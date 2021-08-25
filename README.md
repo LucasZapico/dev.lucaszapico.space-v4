@@ -1,4 +1,6 @@
-# BlueMonkeyMakes Gatsby Starter 2021
+# Dev.LucasZapico.Space - 2021
+
+A Gatsby Chakra creation
 
 ## Stack
 
