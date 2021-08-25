@@ -1,18 +1,18 @@
 ---
-title: "immediately-invoked-functions-expressions-iife"
+title: 'immediately-invoked-functions-expressions-iife'
 ---
 
-### Examples 
+### Examples
 
-```javascript 
+```javascript
 (funtion(){
-  // do stuff 
+  // do stuff
 })()
 ```
 
-```javascript 
-(() => {
-  // do stuff 
+```javascript
+;(() => {
+  // do stuff
 })()
 ```
 
