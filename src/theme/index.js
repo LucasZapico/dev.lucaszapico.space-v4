@@ -51,7 +51,7 @@ export const darkTheme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'brand.two',
+        bg: 'brand.zero',
       },
     },
   },
