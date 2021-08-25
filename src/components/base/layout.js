@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { Box, useTheme, useColorMode } from '@chakra-ui/react';
-import Helmet from 'react-helmet';
-import { ArrowUpIcon } from '@chakra-ui/icons';
-import { Header, Footer } from '../_index';
+import React, { useEffect } from 'react'
+import { Box, useTheme, useColorMode } from '@chakra-ui/react'
+import Helmet from 'react-helmet'
+import { ArrowUpIcon } from '@chakra-ui/icons'
+import { Header, Footer } from '../_index'
 
 const ScrollToTop = () => (
   <Box
@@ -19,24 +19,17 @@ const ScrollToTop = () => (
     width="50px"
     height="50px"
     onClick={() => {
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 0)
     }}
   >
     <ArrowUpIcon style={{ height: '2rem', width: '2rem' }} />
   </Box>
-);
+)
 
 const TypeImports = () => (
   <Helmet>
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossOrigin
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
@@ -50,14 +43,14 @@ const TypeImports = () => (
       rel="stylesheet"
     />
   </Helmet>
-);
+)
 
 const Layout = ({ location, children }) => {
-  const theme = useTheme();
+  const theme = useTheme()
 
   useEffect(() => {
-    console.log(theme);
-  }, [theme]);
+    console.log(theme)
+  }, [theme])
   return (
     <Box py={20}>
       <TypeImports />
@@ -66,7 +59,7 @@ const Layout = ({ location, children }) => {
       <ScrollToTop />
       <Footer location={location} />
     </Box>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
