@@ -1,0 +1,119 @@
+@import './variables';
+@import './scrollbar';
+@import '~swiper/swiper.scss';
+@import '~swiper/components/navigation/navigation.scss';
+@import '~swiper/components/pagination/pagination.scss';
+@import '~swiper/components/scrollbar/scrollbar.scss';
+
+// animations
+
+.home-blob {
+  &-one {
+    animation: orbit-one 20s linear infinite;
+  }
+  &-two {
+    animation: orbit-two 20s linear infinite;
+  }
+}
+
+@keyframes orbit-one {
+  from {
+    transform: translate(-10rem, 10rem);
+  }
+  25% {
+    transform: translate(10rem, 10rem);
+  }
+  50% {
+    transform: translate(10rem, -10rem);
+  }
+  75% {
+    transform: translate(-10rem, -10rem);
+  }
+  to {
+    transform: translate(-10rem, 10rem);
+  }
+}
+
+@keyframes orbit-two {
+  from {
+    transform: translate(10rem, 10rem);
+  }
+  25% {
+    transform: translate(-10rem, 10rem);
+  }
+  50% {
+    transform: translate(-10rem, -10rem);
+  }
+  75% {
+    transform: translate(-10rem, 10rem);
+  }
+  to {
+    transform: translate(10rem, 10rem);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.swiper-button-prev {
+  // top: 50%;
+  // left: -40px;
+  // transform: translateY(-50px);
+  // position: absolute;
+  // background: url('/left.svg');
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // height: 40px;
+  // width: 40px;
+  &:after {
+    color: #f9f6f2;
+    // font-family: none;
+    // content: '';
+  }
+}
+
+.swiper-button-next {
+  // top: 50%;
+  // left: -40px;
+  // transform: translateY(-50px);
+  // position: absolute;
+  // height: 40px;
+  // width: 40px;
+  // background: url('/right.svg');
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  &:after {
+    color: #f9f6f2;
+    // content: '';
+    // font-family: none;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f9f6f2;
+}
