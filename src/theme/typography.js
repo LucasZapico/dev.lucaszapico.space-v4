@@ -1,7 +1,7 @@
 export const Fonts = {
   heading: "'Montserrat', sans-serif",
   body: 'Montserrat, sans-serif',
-};
+}
 
 // Heading
 export const Headings = {
@@ -41,7 +41,7 @@ export const Headings = {
   },
   // The default `size` or `variant` values
   defaultProps: {},
-};
+}
 
 export const Texts = {
   baseStyle: {
@@ -51,4 +51,4 @@ export const Texts = {
     lineHeight: 1.5,
     marginBottom: '6',
   },
-};
+}
