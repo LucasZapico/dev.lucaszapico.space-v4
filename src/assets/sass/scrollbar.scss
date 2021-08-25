@@ -1,0 +1,41 @@
+// custom scroll bar
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: lighten($color-three, 50%);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-three;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-three;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: lighten($color-three, 70%);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-three;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-three;
+}
