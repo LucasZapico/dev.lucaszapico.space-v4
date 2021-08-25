@@ -1,11 +1,9 @@
-import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby';
-import React, { useEffect, useState } from 'react';
-import { generate } from 'shortid';
-import { useSpring, animated as a } from 'react-spring';
-import {
-  Box, Container, Button, useColorMode,
-} from '@chakra-ui/react';
-import { LinkOne } from '../_index';
+import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby'
+import React, { useEffect, useState } from 'react'
+import { generate } from 'shortid'
+import { useSpring, animated as a } from 'react-spring'
+import { Box, Container, Button, useColorMode } from '@chakra-ui/react'
+import { LinkOne } from '../_index'
 
 const ROUTES = [
   {
@@ -28,11 +26,11 @@ const ROUTES = [
     name: 'Playground',
     path: '/playground',
   },
-];
+]
 
 const nav = () => {
   // const { colorMode, toggleColorMode } = useColorMode();
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true)
   const styles = useSpring({
     opacity: show ? 1 : 0,
     height: show ? '10vh' : '0vh',
@@ -40,17 +38,13 @@ const nav = () => {
     width: '100%',
     top: '0px',
     left: '0px',
-  });
+  })
 
   // const { colorMode, toggleColorMode } = useColorMode();
   return (
     <a.div style={styles}>
       <Container maxW="container.xl">
-        <Box
-          display="flex"
-          py={10}
-          justifyContent="space-between"
-        >
+        <Box display="flex" py={10} justifyContent="space-between">
           {ROUTES.map((r, i) => (
             <LinkOne
               activeClassName="active"
@@ -73,7 +67,7 @@ const nav = () => {
         </Box>
       </Container>
     </a.div>
-  );
-};
+  )
+}
 
-export default nav;
+export default nav
