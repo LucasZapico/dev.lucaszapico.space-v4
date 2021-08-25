@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Box, useTheme, useColorMode } from '@chakra-ui/react';
 import Helmet from 'react-helmet';
 import { ArrowUpIcon } from '@chakra-ui/icons';
-import { Header, Footer, Nav } from '../_index';
+import { Header, Footer } from '../_index';
 
 const ScrollToTop = () => (
   <Box
@@ -61,8 +61,10 @@ const Layout = ({ location, children }) => {
   return (
     <Box py={20}>
       <TypeImports />
-      <Nav />
+      <Header location={location} />
       <Box>{children}</Box>
+      <ScrollToTop />
+      <Footer location={location} />
     </Box>
   );
 };
