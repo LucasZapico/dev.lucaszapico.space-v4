@@ -109,7 +109,7 @@ const ArticleSections = ({ recentArticles }) => (
         breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 10 },
           640: { slidesPerView: 2, spaceBetween: 10 },
-          840: { slidesPerView: 3, spaceBetween: 50 },
+          840: { slidesPerView: 2, spaceBetween: 50 },
           1040: { slidesPerView: 4, spaceBetween: 50 },
           1400: { slidesPerView: 4, spaceBetween: 50 },
         }}
