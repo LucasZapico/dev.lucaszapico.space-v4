@@ -1,11 +1,6 @@
-import { extendTheme } from '@chakra-ui/react';
-import { Buttons, Links } from './buttons-links';
-import { Headings, Fonts, Texts } from './typography';
-
-const config = {
-  initialColorMode: 'dark',
-  useSystemColorMode: true,
-};
+import { extendTheme } from '@chakra-ui/react'
+import { Buttons, Links } from './buttons-links'
+import { Headings, Fonts, Texts } from './typography'
 
 const dark = {
   zero: '#000000',
@@ -14,7 +9,7 @@ const dark = {
   three: '#e9e5e0',
   four: '#f9f6f2',
   five: '#FFFFFF',
-};
+}
 
 const light = {
   zero: '#FFFFFF',
@@ -23,10 +18,9 @@ const light = {
   three: '#38383a',
   four: '#333333',
   five: '#000000',
-};
+}
 
 export const coreTheme = {
-  config,
   components: {
     Heading: Headings,
     Link: Links,
@@ -34,10 +28,16 @@ export const coreTheme = {
     Text: Texts,
   },
   fonts: Fonts,
-};
+}
 
 export const darkTheme = extendTheme({
-  ...coreTheme,
+  components: {
+    Heading: Headings,
+    Link: Links,
+    Button: Buttons,
+    Text: Texts,
+  },
+  fonts: Fonts,
   colors: {
     brand: {
       zero: '#000000',
@@ -55,9 +55,9 @@ export const darkTheme = extendTheme({
       },
     },
   },
-});
+})
 export const lightTheme = extendTheme({
-  ...coreTheme,
+  coreTheme,
   colors: {
     brand: {
       zero: '#FFFFFF',
@@ -75,7 +75,7 @@ export const lightTheme = extendTheme({
       },
     },
   },
-});
+})
 
 // colors: {
 //   brand: (props) => ({
