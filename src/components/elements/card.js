@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import { useColorMode, Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react'
 
 export const CardOne = ({ content, children, ...rest }) => {
-  const { colorMode } = useColorMode();
-  console.log('color modes', colorMode);
+  const colorMode = 'dark'
+  console.log('color modes', colorMode)
   return (
     <Box
       p={6}
@@ -14,5 +14,5 @@ export const CardOne = ({ content, children, ...rest }) => {
     >
       {children || content}
     </Box>
-  );
-};
+  )
+}
