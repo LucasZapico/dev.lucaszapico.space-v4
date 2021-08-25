@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   List,
   Box,
@@ -9,9 +9,9 @@ import {
   OrderedList,
   UnorderedList,
   MdCheckCircle,
-} from '@chakra-ui/react';
-import { generate } from 'shortid';
-import { LinkOne } from '../_index';
+} from '@chakra-ui/react'
+import { generate } from 'shortid'
+import { LinkOne } from '../_index'
 
 const used = [
   {
@@ -28,7 +28,7 @@ const used = [
     category: 'development',
     for: ' Simple spring animation primitives for React',
   },
-];
+]
 
 const SiteCredits = () => {
   return (
@@ -36,15 +36,8 @@ const SiteCredits = () => {
       <List spacing={3}>
         {used.map((el, i) => (
           <ListItem key={generate()}>
-            <ListIcon
-              as={MdCheckCircle}
-              color="green.500"
-            />
-            <LinkOne
-              isExternal
-              variant="LinkOne"
-              href={el.link}
-            >
+            <ListIcon as={MdCheckCircle} color="green.500" />
+            <LinkOne isExternal variant="LinkOne" href={el.link}>
               <Heading as="h6">{el.name}</Heading>
             </LinkOne>
             <Text size="md">{el.for}</Text>
@@ -52,7 +45,7 @@ const SiteCredits = () => {
         ))}
       </List>
     </Box>
-  );
-};
+  )
+}
 
-export default SiteCredits;
+export default SiteCredits
