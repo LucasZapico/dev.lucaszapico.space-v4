@@ -1,4 +1,4 @@
-import { CopyIcon, EmailIcon, PhoneIcon } from '@chakra-ui/icons';
+import { CopyIcon, EmailIcon, PhoneIcon } from '@chakra-ui/icons'
 import {
   Box,
   Center,
@@ -7,30 +7,30 @@ import {
   IconButton,
   Tooltip,
   useToast,
-} from '@chakra-ui/react';
-import React, { useState } from 'react';
+} from '@chakra-ui/react'
+import React, { useState } from 'react'
 
-import useClipboard from 'react-use-clipboard';
+import useClipboard from 'react-use-clipboard'
 // import { formatePhone, formatePhoneBot } from '../../helpers/index';
 
 export const formatePhone = (phoneNumberString) => {
-  const cleaned = `${phoneNumberString}`.replace(/\D/g, '');
+  const cleaned = `${phoneNumberString}`.replace(/\D/g, '')
 
-  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
   if (match) {
-    return `(${match[1]}) ${match[2]}-${match[3]}`;
+    return `(${match[1]}) ${match[2]}-${match[3]}`
   }
-  return null;
-};
+  return null
+}
 
 export const formatePhoneBot = (phoneNumberString) => {
-  const cleaned = `${phoneNumberString}`.replace(/\D/g, '');
-  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  const cleaned = `${phoneNumberString}`.replace(/\D/g, '')
+  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
   if (match) {
-    return `${match[1]}-${match[2]}-${match[3]}`;
+    return `${match[1]}-${match[2]}-${match[3]}`
   }
-  return null;
-};
+  return null
+}
 
 export const LinkOne = ({
   children,
@@ -44,7 +44,7 @@ export const LinkOne = ({
 
     {icon}
   </Link>
-);
+)
 
 // export const LinkOne = ({
 //   children,
@@ -87,13 +87,13 @@ export const LinkOne = ({
 // );
 
 export const LinkPhone = (props) => {
-  const { children, color } = props;
-  const formatedPhone = formatePhone(children);
-  const formatedPhoneBot = formatePhoneBot(children);
+  const { children, color } = props
+  const formatedPhone = formatePhone(children)
+  const formatedPhoneBot = formatePhoneBot(children)
   const [isCopied, setCopied] = useClipboard(children, {
     successDuration: 1000,
-  });
-  const toast = useToast();
+  })
+  const toast = useToast()
 
   return (
     <>
@@ -128,7 +128,7 @@ export const LinkPhone = (props) => {
               icon={<CopyIcon opacity="0.5" />}
               m={0}
               onClick={() => {
-                setCopied();
+                setCopied()
                 return toast({
                   title: 'Copied to Clipboard',
                   description: `${children} copied to clipboard`,
@@ -136,7 +136,7 @@ export const LinkPhone = (props) => {
                   variant: 'top-accent',
                   duration: 2000,
                   isClosable: true,
-                });
+                })
               }}
             />
           </Tooltip>
@@ -145,17 +145,17 @@ export const LinkPhone = (props) => {
         <div />
       )}
     </>
-  );
-};
+  )
+}
 
 export const LinkEmail = (props) => {
-  const { children, color } = props;
+  const { children, color } = props
 
   const [isCopied, setCopied] = useClipboard(children, {
     successDuration: 1000,
-  });
+  })
 
-  const toast = useToast();
+  const toast = useToast()
   return (
     <Flex
       {...props}
@@ -186,7 +186,7 @@ export const LinkEmail = (props) => {
           aria-label="copy to clipboard"
           icon={<CopyIcon opacity="0.5" />}
           onClick={() => {
-            setCopied();
+            setCopied()
             return toast({
               title: 'Copied to Clipboard',
               description: `${children} copied to clipboard`,
@@ -194,10 +194,10 @@ export const LinkEmail = (props) => {
               variant: 'top-accent',
               duration: 2000,
               isClosable: true,
-            });
+            })
           }}
         />
       </Tooltip>
     </Flex>
-  );
-};
+  )
+}
