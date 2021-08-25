@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export const BlurBlobOne = ({ ...rest }) => (
   <svg
@@ -10,13 +10,7 @@ export const BlurBlobOne = ({ ...rest }) => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <g filter="url(#filter0_f)">
-      <ellipse
-        cx="1187"
-        cy="624"
-        rx="339"
-        ry="267"
-        fill="#E9E5E0"
-      />
+      <ellipse cx="1187" cy="624" rx="339" ry="267" fill="#E9E5E0" />
     </g>
     <defs>
       <filter
@@ -28,24 +22,18 @@ export const BlurBlobOne = ({ ...rest }) => (
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB"
       >
-        <feFlood
-          floodOpacity="0"
-          result="BackgroundImageFix"
-        />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
           in2="BackgroundImageFix"
           result="shape"
         />
-        <feGaussianBlur
-          stdDeviation="100"
-          result="effect1_foregroundBlur"
-        />
+        <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur" />
       </filter>
     </defs>
   </svg>
-);
+)
 
 export const BlurBlobTwo = () => (
   <svg
@@ -57,13 +45,7 @@ export const BlurBlobTwo = () => (
   >
     <g clipPath="url(#clip0)">
       <g filter="url(#filter0_f)">
-        <ellipse
-          cx="1186.5"
-          cy="727.5"
-          rx="303.5"
-          ry="277.5"
-          fill="#B72525"
-        />
+        <ellipse cx="1186.5" cy="727.5" rx="303.5" ry="277.5" fill="#B72525" />
       </g>
     </g>
     <defs>
@@ -76,31 +58,21 @@ export const BlurBlobTwo = () => (
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB"
       >
-        <feFlood
-          floodOpacity="0"
-          result="BackgroundImageFix"
-        />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
           in2="BackgroundImageFix"
           result="shape"
         />
-        <feGaussianBlur
-          stdDeviation="250"
-          result="effect1_foregroundBlur"
-        />
+        <feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur" />
       </filter>
       <clipPath id="clip0">
-        <rect
-          width="2373"
-          height="1455"
-          fill="white"
-        />
+        <rect width="2373" height="1455" fill="white" />
       </clipPath>
     </defs>
   </svg>
-);
+)
 
 export const BlurBlobThree = ({ ...rest }) => (
   <svg
@@ -111,13 +83,7 @@ export const BlurBlobThree = ({ ...rest }) => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <g filter="url(#filter0_f)">
-      <ellipse
-        cx="1186.5"
-        cy="727"
-        rx="257.5"
-        ry="284"
-        fill="#F5E5CC"
-      />
+      <ellipse cx="1186.5" cy="727" rx="257.5" ry="284" fill="#F5E5CC" />
     </g>
     <defs>
       <filter
@@ -129,21 +95,15 @@ export const BlurBlobThree = ({ ...rest }) => (
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB"
       >
-        <feFlood
-          floodOpacity="0"
-          result="BackgroundImageFix"
-        />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
           in2="BackgroundImageFix"
           result="shape"
         />
-        <feGaussianBlur
-          stdDeviation="100"
-          result="effect1_foregroundBlur"
-        />
+        <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur" />
       </filter>
     </defs>
   </svg>
-);
+)
