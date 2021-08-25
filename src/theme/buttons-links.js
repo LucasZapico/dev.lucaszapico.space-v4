@@ -48,7 +48,7 @@ export const Buttons = {
       },
     },
   },
-};
+}
 
 export const Links = {
   baseStyle: {
@@ -155,4 +155,4 @@ export const Links = {
       },
     },
   },
-};
+}
