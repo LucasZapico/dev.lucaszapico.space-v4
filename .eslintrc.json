@@ -3,7 +3,11 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,7 +17,7 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/jsx-max-props-per-line": [1, { "maximum": 1 }],
+    // "react/jsx-max-props-per-line": [1, { "maximum": 1 }],
     // "react/jsx-max-props-per-line": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",
@@ -23,6 +27,7 @@
     "react/jsx-props-no-spreading": "off",
     "prefer-default-export": "off",
     "import/order": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "prettier/prettier": "warn"
   }
 }
