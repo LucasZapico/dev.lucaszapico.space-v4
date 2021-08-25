@@ -1,4 +1,4 @@
-import './src/assets/sass/_index.scss';
+import './src/assets/sass/_index.scss'
 
 import {
   CSSReset,
@@ -6,11 +6,10 @@ import {
   cookieStorageManager,
   localStorageManager,
   extendTheme,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 // import { useColorModeValue, ColorModeProvider } from './src/context/_index';
-import { mode } from '@chakra-ui/theme-tools';
-import React, { useEffect } from 'react';
-import { lightTheme, darkTheme, coreTheme } from './src/theme';
+import React, { useEffect } from 'react'
+import { lightTheme, darkTheme, coreTheme } from './src/theme'
 
 // import './src/assets/sass/font.css';
 
@@ -49,29 +48,26 @@ export const wrapRootElement = ({ cookies, element }) => {
   // const { cookies, element } = props;
   // console.log(props);
   // const { colorMode } = useColorModeValue();
-  const colorMode = 'dark';
-  const colorModeManager = typeof cookies === 'string'
-    ? cookieStorageManager(cookies)
-    : localStorageManager;
-
+  const colorMode = 'dark'
+  const colorModeManager =
+    typeof cookies === 'string'
+      ? cookieStorageManager(cookies)
+      : localStorageManager
+  const test = extendTheme(colorMode === 'light' ? lightTheme : darkTheme)
   return (
-    <ChakraProvider
-      colorModeManager={colorModeManager}
-      theme={extendTheme(colorMode === 'light' ? lightTheme : darkTheme)}
-    >
+    <ChakraProvider theme={darkTheme}>
       <CSSReset />
-      1
       {element}
     </ChakraProvider>
-  );
-};
-
-export function getServerSideProps({ req }) {
-  return {
-    props: {
-      // first time users will not have any cookies and you may not return
-      // undefined here, hence ?? is necessary
-      cookies: req.headers.cookie ?? '',
-    },
-  };
+  )
 }
+
+// export function getServerSideProps({ req }) {
+//   return {
+//     props: {
+//       // first time users will not have any cookies and you may not return
+//       // undefined here, hence ?? is necessary
+//       cookies: req.headers.cookie ?? '',
+//     },
+//   };
+// }
