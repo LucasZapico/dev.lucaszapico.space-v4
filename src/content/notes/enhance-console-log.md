@@ -24,3 +24,15 @@ logSp
 log(chalk.cyan('query'), query);
 
 ```
+
+### Size 
+
+- example
+
+### Color 
+
+- example
+
+### Background Color 
+
+- example
