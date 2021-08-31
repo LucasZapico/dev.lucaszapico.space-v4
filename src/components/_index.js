@@ -6,6 +6,7 @@ export { default as Nav } from './base/nav'
 
 // elements
 export { CardOne } from './elements/card'
+export { Tag } from './elements/tag'
 
 // sections
 export { default as SiteCredits } from './sections/site-credit'
@@ -16,3 +17,4 @@ export { default as HalfByHalfSection } from './section-templates/half-by-half-s
 // pages
 export { default as Home } from './pages/home'
 export { default as Articles } from './pages/articles'
+export { default as Styleguide } from './pages/styleguide'
