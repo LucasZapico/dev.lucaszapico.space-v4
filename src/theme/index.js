@@ -52,6 +52,7 @@ export const darkTheme = extendTheme({
     global: {
       body: {
         bg: 'brand.zero',
+        color: 'brand.five',
       },
     },
   },
@@ -71,7 +72,8 @@ export const lightTheme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'brand.two',
+        bg: 'brand.zero',
+        color: 'brand.five',
       },
     },
   },
