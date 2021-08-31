@@ -5,11 +5,11 @@ date-created: 2021/08/26
 last-modified: 2021/08/26 10:09:16
 isdraft: true
 categories: ['api', 'express', 'node', 'structure']
-tags: [""]
+tags: ['']
 type: 'note'
 ---
 
-### Reference 
+### Reference
 
 [Scotch.io - Keeping API routing clean using Express Routes](https://scotch.io/tutorials/keeping-api-routing-clean-using-express-routers)
 

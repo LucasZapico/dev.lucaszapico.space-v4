@@ -1,63 +1,62 @@
 ---
-title: "Enhance Console Logs"
+title: 'Enhance Console Logs'
 description: 'Notes and example for enhanced console.log statements'
 date-created: 2021/08/28
 last-modified: 2021/08/28 10:22:22
 isdraft: true
 categories: ['env', 'node', 'javascript']
-tags: ["env", 'logging']
+tags: ['env', 'logging']
 type: 'note'
 ---
-## Install 
+
+## Install
 
 ```shell
 npm install chalk
 ```
 
-### Basic Usage 
+### Basic Usage
 
 ```javascript
-import chalk from 'chalk';
+import chalk from 'chalk'
 
-console.log(chalk.blue('Hello world!'));
+console.log(chalk.blue('Hello world!'))
 ```
 
-or 
+or
 
 ```javascript
-const chalk = require('chalk');
+const chalk = require('chalk')
 
-console.log(chalk.blue('Hello world!'));
+console.log(chalk.blue('Hello world!'))
 ```
-
 
 ### Example
 
 ```javascript
-// abstract log 
-const log = console.log;
+// abstract log
+const log = console.log
 const logSp = log(
   chalk.redBright(`
 
 =================================
 
 `)
-);
+)
 
-log(chalk.blue('Hello') + ' World' + chalk.red('!'));
+log(chalk.blue('Hello') + ' World' + chalk.red('!'))
 logSp
-log(chalk.blue.bgRed.bold('Hello world!'));
-
+log(chalk.blue.bgRed.bold('Hello world!'))
 ```
 
-### Size 
+### Size
 
 - example
 
-### Color 
+### Color
 
 - example
 
-### Background Color 
+### Background Color
 
 - example

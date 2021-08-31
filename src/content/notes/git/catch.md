@@ -1,4 +1,3 @@
-
 ### Git Ignoring GitIgnore
 
 ```shell

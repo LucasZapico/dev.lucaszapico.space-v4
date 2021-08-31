@@ -5,40 +5,37 @@ date-created: 2021/08/26
 last-modified: 2021/08/28 10:27:10
 isdraft: true
 categories: ['api', 'express', 'node', 'structure']
-tags: [""]
+tags: ['']
 type: 'note'
 ---
 
-### Multiple exports from single file 
+### Multiple exports from single file
 
-#### Example 
+#### Example
 
 ```javascript
-exports.log = console.log;
+exports.log = console.log
 exports.logSp = log(
   chalk.redBright(`
 ====================================================
 `)
-);
-
+)
 ```
 
-#### Example 
+#### Example
 
 ```javascript
 exports.getContacts = async (req, res) => {
   try {
     const contacts = await axios.get(`<URL>`)
     res.status(400).json({
-       contacts
+      contacts,
     })
-  } catch(err) {
+  } catch (err) {
     console.error(err)
     res.status(400).json({
-      message: 'erorr'
+      message: 'erorr',
     })
   }
-  
 }
-
 ```
