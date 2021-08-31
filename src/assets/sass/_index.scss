@@ -1,5 +1,8 @@
 @import './variables';
 @import './scrollbar';
+@import './article-styles.scss';
+@import './buttons-links.scss';
+@import './syntax-highlighting.scss';
 @import '~swiper/swiper.scss';
 @import '~swiper/components/navigation/navigation.scss';
 @import '~swiper/components/pagination/pagination.scss';
@@ -116,4 +119,8 @@
 
 .swiper-pagination-bullet-active {
   background-color: #f9f6f2;
+}
+
+.swiper-slide {
+  display: inline-block;
 }
