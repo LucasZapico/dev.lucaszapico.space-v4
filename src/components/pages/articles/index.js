@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
 import { SearchIcon } from '@chakra-ui/icons'
-import { CardOne } from '../../_index'
+
 import {
   Box,
   Heading,
@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { generate } from 'shortid'
 import { generateImageData } from 'gatsby-plugin-image'
+import ArticleCard from './article-card'
 
 const Articles = () => {
   const { recentArticles } = useStaticQuery(query)
@@ -70,28 +71,7 @@ const Articles = () => {
           flexWrap="wrap"
         >
           {articles &&
-            articles.map((article, i) => (
-              <CardOne
-                key={generate()}
-                className="link"
-                mt={6}
-                to={`/${article.node.fields.path}`}
-                as={GatsbyLink}
-                width={{ base: '100%', md: '45%', lg: '30%' }}
-                minH="15rem"
-
-                // onClick={() => {
-                //   navigate(`/${article.node.fields.path}`)
-                // }}
-              >
-                <Heading as="h4" size="md" variant="sec">
-                  {article.node.frontmatter.title}
-                </Heading>
-                <Heading as="h5" variant="sec" size="md">
-                  {article.node.frontmatter.description}
-                </Heading>
-              </CardOne>
-            ))}
+            articles.map((article, i) => <ArticleCard article={article} />)}
         </Container>
       </Container>
     </>
