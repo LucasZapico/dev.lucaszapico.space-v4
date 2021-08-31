@@ -32,6 +32,7 @@ const nav = () => {
   // const { colorMode, toggleColorMode } = useColorMode();
   const [show, setShow] = useState(true)
   const styles = useSpring({
+    zIndex: '10',
     opacity: show ? 1 : 0,
     height: show ? '10vh' : '0vh',
     position: 'fixed',

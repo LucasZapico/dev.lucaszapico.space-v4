@@ -9,3 +9,10 @@ export { CardOne } from './elements/card'
 
 // sections
 export { default as SiteCredits } from './sections/site-credit'
+
+// template
+export { default as HalfByHalfSection } from './section-templates/half-by-half-section'
+
+// pages
+export { default as Home } from './pages/home'
+export { default as Articles } from './pages/articles'
