@@ -79,7 +79,6 @@ exports.createPages = async ({ actions, graphql }) => {
               link
               repo
               path
-              data_created
               isComingSoon
               audio
               subHeader
