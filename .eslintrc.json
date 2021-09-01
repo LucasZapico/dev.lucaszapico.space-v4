@@ -19,6 +19,7 @@
   "rules": {
     // "react/jsx-max-props-per-line": [1, { "maximum": 1 }],
     // "react/jsx-max-props-per-line": "off",
+    "import/no-cycle": "warn",
     "no-unused-vars": "warn",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",
