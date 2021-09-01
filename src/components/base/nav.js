@@ -19,13 +19,13 @@ const ROUTES = [
     path: '/notes',
   },
   {
-    name: 'Cases',
-    path: '/cases',
+    name: 'Projects',
+    path: '/Projects',
   },
-  {
-    name: 'Playground',
-    path: '/playground',
-  },
+  // {
+  //   name: 'Playground',
+  //   path: '/playground',
+  // },
 ]
 
 const nav = () => {
@@ -33,6 +33,7 @@ const nav = () => {
   const [show, setShow] = useState(true)
   const styles = useSpring({
     zIndex: '10',
+    backgroundColor: '#000000',
     opacity: show ? 1 : 0,
     height: show ? '10vh' : '0vh',
     position: 'fixed',
