@@ -2,14 +2,14 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import ArticleSection from './article-section'
 import HomeHero from './hero'
-import ProjectSections from './project-section'
+import { ProjectSection } from '../../_index'
 
 const Home = () => {
   const { recentArticles, recentProjects } = useStaticQuery(query)
   return (
     <>
       <HomeHero />
-      <ProjectSections recentProjects={recentProjects} />
+      <ProjectSection recentProjects={recentProjects} />
       <ArticleSection recentArticles={recentArticles} />
     </>
   )
@@ -43,12 +43,14 @@ export const query = graphql`
         frontmatter: { isdraft: { eq: false }, type: { eq: "project" } }
       }
       sort: { fields: frontmatter___date_created, order: DESC }
+      limit: 4
     ) {
       edges {
         node {
           id
-          excerpt(format: HTML)
-
+          fields {
+            path
+          }
           frontmatter {
             title
             subHeader
