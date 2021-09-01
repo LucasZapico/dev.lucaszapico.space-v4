@@ -6,8 +6,8 @@ repo: 'https://github.com/LucasZapico/luv-coffee-demo-2020'
 link: 'https://luvcoffee2020.netlify.app/'
 featuredImage: '../../images/projects/featured/luv-coffee-3-showcase.png'
 path: '/projects/luv-coffee-roaster'
-data-created: '11/05/2020'
-last-modified: '11/12/2020'
+date-created: 2020/05/11
+last-modified: 2021/09/01 10:03:13
 isdraft: false
 isComingSoon: false
 categories: ['project']

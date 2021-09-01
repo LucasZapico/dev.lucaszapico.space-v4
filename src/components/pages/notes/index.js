@@ -9,40 +9,41 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Divider,
 } from '@chakra-ui/react'
 import { generate } from 'shortid'
 import { generateImageData } from 'gatsby-plugin-image'
 import ArticleCard from './article-card'
 
-const Articles = () => {
-  const { recentArticles } = useStaticQuery(query)
-  const [articles, setArticles] = useState(recentArticles.edges)
+const Notes = () => {
+  const { recentNotes } = useStaticQuery(query)
+  const [Notes, setNotes] = useState(recentNotes.edges)
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
 
   useEffect(() => {
-    if (recentArticles && search.length > 0) {
-      console.log('art', recentArticles)
+    if (recentNotes && search.length > 0) {
+      console.log('art', recentNotes)
       console.log(search)
       const searchResults =
-        recentArticles &&
-        recentArticles.edges.filter((article) => {
+        recentNotes &&
+        recentNotes.edges.filter((article) => {
           const title = article.node.frontmatter.title.toLowerCase()
           return title.includes(search)
         })
       console.log('results', results)
       if (searchResults.length > 0) {
-        setArticles(searchResults)
+        setNotes(searchResults)
       }
     }
-    console.log('a', articles)
+    console.log('a', Notes)
   }, [search])
 
   return (
     <>
       <Container maxW="container.xl">
         <Heading as="h1" size="4xl">
-          Articles
+          Notes
         </Heading>
         <Container maxW="container.md" px={0} py={10}>
           <InputGroup>
@@ -64,14 +65,16 @@ const Articles = () => {
               results.map((r, i) => <Box>{r.node.frontmatter.title}</Box>)}
           </Box> */}
         </Container>
-        <Container
-          maxW="container.xl"
-          display="flex"
-          justifyContent="space-between"
-          flexWrap="wrap"
-        >
-          {articles &&
-            articles.map((article, i) => <ArticleCard article={article} />)}
+        <Container maxW="container.md">
+          {Notes &&
+            Notes.map((article, i) => (
+              <Box as={GatsbyLink} to={`/${article.node.fields.path}`}>
+                <Heading as="h4" size="md" mb={2}>
+                  {article.node.frontmatter.title}
+                </Heading>
+                <Divider mb={6} />
+              </Box>
+            ))}
         </Container>
       </Container>
     </>
@@ -80,7 +83,7 @@ const Articles = () => {
 
 export const query = graphql`
   query {
-    recentArticles: allMarkdownRemark(
+    recentNotes: allMarkdownRemark(
       filter: { frontmatter: { isdraft: { eq: false }, type: { eq: "post" } } }
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {
@@ -90,7 +93,6 @@ export const query = graphql`
           fields {
             path
           }
-          excerpt(format: HTML)
           frontmatter {
             title
             categories
@@ -103,4 +105,4 @@ export const query = graphql`
   }
 `
 
-export default Articles
+export default Notes

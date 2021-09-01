@@ -1,14 +1,13 @@
 import { Box, Heading } from '@chakra-ui/react'
 import React from 'react'
+import { Notes } from '../components/_index'
 
-const Notes = () => {
+const NotesPage = () => {
   return (
     <Box>
-      <Heading as="h1" size="3xl">
-        Notes
-      </Heading>
+      <Notes />
     </Box>
   )
 }
 
-export default Notes
+export default NotesPage

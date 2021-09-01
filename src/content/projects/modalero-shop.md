@@ -7,8 +7,8 @@ repo: 'https://github.com/LucasZapico/modalero-store-prototype-1.0'
 featuredImage: '../../images/projects/featured/modalero-shop.png'
 
 path: '/projects/modalero-shop'
-data-created: 09/10/2020
-last-modified: 09/15/2020
+date-created: '09/10/2020'
+last-modified: 2021/09/01 04:51:01
 isdraft: false
 isComingSoon: false
 categories:
