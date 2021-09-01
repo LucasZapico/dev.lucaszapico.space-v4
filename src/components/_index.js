@@ -10,6 +10,7 @@ export { Tag } from './elements/tag'
 
 // sections
 export { default as SiteCredits } from './sections/site-credit'
+export { default as ProjectSection } from './sections/project-section'
 
 // template
 export { default as HalfByHalfSection } from './section-templates/half-by-half-section'
@@ -18,3 +19,5 @@ export { default as HalfByHalfSection } from './section-templates/half-by-half-s
 export { default as Home } from './pages/home'
 export { default as Articles } from './pages/articles'
 export { default as Styleguide } from './pages/styleguide'
+export { default as Projects } from './pages/projects'
+export { default as Notes } from './pages/notes'
