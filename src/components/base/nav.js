@@ -20,7 +20,7 @@ const ROUTES = [
   },
   {
     name: 'Projects',
-    path: '/Projects',
+    path: '/projects',
   },
   // {
   //   name: 'Playground',
