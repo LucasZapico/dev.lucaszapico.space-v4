@@ -2,14 +2,16 @@
 title: 'Linux and Command Line'
 description: ''
 date-created: 2018/03/15 14:19:17
-last-modified: 2021/09/07 07:29:42
+last-modified: 2021/09/07 07:36:04
 isdraft: false
 categories: ['linux','command-line', 'notes']
 tags: []
 type: 'notes'
 ---
 
-**Copy directory from to another**
+#### Copying Files and Directories 
+
+**copy directory from to another**
 
 ```shell
 cp -R <source_folder> <destination_folder>
@@ -32,3 +34,24 @@ cp -Rv dirOne/ dirTwo/
 # dirOne/ -> dirTwo
 # dirOne//item-1.txt -> dirTwo/item-1.txt
 ```
+
+#### Remove Directories and Content 
+
+**shell docs for command** 
+
+```shell
+man rm
+```
+
+**remove directory and contents**
+
+```shell
+rm -R dirOne
+```
+
+**alt remove directory and contents force and verbose**
+```shell
+rm -rfv dirOne
+```
+*f force flag*
+*v verbose flag*
