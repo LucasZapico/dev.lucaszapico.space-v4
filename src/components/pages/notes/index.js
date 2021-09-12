@@ -34,6 +34,8 @@ const Notes = () => {
       console.log('results', results)
       if (searchResults.length > 0) {
         setNotes(searchResults)
+      } else {
+        setNotes(recentNotes.edges)
       }
     }
     console.log('a', Notes)
@@ -67,10 +69,10 @@ const Notes = () => {
         </Container>
         <Container maxW="container.md">
           {Notes &&
-            Notes.map((article, i) => (
-              <Box as={GatsbyLink} to={`/${article.node.fields.path}`}>
+            Notes.map((note, i) => (
+              <Box as={GatsbyLink} to={`/${note.node.fields.path}`}>
                 <Heading as="h4" size="md" mb={2}>
-                  {article.node.frontmatter.title}
+                  {note.node.frontmatter.title}
                 </Heading>
                 <Divider mb={6} />
               </Box>
@@ -84,7 +86,7 @@ const Notes = () => {
 export const query = graphql`
   query {
     recentNotes: allMarkdownRemark(
-      filter: { frontmatter: { isdraft: { eq: false }, type: { eq: "post" } } }
+      filter: { frontmatter: { isdraft: { eq: false }, type: { eq: "note" } } }
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {
       edges {

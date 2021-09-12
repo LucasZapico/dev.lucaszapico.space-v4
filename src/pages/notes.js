@@ -4,7 +4,7 @@ import { Notes } from '../components/_index'
 
 const NotesPage = () => {
   return (
-    <Box>
+    <Box py={20}>
       <Notes />
     </Box>
   )
