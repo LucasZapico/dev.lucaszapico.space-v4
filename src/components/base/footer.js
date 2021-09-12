@@ -26,13 +26,13 @@ const ROUTES = [
     path: '/notes',
   },
   {
-    name: 'Cases',
-    path: '/cases',
+    name: 'Projects',
+    path: '/projects',
   },
-  {
-    name: 'Playground',
-    path: '/playground',
-  },
+  // {
+  //   name: 'Playground',
+  //   path: '/playground',
+  // },
   {
     name: 'Style Guide',
     path: '/styleguide',
