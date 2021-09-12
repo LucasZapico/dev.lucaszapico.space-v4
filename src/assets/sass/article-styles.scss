@@ -119,6 +119,7 @@ $nc-ac-tx: #ffffff;
   h4,
   h5,
   h6 {
+    font-weight: 700;
     line-height: 150%;
     color: $nc-tx-1;
     padding-top: 0.875rem;
@@ -289,6 +290,7 @@ $nc-ac-tx: #ffffff;
   samp {
     /* Set the font family for monospaced elements */
     font-family: $nc-font-mono;
+    margin-bottom: 2.5rem;
   }
 
   code,
