@@ -8,6 +8,10 @@
 @import '~swiper/components/pagination/pagination.scss';
 @import '~swiper/components/scrollbar/scrollbar.scss';
 
+html {
+  scroll-behavior: smooth;
+}
+
 // animations
 
 .home-blob {
