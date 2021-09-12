@@ -2,11 +2,11 @@
 title: 'Docker Notes 2020'
 description: 'General notes on Docker'
 date-created: 2020/10/21
-last-modified: 2021/09/01 04:25:00
+last-modified: 2021/09/01 19:47:16
 isdraft: false
 categories: ['docker', 'notes']
 tags: []
-type: 'post'
+type: 'note'
 ---
 
 ## Common Commands

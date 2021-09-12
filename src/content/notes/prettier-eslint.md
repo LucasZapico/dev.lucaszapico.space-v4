@@ -2,11 +2,11 @@
 title: 'Eslint and Prettier General Config'
 description: 'My 2020 configuration of Prettier and Eslint'
 date-created: 2020/10/21
-last-modified: 2021/07/12 18:17:28
+last-modified: 2021/09/01 19:48:13
 isdraft: false
 categories: ['dev-env', 'notes']
 tags: ['prettier', 'eslint']
-type: 'post'
+type: 'note'
 ---
 
 ## Machine

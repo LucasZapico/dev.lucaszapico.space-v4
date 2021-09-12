@@ -2,11 +2,11 @@
 title: 'CORS Notes'
 description: 'Notes on CORS policy and common error and solutions'
 date-created: 2021/03/15 14:19:17
-last-modified: 2021/09/01 04:51:02
+last-modified: 2021/09/01 19:09:54
 isdraft: false
 categories: ['web-standards', 'notes']
 tags: ['CORS']
-type: 'post'
+type: 'note'
 ---
 
 ## CORS (Cross origin policy)

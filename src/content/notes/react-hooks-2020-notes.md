@@ -2,11 +2,11 @@
 title: 'React Hooks Review and Notes'
 description: ''
 date-created: 2021/04/04 11:18:38
-last-modified: 2021/04/04 12:28:49
+last-modified: 2021/09/01 19:48:20
 isdraft: false
 categories: ['react', 'notes']
 tags: ['react', 'notes', 'hooks']
-type: 'post'
+type: 'note'
 ---
 
 ## `useState()`

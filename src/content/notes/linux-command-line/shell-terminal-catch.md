@@ -2,7 +2,7 @@
 title: 'Shell and Terminal Notes'
 description: ''
 date-created: 2018/03/15 14:19:17
-last-modified: 2021/09/07 07:07:25
+last-modified: 2021/09/07 07:07:49
 isdraft: false
 categories: ['linux','command-line', 'shell', 'notes']
 tags: []
