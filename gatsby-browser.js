@@ -1,3 +1,4 @@
+import 'prismjs/themes/prism-solarizedlight.css'
 import './src/assets/sass/_index.scss'
 
 import {
