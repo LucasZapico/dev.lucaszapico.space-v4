@@ -4,15 +4,14 @@ description: ''
 date-created: 2018/03/15 14:19:17
 last-modified: 2021/09/07 07:07:49
 isdraft: false
-categories: ['linux','command-line', 'shell', 'notes']
+categories: ['linux', 'command-line', 'shell', 'notes']
 tags: []
 type: 'notes'
 ---
 
-
 ## Catch
 
-From within a CLI(command line interface) environment__Echo__
+From within a CLI(command line interface) environment**Echo**
 
 ```
 // prints to CLI
@@ -26,10 +25,11 @@ echo "some text"
 ~ echo -e "1\t2\t3"
 1	2	3
 ```
-__Color text__
+
+**Color text**
 
 | color   | code |
-|:--------|:-----|
+| :------ | :--- |
 | Reset   | 0    |
 | black   | 30   |
 | red     | 31   |
@@ -40,17 +40,17 @@ __Color text__
 | cyan    | 36   |
 | white   | 37   |
 
-__Example:__ Print out blue text
+**Example:** Print out blue text
 
 ```
 ~ echo -e "\e[1;34m This is blue text \e[0m"
  This is blue text
 ```
 
-__Color Background__
+**Color Background**
 
 | color   | code |
-|:--------|:-----|
+| :------ | :--- |
 | Reset   | 0    |
 | black   | 40   |
 | red     | 41   |
@@ -61,7 +61,6 @@ __Color Background__
 | cyan    | 46   |
 | white   | 47   |
 
-
 ```
 ~ echo -e "\e[1;43m This is text has a yellow background \e[0m"
  This text has a yellow background
@@ -69,15 +68,15 @@ __Color Background__
 
 #### Variables and Environment Variables
 
-
 #### Commands Basics
 
-__Basic General Syntax__
+**Basic General Syntax**
 
 ```
  > some-command some-option some-arguments
- ```
-__WHEN IN DOUBT__
+```
+
+**WHEN IN DOUBT**
 
 Opens a documentation/manual for a given command.
 
@@ -146,30 +145,32 @@ fg
 //(foreground) brings scripts running in background to foreground
 
 ```
+
 ### Bash
 
-####  Commands
+#### Commands
 
-__Echo__
+**Echo**
+
 ```
 ~ echo "some text"
 // prints some text to the terminal
 ```
 
- ```
- // bash commands
+```
+// bash commands
 
- which some-command
- // file path to command
+which some-command
+// file path to command
 
- ```
+```
 
 ### Zsh
 
-####  Commands
+#### Commands
 
- ```
- // zsh commands
+```
+// zsh commands
 
 man some-command
 // opens manual for 'some-command'
@@ -177,10 +178,11 @@ man some-command
 whatis some-command
 // brief descrption of command
 
- ```
+```
 
----------------------------------------------------------
------------------------------------------------------
+---
+
+---
 
 ### Network Status Commands
 
@@ -205,54 +207,51 @@ kill -9 <PID>
 
 ```
 
+---
 
+---
 
+# Reference
 
+| Directory/Folder                                                | Contents                                   |
+| --------------------------------------------------------------- | ------------------------------------------ |
+| /                                                               | root                                       |
+| /bin                                                            | binaries, programs                         |
+| /sbin                                                           | system binaries, system programs           |
+| /dev                                                            | devices: hard drives, keyboard, mouse, etc |
+| /etc                                                            | system configurations                      |
+| /home                                                           | user home directories                      |
+| /lib                                                            | libraries of code                          |
+| /tmp                                                            | temporary files                            |
+| /var                                                            | variousr, mostly files the system uses     |
+| /usr </br> /usr/bin </br> /usr/etc </br>/urs/lib</br>/urs/local | user programs, tools and libraries         |
 
---------------------------------------------------------------
----------------------------------------------------------------
-# Reference #
+---
 
-| Directory/Folder                         | Contents                                 |
-| ---------------------------------------- | ---------------------------------------- |
-| /                                        | root                                     |
-| /bin                                     | binaries, programs                       |
-| /sbin                                    | system binaries, system programs         |
-| /dev                                     | devices: hard drives, keyboard, mouse, etc |
-| /etc                                     | system configurations                    |
-| /home                                    | user home directories                    |
-| /lib                                     | libraries of code                        |
-| /tmp                                     | temporary files                          |
-| /var                                     | variousr, mostly files the system uses   |
-| /usr </br> /usr/bin </br> /usr/etc </br>/urs/lib</br>/urs/local | user programs, tools and libraries       |
-
-
-
-------------------------------------------------------------------------------
-## Resources and Reference 
+## Resources and Reference
 
 Notes within this doc have been drawn from the following sources:
-- source: __Shell Sytle Guide__
-  - link: https://google.github.io/styleguide/shell.xml
-- source: __Bash Programming- Introduction How-To__
-  - link: http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
-    source: __Linux Kernel Codeing Style__
-   - link: https://www.kernel.org/doc/Documentation/process/coding-style.rst
 
-  __EXAMPLE__
-- source: __Example of literal cite__
+- source: **Shell Sytle Guide**
+  - link: https://google.github.io/styleguide/shell.xml
+- source: **Bash Programming- Introduction How-To**
+
+  - link: http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
+    source: **Linux Kernel Codeing Style**
+  - link: https://www.kernel.org/doc/Documentation/process/coding-style.rst
+
+  **EXAMPLE**
+
+- source: **Example of literal cite**
   - Sheldon Ross M(2010). A first course in probability/ Sheldon Ross. - 8th ed. Upper Saddle River, NJ: Pearson Prentice Hall
 
-### Document Details 
+### Document Details
 
 date initialized: November,25,1017
 passes to date: 1
 current pass:
 subject:
 
-
-
-
 ## LOG
-4/21/2018, 2PM
 
+4/21/2018, 2PM

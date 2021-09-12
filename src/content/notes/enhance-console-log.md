@@ -9,16 +9,17 @@ tags: ['env', 'logging']
 type: 'note'
 ---
 
-## JavaScript 
+## JavaScript
 
 ```javascript
-console.log(`%cNode env ${NODE_ENV}.`, 'color:cyan');
-console.log(`%cListening on port: ${PORT}.`, 'color:cyan');
-console.log(`%cURL: ${SITE_URL}:${PORT}`, 'color:cyan');
-console.log(`%clead url: ${LEAD_API}`, 'color:cyan');
+console.log(`%cNode env ${NODE_ENV}.`, 'color:cyan')
+console.log(`%cListening on port: ${PORT}.`, 'color:cyan')
+console.log(`%cURL: ${SITE_URL}:${PORT}`, 'color:cyan')
+console.log(`%clead url: ${LEAD_API}`, 'color:cyan')
 ```
 
 ## Node
+
 ## Install
 
 ```shell
@@ -41,10 +42,10 @@ const chalk = require('chalk')
 console.log(chalk.blue('Hello world!'))
 ```
 
-
-## Reference 
+## Reference
 
 [Colorful consolelogging](https://www.samanthaming.com/tidbits/40-colorful-console-message/)
+
 ### Example
 
 ```javascript

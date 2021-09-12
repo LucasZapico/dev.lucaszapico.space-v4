@@ -9,10 +9,10 @@ tags: ['email', 'improvmx']
 type: 'article'
 ---
 
-## 
+##
 
-- gmail 
-- incognito mode required to avoid cache redirect 
+- gmail
+- incognito mode required to avoid cache redirect
 
 - outlook no longer supporting alias
-- 
+-
