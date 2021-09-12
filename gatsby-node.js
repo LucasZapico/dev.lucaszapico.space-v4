@@ -68,6 +68,10 @@ exports.createPages = async ({ actions, graphql }) => {
           node {
             id
             html
+            tableOfContents(heading: "", maxDepth: 4)
+            wordCount {
+              words
+            }
             frontmatter {
               title
               description
@@ -82,6 +86,8 @@ exports.createPages = async ({ actions, graphql }) => {
               isComingSoon
               audio
               subHeader
+              categories
+              tags
               featured
               featuredImage {
                 childImageSharp {

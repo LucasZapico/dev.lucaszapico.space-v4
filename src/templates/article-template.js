@@ -12,12 +12,18 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link as GatsbyLink, graphql } from 'gatsby'
 import React from 'react'
 import { generate } from 'shortid'
-import { HalfByHalfSection, LinkOne } from '../components/_index'
+import { HalfByHalfSection, LinkOne, Tag } from '../components/_index'
 
 export default function ArticleTemplate({ path, pageContext, location }) {
-  const { next, previous, node, title } = pageContext
+  const { next, previous, node, title, tableOfContents } = pageContext
   console.log('page', pageContext)
-
+  const TOC = () => (
+    <Box
+      px={2}
+      py={10}
+      dangerouslySetInnerHTML={{ __html: node.tableOfContents }}
+    />
+  )
   const NextArticle = () => (
     <Box key={generate()}>
       <Box to={`/${next.fields.path}`} as={GatsbyLink}>
@@ -67,56 +73,72 @@ export default function ArticleTemplate({ path, pageContext, location }) {
     </Box>
   )
 
+  const BreadCrumbs = () => (
+    <Box mt={6} mb={10}>
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <BreadcrumbLink to="/" as={GatsbyLink}>
+            Home
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem>
+          <BreadcrumbLink to="/blog" as={GatsbyLink}>
+            Articles
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink>{title}</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+    </Box>
+  )
+
   return (
     <>
       {/* <SEO location={location} title={title} /> */}
       <Box minHeight="100vh" pt={10} pb={10}>
-        <Container maxW="container.sm">
-          <Box mt={6} mb={10}>
-            <Breadcrumb>
-              <BreadcrumbItem>
-                <BreadcrumbLink to="/" as={GatsbyLink}>
-                  Home
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-
-              <BreadcrumbItem>
-                <BreadcrumbLink to="/blog" as={GatsbyLink}>
-                  Articles
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-
-              <BreadcrumbItem isCurrentPage>
-                <BreadcrumbLink>{title}</BreadcrumbLink>
-              </BreadcrumbItem>
-            </Breadcrumb>
-          </Box>
-          {/* <Box>
-            <GatsbyImage
-              alt=""
-              image={
-                node.featuredImage.node.localFile.childImageSharp
-                  .gatsbyImageData
-              }
-            />
-          </Box> */}
-          <Heading mt={6} mb={4} as="h1" size="2xl">
-            {title}
-          </Heading>
-          <main>
-            <Box
-              className="article-wrapper"
-              dangerouslySetInnerHTML={{ __html: node.html }}
-            />
-          </main>
+        <Container
+          maxW="container.xl"
+          py={10}
+          display="flex"
+          flexWrap="wrap"
+          flexDirection="row-reverse"
+        >
+          <TOC />
+          <Container
+            maxW="container.md"
+            py={10}
+            px={10}
+            backgroundColor="brand.two"
+          >
+            <BreadCrumbs />
+            <Heading mt={6} mb={4} as="h1" size="xl">
+              {title}
+            </Heading>
+            <Box py={6}>
+              {node.frontmatter.categories &&
+                node.frontmatter.categories.map((cat, i) => (
+                  <Tag key={generate()}>{cat}</Tag>
+                ))}
+            </Box>
+            <main>
+              <Box
+                py={10}
+                className="article-wrapper"
+                dangerouslySetInnerHTML={{ __html: node.html }}
+              />
+            </main>
+          </Container>
         </Container>
 
         <Container maxW="container.xl" my={10}>
           <Box my={10}>
-            <Heading as="h3" size="3xl">
+            <Heading as="h3" size="xl">
               More Articles
             </Heading>
-            <LinkOne to="/blog">All Articles</LinkOne>
+            <LinkOne to="/articles">All Articles</LinkOne>
           </Box>
           <HalfByHalfSection
             right={previous !== null ? <PrevArticle /> : ''}
