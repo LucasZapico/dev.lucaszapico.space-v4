@@ -34,6 +34,8 @@ const Articles = () => {
       if (searchResults.length > 0) {
         setArticles(searchResults)
       }
+    } else {
+      setResults([])
     }
     console.log('a', articles)
   }, [search])

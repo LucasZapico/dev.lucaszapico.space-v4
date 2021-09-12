@@ -1,6 +1,7 @@
 import React from 'react'
 import { CardOne, Tag } from '../../_index'
 import { Link as GatsbyLink } from 'gatsby'
+import { Gatsbyimage } from 'gatsby-plugin-image'
 import { Heading, Text, Box } from '@chakra-ui/react'
 import { generate } from 'shortid'
 
@@ -19,18 +20,22 @@ const ProjectCard = ({ project }) => {
       flexDirection="column"
       justifyContent="space-between"
     >
-      <Box>
-        <Heading as="h4" size="md" variant="sec">
+      <Box width={{ base: '100%', lg: '40%' }} pr={{ base: 'auto', md: 4 }}>
+        <Heading as="h4" size="lg">
           {title}
         </Heading>
-        <Text as="h5" variant="sec" size="md">
-          {description}
-        </Text>
+        <Heading as="h5" variant="sec" size="md">
+          {subHeader}
+        </Heading>
+        <Box>
+          {categories.map((cat, i) => (
+            <Tag key={generate()}>{cat}</Tag>
+          ))}
+        </Box>
       </Box>
-      <Box>
-        {categories.map((cat, i) => (
-          <Tag key={generate()}>{cat}</Tag>
-        ))}
+
+      <Box width={{ base: '100%', lg: '60%' }}>
+        <GatsbyImage image={image} alt={`${title} featured Image`} />
       </Box>
     </CardOne>
   )

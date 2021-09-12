@@ -9,7 +9,7 @@ const ProjectCard = ({ project, i }) => {
   return (
     <GridItem colSpan={{ base: 6, md: `${i % 3 === 0 ? 6 : 3}` }}>
       <CardOne display="flex" flexWrap="wrap">
-        <Box width={{ base: '100%', lg: '40%' }}>
+        <Box width={{ base: '100%', lg: '40%' }} pr={{ base: 'auto', md: 4 }}>
           <Heading as="h4" size="lg">
             {title}
           </Heading>
