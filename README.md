@@ -9,7 +9,7 @@
 
 ## About this project - Dev.LucasZapico.Space - 2021
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e312fb7a-70a2-457a-b0a4-f79e0a698c7a/deploy-status)](https://app.netlify.com/sites/devlucaszapicospace-v4/deploys)
 
 A Gatsby Chakra creation
 
