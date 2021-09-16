@@ -1,4 +1,15 @@
-# Dev.LucasZapico.Space - 2021
+<p align="center">
+  <a href="https://bluemonkeymakes.netlify.app">
+    <img alt="dev.lucaszapico.space mark" src="./src/assets/mark.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+   Dev.LucasZapico.Space - 2021
+</h1>
+
+## About this project - Dev.LucasZapico.Space - 2021
+
+
 
 A Gatsby Chakra creation
 
