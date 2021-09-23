@@ -1,32 +1,32 @@
 ---
-title: Yoga Of Words
-subHeader: Yoga of Words is an uplifting poetry and prose experience
-path: /projects/yoga-of-words/
-link: https://yogaofwords.com/
-date-created: 2020/05/22/
-last-modified: 2021/09/23 14:37:50
+title: Dev.Portfolio 2019
+subHeader: Dev.Portfolio 2019
+path: /projects/dev-portfolio-2019/
+link: https://devlucaszapico.netlify.app/
+date-created: 2019/05/15
+last-modified: 2021/09/23 14:49:44
 isdraft: false
 isComingSoon: false
 categories:
   - project
   - web-site
 tags:
-  - gatsby
+  - hugo
   - user-experience
   - development
   - ui-design
-featuredImage: '../../images/projects/featured/yoga-of-word-showcase.png'
+featuredImage: '../../images/projects/featured/dev-portfoliov1.png'
 technology-stack:
   - figma
-  - gatsby
+  - hugo
   - react
   - netlify
   - netlify-cms
-audio: /audio/yoga-of-words-i.mp3
+audio: ''
 type: 'project'
 ---
 
-imgOne: ../assets/images/projects/yogaofwords-showcase-1.png
+[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
 
 ## summary:
 

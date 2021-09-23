@@ -6,8 +6,21 @@ Project Description
 
 ### Todo
 
-- [ ] add hover and active state to card
+- [ ] pull gists into notes?
+- [ ] add floating toc
+- [ ] add logo
+- [ ] add sub footer with policy and such
+- [ ] add tracking
+- [ ] add seo ??
+- [ ] add open graph image
+- [ ] add animations
+- [ ] a funnel contact me
+- [ ] make a distinction between notes and articles
+- [ ] add timeline to projects page
 
 ### In Progress
+
+- [ ] add hover and active state to card
+- [ ] dark and light mode
 
 ### Done ✓

@@ -5,10 +5,9 @@ description: ''
 link: 'https://modalero-store-prototype-1.herokuapp.com/'
 repo: 'https://github.com/LucasZapico/modalero-store-prototype-1.0'
 featuredImage: '../../images/projects/featured/modalero-shop.png'
-
 path: '/projects/modalero-shop'
-date-created: '09/10/2020'
-last-modified: 2021/09/01 04:51:01
+date-created: 2020/09/10
+last-modified: 2021/09/23 14:49:28
 isdraft: false
 isComingSoon: false
 categories:

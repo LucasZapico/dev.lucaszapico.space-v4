@@ -2,8 +2,8 @@
 export { LinkOne, LinkPhone, LinkEmail } from './base/buttons-links'
 export { default as Header } from './base/header'
 export { default as Footer } from './base/footer'
-export { default as Nav } from './base/nav'
-
+export { default as Nav } from './base/nav/nav'
+export { default as SEO } from './base/seo'
 // elements
 export { CardOne } from './elements/card'
 export { Tag } from './elements/tag'

@@ -2,7 +2,7 @@
 title: 'React Journal 2021'
 description: ''
 date-created: 2021/05/09 13:06:37
-last-modified: 2021/05/10 11:12:16
+last-modified: 2021/09/20 11:30:10
 isdraft: true
 categories: ['resources', 'journal', 'react']
 tags: ['react']
@@ -11,7 +11,21 @@ type: 'post'
 
 ## React Journal 2021
 
+### Top Blogs
+
+[Josh W Comeau](https://www.joshwcomeau.com/)
+
+[Flaviocopes](https://flaviocopes.com/)
+
+[Overreacted](https://overreacted.io/)
+
 #### [Prop-types](https://www.npmjs.com/package/prop-types)
+
+## Resources
+
+[useHooks](https://usehooks.com/useDebounce/)
+
+[React Hook Form](https://react-hook-form.com/)
 
 ## Reference
 

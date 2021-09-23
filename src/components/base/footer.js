@@ -29,6 +29,10 @@ const ROUTES = [
     name: 'Projects',
     path: '/projects',
   },
+  {
+    name: 'About',
+    path: '/about',
+  },
   // {
   //   name: 'Playground',
   //   path: '/playground',

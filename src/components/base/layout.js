@@ -52,7 +52,7 @@ const Layout = ({ location, children }) => {
     console.log(theme)
   }, [theme])
   return (
-    <Box py={20}>
+    <Box pb={20}>
       <TypeImports />
       <Header location={location} />
       <Box>{children}</Box>
