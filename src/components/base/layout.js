@@ -53,7 +53,7 @@ const Layout = ({ location, children }) => {
   }, [theme])
   return (
     <Box pb={20}>
-      <SEO />
+      <SEO location={location} />
       <TypeImports />
       <Header location={location} />
       <Box>{children}</Box>
