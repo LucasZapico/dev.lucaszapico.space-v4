@@ -12,7 +12,7 @@ module.exports = {
     description: '',
     titleTemplate: '%s · Making stuff one day at a time',
     author: '@lucaszapico',
-    siteUrl: 'https://dev.lucaszapico.space.netlify.app',
+    siteUrl: 'https://dev.lucaszapico.space',
     baseUrl: 'dev.lucaszapico.space',
     contactEmail: 'connect@dev.lucaszapico.space',
     image: '/opengraph-gen.png',
