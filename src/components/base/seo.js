@@ -81,15 +81,9 @@ const SEO = ({ title, description, image, article, location }) => {
       />
       <meta property="og:image:width" content="400" />
       <meta property="og:image:width" content="50" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
-        rel="stylesheet"
-      />
-      <script type="application/ld+json">
+      {/* <script type="application/ld+json">
         {JSON.stringify(RichSnippetSchema)}
-      </script>
+      </script> */}
     </Helmet>
   )
 }

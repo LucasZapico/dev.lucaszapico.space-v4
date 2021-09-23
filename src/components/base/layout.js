@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Box, useTheme, useColorMode } from '@chakra-ui/react'
 import Helmet from 'react-helmet'
 import { ArrowUpIcon } from '@chakra-ui/icons'
-import { Header, Footer } from '../_index'
+import { Header, Footer, SEO } from '../_index'
 
 const ScrollToTop = () => (
   <Box
@@ -53,6 +53,7 @@ const Layout = ({ location, children }) => {
   }, [theme])
   return (
     <Box pb={20}>
+      <SEO />
       <TypeImports />
       <Header location={location} />
       <Box>{children}</Box>
