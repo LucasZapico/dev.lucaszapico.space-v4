@@ -24,8 +24,9 @@ const Projects = () => {
         <Heading as="h1" size="4xl">
           Work
         </Heading>
+
+        <ProjectSection recentProjects={recentProjects} />
       </Container>
-      <ProjectSection recentProjects={recentProjects} />
     </>
   )
 }

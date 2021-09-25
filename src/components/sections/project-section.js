@@ -6,16 +6,11 @@ import ProjectCard from '../pages/home/project-card'
 const ProjectSections = ({ recentProjects }) => {
   return (
     <Box py={20}>
-      <Container maxW="container.xl">
-        <Heading as="h3" size="3xl">
-          Recent Projects
-        </Heading>
-        <Grid templateColumns="repeat(6, 1fr)" gap={10}>
-          {recentProjects.edges.map((project, i) => (
-            <ProjectCard i={i} key={generate()} project={project} />
-          ))}
-        </Grid>
-      </Container>
+      <Grid templateColumns="repeat(6, 1fr)" gap={10}>
+        {recentProjects.edges.map((project, i) => (
+          <ProjectCard i={i} key={generate()} project={project} />
+        ))}
+      </Grid>
     </Box>
   )
 }
