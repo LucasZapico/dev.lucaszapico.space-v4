@@ -2,7 +2,7 @@
 title: 'git'
 description: 'Notes on CORS policy and common error and solutions'
 date-created: 2017/03/15 14:19:17
-last-modified: 2021/10/01 15:26:22
+last-modified: 2021/10/03 08:19:27
 isdraft: false
 categories: ['git', 'notes']
 tags: []
@@ -21,4 +21,14 @@ git commit -m "fixed untracked files"
 
 ```shell
 git reset HEAD 
+```
+
+### Delete Local and Remote Branches 
+
+```shell
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
 ```
