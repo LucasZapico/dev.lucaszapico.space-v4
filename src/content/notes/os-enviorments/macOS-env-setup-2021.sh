@@ -67,7 +67,7 @@ fi
 ## install brew casks 
 ##
 installBrewCasks() {
-  BrewCasks=('iterm2' 'slack' 'rectangle' 'discord' 'fantastical' 'notion' 'bartender' 'figma' 'visual-studio-code' 'homebrew/cask-versions/google-chrome-canary' 'google-chrome' )
+BrewCasks=('dropbox' 'clipy' 'devdocs' 'insomnia' 'brave-browser' 'firefox' 'lepton' 'iterm2' 'slack' 'rectangle' 'discord' 'fantastical' 'notion' 'bartender' 'figma' 'visual-studio-code' 'homebrew/cask-versions/google-chrome-canary' 'google-chrome' '1password' )
   for i in "${BrewCasks[@]}"; do
       echo -e "${Cyan} start: ${NC}installing $i cask via brew"
       brew install --cask $i
