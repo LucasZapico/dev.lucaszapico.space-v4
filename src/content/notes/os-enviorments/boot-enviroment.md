@@ -2,7 +2,7 @@
 title: "Booting Os's"
 description: 'Reference notes on window'
 date-created: 2021/03/15 14:19:17
-last-modified: 2021/10/06 09:13:19
+last-modified: 2021/10/06 10:31:55
 isdraft: false
 categories: ['window', 'notes']
 tags: []
@@ -60,6 +60,10 @@ or
 
 `diskutil unmount /dev/disk3s9`
 
+or 
+
+`diskutil unmountDisk /dev/disk3`
+
 ## Reference 
 
 #### Articles 
@@ -78,3 +82,4 @@ Flash OS images to SD cards & USB drives, safely and easily.
 
 A New Bootable USB Solution
 
+[Multiboot options](https://www.linuxbabe.com/apps/create-multiboot-usb-linux-windows-iso)
