@@ -36,7 +36,7 @@ wait
 ## brew packages
 ## 
 installBrewPackages() {
-  BrewPackages=(vim zsh node 'python@3.9')
+  BrewPackages=(vim zsh node 'python@3.9' pandoc rbenv)
 
   for i in "${BrewPackages[@]}"; do
       echo -e "${Cyan} start: ${NC}installing $i via brew"
@@ -83,6 +83,9 @@ else
   echo -e "${Red} --- failure --- ${NC}"
 fi
 
+# init ruby env 
+rbenv init
+
 # TEST="curl http://127.0.0.1 -H $CT"
 # echo $TEST
 
@@ -92,3 +95,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 git config --global user.email ${GITEMAIL}
 git config --global user.name ${GITUSERNAME}
+

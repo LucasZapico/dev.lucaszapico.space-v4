@@ -2,13 +2,20 @@
 title: 'Quality of Life Commands'
 description: ''
 date-created: 2018/03/15 14:19:17
-last-modified: 2021/10/23 10:24:52
+last-modified: 2021/10/23 10:58:10
 isdraft: false
 categories: ['linux', 'command-line', 'notes', 'quality-of-life']
 tags: []
 type: 'notes'
 ---
 
+
+### Generate Dir Tree 
+
+```shell
+ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'  
+```
+[CenterKey](https://centerkey.com/tree/)
 
 ### One Line replace spaces with "-" 
 
