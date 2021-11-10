@@ -29,7 +29,9 @@ NC='\033[0m'             # No Color
 ##
 ## install brew
 ##
-#$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.s$
+echo -e "${Cyan} start installing brew${NC}"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo -e "${Cyan} end installing brew${NC}"
 wait
 
 ## 
@@ -67,7 +69,7 @@ fi
 ## install brew casks 
 ##
 installBrewCasks() {
-BrewCasks=('dropbox' 'clipy' 'devdocs' 'insomnia' 'brave-browser' 'firefox' 'lepton' 'iterm2' 'slack' 'rectangle' 'discord' 'fantastical' 'notion' 'bartender' 'figma' 'visual-studio-code' 'homebrew/cask-versions/google-chrome-canary' 'google-chrome' '1password' )
+BrewCasks=('dropbox' 'clipy' 'devdocs' 'insomnia' 'brave-browser' 'firefox' 'lepton' 'iterm2' 'slack' 'rectangle' 'discord' 'fantastical' 'notion' 'bartender' 'figma' 'visual-studio-code' 'homebrew/cask-versions/google-chrome-canary' 'google-chrome' '1password' 'zoom' )
   for i in "${BrewCasks[@]}"; do
       echo -e "${Cyan} start: ${NC}installing $i cask via brew"
       brew install --cask $i
@@ -92,3 +94,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 git config --global user.email ${GITEMAIL}
 git config --global user.name ${GITUSERNAME}
+
+# todo: add basic vim config 
+
