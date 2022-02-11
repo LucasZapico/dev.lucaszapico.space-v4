@@ -24,3 +24,7 @@ check:
 ```shell
 .databases
 ```
+
+## Reference 
+
+[sqliteTutorial](https://www.sqlitetutorial.net/sqlite-nodejs/connect/)

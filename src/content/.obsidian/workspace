@@ -1,0 +1,126 @@
+{
+  "main": {
+    "id": "2a09f2f33872d3fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "c55883ddb4ae7924",
+        "type": "leaf",
+        "dimension": 37.68181818181818,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "notes/node/catch-project-setup-architecture.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "9556586cbd74b50f",
+        "type": "leaf",
+        "dimension": 30.636363636363637,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "notes/git/ssh.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "8998be334af6ab92",
+        "type": "leaf",
+        "dimension": 31.681818181818183,
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6bae10d045a6ae0b",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ac148d25711bd44",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b7a181b8cac7c45f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "1d70cc84cc0e9a91",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c0f72f2f02d246b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "9d5d40dabc6da38b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3e9a752277943c9a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/git/ssh.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "9556586cbd74b50f",
+  "lastOpenFiles": [
+    "notes/git/ssh.md",
+    "notes/git/catch.md",
+    "notes/databases/my-sql.md",
+    "notes/node/catch-project-setup-architecture.md",
+    "notes/databases/Untitled.md",
+    "notes/databases/sqlite3.md",
+    "notes/databases/sql.md",
+    "notes/databases/database-management.md",
+    "templates/template-one.md",
+    "notes/databases/embedded.md"
+  ]
+}
