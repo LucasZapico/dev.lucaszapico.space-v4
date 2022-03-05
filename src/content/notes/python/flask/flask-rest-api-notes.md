@@ -5,7 +5,7 @@ date-created: 2021/05/14 18:25:12
 last-modified: 2021/09/01 19:47:32
 isdraft: false
 categories: ['flask', 'notes']
-tags: []
+tags: ['flask', 'notes', 'reference', 'api']
 type: 'note'
 ---
 

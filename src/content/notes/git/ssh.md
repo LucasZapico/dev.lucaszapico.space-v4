@@ -4,7 +4,7 @@ description:
 date-created: 2022-02-11
 last-modified: 2022-02-11
 categories: [git, reference] 
-tags: [github, gitlab, bitbucket, version-control]
+tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
 type: note
 ---
@@ -47,13 +47,15 @@ Now when `ssh-keygen -t rsa` asks for a file specify the file associated with th
 __Example key gen__
 
 ```shell
-ssh-keygen -t ed25519 -c <github-email>
+ssh-keygen -t ed25519 -C <github-email>
 ```
 
 ```
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/Users/lkuno/.ssh/id_ed25519): github.key
 ```
+
+>💡  note: if the file does not show up in `.ssh/` using the full path should correct
 
 
 ### Add to Service 

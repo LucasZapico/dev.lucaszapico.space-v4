@@ -1,0 +1,47 @@
+---
+title: 'Npm Notes 2020'
+description: 'General notes on Brew'
+date-created: 2021/06/02 08:38:24
+last-modified: 2021/06/02 08:39:57
+isdraft: true
+categories: ['npm', 'notes']
+tags: ['npm', 'notes', 'reference']
+type: 'post'
+---
+
+**& vs &&**
+### Double `&&`
+
+Runs one script and once is terminates run the next script
+
+**Example**
+
+```json
+"scriptOne": "script 1",
+"scriptTwo": "script 2"
+"One:Two": "script 1 && script 2"
+```
+
+With `&&` script 1 will run and if it does not error script 2 will run
+
+## Single `&`
+
+Runs script concurrently
+
+**Example**
+
+```json
+"scriptOne": "script 1",
+"scriptTwo": "script 2"
+"One:Two": "script 1 & scrpit 2"
+```
+
+With `&` script 1 in parallel to script 2
+
+
+
+
+
+
+
+

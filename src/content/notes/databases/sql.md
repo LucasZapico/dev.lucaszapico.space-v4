@@ -4,8 +4,8 @@ description: ''
 date-created: 2017/03/15 14:19:17
 last-modified: 2021/09/01 19:42:40
 isdraft: false
-categories: ['sql', 'notes']
-tags: []
+categories: ['sql', 'notes', 'database']
+tags: ['sql', 'notes', 'database']
 type: 'note'
 ---
 

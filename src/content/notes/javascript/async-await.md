@@ -5,11 +5,11 @@ date-created: 2022/02/03 11:54
 last-modified: 2022/02/03 11:56
 isdraft: false
 categories: ['javascript', 'general', 'notes']
-tags: 
+tags: ['javascript', 'general', 'notes']
 type: 'note'
 ---
 
-A javascript async await is syntaxical sugar for promises. 
+A javascript async-await is syntactical sugar for promises. 
 
 __Simple Promise Example__
 
@@ -18,3 +18,6 @@ __Simple Promise Example__
 
 ```
 
+
+## Reference 
+[async await - javascript.info](https://javascript.info/async-await)

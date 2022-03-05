@@ -5,7 +5,7 @@ date-created: 2018/03/15 14:19:17
 last-modified: 2021/10/23 10:58:10
 isdraft: false
 categories: ['linux', 'command-line', 'notes', 'quality-of-life']
-tags: []
+tags: ['linux', 'command-line', 'notes', 'quality-of-life']
 type: 'notes'
 ---
 

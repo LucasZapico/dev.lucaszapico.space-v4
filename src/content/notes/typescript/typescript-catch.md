@@ -1,14 +1,12 @@
 ---
-title: Typescript Notes
-description: General notes on typescript
+title: 'Typescript Notes'
+description: 'General notes on typescript'
 date-created: 2022/01/10
-last-modified: 2022/01/10 12:16:55
+last-modified: 2022/01/10 
 isdraft: true
-categories:
-  - typescript
-  - notes
-tags: []
-type: note
+categories: ['typescript','notes']
+tags: ['typescript','notes']
+type: 'note'
 ---
 
 ## What is Typescript 
@@ -17,14 +15,14 @@ Typescript is a superset of Javascript that gets compiled down to JavaScript.
 
 Typescript delivers new features or simpler features to what would be more complete JavaScripts. 
 
-Out of the box, TypeScript uses types that for extra error checking. 
+Out of the box, TypeScript uses types for extra error checking. 
 
 ### Why use TypeScript 
 
 
 __Example__
 
-The following is an example of an addition function, but because of the native behavior of JavaScript this can result in a logical error in our code. Because of how JavaScript handles the `+` operater a string is pass to our addition function it will concat said strings. Which, in this case is not the desired function. The reason this is an issue is because no error will be thrown. 
+The following is an example of an additional function, but because of the native behavior of JavaScript, this can result in a logical error in our code. Because of how JavaScript handles the `+` operator a string is passed to our addition function it will concat said strings. Which, in this case, is not the desired function. The reason this is an issue is that no error will be thrown. 
 
 ```javascript
 function add(num1, num2){

@@ -5,7 +5,7 @@ date-created: 2021/09/04
 last-modified: 2021/10/21 12:26:59
 isdraft: false
 categories: ['react', 'hooks']
-tags: []
+tags: ['react', 'hooks', 'notes', 'reference', 'patterns']
 type: 'note'
 ---
 

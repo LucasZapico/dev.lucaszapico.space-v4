@@ -5,7 +5,7 @@ date-created: 2020/10/21
 last-modified: '2020/11/19'
 isdraft: true
 categories: ['brew', 'notes']
-tags: []
+tags: ['brew', 'notes','dev-env']
 type: 'post'
 ---
 

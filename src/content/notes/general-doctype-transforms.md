@@ -2,10 +2,10 @@
 title: 'Document Transformation'
 description: 'Quality of life tools for transforming doc types and escaping evil empires'
 date-created: 2021/09/04
-last-modified: 2021/10/23 10:24:55
+last-modified: 2021/10/23
 isdraft: false
 categories: ['general', 'transforms']
-tags: []
+tags: ['general']
 type: 'note'
 ---
 

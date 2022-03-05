@@ -5,7 +5,7 @@ date-created: 2017/03/15 14:19:17
 last-modified: 2021/09/01 19:41:41
 isdraft: false
 categories: ['database', 'notes']
-tags: []
+tags: ['database']
 type: 'note'
 ---
 

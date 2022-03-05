@@ -5,6 +5,6 @@ date-created: 2020/10/26
 last-modified: '2020/11/03'
 isdraft: true
 categories: ['resources', 'journal']
-tags: ['']
+tags: ['resources', 'journal']
 type: 'post'
 ---

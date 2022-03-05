@@ -1,11 +1,11 @@
 ---
 title: 'API Security'
 description: 'Notes '
-date-created: 2021/03/15 14:19:17
-last-modified: 2021/09/01 19:13:00
+date-created: 2021/03/15
+last-modified: 2021/09/01
 isdraft: false
 categories: ['api', 'notes']
-tags: []
+tags: ['api', 'notes','security']
 type: 'note'
 ---
 

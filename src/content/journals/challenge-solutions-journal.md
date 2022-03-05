@@ -5,7 +5,7 @@ date-created: 2020/10/22
 last-modified: 2020/10/22
 isdraft: true
 categories: ['journal']
-tags: ['']
+tags:['journal']
 type: 'post'
 ---
 

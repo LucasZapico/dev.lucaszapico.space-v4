@@ -3,14 +3,15 @@ title: databases
 description: 
 date-created: 2022-02-06
 last-modified: 2022-02-06
-categories: [database] 
-tags: []
+categories: ['database'] 
+tags: ['database'] 
 isdraft: false
 type: note
 ---
 
 # databases
 
-Embedded
-
-[[]]
+- [[sqlite3]]
+- [[database-management]]
+- [[my-sql]]
+- [[sql]]

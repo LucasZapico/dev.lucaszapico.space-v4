@@ -4,38 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c55883ddb4ae7924",
+        "id": "6a094eb4f468a0b8",
         "type": "leaf",
-        "dimension": 37.68181818181818,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "notes/node/catch-project-setup-architecture.md",
+            "file": "notes/docker-notes.md",
             "mode": "source",
             "source": false
           }
-        }
-      },
-      {
-        "id": "9556586cbd74b50f",
-        "type": "leaf",
-        "dimension": 30.636363636363637,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "notes/git/ssh.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "8998be334af6ab92",
-        "type": "leaf",
-        "dimension": 31.681818181818183,
-        "state": {
-          "type": "graph",
-          "state": {}
         }
       }
     ],
@@ -63,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#security",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -71,12 +48,34 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "a803b1bb7ae4c64a",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "9119d969af52c69d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d622a493a9a39162",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 497
   },
   "right": {
     "id": "c0f72f2f02d246b5",
@@ -92,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/git/ssh.md",
+                "file": "notes/docker-notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,25 +101,55 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "a171c232691a2ab0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ccdc9aac3a77f5bc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "notes/docker-notes.md"
+              }
+            }
+          },
+          {
+            "id": "e1f47694f44bdda4",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "9556586cbd74b50f",
+  "active": "6a094eb4f468a0b8",
   "lastOpenFiles": [
-    "notes/git/ssh.md",
-    "notes/git/catch.md",
-    "notes/databases/my-sql.md",
-    "notes/node/catch-project-setup-architecture.md",
-    "notes/databases/Untitled.md",
-    "notes/databases/sqlite3.md",
+    "notes/docker-notes.md",
+    "notes/os-enviorments/_Index_of_os-enviorments.md",
+    "notes/os-enviorments/Untitled.md",
+    "notes/os-enviorments/window-os.md",
+    "notes/node/express/_Index_of_express.md",
+    "notes/web-secuity-catch.md",
+    "notes/node/express/_express.md",
+    "notes/node/organizing-express-api.md",
     "notes/databases/sql.md",
-    "notes/databases/database-management.md",
-    "templates/template-one.md",
-    "notes/databases/embedded.md"
+    "notes/git/catch.md"
   ]
 }

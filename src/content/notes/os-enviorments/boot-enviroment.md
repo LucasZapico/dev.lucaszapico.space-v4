@@ -5,7 +5,7 @@ date-created: 2021/03/15 14:19:17
 last-modified: 2021/10/06 10:31:55
 isdraft: false
 categories: ['window', 'notes']
-tags: []
+tags: ['windows', 'notes','iso','provisioning']
 type: 'note'
 ---
 
@@ -13,7 +13,7 @@ type: 'note'
 
 ## Set up USB drive with single ISO
 
-The [ubuntu walk](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos) through work for most linux derivative.
+The [ubuntu walk](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos) through work for most Linux derivatives.
 
 > The process uses Etcher which does not support writing to a partition of a given drive
 
@@ -63,6 +63,15 @@ or
 or 
 
 `diskutil unmountDisk /dev/disk3`
+
+
+## Other 
+
+1. keymap escape to caplock `setxkbmap -option caps:swapescape`
+2. [keys to macos](https://github.com/petrstepanov/gnome-macos-remap)
+
+- sudo apt-get install gnome-tweak-tool -y && gnome-tweak-tool
+
 
 ## Reference 
 

@@ -4,8 +4,8 @@ description: 'Reference notes on window'
 date-created: 2021/03/15 14:19:17
 last-modified: 2021/09/01 19:08:28
 isdraft: false
-categories: ['window', 'notes']
-tags: []
+categories: ['windows', 'notes']
+tags: ['windows','notes','workflow']
 type: 'note'
 ---
 
@@ -258,10 +258,10 @@ ls
 </tbody>
 </table>
 
-## RESOURCES
+## Resources
 
 [Command Prompt: What is is and how to use it](https://www.lifewire.com/command-prompt-2625840)
 
 [Window and unix command line equivalents](https://www.lemoda.net/windows/windows2unix/windows2unix.html)
 
-### REFERENCES
+### References

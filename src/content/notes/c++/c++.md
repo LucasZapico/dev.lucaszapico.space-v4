@@ -1,11 +1,11 @@
 ---
 title: 'C++ General Notes'
 description: ''
-date-created: 2021/03/15 14:19:17
-last-modified: 2021/09/01 19:17:41
+date-created: 2021/03/15
+last-modified: 2021/09/01
 isdraft: false
 categories: ['c++', 'notes']
-tags: []
+tags: ['c++', 'notes']
 type: 'note'
 ---
 

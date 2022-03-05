@@ -1,11 +1,11 @@
 ---
 title: 'Linux and Command Line'
 description: ''
-date-created: 2018/03/15 14:19:17
-last-modified: 2021/09/07 07:36:04
+date-created: 2018/03/15 
+last-modified: 2021/09/07
 isdraft: false
 categories: ['linux', 'command-line', 'notes']
-tags: []
+tags: ['linux', 'command-line', 'notes']
 type: 'notes'
 ---
 

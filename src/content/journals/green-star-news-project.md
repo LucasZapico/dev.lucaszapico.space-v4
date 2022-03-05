@@ -5,7 +5,7 @@ date-created: 2020/10/2
 last-modified: '2020/11/14'
 isdraft: false
 categories: ['gatsby', 'project', 'react']
-tags: ['']
+tags: ['journal', 'project']
 type: 'post'
 ---
 

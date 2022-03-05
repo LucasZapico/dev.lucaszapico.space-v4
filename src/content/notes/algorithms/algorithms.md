@@ -1,11 +1,11 @@
 ---
 title: 'Algorithms'
 description: ''
-date-created: 2021/03/15 14:19:17
-last-modified: 2021/09/01 19:09:47
+date-created: 2021/03/15 
+last-modified: 2021/09/01
 isdraft: false
 categories: ['algorithms', 'notes']
-tags: []
+tags: ['algorithms', 'notes']
 type: 'note'
 ---
 
@@ -65,9 +65,9 @@ _End: 4/14/2018, 1:10:10 PM_
 
 ## Catch
 
-## RESOURCES
+## Resources
 
-### REFERENCES
+### References
 
 [Lynda: Learning C# Algorithms](https://www.lynda.com/C-tutorials/Learning-C-Algorithms/604241-2.html)
 
@@ -92,4 +92,4 @@ _End: 4/14/2018, 1:10:10 PM_
 | Sleep sort ||||||
 | Strand sort ||||||
 
-### DEFINITIONS
+

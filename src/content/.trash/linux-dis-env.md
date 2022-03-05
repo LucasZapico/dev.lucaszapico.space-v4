@@ -5,8 +5,6 @@ isDraft: false
 
 ## Setup Action Order 
 
-1. keymap escape to caplock `setxkbmap -option caps:swapescape`
-2. [keys to macos](https://github.com/petrstepanov/gnome-macos-remap)
 
 ## Brew Packages 
 

@@ -5,7 +5,7 @@ date-created: 2021/09/04
 last-modified: 2021/10/22 10:42:39
 isdraft: false
 categories: ['design', 'typography']
-tags: []
+tags: ['design', 'typography', 'reference', 'resources']
 type: 'note'
 ---
 
