@@ -5,7 +5,7 @@ date-created: 2017/03/15 14:19:17
 last-modified: 2021/10/03 08:19:27
 isdraft: false
 categories: ['git', 'notes']
-tags: []
+tags: ['git', 'notes']
 type: 'note'
 ---
 
@@ -31,4 +31,10 @@ git branch -d localBranchName
 
 // delete branch remotely
 git push origin --delete remoteBranchName
+```
+
+__See Remote Url__
+
+```shell
+git config --get remote.origin.url
 ```

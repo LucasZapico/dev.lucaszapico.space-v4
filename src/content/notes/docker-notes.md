@@ -87,6 +87,11 @@ __Run Container__
 docker run <container>
 ```
 
+__Access an exited Container shell__
+```shell
+docker run -ti --entrypoint=sh <contianerid|name>
+```
+
 List running containers and basic information
 ```shell
 docker ps
@@ -161,23 +166,26 @@ A tag is a flag to specify a particular flavor of an image, the command without 
 
 ### Images
 
+Shows a list of images
 ```shell
 docker images
 ```
-
-Shows a list of images
-
+or 
 ```shell
-docker rmi node
+docker images --all
 ```
 
 removes an image Note: the image cannot be in use by any container
-
 ```shell
-docker run node
+docker rmi <image-name|imageid>
 ```
 
 Runs and image if the image already exists on machine else pulls latest image and runs.
+```shell
+docker run <image-name|imageid>
+```
+
+
 
 #### Run Container
 
@@ -211,13 +219,85 @@ or **best practice** tag your image with a name
 docker build . -t imageName
 ```
 
+
+## Docker Development vs Production Workflow
+General notes and examples for discovery for Docker multi env workflows that ideally do not deviate drastically from what the workflow I have already explored and optimized. 
+
+### Workflow One 
+- single dockerfile 
+- compose defined env 
+
+*Dockerfile*
+```docker 
+FROM node:17-alpine3.14 as base
+
+WORKDIR /app
+COPY package*.json /
+EXPOSE 3444:3444
+
+FROM base as production
+RUN npm install -g pm2
+ENV NODE_ENV=production
+COPY . /
+CMD ["pm2", "start", "src/index.js"]
+
+FROM base as development
+ENV NODE_ENV=development
+ENV NODE_OPTIONS="--max-old-space-size=8192"
+RUN npm install -g nodemon && npm install
+COPY . /
+CMD ["nodemon", "src/index.js"]
+```
+
+*docker.compose.yml*
+```yml
+version: '3.8'
+services:
+	app:
+		build:
+			context: ./
+			target: development
+	volumes:
+		- .:/app
+	command: npm run start:dev
+	ports:
+		- "3444:3444"
+	environment:
+		NODE_ENV: development
+```
+
+*.dockerignore*
+```txt
+.git
+node_modules
+```
+
+#### Commands 
+The image will be names by the root dir name
+```shell
+COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build
+```
+
+```shell 
+docker compose up
+```
+
+
+
+
+## Docker in different environments 
+- [docker with node in dev and prod - sentinelstand](https://www.sentinelstand.com/article/docker-with-node-in-development-and-production)
+- [docker dev prod - logrocket](https://blog.logrocket.com/node-js-docker-improve-dx/)
+- [Advanced docker compose - runnable](https://runnable.com/docker/advanced-docker-compose-configuration)
+
+
 ### Reference
 
 - [Anatomy of a DockerFile](https://gist.github.com/adamveld12/4815792fadf119ef41bd)
 - [Docker Tutorial for Beginners](https://www.youtube.com/watch?v=fqMOX6JJhGo)
 
-[Docker dev architecture for multiple dev env - vsupalov](https://vsupalov.com/same-dockerfile-dev-staging-production/)
-
+- [Docker dev architecture for multiple dev env - vsupalov](https://vsupalov.com/same-dockerfile-dev-staging-production/)
+- [Docker compose in production ? - vsupalov](https://vsupalov.com/docker-compose-production/)
 ### For Review
 
 - port mapping

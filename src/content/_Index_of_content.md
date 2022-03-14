@@ -3,6 +3,7 @@
  [[journal-2022-q1|journal-2022-q1]]
  [[journals/_Index_of_journals|_Index_of_journals]]
  [[notes/_Index_of_notes|_Index_of_notes]]
+ [[prisma-orm|prisma-orm]]
  [[projects/_Index_of_projects|_Index_of_projects]]
  [[research-and-looks/_Index_of_research-and-looks|_Index_of_research-and-looks]]
  [[resources/_Index_of_resources|_Index_of_resources]]
