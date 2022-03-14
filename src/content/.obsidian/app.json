@@ -1,13 +1,1 @@
-{
-  "legacyEditor": false,
-  "livePreview": true,
-  "tabSize": 2,
-  "foldHeading": false,
-  "defaultViewMode": "source",
-  "showFrontmatter": true,
-  "showLineNumber": true,
-  "trashOption": "local",
-  "alwaysUpdateLinks": true,
-  "spellcheck": true,
-  "communityPluginSortOrder": "download"
-}
+{}

@@ -1,8 +1,40 @@
 {
   "recentFiles": [
     {
+      "basename": "prisma-orm",
+      "path": "prisma-orm.md"
+    },
+    {
       "basename": "docker-notes",
       "path": "notes/docker-notes.md"
+    },
+    {
+      "basename": "catch",
+      "path": "notes/git/catch.md"
+    },
+    {
+      "basename": "express-best-practices-patterns",
+      "path": "notes/node/express/express-best-practices-patterns.md"
+    },
+    {
+      "basename": "_Index_of_express",
+      "path": "notes/node/express/_Index_of_express.md"
+    },
+    {
+      "basename": "_git",
+      "path": "notes/git/_git.md"
+    },
+    {
+      "basename": "webpack",
+      "path": "notes/webpack.md"
+    },
+    {
+      "basename": "digital-ocean",
+      "path": "notes/digital-ocean.md"
+    },
+    {
+      "basename": "_Index_of_content",
+      "path": "_Index_of_content.md"
     },
     {
       "basename": "_Index_of_os-enviorments",
@@ -11,10 +43,6 @@
     {
       "basename": "window-os",
       "path": "notes/os-enviorments/window-os.md"
-    },
-    {
-      "basename": "_Index_of_express",
-      "path": "notes/node/express/_Index_of_express.md"
     },
     {
       "basename": "web-secuity-catch",
@@ -27,14 +55,6 @@
     {
       "basename": "sql",
       "path": "notes/databases/sql.md"
-    },
-    {
-      "basename": "catch",
-      "path": "notes/git/catch.md"
-    },
-    {
-      "basename": "_git",
-      "path": "notes/git/_git.md"
     },
     {
       "basename": "_server",
@@ -179,26 +199,6 @@
     {
       "basename": "chrome-extension",
       "path": "notes/chrome-extension/chrome-extension.md"
-    },
-    {
-      "basename": "_flask",
-      "path": "notes/python/flask/_flask.md"
-    },
-    {
-      "basename": "command-line-catch",
-      "path": "notes/linux-command-line/command-line-catch.md"
-    },
-    {
-      "basename": "flask-auth",
-      "path": "notes/python/flask/flask-auth.md"
-    },
-    {
-      "basename": "useful-commands",
-      "path": "notes/linux-command-line/useful-commands.md"
-    },
-    {
-      "basename": "typescript-catch",
-      "path": "notes/typescript/typescript-catch.md"
     }
   ],
   "omittedPaths": [],
