@@ -7,11 +7,8 @@
         "id": "6a094eb4f468a0b8",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "prisma-orm.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       },
       {
@@ -51,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "digital",
+                "query": "security",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +100,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "prisma-orm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "prisma-orm.md"
-              }
+              "state": {}
             }
           },
           {
@@ -153,15 +147,15 @@
   },
   "active": "6a094eb4f468a0b8",
   "lastOpenFiles": [
+    "notes/typescript/typescript-project-setup.md",
+    "notes/git/catch.md",
+    "notes/typescript/typescript-catch.md",
+    "notes/auth-notes.md",
     "prisma-orm.md",
     "notes/docker-notes.md",
-    "notes/git/catch.md",
     "notes/node/express/express-best-practices-patterns.md",
     "notes/node/express/_Index_of_express.md",
     "notes/git/_git.md",
-    "notes/webpack.md",
-    "notes/digital-ocean.md",
-    "_Index_of_content.md",
-    "notes/os-enviorments/_Index_of_os-enviorments.md"
+    "notes/webpack.md"
   ]
 }

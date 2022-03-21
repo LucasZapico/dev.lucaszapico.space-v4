@@ -1,16 +1,28 @@
 {
   "recentFiles": [
     {
+      "basename": "typescript-project-setup",
+      "path": "notes/typescript/typescript-project-setup.md"
+    },
+    {
+      "basename": "catch",
+      "path": "notes/git/catch.md"
+    },
+    {
+      "basename": "typescript-catch",
+      "path": "notes/typescript/typescript-catch.md"
+    },
+    {
+      "basename": "auth-notes",
+      "path": "notes/auth-notes.md"
+    },
+    {
       "basename": "prisma-orm",
       "path": "prisma-orm.md"
     },
     {
       "basename": "docker-notes",
       "path": "notes/docker-notes.md"
-    },
-    {
-      "basename": "catch",
-      "path": "notes/git/catch.md"
     },
     {
       "basename": "express-best-practices-patterns",
@@ -173,10 +185,6 @@
       "path": "notes/os-enviorments/boot-enviroment.md"
     },
     {
-      "basename": "auth-notes",
-      "path": "notes/auth-notes.md"
-    },
-    {
       "basename": "brew-notes",
       "path": "notes/brew-notes.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "shell-terminal-catch",
       "path": "notes/linux-command-line/shell-terminal-catch.md"
-    },
-    {
-      "basename": "frontend-journal-10.26.2020",
-      "path": "journals/frontend-journal-10.26.2020.md"
-    },
-    {
-      "basename": "chrome-extension",
-      "path": "notes/chrome-extension/chrome-extension.md"
     }
   ],
   "omittedPaths": [],
