@@ -4,20 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "6a094eb4f468a0b8",
-        "type": "leaf",
-        "state": {
-          "type": "empty",
-          "state": {}
-        }
-      },
-      {
-        "id": "4c91b9957c4cdca4",
+        "id": "6950eadbc5216bc6",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "notes/git/catch.md",
+            "file": "Untitled.md",
             "mode": "source"
           }
         }
@@ -48,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "security",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +57,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "9119d969af52c69d",
@@ -100,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +120,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Untitled.md"
+              }
             }
           },
           {
@@ -145,17 +141,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "6a094eb4f468a0b8",
+  "active": "6950eadbc5216bc6",
   "lastOpenFiles": [
-    "notes/typescript/typescript-project-setup.md",
+    "Untitled.md",
     "notes/git/catch.md",
+    "notes/typescript/typescript-project-setup.md",
     "notes/typescript/typescript-catch.md",
     "notes/auth-notes.md",
     "prisma-orm.md",
     "notes/docker-notes.md",
     "notes/node/express/express-best-practices-patterns.md",
     "notes/node/express/_Index_of_express.md",
-    "notes/git/_git.md",
-    "notes/webpack.md"
+    "notes/git/_git.md"
   ]
 }

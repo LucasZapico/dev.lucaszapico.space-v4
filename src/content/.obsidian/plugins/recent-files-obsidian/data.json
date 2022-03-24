@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "typescript-project-setup",
-      "path": "notes/typescript/typescript-project-setup.md"
+      "basename": "Untitled",
+      "path": "Untitled.md"
     },
     {
       "basename": "catch",
       "path": "notes/git/catch.md"
+    },
+    {
+      "basename": "typescript-project-setup",
+      "path": "notes/typescript/typescript-project-setup.md"
     },
     {
       "basename": "typescript-catch",
@@ -195,10 +199,6 @@
     {
       "basename": "pretty-password-journal",
       "path": "journals/pretty-password-journal.md"
-    },
-    {
-      "basename": "shell-terminal-catch",
-      "path": "notes/linux-command-line/shell-terminal-catch.md"
     }
   ],
   "omittedPaths": [],
