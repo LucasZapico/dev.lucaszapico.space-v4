@@ -79,27 +79,17 @@ exports.createPages = async ({ actions, graphql }) => {
               last_modified
               isdraft
               type
-              subheader
-              link
-              repo
-              path
-              isComingSoon
-              audio
-              subHeader
               categories
               tags
-              featured
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
             }
           }
         }
       }
     }
   `)
+
+  logSp
+  console.log(results)
 
   await results.data.allMarkdownRemark.edges.forEach((edge) => {
     const pagePath = edge.node.frontmatter.title

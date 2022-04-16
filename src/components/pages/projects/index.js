@@ -16,7 +16,7 @@ import ProjectCard from './project-card'
 import { ProjectSection } from '../../_index'
 
 const Projects = () => {
-  const { recentProjects } = useStaticQuery(query)
+  // const { recentProjects } = useStaticQuery(query)
 
   return (
     <>
@@ -25,42 +25,42 @@ const Projects = () => {
           Work
         </Heading>
 
-        <ProjectSection recentProjects={recentProjects} />
+        {/* <ProjectSection recentProjects={recentProjects} /> */}
       </Container>
     </>
   )
 }
 
-export const query = graphql`
-  query {
-    recentProjects: allMarkdownRemark(
-      filter: {
-        frontmatter: { isdraft: { eq: false }, type: { eq: "project" } }
-      }
-      sort: { fields: frontmatter___date_created, order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            path
-          }
-          frontmatter {
-            title
-            subHeader
-            categories
-            description
-            tags
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query {
+//     recentProjects: allMarkdownRemark(
+//       filter: {
+//         frontmatter: { isdraft: { eq: false }, type: { eq: "project" } }
+//       }
+//       sort: { fields: frontmatter___date_created, order: DESC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           fields {
+//             path
+//           }
+//           frontmatter {
+//             title
+//             subHeader
+//             categories
+//             description
+//             tags
+//             featuredImage {
+//               childImageSharp {
+//                 gatsbyImageData
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default Projects
