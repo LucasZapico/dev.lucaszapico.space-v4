@@ -9,17 +9,14 @@ tags: ['tools']
 type: 'article'
 ---
 
-# Desktop 
+# Desktop
 
 [Bartender](https://www.macbartender.com/)
 
-
-
-## Chrome Extension 
+## Chrome Extension
 
 ```shell
 mas install Amphetamine
 ```
 
-### Markdown 
-
+### Markdown

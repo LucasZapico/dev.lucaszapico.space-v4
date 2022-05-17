@@ -1,7 +1,7 @@
 ---
 title: 'Linux and Command Line'
 description: ''
-date-created: 2018/03/15 
+date-created: 2018/03/15
 last-modified: 2021/09/07
 isdraft: false
 categories: ['linux', 'command-line', 'notes']

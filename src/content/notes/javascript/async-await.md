@@ -9,15 +9,14 @@ tags: ['javascript', 'general', 'notes']
 type: 'note'
 ---
 
-A javascript async-await is syntactical sugar for promises. 
+A javascript async-await is syntactical sugar for promises.
 
-__Simple Promise Example__
+**Simple Promise Example**
 
 ```javascript
 
-
 ```
 
+## Reference
 
-## Reference 
 [async await - javascript.info](https://javascript.info/async-await)

@@ -10,16 +10,15 @@ tags:
 draft: false
 ---
 
-## Resources 
+## Resources
 
 [Readme GUI maker](https://readme.so/)
 
 [Readme template](https://github.com/cfpb/open-source-project-template/blob/main/README.md)
 
-
 ## References
 
-__Quality README's 2021__
+**Quality README's 2021**
 
 [Timber](https://github.com/timber/timber)
 

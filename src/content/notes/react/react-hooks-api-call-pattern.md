@@ -9,7 +9,7 @@ tags: ['react', 'hooks', 'notes', 'reference', 'patterns']
 type: 'note'
 ---
 
-## 2021 Must know hook libraries 
+## 2021 Must know hook libraries
 
 [React Use](https://github.com/streamich/react-use)
 

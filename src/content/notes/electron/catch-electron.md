@@ -9,17 +9,14 @@ tags: ['electron', 'env']
 type: 'note'
 ---
 
-## Quick fix to CORS error  
+## Quick fix to CORS error
 
-*electron.js*
+_electron.js_
 
 ```javascript
 const mainWindow = new BrowserWindow({
   webPreferences: {
-    webSecurity: false
-  }
+    webSecurity: false,
+  },
 })
 ```
-
-
-

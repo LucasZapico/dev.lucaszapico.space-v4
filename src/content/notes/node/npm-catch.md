@@ -10,6 +10,7 @@ type: 'post'
 ---
 
 **& vs &&**
+
 ### Double `&&`
 
 Runs one script and once is terminates run the next script
@@ -37,11 +38,3 @@ Runs script concurrently
 ```
 
 With `&` script 1 in parallel to script 2
-
-
-
-
-
-
-
-

@@ -9,7 +9,6 @@ tags: ['JavaScript', 'general', 'notes']
 type: 'note'
 ---
 
-
 # JavaScript Catch
 
 - [[fundamentals]]
@@ -19,8 +18,6 @@ type: 'note'
 - [[async-await]]
 - [[promises]]
 - [[]]
-
-
 
 #### AJAX-(Asynchronous, JavaScript, and XML)
 
@@ -163,7 +160,6 @@ function findIndex(arr, callback){
   return -1;
 }
 ```
-
 
 ---
 

@@ -9,9 +9,6 @@ tags: ['general']
 type: 'note'
 ---
 
-
-
-
-### Reference 
+### Reference
 
 [Pandocs](https://pandoc.org/demos.html)

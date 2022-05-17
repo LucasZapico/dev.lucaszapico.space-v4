@@ -2,8 +2,8 @@
 title: 'typescript-project-setup'
 description: ''
 date-created: '2022/03/18'
-last-modified: '2022/03/18''
-categories: ['typescript', 'notes'] 
+last-modified: '2022/05/11'
+categories: ['typescript', 'notes']
 tags: ['typescript', 'notes']
 isdraft: false
 type: 'note'
@@ -15,7 +15,7 @@ type: 'note'
 npm i -g typescript
 ```
 
-__Watch a single file__
+**Watch a single file**
 
 ```shell
 tsc --watch <file-name>
@@ -26,4 +26,3 @@ tsc --watch <file-name>
 ```shell
 tsc --init
 ```
-

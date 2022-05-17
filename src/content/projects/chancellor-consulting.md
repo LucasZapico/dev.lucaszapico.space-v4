@@ -4,7 +4,7 @@ subHeader: A professional point of contact
 path: /projects/chancellor-consulting/
 link: https://chancellorconsulting.com/
 date-created: 2021/05/15
-last-modified: 2021/09/01 10:02:56
+last-modified: '2022/05/11'
 isdraft: false
 isComingSoon: false
 categories:

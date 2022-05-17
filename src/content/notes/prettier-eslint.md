@@ -2,7 +2,7 @@
 title: 'Eslint and Prettier General Config'
 description: 'My 2020 configuration of Prettier and Eslint'
 date-created: 2020/10/21
-last-modified: 2021/09/01 19:48:13
+last-modified: '2022/05/11'
 isdraft: false
 categories: ['dev-env', 'notes']
 tags: ['prettier', 'eslint']
@@ -45,6 +45,22 @@ _.prettierrc_
   "singleQuote": true,
   "printWidth": 70
 }
+```
+
+#### Prettier from CLI
+
+**All Files**
+
+```
+npx prettier ---write
+```
+
+**Specific Dir**
+
+```shell
+npx prettier --write './src/content/**/*.md'
+# or
+npx prettier --write './src/**/*.js'
 ```
 
 ### Eslint Example

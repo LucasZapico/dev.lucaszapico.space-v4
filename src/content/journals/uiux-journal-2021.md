@@ -17,7 +17,7 @@ The wave effect is when during scroll a given element sticks to scroll for a per
 
 [Gatsby plugin enabling wave](https://www.gatsbyjs.com/plugins/gatsby-theme-waves/?=scroll)
 
-### Blobs 
+### Blobs
 
 [BlobMaker](https://www.blobmaker.app/)
 
@@ -27,11 +27,9 @@ The wave effect is when during scroll a given element sticks to scroll for a per
 
 I just did my semi quarterly touch on the world of trends and found this article from [2021 design trend prediciton](https://uxmisfit.com/2020/12/16/ui-design-trends-for-2021-predictions/)
 
-### Aurora Effect 
+### Aurora Effect
 
 [ Aurora ui's - Lucas codepen](https://codepen.io/LucasZapico/pen/vYxEjwJ)
-
-
 
 ## Inspiration Resources
 
@@ -41,7 +39,7 @@ I just did my semi quarterly touch on the world of trends and found this article
 
 [awwwards]()
 
-### Amazing blog ui's 
+### Amazing blog ui's
 
 [Annual Digest](https://2019.curatemag.co/)
 

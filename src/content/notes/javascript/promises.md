@@ -132,25 +132,23 @@ promise.then(function(data){
 // log 30
 ```
 
-A javascript promise either resolves when true or is rejected when false 
+A javascript promise either resolves when true or is rejected when false
 
-__Simple Promise Example__
+**Simple Promise Example**
 
 ```javascript
 let p = new Promise((resolve, reject) => {
-    let a = 1 + 1 
-    if (a == 2){
-        resolve('success')
-    } else {
-        reject('failed')
-    }
+  let a = 1 + 1
+  if (a == 2) {
+    resolve('success')
+  } else {
+    reject('failed')
+  }
 })
 
 p.then((message) => {
-    console.log(message)
+  console.log(message)
 }).catch((err) => {
-    console.log(err)
+  console.log(err)
 })
-
 ```
-

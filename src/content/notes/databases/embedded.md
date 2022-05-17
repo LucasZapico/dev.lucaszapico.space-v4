@@ -1,9 +1,9 @@
 ---
 title: 'Embedded'
-description: 
+description:
 date-created: '2022-02-06'
 last-modified: '2022-02-06'
-categories: ['database'] 
+categories: ['database']
 tags: ['database', 'embedded']
 isdraft: false
 type: 'note'
@@ -13,9 +13,8 @@ type: 'note'
 
 ## NoSQL
 
-__[StormDb](https://awesomeopensource.com/project/TomPrograms/stormdb)__
+**[StormDb](https://awesomeopensource.com/project/TomPrograms/stormdb)**
 
 ## SQL
 
-__[SQLite3](https://www.sqlite.org/index.html)__
-
+**[SQLite3](https://www.sqlite.org/index.html)**

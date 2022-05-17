@@ -4,27 +4,26 @@ description: Notes on the Deta platform
 date-created: 2020/10/21
 last-modified: 2022/01/01 18:27:48
 isdraft: true
-categories: ['auth','notes']
+categories: ['auth', 'notes']
 tags: ['deta', 'notes', 'reference']
 type: note
 ---
 
+### Command Reference
 
-### Command Reference 
-
-__Purge deps__
+**Purge deps**
 
 ```shell
 deta deploy purge-dependencies
 ```
 
-__Enhanced Logs__
+**Enhanced Logs**
 
 ```shell
 deta logs --follow
 ```
 
-__New Micro Under Project__
+**New Micro Under Project**
 
 ```
 deta new --node <microname> --project <your-project>

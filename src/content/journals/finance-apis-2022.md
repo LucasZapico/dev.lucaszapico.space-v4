@@ -13,16 +13,16 @@ type: 'post'
 
 ### [IEX Cloud ](https://iexcloud.io/docs/api/#rest-how-to)
 
-#### Pros 
+#### Pros
 
-#### Cons 
+#### Cons
 
 ### [Alpha Vantage](https://www.alphavantage.co/documentation/)
 
-#### Pros 
+#### Pros
 
-#### Cons 
+#### Cons
 
-## References 
+## References
 
 [Google Finance API guide](https://algotrading101.com/learn/google-finance-api-guide/)

@@ -2,14 +2,10 @@
 title: Python Catch
 description: General python code reference for useful snippets
 date-created: 2020/10/21
-last-modified: 2021/12/23 09:11:23
+last-modified: '2022/05/11'
 isdraft: true
-categories:
-  - notes
-  - python
-  - general
-tags:
-  - reference
+categories: ['python', 'notes', 'general']
+tags: ['reference', 'python', 'notes', 'general']
 type: note
 ---
 
@@ -21,5 +17,8 @@ foo = {"a": 1, "b": 2, "c": 3}
 "a" in foo
 # return tru$$e
 ```
+
 $$
 
+
+$$

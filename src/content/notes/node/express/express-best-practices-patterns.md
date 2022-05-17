@@ -2,8 +2,8 @@
 title: 'Express Best Practices Patterns'
 description: ''
 date-created: '2022/03/08'
-last-modified: '2022/03/08''
-categories: ['best-practice', 'express', 'node'] 
+last-modified: '2022/05/10'
+categories: ['best-practice', 'express', 'node']
 tags: ['notes', 'express', 'node']
 isdraft: false
 type: 'note'
@@ -11,30 +11,37 @@ type: 'note'
 
 # Express Best Practices Journal
 
-- development 
+- development
 - testing
 - staging
-- production 
-
+- production
 
 ## Common
-- logging 
+
+- logging
 - auth
-- architecture 
+- architecture
 
-## Development 
+## Development
 
-### Logging 
-*Why is logging useful?*
+### Logging
+
+_Why is logging useful?_
 
 - [node logging with morgan - Digital Ocean](https://www.digitalocean.com/community/tutorials/nodejs-getting-started-morgan)
 - [node logging with morgan and winston - Digital Ocean]
 - [logger in Node js express - Programming with Basar](https://www.youtube.com/watch?v=cWi7TAyVoZo)
+
 ## Testing
 
 ## Staging
 
+## Production
 
-## Production 
+## Reference
 
-## Reference 
+- [softwareontheroad - ideal nodejs project structure ](https://softwareontheroad.com/ideal-nodejs-project-structure/)
+
+### Example Repos
+
+- [softwareontheroad - bulletproofnode](https://github.com/santiq/bulletproof-nodejs)

@@ -1,15 +1,15 @@
 ---
 title: _git
-description: 
+description:
 date-created: 2022-02-11
 last-modified: 2022-02-11
-categories: [] 
+categories: []
 tags: []
 isdraft: false
-type: 
+type:
 ---
 
-# _git
+# \_git
 
 - [[notes/git/catch]]
 - [[ssh]]

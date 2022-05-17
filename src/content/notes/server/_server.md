@@ -2,18 +2,18 @@
 title: '_server'
 description: ''
 date-created: '2022/02/16'
-last-modified: '2022/02/16''
-categories: [] 
+last-modified: '2022/05/11'
+categories: []
 tags: []
 isdraft: false
 type: ''
 ---
 
-# _server
+# \_server
 
-__ssh catch__
+**ssh catch**
 
-remote in 
+remote in
 
 ```
 ssh -v user@IP-Address

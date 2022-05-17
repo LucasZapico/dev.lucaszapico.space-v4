@@ -20,20 +20,21 @@ console.log(`%cURL: ${SITE_URL}:${PORT}`, 'color:cyan')
 console.log(`%clead url: ${LEAD_API}`, 'color:cyan')
 ```
 
-### Custom No Production Logging 
+### Custom No Production Logging
 
-*DevLogging.js*
+_DevLogging.js_
+
 ```javascript
 export const log = (arg) => {
-  const { message, data, color } = arg;
+  const { message, data, color } = arg
   if (process.env.NODE_ENV !== 'production') {
-    console.log(message, data, color);
+    console.log(message, data, color)
   }
-};
-
+}
 ```
 
-*index.js*
+_index.js_
+
 ```javascript
 log({
   message: `%c
@@ -43,7 +44,7 @@ URL: ${SITE_URL}:${PORT},
 lead url: ${LEAD_API},
 `,
   color: 'color:cyan',
-});
+})
 ```
 
 ## Node

@@ -1,6 +1,5 @@
 const path = require('path')
 const chalk = require('chalk')
-const { node } = require('prop-types')
 
 const { log } = console
 const logSp = log(
@@ -105,18 +104,20 @@ exports.createPages = async ({ actions, graphql }) => {
     const pagePath = edge.node.frontmatter.title
       .toLowerCase()
       .replaceAll(' ', '-')
-    logSp
-    log(chalk.cyanBright('page path', pagePath))
 
-    createPage({
-      path: pagePath,
-      component: PostTemplate,
-      context: {
-        next: edge.next,
-        node: edge.node,
-        previous: edge.previous,
-        title: edge.node.frontmatter.title,
-      },
-    })
+    logSp
+    if (pagePath.includes('Index') || pagePath.length < 1) {
+      log(pagePath)
+      createPage({
+        path: pagePath,
+        component: PostTemplate,
+        context: {
+          next: edge.next,
+          node: edge.node,
+          previous: edge.previous,
+          title: edge.node.frontmatter.title,
+        },
+      })
+    }
   })
 }

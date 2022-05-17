@@ -38,6 +38,10 @@ module.exports = {
         plugins: [`gatsby-remark-prismjs`],
       },
     },
+    {
+      resolve: 'gatsby-plugin-exclude',
+      options: { paths: ['/templates/**', '.vault-stats*'] },
+    },
 
     'gatsby-plugin-sass',
     {

@@ -9,15 +9,15 @@ tags: ['linux', 'command-line', 'notes', 'quality-of-life']
 type: 'notes'
 ---
 
-
-### Generate Dir Tree 
+### Generate Dir Tree
 
 ```shell
-ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'  
+ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
 ```
+
 [CenterKey](https://centerkey.com/tree/)
 
-### One Line replace spaces with "-" 
+### One Line replace spaces with "-"
 
 ```shell
 for file in *; do mv "$file" `echo $file | tr ' ' '-'` ; done

@@ -11,7 +11,6 @@ type: 'note'
 
 ##
 
-
 ### [Font Share](https://www.fontshare.com/)
 
 ### [Open Foundry](https://open-foundry.com/fonts)
@@ -24,6 +23,6 @@ type: 'note'
 
 ### [Tunera](http://www.tunera.xyz/)
 
-### References 
+### References
 
 [Raphael Bastinde Font Foundry List](https://gitlab.com/raphaelbastide/libre-foundries)

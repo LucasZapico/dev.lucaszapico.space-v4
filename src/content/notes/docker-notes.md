@@ -5,15 +5,18 @@ date-created: 2020/10/21
 last-modified: 2021/09/01
 isdraft: false
 categories: ['docker', 'notes']
-tags: ['docker', 'notes','reference','basics']
+tags: ['docker', 'notes', 'reference', 'basics']
 type: 'note'
 ---
 
 ## Common Commands
-### DockerFile 
+
+### DockerFile
+
 A `Dockerfile` is used to define an image for a project's specific specs.
 
 ### DockerFile
+
 - FROM
 - ENV
 - RUN
@@ -22,17 +25,20 @@ A `Dockerfile` is used to define an image for a project's specific specs.
 - EXPOSE
 - WORKDIR
 
-### Images 
+### Images
 
-Pull an image from docker registry 
+Pull an image from docker registry
+
 ```shell
 docker pull <NAME[:TAG]>
 ```
 
 ```shell
-docker-compose build 
+docker-compose build
 ```
-__BuildKit__
+
+**BuildKit**
+
 ```shell
 
 COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build
@@ -42,87 +48,98 @@ COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build
 ```shell
 docker compose up
 ```
+
 or
+
 ```shell
 docker-compose up
 ```
 
-__Build Image from Dockerfile__
+**Build Image from Dockerfile**
+
 ```shell
 docker build --tag <image-name:tag> <path>
 ```
 
-__Example one__
+**Example one**
 
 ```shell
 docker build --tag expressapp:latest .
 ```
 
+**List images**
 
-
-__List images__
 ```shell
-docker images 
+docker images
 ```
 
-__Remove Image__
+**Remove Image**
+
 ```shell
 docker rmi <id>
 ```
 
-
 ### Containers
-__List Containers__
+
+**List Containers**
+
 ```shell
 docker ps -a
 ```
 
-__Remove Container__
+**Remove Container**
+
 ```shell
 docker rm <ide>
 ```
 
-__Run Container__
+**Run Container**
+
 ```shell
 docker run <container>
 ```
 
-__Access an exited Container shell__
+**Access an exited Container shell**
+
 ```shell
 docker run -ti --entrypoint=sh <contianerid|name>
 ```
 
 List running containers and basic information
+
 ```shell
 docker ps
 ```
 
 List containers both running or stopped and basic information
+
 ```shell
 docker ps -a
 ```
 
 Stops a running container
+
 ```shell
 docker stop silly_sammet
 ```
 
-
 Remove a stopped container run `docker ps -a` to confirm removal
+
 ```shell
 docker rm silly_sammet
 ```
 
-__Example one__
+**Example one**
+
 ```shell
 docker run -p 80:80 docker/getting-started
 ```
 
-__Example two__
+**Example two**
+
 ```shell
 docker run -p 3333:3333 <containerid|contianername>
 ```
-
 
 Runs docker in the foreground
 
@@ -167,25 +184,28 @@ A tag is a flag to specify a particular flavor of an image, the command without 
 ### Images
 
 Shows a list of images
+
 ```shell
 docker images
 ```
-or 
+
+or
+
 ```shell
 docker images --all
 ```
 
 removes an image Note: the image cannot be in use by any container
+
 ```shell
 docker rmi <image-name|imageid>
 ```
 
 Runs and image if the image already exists on machine else pulls latest image and runs.
+
 ```shell
 docker run <image-name|imageid>
 ```
-
-
 
 #### Run Container
 
@@ -219,16 +239,18 @@ or **best practice** tag your image with a name
 docker build . -t imageName
 ```
 
-
 ## Docker Development vs Production Workflow
-General notes and examples for discovery for Docker multi env workflows that ideally do not deviate drastically from what the workflow I have already explored and optimized. 
 
-### Workflow One 
-- single dockerfile 
-- compose defined env 
+General notes and examples for discovery for Docker multi env workflows that ideally do not deviate drastically from what the workflow I have already explored and optimized.
 
-*Dockerfile*
-```docker 
+### Workflow One
+
+- single dockerfile
+- compose defined env
+
+_Dockerfile_
+
+```docker
 FROM node:17-alpine3.14 as base
 
 WORKDIR /app
@@ -249,7 +271,8 @@ COPY . /
 CMD ["nodemon", "src/index.js"]
 ```
 
-*docker.compose.yml*
+_docker.compose.yml_
+
 ```yml
 version: '3.8'
 services:
@@ -266,30 +289,30 @@ services:
 		NODE_ENV: development
 ```
 
-*.dockerignore*
+_.dockerignore_
+
 ```txt
 .git
 node_modules
 ```
 
-#### Commands 
+#### Commands
+
 The image will be names by the root dir name
+
 ```shell
 COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build
 ```
 
-```shell 
+```shell
 docker compose up
 ```
 
+## Docker in different environments
 
-
-
-## Docker in different environments 
 - [docker with node in dev and prod - sentinelstand](https://www.sentinelstand.com/article/docker-with-node-in-development-and-production)
 - [docker dev prod - logrocket](https://blog.logrocket.com/node-js-docker-improve-dx/)
 - [Advanced docker compose - runnable](https://runnable.com/docker/advanced-docker-compose-configuration)
-
 
 ### Reference
 
@@ -298,6 +321,7 @@ docker compose up
 
 - [Docker dev architecture for multiple dev env - vsupalov](https://vsupalov.com/same-dockerfile-dev-staging-production/)
 - [Docker compose in production ? - vsupalov](https://vsupalov.com/docker-compose-production/)
+
 ### For Review
 
 - port mapping

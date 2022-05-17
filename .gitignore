@@ -1,3 +1,7 @@
+# obsidian 
+# .vault*
+# .obsidian/
+
 node_modules/
 .cache/
 public

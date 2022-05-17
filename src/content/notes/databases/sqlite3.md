@@ -17,12 +17,12 @@ In project dir:
 sqlite3 test.db
 ```
 
-check: 
+check:
 
 ```shell
 .databases
 ```
 
-## Reference 
+## Reference
 
 [sqliteTutorial](https://www.sqlitetutorial.net/sqlite-nodejs/connect/)

@@ -2,10 +2,10 @@
 title: 'Exports in Node'
 description: 'Note and example for modularizing express api'
 date-created: 2021/08/26
-last-modified: 2021/08/28 10:27:10
+last-modified: '2022/05/11'
 isdraft: true
 categories: ['node', 'structure']
-tags: ['api', 'express','reference']
+tags: ['api', 'express', 'reference']
 type: 'note'
 ---
 
@@ -40,23 +40,16 @@ exports.getContacts = async (req, res) => {
 }
 ```
 
-```javascript 
-const foo = () => {
-
-}
+```javascript
+const foo = () => {}
 
 module.exports = foo
 ```
 
+```javascript
+const foo = () => {}
 
-```javascript 
-const foo = () => {
-	
-}
+const bar = () => {}
 
-const bar = () => {
-	
-}
-
-module.exports = {foo, bar}
+module.exports = { foo, bar }
 ```

@@ -6,7 +6,7 @@ last-modified: 2021/09/01
 series: []
 isdraft: true
 categories: ['dev-env', 'notes']
-tags: ['dev-env', 'notes','2020', 'vscode']
+tags: ['dev-env', 'notes', '2020', 'vscode']
 type: 'note'
 ---
 

@@ -5,7 +5,7 @@ date-created: 2021/03/15
 last-modified: 2021/09/01
 isdraft: false
 categories: ['general', 'notes']
-tags: ['general','notes', 'development', 'tech']
+tags: ['general', 'notes', 'development', 'tech']
 type: 'note'
 ---
 

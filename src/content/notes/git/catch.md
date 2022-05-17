@@ -17,13 +17,14 @@ git add .
 git commit -m "fixed untracked files"
 
 ```
+
 ### Git undo `git add --all`
 
 ```shell
-git reset HEAD 
+git reset HEAD
 ```
 
-### Delete Local and Remote Branches 
+### Delete Local and Remote Branches
 
 ```shell
 // delete branch locally
@@ -33,7 +34,7 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 ```
 
-__See Remote Url__
+**See Remote Url**
 
 ```shell
 git config --get remote.origin.url
