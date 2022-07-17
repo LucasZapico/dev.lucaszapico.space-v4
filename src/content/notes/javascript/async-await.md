@@ -16,6 +16,11 @@ A javascript async-await is syntactical sugar for promises.
 ```javascript
 
 ```
+## Gatchas
+
+### `.forEach`
+
+`forEach` results in stange behavior with async await and it is better to just use `for .. of`
 
 ## Reference
 

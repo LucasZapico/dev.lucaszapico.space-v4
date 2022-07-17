@@ -75,9 +75,9 @@ Enter file in which to save the key (/Users/lkuno/.ssh/id_ed25519): github.key
 **ssh auth Error**
 
 ```shell
-The authenticity of host '216.128.129.16 (216.128.129.16)' can't be established.
+"The authenticity of host '216.128.129.16 (216.128.129.16)' can't be established.
 ED25519 key fingerprint is SHA256:nnzspBxbguoVHYiPiPEL6smGCfyE2KRSMLmayeaH3Mw.
-This key is not known by any other names
+This key is not known by any other names"
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 ```
 
@@ -100,3 +100,12 @@ Add this to the services we want to Authorize.
 [how to set up ssh for multiple services](https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/)
 
 [Generating new ssh key and adding it to ssh-agent - github](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+### checks
+
+\_test Github Auth\_\_
+
+```sh
+ssh -T git@github.com
+``
+```

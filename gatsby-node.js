@@ -100,12 +100,11 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `)
 
-  await results.data.allMarkdownRemark.edges.forEach((edge) => {
+  await results.data.allMarkdownRemark.edges.slice(0, 1).forEach((edge) => {
     const pagePath = edge.node.frontmatter.title
       .toLowerCase()
       .replaceAll(' ', '-')
 
-    logSp
     if (pagePath.includes('Index') || pagePath.length < 1) {
       log(pagePath)
       createPage({

@@ -17,6 +17,7 @@ Project Description
 - [ ] a funnel contact me
 - [ ] make a distinction between notes and articles
 - [ ] add timeline to projects page
+- [ ] docker file for Node 16
 
 ### In Progress
 

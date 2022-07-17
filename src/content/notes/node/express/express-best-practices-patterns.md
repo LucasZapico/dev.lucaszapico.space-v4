@@ -16,7 +16,7 @@ type: 'note'
 - staging
 - production
 
-## Common
+## Commoninst
 
 - logging
 - auth

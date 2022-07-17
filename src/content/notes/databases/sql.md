@@ -50,7 +50,7 @@ type: 'note'
 
 ### Quick Reference
 
-_Note SQL is not case sensitive but it is general practice to distinguish fields_
+> Note SQL is not case sensitive but it is general practice to distinguish fields
 
 - not case sensitive
 - not white space sensitive
@@ -63,20 +63,25 @@ Though the addition of each of these formats are best practice and general conve
 - **String values in SQL are surrounded in single quotes**
 - **equality is a single =**
 
-#### Select statement
+## `SELECT` statement
 
+### All rows and columns from table
 ```SQL
 SELECT * FROM table;
 // returns all columns from some table
-
+```
+### All rows and colums where contdition is met
+```SQL
 SELECT * FROM table WHERE condition
 // returns all columns from some table where a condition is met
+```
 
+```SQL
 SELECT * FROM database.table WHERE condition
 // in some cases the database needs to be specified, though many SQL databases server have default databases that a query will be aplied to
 ```
 
-Examples Select:
+__Examples Select:__
 
 ```SQL
 SELECT FirstName FROM Employee;
@@ -92,7 +97,7 @@ SELECT *  FROM Employee WHERE LastName = 'Smith';
 // returns all columns where lastname is equal to Smith
 ```
 
-#### Insert Statement
+## `INSERT` Statement
 
 ```SQL
 INSERT INTO table (a,b,c)
@@ -100,25 +105,25 @@ INSERT INTO table (a,b,c)
   ORDER BY b;
 ```
 
-#### Update Statement
+## `UPDATE` Statement
 
 ```SQL
 UPDATE table SET a = 7, b =5;
 ```
 
-#### Delete Statement
+## `DELETE` Statement
 
 ```SQL
 DELETE FROM table WHERE a = 7;
 ```
 
-#### Record match query
+### Record match query
 
 ```SQL
 SELECT COUNT( * ) FROM table;
 ```
 
-#### Where
+## `WHWEW`
 
 The **Where** clause is the predicate. Where is boolian. It is either true of false
 
@@ -130,14 +135,6 @@ The **Where** clause is the predicate. Where is boolian. It is either true of fa
 
 ---
 
-## Goals
-
-1. clearly understand the relationship between
-   - [] goal 1
-   - [] goal 2
-   - [] goal 3
-
----
 
 ## Popular SQL databases
 

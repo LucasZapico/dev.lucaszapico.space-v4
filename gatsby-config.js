@@ -1,10 +1,10 @@
 module.exports = {
   flags: {
-    PARALLEL_SOURCING: true,
+    PARALLEL_SOURCING: false,
     LMDB_STORE: false,
-    FAST_DEV: true,
+    FAST_DEV: false,
     DEV_SSR: false,
-    DEV_WEBPACK_CACHE: true,
+    DEV_WEBPACK_CACHE: false,
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
   },
   siteMetadata: {

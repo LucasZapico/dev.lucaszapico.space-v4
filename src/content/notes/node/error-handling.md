@@ -11,32 +11,29 @@ type: 'note'
 
 # Node Error Handling
 
-## HTTP Errors 
+## HTTP Errors
 
 ```javascript
 // express app
-app.get('/foo', async (req, res, next) => { 
+app.get('/foo', async (req, res, next) => {
   try {
-    // do stuff 
-    if(!stuff){
-      const httpErr = new createError.Unauthorized(
-          "stuff failed"
-        );
-        throw httpErr;
+    // do stuff
+    if (!stuff) {
+      const httpErr = new createError.Unauthorized('stuff failed')
+      throw httpErr
     }
-  } catch (err){
-    return next(createError(err));
+  } catch (err) {
+    return next(createError(err))
   }
 })
 /*
-* 401
-* {
-*	  "status": false,
-*	  "message": "stuff failed"
-* }
-*/
+ * 401
+ * {
+ *	  "status": false,
+ *	  "message": "stuff failed"
+ * }
+ */
 ```
-
 
 ## Reference
 

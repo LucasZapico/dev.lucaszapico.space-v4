@@ -1,12 +1,10 @@
 ---
-date-created: '2021/12/08 10:23:17'
-last-modified: 2021/12/08 10:31:47
-title: Awesome README 2021
+title: 'Quality Readme'
+date-created: '2021/12/08'
+last-modified: '2021/12/08'
 description: notes and resources for creating a rocking readme
-categories:
-  - operation
-tags:
-  - quality-of-life
+categories: ['operation']
+tags: ['quality-of-life']
 draft: false
 ---
 

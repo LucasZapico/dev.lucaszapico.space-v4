@@ -13,8 +13,14 @@ type: 'note'
 
 ## Error Handling
 
+## Generate Prisma UML from Schema
+
+```sh
+npx prisma-uml prisma/schema.prisma --output svg --file prism.uml.svg
+```
+
 ## Reference
 
-[# Building a REST API with NestJS and Prisma - Marc Stammerjohann | Prisma Day 2021](https://www.youtube.com/watch?v=mmbd5hcQUaY)
-
-[fix multiple prisma clients running](https://flaviocopes.com/prisma-fix-initialize-yet-vercel/)
+- [# Building a REST API with NestJS and Prisma - Marc Stammerjohann | Prisma Day 2021](https://www.youtube.com/watch?v=mmbd5hcQUaY)
+- [fix multiple prisma clients running](https://flaviocopes.com/prisma-fix-initialize-yet-vercel/)
+- [Generate UML from prisma schema](https://github.com/emyann/prisma-uml)

@@ -1,8 +1,8 @@
 ---
 title: 'HubDB'
 description: 'General notes on HubSpot Development'
-date-created: '2022/05/16'
-last-modified: '2022/05/16'
+date-created: '2022/05/17'
+last-modified: '2022/05/17'
 isdraft: true
 categories: ['hubspot', 'notes']
 tags: ['hubspot', 'notes', 'hubdb']
@@ -18,20 +18,23 @@ type: 'note'
 
 - HubSpot APIkey
 
-__Setup Call__
+**Setup Call**
+
 1. `https://api.hubapi.com/crm/v3/schemas`
 2. Add APIkey to auth
 3. Content-type: application/json
 4. add schema
 
-__Object Requirements__
+**Object Requirements**
+
 - name
 - properties
 - crm objects
 
 > objects name and label cannot be changed after object creations
 
-__Body Example__
+**Body Example**
+
 ```json
 {
   "name": "Cat",
@@ -40,21 +43,9 @@ __Body Example__
     "plural": "cats"
   },
   "primaryDisplayProperty": "name",
-  "secondaryDisplayProperties": [
-    "breed"
-  ],
-  "requiredProperties": [
-    "name",
-    "breed",
-    "weight",
-    "favorite-food"
-  ],
-  "searchableProperties": [
-    "name",
-    "breed",
-    "weight",
-    "favorite-food"
-  ],
+  "secondaryDisplayProperties": ["breed"],
+  "requiredProperties": ["name", "breed", "weight", "favorite-food"],
+  "searchableProperties": ["name", "breed", "weight", "favorite-food"],
   "properties": [
     {
       "name": "name",
@@ -81,9 +72,7 @@ __Body Example__
       "fieldType": "text"
     }
   ],
-  "associatedObjects": [
-    "CONTACT"
-  ]
+  "associatedObjects": ["CONTACT"]
 }
 ```
 
@@ -94,19 +83,36 @@ Custom objects are located with default objects.
 ### Node Snippet
 
 ```js
-const hubspot = require('@hubspot/api-client');
+const hubspot = require('@hubspot/api-client')
 
-const hubspotClient = new hubspot.Client({"apiKey":"YOUR_HUBSPOT_API_KEY"});
+const hubspotClient = new hubspot.Client({ apiKey: 'YOUR_HUBSPOT_API_KEY' })
 
 const labels = {
-  "singular": "My object",
-  "plural": "My objects"
-};
-const ObjectSchemaEgg = { labels, requiredProperties: ["my_object_property"], searchableProperties: [null], primaryDisplayProperty: "my_object_property", secondaryDisplayProperties: [null], properties: [{"name":"my_object_property","label":"My object property","isPrimaryDisplayLabel":true}], associatedObjects: ["CONTACT"], name: "my_object" };
+  singular: 'My object',
+  plural: 'My objects',
+}
+const ObjectSchemaEgg = {
+  labels,
+  requiredProperties: ['my_object_property'],
+  searchableProperties: [null],
+  primaryDisplayProperty: 'my_object_property',
+  secondaryDisplayProperties: [null],
+  properties: [
+    {
+      name: 'my_object_property',
+      label: 'My object property',
+      isPrimaryDisplayLabel: true,
+    },
+  ],
+  associatedObjects: ['CONTACT'],
+  name: 'my_object',
+}
 
 try {
-  const apiResponse = await hubspotClient.crm.schemas.coreApi.create(ObjectSchemaEgg);
-  console.log(JSON.stringify(apiResponse.body, null, 2));
+  const apiResponse = await hubspotClient.crm.schemas.coreApi.create(
+    ObjectSchemaEgg
+  )
+  console.log(JSON.stringify(apiResponse.body, null, 2))
 } catch (e) {
   e.message === 'HTTP request failed'
     ? console.error(JSON.stringify(e.response, null, 2))
@@ -114,8 +120,7 @@ try {
 }
 ```
 
-
 ## Reference
 
-__Hubspot API URL__
+**Hubspot API URL**
 `https://api.hubapi.com`
