@@ -80,7 +80,7 @@ ssh-keygen -t ed25519 -C <github-email>
 
 ```
 Generating public/private ed25519 key pair.
-Enter file in which to save the key (/Users/lkuno/.ssh/id_ed25519): github.key
+Enter file in which to save the key (/Users/<foo>/.ssh/id_ed25519): github.key
 ```
 
 > 💡 note: if the file does not show up in `.ssh/` using the full path should correct
@@ -128,7 +128,7 @@ Verbose tst
 ssh -Tv git@github.com
 ```
 
-We can also test a specific host from out `.ssh/config`
+We can also test a specific host from out `~/.ssh/config`
 
 ## Use with Github, BitBucket, Gitlab etc
 
