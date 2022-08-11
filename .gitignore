@@ -88,3 +88,5 @@ wp-config.php
 # uncomment the next line
 #/wp-content/themes
 # End of https://www.toptal.com/developers/gitignore/api/macos,react,wordpress
+# Local Netlify folder
+.netlify
