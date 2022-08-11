@@ -1,13 +1,10 @@
 ---
-last-modified: 2022/01/29 09:24:17
+last-modified: '2022/08/11'
 title: Python List Comprehensions
 description: Notes on single line loops in python known as list comprehensions
 draft: true
-tags:
-  - python
-categories:
-  - python
-  - notes
+categories: ['python', 'notes']
+tags: ['python']
 ---
 
 ## Reference

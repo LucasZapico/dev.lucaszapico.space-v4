@@ -15,6 +15,8 @@ type: 'note'
 
 ## Reference
 
-[# Building a REST API with NestJS and Prisma - Marc Stammerjohann | Prisma Day 2021](https://www.youtube.com/watch?v=mmbd5hcQUaY)
+```sh
+npx prisma-uml prisma/schema.prisma --output svg --file prism.uml.svg
+```
 
 [fix multiple prisma clients running](https://flaviocopes.com/prisma-fix-initialize-yet-vercel/)

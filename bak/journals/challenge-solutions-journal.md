@@ -2,10 +2,10 @@
 title: Challenge Solution Journal
 description: ''
 date-created: 2020/10/22
-last-modified: '2022/07/17'
+last-modified: '2022/08/11'
 isdraft: true
 categories: ['journal']
-tags:['journal']
+tags: ['journal']
 type: 'post'
 ---
 

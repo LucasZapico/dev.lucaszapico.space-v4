@@ -2,7 +2,7 @@
 title: 'Typescript Notes'
 description: 'General notes on typescript'
 date-created: 2022/01/10
-last-modified: 2022/01/10
+last-modified: '2022/08/11'
 isdraft: true
 categories: ['typescript', 'notes']
 tags: ['typescript', 'notes']

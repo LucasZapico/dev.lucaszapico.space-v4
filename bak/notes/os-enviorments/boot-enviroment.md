@@ -62,11 +62,14 @@ or
 `diskutil unmountDisk /dev/disk3`
 
 <<<<<<< HEAD:bak/notes/os-enviorments/boot-enviroment.md
+<<<<<<< HEAD:bak/notes/os-enviorments/boot-enviroment.md
 
 ## Reference
 
 =======
 
+=======
+>>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c:src/content/notes/os-enviorments/boot-enviroment.md
 ## Other
 
 1. keymap escape to caplock `setxkbmap -option caps:swapescape`
@@ -76,8 +79,11 @@ or
 
 ## Reference
 
+<<<<<<< HEAD:bak/notes/os-enviorments/boot-enviroment.md
 > > > > > > > 17d7e9df15633500cbf6996ad5dedd40c6e09354:src/content/notes/os-enviorments/boot-enviroment.md
 
+=======
+>>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c:src/content/notes/os-enviorments/boot-enviroment.md
 #### Articles
 
 [Copy ISO to USB Mac os command line](https://osxdaily.com/2015/06/05/copy-iso-to-usb-drive-mac-os-x-command/)

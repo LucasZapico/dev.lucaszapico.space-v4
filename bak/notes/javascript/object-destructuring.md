@@ -2,7 +2,7 @@
 title: 'Object Destructuring'
 description: 'Notes on object destructuring and the forms it can take'
 date-created: 2018/03/15
-last-modified: '2022/07/17'
+last-modified: '2022/08/11'
 isdraft: false
 categories: ['javascript', 'notes']
 tags: ['javascript', 'notes', 'reference']

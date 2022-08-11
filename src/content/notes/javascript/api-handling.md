@@ -2,8 +2,8 @@
 title: 'api-handling'
 description: ''
 date-created: '2022/02/16'
-last-modified: '2022/02/16''
-categories: ['javascript', 'api', 'pattern'] 
+last-modified: '2022/05/11'
+categories: ['javascript', 'api', 'pattern']
 tags: ['javascript', 'api', 'pattern']
 isdraft: false
 type: 'note'

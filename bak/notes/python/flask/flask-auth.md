@@ -2,7 +2,7 @@
 title: Flask Auth Notes
 description: Flask auth notes on JWT and general security
 date-created: 2020/10/21
-last-modified: 2022/01/29 09:23:49
+last-modified: '2022/08/11'
 isdraft: true
 categories:
   - auth

@@ -2,7 +2,7 @@
 title: SQL Notes
 description: ''
 date-created: '2017/03/15 14:19:17'
-last-modified: '2022/07/17'
+last-modified: '2022/08/11'
 isdraft: false
 categories: ['sql', 'notes', 'database']
 tags: ['sql', 'notes', 'database']
@@ -19,18 +19,19 @@ type: 'note'
     - [DBMS Database Management System](#dbms-database-management-system)
   - [Quick Reference](#quick-reference)
   - [Important](#important)
-    - [Select statement](#select-statement)
-    - [Insert Statement](#insert-statement)
-    - [Update Statement](#update-statement)
-    - [Delete Statement](#delete-statement)
-    - [Record match query](#record-match-query)
-    - [Where](#where)
+- [`SELECT` statement](#select-statement)
+  - [All rows and columns from table](#all-rows-and-columns-from-table)
+  - [All rows and colums where contdition is met](#all-rows-and-colums-where-contdition-is-met)
+- [`INSERT` Statement](#insert-statement)
+- [`UPDATE` Statement](#update-statement)
+- [`DELETE` Statement](#delete-statement)
+  - [Record match query](#record-match-query)
+- [`WHERE`](#where)
 - [NOTES ON SQL DATABASES](#notes-on-sql-databases)
-- [Goals](#goals)
 - [Popular SQL databases](#popular-sql-databases)
   - [Installation](#installation)
-    - [primary-key point](#primary-key-point)
-      - [_sub-key point_](#sub-key-point)
+      - [primary-key point](#primary-key-point)
+        - [_sub-key point_](#sub-key-point)
   - [Definitions](#definitions)
 - [NOTES ON NoSQL DATABASES](#notes-on-nosql-databases)
   - [Popular SQL databases](#popular-sql-databases-1)
@@ -50,7 +51,7 @@ type: 'note'
 
 ### Quick Reference
 
-_Note SQL is not case sensitive but it is general practice to distinguish fields_
+> Note SQL is not case sensitive but it is general practice to distinguish fields
 
 - not case sensitive
 - not white space sensitive
@@ -63,20 +64,28 @@ Though the addition of each of these formats are best practice and general conve
 - **String values in SQL are surrounded in single quotes**
 - **equality is a single =**
 
-#### Select statement
+## `SELECT` statement
+
+### All rows and columns from table
 
 ```SQL
 SELECT * FROM table;
 // returns all columns from some table
+```
 
+### All rows and colums where contdition is met
+
+```SQL
 SELECT * FROM table WHERE condition
 // returns all columns from some table where a condition is met
+```
 
+```SQL
 SELECT * FROM database.table WHERE condition
 // in some cases the database needs to be specified, though many SQL databases server have default databases that a query will be aplied to
 ```
 
-Examples Select:
+**Examples Select:**
 
 ```SQL
 SELECT FirstName FROM Employee;
@@ -92,7 +101,7 @@ SELECT *  FROM Employee WHERE LastName = 'Smith';
 // returns all columns where lastname is equal to Smith
 ```
 
-#### Insert Statement
+## `INSERT` Statement
 
 ```SQL
 INSERT INTO table (a,b,c)
@@ -100,25 +109,25 @@ INSERT INTO table (a,b,c)
   ORDER BY b;
 ```
 
-#### Update Statement
+## `UPDATE` Statement
 
 ```SQL
 UPDATE table SET a = 7, b =5;
 ```
 
-#### Delete Statement
+## `DELETE` Statement
 
 ```SQL
 DELETE FROM table WHERE a = 7;
 ```
 
-#### Record match query
+### Record match query
 
 ```SQL
 SELECT COUNT( * ) FROM table;
 ```
 
-#### Where
+## `WHERE`
 
 The **Where** clause is the predicate. Where is boolian. It is either true of false
 
@@ -127,15 +136,6 @@ The **Where** clause is the predicate. Where is boolian. It is either true of fa
 ```
 
 ## NOTES ON SQL DATABASES
-
----
-
-## Goals
-
-1. clearly understand the relationship between
-   - [] goal 1
-   - [] goal 2
-   - [] goal 3
 
 ---
 

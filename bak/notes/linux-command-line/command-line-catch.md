@@ -2,7 +2,7 @@
 title: Linux and Command Line
 description: ''
 date-created: 2018/03/15
-last-modified: '2022/07/17'
+last-modified: '2022/08/11'
 isdraft: false
 categories: ['linux', 'command-line', 'notes']
 tags: ['linux', 'command-line', 'notes']
