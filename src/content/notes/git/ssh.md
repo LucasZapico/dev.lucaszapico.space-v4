@@ -1,50 +1,15 @@
 ---
 title: ssh Catch
 description:
-date-created: 2022-02-11
-<<<<<<< HEAD
-last-modified: 2022-02-11
-=======
-last-modified: '2022/07/18'
->>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c
+date-created: '2022/02/11'
+last-modified: '2022/08/11'
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
 type: note
 ---
 
-<<<<<<< HEAD
 # ssh Catch
-=======
-- [ssh Catch](#ssh-catch)
-  - [ssh Reference](#ssh-reference)
-  - [Set-Up](#set-up)
-    - [Single Service](#single-service)
-    - [Setting Up Unique SSH for Multiple Services](#setting-up-unique-ssh-for-multiple-services)
-    - [Add Host to known Hosts](#add-host-to-known-hosts)
-    - [Add to Service](#add-to-service)
-  - [Testing and Troubleshooting Connections](#testing-and-troubleshooting-connections)
-  - [Use with Github, BitBucket, Gitlab etc](#use-with-github-bitbucket-gitlab-etc)
-    - [Cloning a new project](#cloning-a-new-project)
-    - [Updating and existing repo](#updating-and-existing-repo)
-  - [Reference](#reference)
-
-# ssh Catch
-
-## ssh Reference
-
-ssh into remote server
-
-```shell
-ssh <remote-username>@<remote_domain/ip>
-```
-
-**Examples**
-
-```shell
-ssh root@216.125.129.17
-```
->>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c
 
 ## Set-Up
 
@@ -105,12 +70,14 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 ```
 
 <<<<<<< HEAD
-> 💡 note: if the file does not show up in `.ssh/` using the full path should correct
-=======
+
+> # 💡 note: if the file does not show up in `.ssh/` using the full path should correct
+
 ```shell
 ssh-keyscan -H <ip.address> >> ~/.ssh/known_hosts
 ```
->>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c
+
+> > > > > > > fd21fd6232681710c98ae70d534cb1106ed2c16c
 
 ### Add to Service
 
@@ -177,7 +144,8 @@ _.git/config_
 
 ...
 ```
->>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c
+
+> > > > > > > fd21fd6232681710c98ae70d534cb1106ed2c16c
 
 ## Reference
 

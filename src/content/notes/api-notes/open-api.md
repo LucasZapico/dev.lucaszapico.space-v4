@@ -9,19 +9,18 @@ tags: ['api', 'notes', 'open-api']
 type: 'note'
 ---
 
-
-
 ## Spec Structure
 
 - info
 - servers
-- sercurity 
+- sercurity
 - paths
 - tags
 - externalDocs
 - components
 
 ---
+
 - Reusable syntax
 - paramaters
   - header

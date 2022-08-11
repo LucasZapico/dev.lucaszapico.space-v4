@@ -1,8 +1,4 @@
-
-
 ### Base/Primitive
-
-
 
 - typography
   - display
@@ -29,7 +25,7 @@
 - cards
   - link
     - hover
-- __forms__
+- **forms**
   - input
   - textarea
   - checkbox
@@ -38,7 +34,7 @@
   - number input
   - slider
   - switch
-- __data display__
+- **data display**
   - badge
   - code
   - divider
@@ -53,22 +49,22 @@
   - progress
   - skeleton
   - toast
-- __Overlay__
+- **Overlay**
   - alert dialog
   - drawer
   - menu
   - modal
   - popover
   - tool tip
-- __Diclosure__
+- **Diclosure**
   - accordian
   - tabs
   - visually hidden
-- __Navigation__
+- **Navigation**
   - breadcrumbs
   - link
   - link overlay
-- __Media Icons__
+- **Media Icons**
   - avatar
-  - icon  
+  - icon
   - image

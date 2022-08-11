@@ -22,13 +22,9 @@ draft: false
  * @return {[type]}      [description]
  */
 const someFunction = (arg1, arg2) => {
-	// Do something...
-};
+  // Do something...
+}
 ```
-
-
-
-
 
 ## Resources
 
