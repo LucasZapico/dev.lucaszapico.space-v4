@@ -2,14 +2,11 @@
 title: git
 description: Notes on CORS policy and common error and solutions
 date-created: '2017/03/15 14:19:17'
-last-modified: 2022/01/29 09:18:27
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - git
-  - notes
-tags:
-  - null
-type: note
+categories: ['git', 'notes']
+tags: ['git', 'notes']
+type: 'note'
 ---
 
 ### Git Ignoring GitIgnore

@@ -2,14 +2,11 @@
 title: Type Foundries 2021
 description: List of quality Typefoundries 2021
 date-created: 2021/09/04
-last-modified: 2022/01/29 09:17:18
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - design
-  - typography
-tags:
-  - null
-type: note
+categories: ['design', 'typography']
+tags: ['design', 'typography', 'reference', 'resources']
+type: 'note'
 ---
 
 ##

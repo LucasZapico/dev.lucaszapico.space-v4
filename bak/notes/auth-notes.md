@@ -1,15 +1,12 @@
 ---
-title: Auth Notes
-description: A walk through on how to build pages with images from json data
+title: 'Auth Notes'
+description: 'General note catch on Auth'
 date-created: 2020/10/21
-last-modified: 2022/01/29 09:27:10
+last-modified: '2022/07/17'
 isdraft: true
-categories:
-  - auth
-  - notes
-tags:
-  - null
-type: note
+categories: ['auth', 'notes']
+tags: ['auth', 'notes', 'security']
+type: 'note'
 ---
 
 - storage, stores token

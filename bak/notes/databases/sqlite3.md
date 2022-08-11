@@ -1,15 +1,12 @@
 ---
-title: Sqlite3 Notes
+title: 'Sqlite3 Notes'
 description: ''
-date-created: '2021/03/15 14:19:17'
-last-modified: 2022/01/29 09:17:00
+date-created: '2021/03/15'
+last-modified: '2022/07/17'
 isdraft: true
-categories:
-  - sql
-  - notes
-tags:
-  - null
-type: note
+categories: ['sql', 'notes', 'database']
+tags: ['sqlite', 'notes', 'database']
+type: 'note'
 ---
 
 ## Add Sqlite database to project dir
@@ -25,3 +22,7 @@ check:
 ```shell
 .databases
 ```
+
+## Reference
+
+[sqliteTutorial](https://www.sqlitetutorial.net/sqlite-nodejs/connect/)

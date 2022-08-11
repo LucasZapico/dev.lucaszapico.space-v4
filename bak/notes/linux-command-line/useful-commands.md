@@ -2,16 +2,11 @@
 title: Quality of Life Commands
 description: ''
 date-created: '2018/03/15 14:19:17'
-last-modified: 2022/01/29 09:20:50
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - linux
-  - command-line
-  - notes
-  - quality-of-life
-tags:
-  - null
-type: notes
+categories: ['linux', 'command-line', 'notes', 'quality-of-life']
+tags: ['linux', 'command-line', 'notes', 'quality-of-life']
+type: 'notes'
 ---
 
 ### Generate Dir Tree

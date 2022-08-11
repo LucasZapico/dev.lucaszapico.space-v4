@@ -2,14 +2,11 @@
 title: immediately-invoked-functions-expressions-iife
 description: ''
 date-created: '2018/03/15 14:19:17'
-last-modified: 2022/01/29 09:18:45
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - javascript
-  - notes
-tags:
-  - null
-type: note
+categories: ['javascript', 'notes']
+tags: ['javascript', 'notes']
+type: 'note'
 ---
 
 ### Examples

@@ -4,12 +4,18 @@ description: General Routing notes for Flask REST
 date-created: '2021/05/14 18:25:12'
 last-modified: 2022/01/29 09:29:24
 isdraft: false
+<<<<<<< HEAD:bak/notes/flask-rest-api-notes.md
 categories:
   - flask
   - notes
 tags:
   - null
 type: note
+=======
+categories: ['flask', 'notes']
+tags: ['flask', 'notes', 'reference', 'api']
+type: 'note'
+>>>>>>> 17d7e9df15633500cbf6996ad5dedd40c6e09354:src/content/notes/python/flask/flask-rest-api-notes.md
 ---
 
 **Requirement.txt**

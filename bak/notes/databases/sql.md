@@ -2,14 +2,11 @@
 title: SQL Notes
 description: ''
 date-created: '2017/03/15 14:19:17'
-last-modified: 2022/01/29 09:16:53
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - sql
-  - notes
-tags:
-  - null
-type: note
+categories: ['sql', 'notes', 'database']
+tags: ['sql', 'notes', 'database']
+type: 'note'
 ---
 
 ## Notes and Reference SQL Language

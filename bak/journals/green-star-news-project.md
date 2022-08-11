@@ -2,15 +2,11 @@
 title: Green Star News Gatsby Project
 description: Quick play mock of a news website with Gatsby
 date-created: 2020/10/2
-last-modified: 2022/01/12 12:51:24
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - gatsby
-  - project
-  - react
-tags:
-  - ''
-type: post
+categories: ['gatsby', 'project', 'react']
+tags: ['journal', 'project']
+type: 'post'
 ---
 
 [Checkout the code repository](https://github.com/LucasZapico/green-star-news-gatsby)

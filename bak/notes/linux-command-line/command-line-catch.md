@@ -1,52 +1,51 @@
 ---
 title: Linux and Command Line
 description: ''
-date-created: '2018/03/15 14:19:17'
-last-modified: 2022/03/18 19:04
+date-created: 2018/03/15
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - linux
-  - command-line
-  - notes
-tags:
-  - null
-type: notes
+categories: ['linux', 'command-line', 'notes']
+tags: ['linux', 'command-line', 'notes']
+type: 'notes'
 ---
 
-### User Management 
+### User Management
 
 #### List Users
 
 ```shell
-sudo dscl . list /Users | grep -v "^_" 
+sudo dscl . list /Users | grep -v "^_"
 ```
 
-#### List Groups 
+#### List Groups
 
 ```shell
 sudo dscl . list /Groups
 ```
 
-#### See Members of Group 
+#### See Members of Group
 
 ```shell
 dscl . -read  /Groups/admin
 ```
-or 
+
+or
+
 ```shell
 dscl . -read /Groups/admin GroupMembership
 ```
-or 
+
+or
+
 ```shell
 dscacheutil -q group -a name admin
 ```
 
-#### Add user to Group 
+#### Add user to Group
 
 ```shell
 sudo dscl . append /Groups/admin GroupMembership <user_name>
 ```
-
 
 #### Copying Files and Directories
 

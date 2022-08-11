@@ -2,13 +2,11 @@
 title: Making Pretty Password
 description: A informal and non technical entry about the making of pretty password
 date-created: 2020/09/16
-last-modified: 2022/01/29 09:13:04
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - journal
-  - project
-tags: []
-type: post
+categories: ['journal', 'project']
+tags: ['journal', 'project']
+type: 'post'
 ---
 
 ## The Story Behind Pretty Password

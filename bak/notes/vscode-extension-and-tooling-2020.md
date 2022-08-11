@@ -2,14 +2,12 @@
 title: Vscode Extensions and Tooling 2020
 description: A breakdown of Vscode tooling
 date-created: 2020/10/21
-last-modified: 2022/01/29 09:30:58
+last-modified: '2022/07/17'
+series: []
 isdraft: true
-categories:
-  - dev-env
-  - notes
-tags:
-  - null
-type: note
+categories: ['dev-env', 'notes']
+tags: ['dev-env', 'notes', '2020', 'vscode']
+type: 'note'
 ---
 
 ## Essentials

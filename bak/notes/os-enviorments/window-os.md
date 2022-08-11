@@ -2,14 +2,11 @@
 title: Window 10 Notes
 description: Reference notes on window
 date-created: '2021/03/15 14:19:17'
-last-modified: 2022/01/29 09:23:33
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - window
-  - notes
-tags:
-  - null
-type: note
+categories: ['windows', 'notes']
+tags: ['windows', 'notes', 'workflow']
+type: 'note'
 ---
 
 # Window 10 OS Notes
@@ -261,10 +258,10 @@ ls
 </tbody>
 </table>
 
-## RESOURCES
+## Resources
 
 [Command Prompt: What is is and how to use it](https://www.lifewire.com/command-prompt-2625840)
 
 [Window and unix command line equivalents](https://www.lemoda.net/windows/windows2unix/windows2unix.html)
 
-### REFERENCES
+### References

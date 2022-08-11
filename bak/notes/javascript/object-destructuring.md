@@ -1,15 +1,12 @@
 ---
-title: Object Destructuring
-description: Notes on object destructuring and the forms it can take
-date-created: '2018/03/15 14:19:17'
-last-modified: 2022/01/29 09:19:31
+title: 'Object Destructuring'
+description: 'Notes on object destructuring and the forms it can take'
+date-created: 2018/03/15
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - javascript
-  - notes
-tags:
-  - null
-type: note
+categories: ['javascript', 'notes']
+tags: ['javascript', 'notes', 'reference']
+type: 'note'
 ---
 
 Object destructuring the method of extracting properties at

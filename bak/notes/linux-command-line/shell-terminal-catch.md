@@ -2,16 +2,11 @@
 title: Shell and Terminal Notes
 description: ''
 date-created: '2018/03/15 14:19:17'
-last-modified: 2022/01/29 09:20:20
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - linux
-  - command-line
-  - shell
-  - notes
-tags:
-  - null
-type: notes
+categories: ['linux', 'command-line', 'shell', 'notes']
+tags: ['linux', 'command-line', 'shell', 'notes']
+type: 'notes'
 ---
 
 ## Catch

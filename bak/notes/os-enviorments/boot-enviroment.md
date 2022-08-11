@@ -2,19 +2,16 @@
 title: Booting Os's
 description: Reference notes on window
 date-created: '2021/03/15 14:19:17'
-last-modified: 2022/01/29 09:22:04
+last-modified: '2022/07/17'
 isdraft: false
-categories:
-  - window
-  - notes
-tags:
-  - null
-type: note
+categories: ['window', 'notes']
+tags: ['windows', 'notes', 'iso', 'provisioning']
+type: 'note'
 ---
 
 ## Set up USB drive with single ISO
 
-The [ubuntu walk](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos) through work for most linux derivative.
+The [ubuntu walk](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos) through work for most Linux derivatives.
 
 > The process uses Etcher which does not support writing to a partition of a given drive
 
@@ -64,7 +61,22 @@ or
 
 `diskutil unmountDisk /dev/disk3`
 
+<<<<<<< HEAD:bak/notes/os-enviorments/boot-enviroment.md
+
 ## Reference
+
+=======
+
+## Other
+
+1. keymap escape to caplock `setxkbmap -option caps:swapescape`
+2. [keys to macos](https://github.com/petrstepanov/gnome-macos-remap)
+
+- sudo apt-get install gnome-tweak-tool -y && gnome-tweak-tool
+
+## Reference
+
+> > > > > > > 17d7e9df15633500cbf6996ad5dedd40c6e09354:src/content/notes/os-enviorments/boot-enviroment.md
 
 #### Articles
 
