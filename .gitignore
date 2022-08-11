@@ -1,6 +1,9 @@
+# vscode
+.vscode
+
 # obsidian 
-# .vault*
-# .obsidian/
+.vault*
+.obsidian/
 
 node_modules/
 .cache/
