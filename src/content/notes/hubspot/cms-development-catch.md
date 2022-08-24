@@ -2,7 +2,7 @@
 title: 'HubSpot CMS Dev'
 description: 'General notes on HubSpot Development'
 date-created: '2022/05/16'
-last-modified: '2022/05/16'
+last-modified: '2022/08/23'
 isdraft: true
 categories: ['hubspot', 'notes']
 tags: ['hubspot', 'notes']

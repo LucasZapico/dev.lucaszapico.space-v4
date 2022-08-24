@@ -2,7 +2,8 @@
 title: 'api-handling'
 description: ''
 date-created: '2022/02/16'
-last-modified: '2022/05/11'
+last-modified: '2022/08/24'
+parent: 'javascript'
 categories: ['javascript', 'api', 'pattern']
 tags: ['javascript', 'api', 'pattern']
 isdraft: false

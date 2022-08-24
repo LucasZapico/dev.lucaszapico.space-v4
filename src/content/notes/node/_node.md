@@ -2,10 +2,10 @@
 title: '_node'
 description:
 date-created: 2022/02/12
-last-modified: '2022/08/11'
+last-modified: '2022/08/24'
 categories: ['node']
 tags: ['node', 'root']
-isdraft: false
+isdraft: true
 type: 'note'
 ---
 

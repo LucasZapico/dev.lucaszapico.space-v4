@@ -2,10 +2,10 @@
 title: 'digital-ocean'
 description: ''
 date-created: '2022/03/05'
-last-modified: '2022/08/11'
+last-modified: '2022/08/24'
 categories: ['digital-ocean', 'development', 'dev-ops']
 tags: ['digital-ocean', 'development', 'dev-ops', 'hosting', 'notes']
-isdraft: false
+isdraft: true
 type: 'note'
 ---
 

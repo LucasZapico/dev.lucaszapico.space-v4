@@ -2,8 +2,8 @@
 title: 'Spam and Lead Quality Control'
 description: ''
 date-created: '2022/25/04'
-last-modified: 2022/25/04
-isdraft: false
+last-modified: '2022/08/24'
+isdraft: true
 categories: ['general', 'spam']
 tags: ['general', 'spam']
 type: 'note'

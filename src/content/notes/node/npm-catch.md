@@ -2,11 +2,11 @@
 title: 'Npm Notes 2020'
 description: 'General notes on Brew'
 date-created: 2021/06/02 08:38:24
-last-modified: 2021/06/02 08:39:57
+last-modified: '2022/08/23'
 isdraft: true
 categories: ['npm', 'notes']
 tags: ['npm', 'notes', 'reference']
-type: 'post'
+type: 'note'
 ---
 
 **& vs &&**

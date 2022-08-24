@@ -2,11 +2,11 @@
 title: 'Express'
 description: ''
 date-created: '2022/02/22'
-last-modified: '2022/08/11'
+last-modified: '2022/08/23'
 categories: []
 tags: ['validation', 'express', 'notes', MOC]
 isdraft: false
-type: ''
+type: 'note'
 ---
 
 # Express

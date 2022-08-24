@@ -1,3 +1,14 @@
+---
+title: Design Resources
+description:
+date-created: 2022-02-06
+last-modified: '2022/08/23'
+categories: ['design', 'resources', 'notes']
+tags: ['design', 'resources', 'notes']
+isdraft: false
+type: note
+---
+
 # Design Resources 2022
 
 - [Design Resources 2022](#design-resources-2022)

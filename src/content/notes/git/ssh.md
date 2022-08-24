@@ -1,15 +1,27 @@
 ---
-title: ssh Catch
+title: SSH Catch
 description:
-date-created: '2022/02/11'
-last-modified: '2022/08/11'
+date-created: 2022-02-11
+last-modified: '2022/08/24'
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
 type: note
 ---
 
-# ssh Catch
+## SSH Reference
+
+ssh into remote server
+
+```shell
+ssh <remote-username>@<remote_domain/ip>
+```
+
+**Examples**
+
+```shell
+ssh root@216.125.129.17
+```
 
 ## Set-Up
 
@@ -48,13 +60,17 @@ Now when `ssh-keygen -t rsa` asks for a file specify the file associated with th
 **Example key gen**
 
 ```shell
-ssh-keygen -t ed25519 -C <github-email>
-```
-
-```
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/Users/<foo>/.ssh/id_ed25519): github.key
 ```
+
+```shell
+ssh-keygen -t ed25519 -C <github-email>
+```
+
+<!--  -->
+
+<---->
 
 > 💡 note: if the file does not show up in `.ssh/` using the full path should correct
 
@@ -69,15 +85,9 @@ This key is not known by any other names"
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 ```
 
-<<<<<<< HEAD
-
-> # 💡 note: if the file does not show up in `.ssh/` using the full path should correct
-
 ```shell
 ssh-keyscan -H <ip.address> >> ~/.ssh/known_hosts
 ```
-
-> > > > > > > fd21fd6232681710c98ae70d534cb1106ed2c16c
 
 ### Add to Service
 
@@ -88,8 +98,6 @@ pbcopy < ~/.ssh/github.key.pub
 ```
 
 Add this to the services we want to Authorize.
-<<<<<<< HEAD
-=======
 
 ## Testing and Troubleshooting Connections
 
@@ -144,8 +152,6 @@ _.git/config_
 
 ...
 ```
-
-> > > > > > > fd21fd6232681710c98ae70d534cb1106ed2c16c
 
 ## Reference
 
