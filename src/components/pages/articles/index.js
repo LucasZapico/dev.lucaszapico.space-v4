@@ -83,7 +83,9 @@ const Articles = () => {
 export const query = graphql`
   query {
     recentArticles: allMarkdownRemark(
-      filter: { frontmatter: { isdraft: { eq: false }, type: { eq: "post" } } }
+      filter: {
+        frontmatter: { isdraft: { eq: false }, type: { eq: "article" } }
+      }
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {
       edges {
