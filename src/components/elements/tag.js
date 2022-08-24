@@ -1,19 +1,27 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
 
-export const Tag = ({ children, ...rest }) => {
+/**
+ * TODO: add is clickable flag
+ */
+
+export const Tag = ({ hasBorder = true, hasBG = false, children, ...rest }) => {
   const value = children.toLowerCase().replaceAll(' ', '-')
   const colorMode = 'dark'
+  const color = colorMode === 'light' || hasBG ? 'gray.300' : 'brand.one'
+  const borderColor = colorMode === 'light' ? 'brand.two' : 'brand.one'
+  const backgroundColor = colorMode === 'light' ? 'brand.three' : 'brand.one'
   return (
     <Box
       {...rest}
       border="2px"
-      padding={1}
+      px={2}
+      py={1}
       display="inline"
       mr={1}
-      color={colorMode === 'light' ? 'brand.two' : 'brand.three'}
-      borderColor={colorMode === 'light' ? 'brand.two' : 'brand.zero'}
-      backgroundColor={colorMode === 'light' ? 'brand.three' : 'brand.two'}
+      color={color}
+      borderColor={hasBorder ? borderColor : ''}
+      backgroundColor={hasBG ? backgroundColor : ''}
     >
       {value}
     </Box>
