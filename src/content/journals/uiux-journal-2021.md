@@ -2,7 +2,7 @@
 title: 'Design Journal 2020'
 description: ''
 date-created: 2021/04/02 21:24:00
-last-modified: 2021/10/03 08:19:31
+last-modified: '2022/08/26'
 isdraft: false
 categories: ['frontend', 'design', 'journal']
 tags: ['journal', 'design']
@@ -17,7 +17,7 @@ The wave effect is when during scroll a given element sticks to scroll for a per
 
 [Gatsby plugin enabling wave](https://www.gatsbyjs.com/plugins/gatsby-theme-waves/?=scroll)
 
-### Blobs 
+### Blobs
 
 [BlobMaker](https://www.blobmaker.app/)
 
@@ -27,11 +27,9 @@ The wave effect is when during scroll a given element sticks to scroll for a per
 
 I just did my semi quarterly touch on the world of trends and found this article from [2021 design trend prediciton](https://uxmisfit.com/2020/12/16/ui-design-trends-for-2021-predictions/)
 
-### Aurora Effect 
+### Aurora Effect
 
 [ Aurora ui's - Lucas codepen](https://codepen.io/LucasZapico/pen/vYxEjwJ)
-
-
 
 ## Inspiration Resources
 
@@ -41,7 +39,7 @@ I just did my semi quarterly touch on the world of trends and found this article
 
 [awwwards]()
 
-### Amazing blog ui's 
+### Amazing blog ui's
 
 [Annual Digest](https://2019.curatemag.co/)
 
