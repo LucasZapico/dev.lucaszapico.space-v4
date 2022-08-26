@@ -2,11 +2,7 @@
 title: Organizing Express API
 description: Note and example for modularizing express api
 date-created: 2021/08/26
-<<<<<<< HEAD:bak/notes/node/organizing-express-api.md
-last-modified: '2022/07/17'
-=======
-last-modified: '2022/05/10'
->>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c:src/content/notes/node/express/organizing-express-api.md
+last-modified: '2022/08/11'
 isdraft: true
 categories: ['api', 'express', 'node', 'structure']
 tags: ['api', 'architecture', 'node', 'express']
@@ -102,15 +98,16 @@ type: 'note'
 
 [node|express|postgress - logrocket](https://blog.logrocket.com/nodejs-expressjs-postgresql-crud-rest-api-example/)
 
-<<<<<<< HEAD:bak/notes/node/organizing-express-api.md
-=======
+# <<<<<<< HEAD:bak/notes/node/organizing-express-api.md
+
 | Main Layer           | Type                   | What logic goes here?                                                                                                                                                                           |
 | -------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | HTTP logic layer     | Routes + Controllers   | Routes - handle the HTTP requests that hits the API and route them to appropriate controller(s) Contollers - take request object, pull out data from request, validate, then send to service(s) |
 | Business logic layer | Services + Data Access | Contains the business logic, derived from business and technical requirements, as well as how we access our data stores\*\*                                                                     |
 |                      |                        |                                                                                                                                                                                                 |
 
->>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c:src/content/notes/node/express/organizing-express-api.md
+> > > > > > > fd21fd6232681710c98ae70d534cb1106ed2c16c:src/content/notes/node/express/organizing-express-api.md
+
 ### ORM
 
 [**Sequelize**](https://sequelize.org/v7/manual/model-basics.html#concept)
@@ -122,10 +119,10 @@ type: 'note'
 
 **Articles**
 
-<<<<<<< HEAD:bak/notes/node/organizing-express-api.md
-=======
+# <<<<<<< HEAD:bak/notes/node/organizing-express-api.md
+
 - [softwareontheroad - ideal nodejs project structure ](https://softwareontheroad.com/ideal-nodejs-project-structure/)
->>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c:src/content/notes/node/express/organizing-express-api.md
+  > > > > > > > fd21fd6232681710c98ae70d534cb1106ed2c16c:src/content/notes/node/express/organizing-express-api.md
 - [Scotch.io - Keeping API routing clean using Express Routes](https://scotch.io/tutorials/keeping-api-routing-clean-using-express-routers)
 - [Scotch.io - example](https://github.com/searsaw/express-routing-example/)
 - [React, Node Express, Postgres walk through - BezKoder](https://www.bezkoder.com/node-express-sequelize-postgresql/)
