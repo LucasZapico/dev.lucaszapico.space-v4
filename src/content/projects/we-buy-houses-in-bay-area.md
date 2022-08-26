@@ -1,14 +1,13 @@
 ---
-title: Dev.Portfolio 2020
-subHeader: Dev.Portfolio 2020
-path: /projects/dev-portfolio-2020/
-link: https://devlucaszapico2020.netlify.app/
-date-created: 2021/05/15
-last-modified: '2022/08/23'
+title: We Buy Houses In Bay Area
+subHeader: A clean sales funnel focused on up front information
+path: /projects/we-buy-houses-in-bay-area/
+link: https://webuyhousesinbayarea.com/
+date-created: 2021/07/15
+last-modified: 2021/09/01 10:02:35
 isdraft: false
 isComingSoon: false
 categories:
-  - portfolio
   - project
   - web-site
 tags:
@@ -16,7 +15,7 @@ tags:
   - user-experience
   - development
   - ui-design
-featuredImage: '../../images/projects/featured/dev-portfoliov2.png'
+featuredImage: '../../images/projects/featured/we-buy-houses.png'
 technology-stack:
   - figma
   - gatsby
@@ -27,7 +26,7 @@ audio: ''
 type: 'project'
 ---
 
-[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
+imgOne: ../assets/images/projects/yogaofwords-showcase-1.png
 
 ## summary:
 
