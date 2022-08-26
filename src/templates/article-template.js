@@ -16,8 +16,6 @@ import { HalfByHalfSection, LinkOne, Tag } from '../components/_index'
 
 export default function ArticleTemplate({ path, pageContext, location }) {
   const { next, previous, node, title, tableOfContents } = pageContext
-  console.log('article')
-  console.log(pageContext)
 
   const TOC = () => (
     <Box paddingY={6} as="aside" className="toc">
