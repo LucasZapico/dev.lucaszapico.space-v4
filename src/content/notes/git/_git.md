@@ -2,11 +2,11 @@
 title: _git
 description:
 date-created: 2022-02-11
-last-modified: '2022/08/11'
-categories: []
-tags: []
+last-modified: '2022/08/23'
+categories: ['git']
+tags: ['git']
 isdraft: false
-type:
+type: 'note'
 ---
 
 # \_git

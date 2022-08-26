@@ -2,10 +2,10 @@
 title: 'web-secuity-catch'
 description: ''
 date-created: '2022/02/22'
-last-modified: '2022/08/11'
+last-modified: '2022/08/24'
 categories: ['security', 'web-deve']
 tags: ['security', 'web-deve']
-isdraft: false
+isdraft: true
 type: 'notes'
 ---
 

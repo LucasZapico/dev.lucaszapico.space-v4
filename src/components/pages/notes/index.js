@@ -1,19 +1,67 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
 import { SearchIcon } from '@chakra-ui/icons'
-
+import { capitalizeCase } from '../../../utils/font-util'
 import {
+  Text,
   Box,
+  Flex,
   Heading,
   Container,
   Input,
   InputGroup,
   InputLeftElement,
   Divider,
+  GridItem,
+  Grid,
 } from '@chakra-ui/react'
 import { generate } from 'shortid'
 import { generateImageData } from 'gatsby-plugin-image'
 import ArticleCard from './article-card'
+import { CardOne, Tag } from '../../_index'
+
+const NoteCard = ({ note }) => {
+  const {
+    title,
+    categories,
+    tags,
+    date_created: dateCreated,
+    last_modified: lastModified,
+  } = note.node.frontmatter
+  const noteTitle = capitalizeCase(title)
+
+  return (
+    <CardOne colSpan={{ sm: 6, md: 3 }} as={GridItem}>
+      <Flex
+        height="100%"
+        justifyContent="space-between"
+        direction="column"
+        as={GatsbyLink}
+        to={`/${note.node.fields.path}`}
+      >
+        <Box>
+          <Heading as="h4" size="md" mb={2} color="brand.three">
+            {noteTitle}
+          </Heading>
+          <Text>{note.node.excerpt}</Text>
+          <Text color="gray.300" mb={0} fontSize="xs">
+            published: {dateCreated.slice(0, 10)}
+          </Text>
+          <Text color="gray.300" mb={4} fontSize="xs">
+            last updated: {lastModified.slice(0, 10)}
+          </Text>
+        </Box>
+        <Box>
+          {categories.map((c) => {
+            if (c != 'notes') {
+              return <Tag>{c}</Tag>
+            }
+          })}
+        </Box>
+      </Flex>
+    </CardOne>
+  )
+}
 
 const Notes = () => {
   const { recentNotes } = useStaticQuery(query)
@@ -22,27 +70,33 @@ const Notes = () => {
   const [results, setResults] = useState([])
 
   useEffect(() => {
+    /**
+     * TODO: review for refactor
+     */
     if (recentNotes && search.length > 0) {
-      console.log('art', recentNotes)
-      console.log(search)
       const searchResults =
         recentNotes &&
         recentNotes.edges.filter((article) => {
           const title = article.node.frontmatter.title.toLowerCase()
           return title.includes(search)
         })
-      console.log('results', results)
+
       if (searchResults.length > 0) {
         setNotes(searchResults)
       } else {
         setNotes(recentNotes.edges)
       }
+    } else {
+      setNotes(recentNotes.edges)
     }
-    console.log('a', Notes)
   }, [search])
 
   return (
     <>
+      {/* <Box pl={4}>
+        <Heading>Test</Heading>
+
+      </Box> */}
       <Container maxW="container.xl">
         <Heading as="h1" size="4xl">
           Notes
@@ -67,16 +121,10 @@ const Notes = () => {
               results.map((r, i) => <Box>{r.node.frontmatter.title}</Box>)}
           </Box> */}
         </Container>
-        <Container maxW="container.md">
-          {Notes &&
-            Notes.map((note, i) => (
-              <Box as={GatsbyLink} to={`/${note.node.fields.path}`}>
-                <Heading as="h4" size="md" mb={2}>
-                  {note.node.frontmatter.title}
-                </Heading>
-                <Divider mb={6} />
-              </Box>
-            ))}
+        <Container maxW="container.xl">
+          <Grid templateColumns="repeat(6, 1fr)" gap={10}>
+            {Notes && Notes.map((note, i) => <NoteCard note={note} />)}
+          </Grid>
         </Container>
       </Container>
     </>
@@ -91,6 +139,17 @@ export const query = graphql`
     ) {
       edges {
         node {
+          parent {
+            id
+            ... on File {
+              id
+              name
+              dir
+              relativeDirectory
+              relativePath
+            }
+          }
+          excerpt
           id
           fields {
             path
@@ -100,6 +159,9 @@ export const query = graphql`
             categories
             description
             tags
+            date_created
+            last_modified
+            type
           }
         }
       }

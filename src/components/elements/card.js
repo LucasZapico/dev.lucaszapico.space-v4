@@ -8,8 +8,9 @@ export const CardOne = ({ content, children, ...rest }) => {
   return (
     <Box
       p={6}
-      backgroundColor={colorMode === 'light' ? 'brand.three' : 'brand.two'}
-      boxShadow={`10px -10px ${colorMode === 'light' ? '#38383a' : '#f9f6f2'}`}
+      backgroundColor={colorMode === 'light' ? 'brand.zero' : 'gray.800'}
+      boxShadow={`10px -10px ${colorMode === 'light' ? '#38383a' : '#dbe3df'}`}
+      // boxShadow={`10px -10px ${colorMode === 'light' ? '#38383a' : '#f9f6f2'}`}
       {...rest}
     >
       {children || content}

@@ -2,8 +2,9 @@
 title: 'format date time'
 description: ''
 date-created: '2022/02/15'
-last-modified: '2022/02/15'
+last-modified: '2022/08/24'
 isdraft: false
+parent: 'javascript'
 categories: ['javascript', 'notes']
 tags: ['javascript', 'notes', 'reference']
 type: 'note'

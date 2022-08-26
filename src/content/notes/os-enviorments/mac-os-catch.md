@@ -2,8 +2,8 @@
 title: 'General MacOS Notes'
 description: 'Reference notes for mac'
 date-created: 2022/07/06
-last-modified: '2022/08/11'
-isdraft: false
+last-modified: '2022/08/24'
+isdraft: true
 categories: ['mac', 'os', 'notes']
 tags: ['mac', 'os', 'notes', 'workflow']
 type: 'note'

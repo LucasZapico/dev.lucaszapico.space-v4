@@ -2,8 +2,9 @@
 title: 'Async Await Notes'
 description: 'Notes on Async Await'
 date-created: 2022/02/03 11:54
-last-modified: 2022/02/03 11:56
+last-modified: '2022/08/24'
 isdraft: false
+parent: 'javascript'
 categories: ['javascript', 'general', 'notes']
 tags: ['javascript', 'general', 'notes']
 type: 'note'

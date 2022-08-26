@@ -2,13 +2,14 @@ const path = require('path')
 const chalk = require('chalk')
 
 const { log } = console
-const logSp = log(
-  chalk.redBright(`
+const logSp = () =>
+  log(
+    chalk.redBright(`
 
 =================================
 
 `)
-)
+  )
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
@@ -18,22 +19,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const pagePath = node.frontmatter.title.toLowerCase().replaceAll(' ', '-')
+    const pagePath = node.frontmatter.title
+      .toLowerCase()
+      .replaceAll(' ', '-')
+      .replaceAll(' ', '')
     // const value = createFilePath({ node, getNode })
     createNodeField({
       name: `path`,
       node,
       value: pagePath,
     })
-    logSp
-    log(
-      chalk.greenBright(
-        'node field made',
-        JSON.stringify(
-          node.frontmatter.title.toLowerCase().replaceAll(' ', '-')
-        )
-      )
-    )
+    logSp()
+    log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
   }
 }
 
@@ -65,6 +62,10 @@ exports.createPages = async ({ actions, graphql }) => {
             }
           }
           node {
+            excerpt
+            fields {
+              path
+            }
             id
             html
             tableOfContents(heading: "", maxDepth: 4)
@@ -87,19 +88,12 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `)
 
-<<<<<<< HEAD
-  logSp
-  console.log(results)
+  logSp()
 
   await results.data.allMarkdownRemark.edges.forEach((edge) => {
-=======
-  await results.data.allMarkdownRemark.edges.slice(0, 1).forEach((edge) => {
->>>>>>> fd21fd6232681710c98ae70d534cb1106ed2c16c
-    const pagePath = edge.node.frontmatter.title
-      .toLowerCase()
-      .replaceAll(' ', '-')
-
-    if (pagePath.includes('Index') || pagePath.length < 1) {
+    const pagePath = edge.node.fields.path
+    log(pagePath)
+    if (!pagePath.includes('Index') || pagePath.length < 1) {
       log(pagePath)
       createPage({
         path: pagePath,

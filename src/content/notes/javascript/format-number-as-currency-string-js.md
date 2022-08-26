@@ -2,8 +2,9 @@
 title: 'format number as currency string'
 description: ''
 date-created: 2018/03/15 14:19:17
-last-modified: 2021/09/01 19:44:50
+last-modified: '2022/08/24'
 isdraft: false
+parent: 'javascript'
 categories: ['javascript', 'notes']
 tags: ['javascript', 'notes', 'reference']
 type: 'note'

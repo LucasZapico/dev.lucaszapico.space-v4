@@ -2,10 +2,10 @@
 title: 'typescript-project-setup'
 description: ''
 date-created: '2022/03/18'
-last-modified: '2022/08/11'
+last-modified: '2022/08/24'
 categories: ['typescript', 'notes']
 tags: ['typescript', 'notes']
-isdraft: false
+isdraft: true
 type: 'note'
 ---
 

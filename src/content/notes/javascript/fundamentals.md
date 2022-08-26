@@ -2,8 +2,9 @@
 title: 'JavaScript Fundamentals'
 description: 'javascript fundamentals notes and examples'
 date-created: 2021/03/15
-last-modified: 2021/09/01
+last-modified: '2022/08/24'
 isdraft: false
+parent: 'javascript'
 categories: ['JavaScript', 'general', 'notes']
 tags: ['JavaScript', 'general', 'notes', 'fundamentals']
 type: 'note'
