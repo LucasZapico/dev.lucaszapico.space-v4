@@ -13,38 +13,38 @@ export const Buttons = {
   variants: {
     btnCTA: {
       textDecoration: 'underline',
-      color: 'brand.one',
-      backgroundColor: 'brand.three',
-      // bgGradient: 'linear(to-br, , brand.three 80%,  brand.one )',
-      borderColor: 'brand.one',
+      color: 'gray.800',
+      backgroundColor: 'gray.100',
+      // bgGradient: 'linear(to-br, , gray.100 80%,  brand.one )',
+      borderColor: 'gray.100',
       border: '2px',
       _active: {
         outlineWidth: '2px',
-        outlineColor: 'brand.three',
+        outlineColor: 'gray.100',
       },
       _hover: {
         border: '2px',
-        backgroundColor: 'brand.one',
-        color: 'brand.three',
-        borderColor: 'brand.three',
+        backgroundColor: 'gray.100',
+        color: 'gray.800',
+        borderColor: 'gray.100',
       },
     },
     btnOne: {
-      color: 'brand.dark',
-      backgroundColor: 'brand.six',
+      color: 'gray.800',
+      backgroundColor: 'gray.100',
     },
     btnTwo: {
       textDecoration: 'underline',
-      color: 'brand.three',
+      color: 'gray.800',
       border: '2px',
-      borderColor: 'brand.three',
+      borderColor: 'gray.100',
       _active: {
         outlineWidth: '2px',
-        outlineColor: 'brand.three',
+        outlineColor: 'gray.100',
       },
       _hover: {
-        backgroundColor: 'brand.three',
-        color: 'brand.one',
+        backgroundColor: 'gray.100',
+        color: 'gray.800',
       },
     },
   },
@@ -52,13 +52,13 @@ export const Buttons = {
 
 export const Links = {
   baseStyle: {
-    color: 'brand.three',
+    color: 'gray.100',
     fontWeight: 600,
     __hover: {},
   },
   variants: {
     linkOne: {
-      color: 'brand.three',
+      color: 'gray.100',
       paddingRight: '1rem',
       paddingLeft: '1rem',
       position: 'relative',
@@ -67,8 +67,8 @@ export const Links = {
       _after: {
         transition: 'all 0.15s ease-out',
         zIndex: '-1',
-        // bgGradient: 'linear(to-br, , brand.one 80%,  brand.three )',
-        background: 'brand.three',
+        // bgGradient: 'linear(to-br, , brand.one 80%,  gray.100 )',
+        background: 'gray.100',
         position: 'absolute',
         content: '""',
         height: '5px',
@@ -79,11 +79,11 @@ export const Links = {
         right: '0%',
       },
       _active: {
-        color: 'brand.three',
+        color: 'gray.100',
         _after: {
           zIndex: '-1',
-          // bgGradient: 'linear(to-br,  brand.three 80%,  brand.one )',
-          background: 'brand.three',
+          // bgGradient: 'linear(to-br,  gray.100 80%,  brand.one )',
+          background: 'gray.100',
           position: 'absolute',
 
           content: '""',
@@ -95,8 +95,8 @@ export const Links = {
         color: 'brand.one',
         _after: {
           zIndex: '-1',
-          // bgGradient: 'linear(to-br,  brand.three 80%,  brand.one )',
-          background: 'brand.three',
+          // bgGradient: 'linear(to-br,  gray.100 80%,  brand.one )',
+          background: 'gray.100',
           position: 'absolute',
 
           content: '""',
@@ -107,7 +107,7 @@ export const Links = {
     },
 
     linkInline: {
-      color: 'brand.three',
+      color: 'gray.100',
       paddingRight: '.3rem',
       paddingLeft: '.3rem',
       position: 'relative',
@@ -116,8 +116,8 @@ export const Links = {
       _after: {
         transition: 'all 0.15s ease-out',
         zIndex: '-1',
-        // bgGradient: 'linear(to-br, , brand.one 80%,  brand.three )',
-        background: 'brand.three',
+        // bgGradient: 'linear(to-br, , brand.one 80%,  gray.100 )',
+        background: 'gray.100',
         position: 'absolute',
         content: '""',
         height: '5px',
@@ -128,11 +128,11 @@ export const Links = {
         right: '0%',
       },
       _active: {
-        color: 'brand.three',
+        color: 'gray.100',
         _after: {
           zIndex: '-1',
-          // bgGradient: 'linear(to-br,  brand.three 80%,  brand.one )',
-          background: 'brand.three',
+          // bgGradient: 'linear(to-br,  gray.100 80%,  brand.one )',
+          background: 'gray.100',
           position: 'absolute',
 
           content: '""',
@@ -144,8 +144,8 @@ export const Links = {
         color: 'brand.one',
         _after: {
           zIndex: '-1',
-          // bgGradient: 'linear(to-br,  brand.three 80%,  brand.one )',
-          background: 'brand.three',
+          // bgGradient: 'linear(to-br,  gray.100 80%,  brand.one )',
+          background: 'gray.100',
           position: 'absolute',
 
           content: '""',

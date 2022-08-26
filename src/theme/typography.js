@@ -7,7 +7,7 @@ export const Fonts = {
 export const Headings = {
   baseStyle: {
     fontWeight: 700,
-    color: 'brand.five',
+    color: 'gray.100',
     marginBottom: '6',
     lineHeight: 'lineHeights.taller',
     letterSpacing: '0.02rem',
@@ -35,7 +35,7 @@ export const Headings = {
   // Styles for the visual style variations
   variants: {
     sec: {
-      color: 'brand.four',
+      color: 'gray.300',
       fontWeight: 500,
     },
   },
@@ -45,8 +45,8 @@ export const Headings = {
 
 export const Texts = {
   baseStyle: {
-    color: 'brand.three',
-    fontWeight: 600,
+    color: 'gray.200',
+    fontWeight: 500,
     letterSpacing: '0.1rem',
     lineHeight: 1.5,
     marginBottom: '6',
