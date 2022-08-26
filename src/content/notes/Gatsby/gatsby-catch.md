@@ -9,17 +9,14 @@ tags: ['gatsby', 'env']
 type: 'note'
 ---
 
-## Setting Gatsby Env 
+## Setting Gatsby Env
 
-The Gatsby uses a similar env set up as the create react app. 
+The Gatsby uses a similar env set up as the create react app.
 
+_package.json_
 
-
-*package.json*
-
-```json 
+```json
 "scripts": {
   "staging": "set GATSBY_ENV=staging gatsby develop --port 8005",
 }
 ```
-

@@ -1,15 +1,15 @@
 const path = require('path')
 const chalk = require('chalk')
-const { node } = require('prop-types')
 
 const { log } = console
-const logSp = log(
-  chalk.redBright(`
+const logSp = () =>
+  log(
+    chalk.redBright(`
 
 =================================
 
 `)
-)
+  )
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
@@ -19,22 +19,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const pagePath = node.frontmatter.title.toLowerCase().replaceAll(' ', '-')
+    const pagePath = node.frontmatter.title
+      .toLowerCase()
+      .replaceAll(' ', '-')
+      .replaceAll(' ', '')
     // const value = createFilePath({ node, getNode })
     createNodeField({
       name: `path`,
       node,
       value: pagePath,
     })
-    logSp
-    log(
-      chalk.greenBright(
-        'node field made',
-        JSON.stringify(
-          node.frontmatter.title.toLowerCase().replaceAll(' ', '-')
-        )
-      )
-    )
+    logSp()
+    log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
   }
 }
 
@@ -66,6 +62,10 @@ exports.createPages = async ({ actions, graphql }) => {
             }
           }
           node {
+            excerpt
+            fields {
+              path
+            }
             id
             html
             tableOfContents(heading: "", maxDepth: 4)
@@ -79,21 +79,8 @@ exports.createPages = async ({ actions, graphql }) => {
               last_modified
               isdraft
               type
-              subheader
-              link
-              repo
-              path
-              isComingSoon
-              audio
-              subHeader
               categories
               tags
-              featured
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
             }
           }
         }
@@ -101,22 +88,23 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `)
 
-  await results.data.allMarkdownRemark.edges.forEach((edge) => {
-    const pagePath = edge.node.frontmatter.title
-      .toLowerCase()
-      .replaceAll(' ', '-')
-    logSp
-    log(chalk.cyanBright('page path', pagePath))
+  logSp()
 
-    createPage({
-      path: pagePath,
-      component: PostTemplate,
-      context: {
-        next: edge.next,
-        node: edge.node,
-        previous: edge.previous,
-        title: edge.node.frontmatter.title,
-      },
-    })
+  await results.data.allMarkdownRemark.edges.forEach((edge) => {
+    const pagePath = edge.node.fields.path
+    log(pagePath)
+    if (!pagePath.includes('Index') || pagePath.length < 1) {
+      log(pagePath)
+      createPage({
+        path: pagePath,
+        component: PostTemplate,
+        context: {
+          next: edge.next,
+          node: edge.node,
+          previous: edge.previous,
+          title: edge.node.frontmatter.title,
+        },
+      })
+    }
   })
 }

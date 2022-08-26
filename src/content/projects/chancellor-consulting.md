@@ -4,7 +4,7 @@ subHeader: A professional point of contact
 path: /projects/chancellor-consulting/
 link: https://chancellorconsulting.com/
 date-created: 2021/05/15
-last-modified: 2021/09/01 10:02:56
+last-modified: '2022/08/19'
 isdraft: false
 isComingSoon: false
 categories:
@@ -15,7 +15,8 @@ tags:
   - user-experience
   - development
   - ui-design
-featuredImage: '../../images/projects/featured/chancellor-consutling.png'
+# featuredImage: '../../images/projects/featured/chancellor-consutling.png'
+featuredImage: '../../images/illustration/7.png'
 technology-stack:
   - figma
   - gatsby

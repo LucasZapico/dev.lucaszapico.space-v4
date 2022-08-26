@@ -4,10 +4,11 @@ subHeader: Dev.Portfolio 2020
 path: /projects/dev-portfolio-2020/
 link: https://devlucaszapico2020.netlify.app/
 date-created: 2021/05/15
-last-modified: 2021/09/23 14:48:40
+last-modified: '2022/08/23'
 isdraft: false
 isComingSoon: false
 categories:
+  - portfolio
   - project
   - web-site
 tags:

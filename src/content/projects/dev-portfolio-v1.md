@@ -4,7 +4,7 @@ subHeader: Lucas Zapico Portfolio Site 2017
 path: /projects/portfolio-2017/
 link: https://lucaszapico2017.netlify.app/
 date-created: 2017/05/15
-last-modified: 2021/09/23 14:49:49
+last-modified: '2022/08/23'
 isdraft: false
 isComingSoon: false
 categories:
@@ -17,6 +17,7 @@ tags:
   - development
   - ui-design
 featuredImage: '../../images/projects/featured/portfoliov1.png'
+# featuredImage: '../../images/illustration/2.png'
 technology-stack:
   - figma
   - jekyll

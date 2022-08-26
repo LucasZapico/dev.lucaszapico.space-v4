@@ -4,10 +4,11 @@ subHeader: Dev.Portfolio 2019
 path: /projects/dev-portfolio-2019/
 link: https://devlucaszapico.netlify.app/
 date-created: 2019/05/15
-last-modified: 2021/09/23 14:49:44
+last-modified: '2022/08/23'
 isdraft: false
 isComingSoon: false
 categories:
+  - portfolio
   - project
   - web-site
 tags:
@@ -15,6 +16,7 @@ tags:
   - user-experience
   - development
   - ui-design
+# featuredImage: '../../images/illustration/4.png'
 featuredImage: '../../images/projects/featured/dev-portfoliov1.png'
 technology-stack:
   - figma

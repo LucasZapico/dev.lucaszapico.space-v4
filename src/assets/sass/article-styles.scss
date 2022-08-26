@@ -99,18 +99,18 @@ $nc-ac-tx: #ffffff;
     overflow-x: hidden;
     word-break: break-word;
     overflow-wrap: break-word;
-    background: $nc-bg-1;
+    background: $gray-200;
 
     /* Main body text */
-    color: $nc-tx-2;
+    color: $gray-50;
     font-size: 1.03rem;
     line-height: 1.5;
   }
 
   ::selection {
     /* Set background color for selected text */
-    background: $nc-ac-1;
-    color: $nc-ac-tx;
+    background: $color-three;
+    color: $gray-800;
   }
 
   h1,
@@ -121,23 +121,26 @@ $nc-ac-tx: #ffffff;
   h6 {
     font-weight: 700;
     line-height: 150%;
-    color: $nc-tx-1;
+    color: $gray-50;
     padding-top: 0.875rem;
   }
 
   h1,
-  h2,
-  h3 {
-    color: $nc-tx-1;
-    padding-bottom: 2px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid $nc-bg-2;
+  h2 {
+    color: $color-four;
+    // color: $color-one;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    // border-bottom: 1px solid $nc-bg-2;
   }
 
+  h3,
   h4,
   h5,
   h6 {
-    margin-bottom: 0.3rem;
+    color: $gray-400;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   h1 {
@@ -166,12 +169,13 @@ $nc-ac-tx: #ffffff;
 
   a {
     position: relative;
-    color: $nc-lk-1;
+    color: $gray-200;
     &::after {
       content: '';
       height: 2px;
       width: 50px;
-      background-color: $color-four;
+      // background-color: $color-four;
+      background-color: $color-zero;
       position: absolute;
       bottom: -1px;
       left: 0px;
@@ -179,7 +183,7 @@ $nc-ac-tx: #ffffff;
   }
 
   a:hover {
-    color: $nc-lk-2;
+    color: $gray-500;
   }
 
   abbr:hover {
@@ -188,9 +192,11 @@ $nc-ac-tx: #ffffff;
   }
 
   blockquote {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 1.5rem;
-    background: $nc-bg-2;
-    border-left: 5px solid $nc-bg-3;
+    background: $gray-700;
+    border-left: 5px solid $gray-600;
   }
 
   abbr {
@@ -203,8 +209,8 @@ $nc-ac-tx: #ffffff;
   }
 
   header {
-    background: $nc-bg-2;
-    border-bottom: 1px solid $nc-bg-3;
+    background: $gray-100;
+    border-bottom: 1px solid $gray-300;
     padding: 2rem 1.5rem;
 
     /* This sets the right and left margins to cancel out the body's margins. It's width is still the same, but the background stretches across the page's width. */
@@ -226,8 +232,15 @@ $nc-ac-tx: #ffffff;
   header h1,
   header h2,
   header h3 {
+    color: #ffe194;
     padding-bottom: 0;
     border-bottom: 0;
+  }
+
+  h4,
+  h5,
+  h6 {
+    color: #a1aca7;
   }
 
   header > *:first-child {
@@ -250,13 +263,13 @@ $nc-ac-tx: #ffffff;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
-    background: $nc-lk-1;
-    color: $nc-lk-tx;
+    background: $color-five;
+    color: $gray-50;
     border: 0;
     border-radius: 4px;
     box-sizing: border-box;
     cursor: pointer;
-    color: $nc-lk-tx;
+    color: $gray-50;
   }
 
   a button[disabled],
@@ -289,7 +302,7 @@ $nc-ac-tx: #ffffff;
   kbd,
   samp {
     /* Set the font family for monospaced elements */
-    font-family: $nc-font-mono;
+    // font-family: $nc-font-mono;
     margin-bottom: 2.5rem;
   }
 
@@ -298,8 +311,8 @@ $nc-ac-tx: #ffffff;
   kbd,
   pre {
     /* The main preformatted style. This is changed slightly across different cases. */
-    background: $nc-bg-2;
-    border: 1px solid $nc-bg-3;
+    background: $gray-100;
+    border: 1px solid $gray-800;
     border-radius: 4px;
     padding: 3px 6px;
     /* ↓ font-size is relative to containing element, so it scales for titles*/
@@ -432,6 +445,22 @@ $nc-ac-tx: #ffffff;
     padding-left: 2rem;
   }
 
+  .toc {
+    position: sticky;
+    right: 2rem;
+    top: 0px;
+    color: $gray-300;
+    ol,
+    ul {
+      /* Replace the browser default padding */
+      padding-left: 0rem;
+      list-style-type: none;
+      * > ul {
+        padding-left: 1rem;
+      }
+    }
+  }
+
   li {
     margin-top: 0.4rem;
   }
@@ -445,8 +474,8 @@ $nc-ac-tx: #ffffff;
 
   mark {
     padding: 3px 6px;
-    background: $nc-ac-1;
-    color: $nc-ac-tx;
+    background: lighten($color-four, 10%);
+    color: $gray-900;
   }
 
   textarea,
@@ -454,9 +483,9 @@ $nc-ac-tx: #ffffff;
   input {
     padding: 6px 12px;
     margin-bottom: 0.5rem;
-    background: $nc-bg-2;
-    color: $nc-tx-2;
-    border: 1px solid $nc-bg-3;
+    background: $gray-800;
+    color: $gray-100;
+    border: 1px solid $gray-900;
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box;

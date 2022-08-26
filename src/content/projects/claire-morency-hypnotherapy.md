@@ -4,7 +4,7 @@ subHeader: A welcoming experience focused on informing
 path: /projects/claire-morency-hypnotherapy/
 link: https://clairemorencyhypnotherapy.com/
 date-created: 2021/07/15
-last-modified: 2021/09/01 10:02:27
+last-modified: '2022/08/19'
 isdraft: false
 isComingSoon: false
 categories:
@@ -15,7 +15,8 @@ tags:
   - user-experience
   - development
   - ui-design
-featuredImage: '../../images/projects/featured/claire-morency-hypno.png'
+# featuredImage: '../../images/projects/featured/claire-morency-hypno.png'
+featuredImage: '../../images/illustration/3.png'
 technology-stack:
   - figma
   - gatsby

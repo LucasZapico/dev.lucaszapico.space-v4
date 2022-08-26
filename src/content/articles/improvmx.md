@@ -1,12 +1,15 @@
 ---
-title: 'Setting up reply from ImprovMX email forwarding'
+title: Setting up reply from ImprovMX email forwarding
 description: 'How to add ImprovMX email to Gmail including pit falls, attempted solutions that did not work.'
-date-created: 2021/09/11 08:30
-last-modified: 2021/09/12 10:03:45
-isdraft: false
-categories: ['email', 'business', 'operations']
+date-created: '2021/09/11 08:30'
+last-modified: 2022/01/29 10:40:07
+categories:
+  - 'email'
+  - 'business'
+  - 'operations'
 tags: ['email', 'improvmx']
-type: 'article'
+type: article
+isdraft: false
 ---
 
 ##

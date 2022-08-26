@@ -1,0 +1,23 @@
+---
+title: 'HubSpot API'
+description: "General notes on HubSpot API's"
+date-created: '2022/05/18'
+last-modified: '2022/08/23'
+isdraft: false
+categories: ['hubspot', 'api', 'notes']
+tags: ['hubspot', 'api', 'notes']
+type: 'note'
+---
+
+## accounts
+
+**Important Account for Developer**
+
+- developer account
+  - [test account (full access for 90 days)](https://developers.hubspot.com/docs/api/creating-test-accounts?_ga=2.221701912.1666960614.1652703028-1851930813.1642977339)
+
+## Reference
+
+- [Account Types](https://developers.hubspot.com/docs/api/account-types?_ga=2.252168841.1666960614.1652703028-1851930813.1642977339)
+
+[HubSpot API snippets](https://github.com/HubSpot/hubspot-academy-tutorials/tree/master/getting-started-with-hubspot-apis)

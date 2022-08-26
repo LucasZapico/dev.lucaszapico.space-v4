@@ -16,13 +16,19 @@ import { HalfByHalfSection, LinkOne, Tag } from '../components/_index'
 
 export default function ArticleTemplate({ path, pageContext, location }) {
   const { next, previous, node, title, tableOfContents } = pageContext
-  console.log('page', pageContext)
+
   const TOC = () => (
-    <Box
-      px={2}
-      py={10}
-      dangerouslySetInnerHTML={{ __html: node.tableOfContents }}
-    />
+    <Box paddingY={6} as="aside" className="toc">
+      <Heading as="div" color="gray.200" mb={2} size="xl">
+        Table of Contents
+      </Heading>
+      <Box
+        as="nav"
+        px={2}
+        py={10}
+        dangerouslySetInnerHTML={{ __html: node.tableOfContents }}
+      />
+    </Box>
   )
   const NextArticle = () => (
     <Box key={generate()}>
@@ -40,7 +46,7 @@ export default function ArticleTemplate({ path, pageContext, location }) {
           <Heading as="h4" size="lg">
             {next.frontmatter.title}
           </Heading>
-          {/* <Text as="lg" dangerouslySetInnerHTML={{ __html: next.excerpt }} /> */}
+          <Text as="lg" dangerouslySetInnerHTML={{ __html: next.excerpt }} />
         </Box>
       </Box>
     </Box>
@@ -62,12 +68,12 @@ export default function ArticleTemplate({ path, pageContext, location }) {
           <Heading as="h4" size="lg">
             {previous.frontmatter.title}
           </Heading>
-          {/* <Text
-              as="lg"
-              dangerouslySetInnerHTML={{
-                __html: previous.excerpt,
-              }}
-            /> */}
+          <Text
+            as="lg"
+            dangerouslySetInnerHTML={{
+              __html: previous.excerpt,
+            }}
+          />
         </Box>
       </Box>
     </Box>
@@ -83,8 +89,11 @@ export default function ArticleTemplate({ path, pageContext, location }) {
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink to="/blog" as={GatsbyLink}>
-            Articles
+          <BreadcrumbLink
+            to={node.frontmatter.type === 'note' ? '/notes' : '/articles'}
+            as={GatsbyLink}
+          >
+            {node.frontmatter.type === 'note' ? 'Notes' : 'Articles'}
           </BreadcrumbLink>
         </BreadcrumbItem>
 
@@ -106,39 +115,47 @@ export default function ArticleTemplate({ path, pageContext, location }) {
           flexWrap="wrap"
           flexDirection="row-reverse"
         >
-          <TOC />
-          <Container
-            maxW="container.md"
-            py={10}
-            px={10}
-            backgroundColor="brand.two"
-          >
-            <BreadCrumbs />
-            <Heading mt={6} mb={4} as="h1" size="xl">
+          <Container maxW="container.xl" py={10} px={10}>
+            <Heading mt={6} mb={4} as="h1" size="2xl">
               {title}
             </Heading>
+            <BreadCrumbs />
             <Box py={6}>
               {node.frontmatter.categories &&
                 node.frontmatter.categories.map((cat, i) => (
                   <Tag key={generate()}>{cat}</Tag>
                 ))}
             </Box>
-            <main>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              as="main"
+              className="article-wrapper"
+            >
               <Box
+                width={{ md: '650px' }}
                 py={10}
-                className="article-wrapper"
                 dangerouslySetInnerHTML={{ __html: node.html }}
               />
-            </main>
+              <TOC width="20%" />
+            </Box>
           </Container>
         </Container>
 
         <Container maxW="container.xl" my={10}>
           <Box my={10}>
             <Heading as="h3" size="xl">
-              More Articles
+              More {node.frontmatter.type === 'note' ? 'Notes' : '/Articles'}
             </Heading>
-            <LinkOne to="/articles">All Articles</LinkOne>
+            {node.frontmatter.type === 'note' ? (
+              <LinkOne as={GatsbyLink} to="/notes">
+                All Notes
+              </LinkOne>
+            ) : (
+              <LinkOne as={GatsbyLink} to="/articles">
+                All Articles
+              </LinkOne>
+            )}
           </Box>
           <HalfByHalfSection
             right={previous !== null ? <PrevArticle /> : ''}
