@@ -3,6 +3,7 @@ import { Box } from '@chakra-ui/react'
 
 /**
  * TODO: add is clickable flag
+ * TODO: add hover
  */
 
 export const Tag = ({ hasBorder = true, hasBG = false, children, ...rest }) => {
