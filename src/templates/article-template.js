@@ -128,6 +128,7 @@ export default function ArticleTemplate({ path, pageContext, location }) {
             </Box>
             <Box
               display="flex"
+              flexDirection={{ base: 'column-reverse', md: 'row' }}
               justifyContent="space-between"
               as="main"
               className="article-wrapper"
