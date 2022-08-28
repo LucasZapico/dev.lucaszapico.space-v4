@@ -2,7 +2,7 @@
 title: SSH Catch
 description:
 date-created: 2022-02-11
-last-modified: '2022/08/24'
+last-modified: '2022/08/28'
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
@@ -31,6 +31,11 @@ ssh root@216.125.129.17
 
 ```shell
 ssh-keygen -t rsa
+```
+
+*Github Example*
+```shell
+ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 For a single service use the default file `.ssh/id_rsa` but for multiple services follow the steps below.
