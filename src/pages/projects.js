@@ -4,7 +4,7 @@ import { Projects } from '../components/_index'
 
 const Cases = () => {
   return (
-    <Box>
+    <Box py={20}>
       <Projects />
     </Box>
   )

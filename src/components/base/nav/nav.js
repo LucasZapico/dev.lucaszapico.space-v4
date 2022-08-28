@@ -16,10 +16,10 @@ const ROUTES = [
     name: 'Projects',
     path: '/projects',
   },
-  {
-    name: 'Articles',
-    path: '/articles',
-  },
+  // {
+  //   name: 'Articles',
+  //   path: '/articles',
+  // },
   {
     name: 'Notes',
     path: '/notes',
