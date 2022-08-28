@@ -1,22 +1,22 @@
 ---
-title: Dev.Portfolio 2020
-subHeader: Dev.Portfolio 2020
-path: /projects/dev-portfolio-2020/
-link: https://devlucaszapico2020.netlify.app/
-date-created: 2021/05/15
-last-modified: '2022/08/23'
+title: Staten Web
+subHeader: Gatsby site with Wordpress headless CMS
+path: /projects/statenweb/
+link: https://statenwebdemo.netlify.app/
+date-created: 2021/04/15
+last-modified: 2021/09/01 10:13:59
 isdraft: false
 isComingSoon: false
 categories:
-  - portfolio
   - project
   - web-site
+  - cms
 tags:
   - gatsby
   - user-experience
   - development
   - ui-design
-featuredImage: '../../images/projects/featured/dev-portfoliov2.png'
+featuredImage: '../../images/projects/featured/staten-web.png'
 technology-stack:
   - figma
   - gatsby
@@ -27,7 +27,7 @@ audio: ''
 type: 'project'
 ---
 
-[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
+<!-- [imgOne:](../assets/images/projects/yogaofwords-showcase-1.png) -->
 
 ## summary:
 
