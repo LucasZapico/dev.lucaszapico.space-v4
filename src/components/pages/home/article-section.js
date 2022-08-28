@@ -47,7 +47,7 @@ const ArticleSection = ({ recentArticles }) => (
                 navigate(`/${article.node.fields.path}`)
               }}
             >
-              <Heading as="h4" size="xl" variant="sec">
+              <Heading as="h4" size="md">
                 {article.node.frontmatter.title}
               </Heading>
               <Heading as="h5" variant="sec" size="md">

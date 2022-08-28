@@ -1,25 +1,25 @@
 ---
-title: Dev.Portfolio 2020
-subHeader: Dev.Portfolio 2020
-path: /projects/dev-portfolio-2020/
-link: https://devlucaszapico2020.netlify.app/
-date-created: 2021/05/15
-last-modified: '2022/08/23'
+title: Noma - demo
+subHeader: Noma - demo
+path: /projects/noma/
+link: https://noma2020.netlify.app/
+date-created: 2019/05/15
+last-modified: '2022/08/22'
 isdraft: false
 isComingSoon: false
 categories:
-  - portfolio
   - project
   - web-site
+  - demo
 tags:
   - gatsby
   - user-experience
   - development
   - ui-design
-featuredImage: '../../images/projects/featured/dev-portfoliov2.png'
+featuredImage: '../../images/projects/featured/noma.png'
 technology-stack:
   - figma
-  - gatsby
+  - hugo
   - react
   - netlify
   - netlify-cms
