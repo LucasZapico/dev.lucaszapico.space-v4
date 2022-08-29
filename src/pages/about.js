@@ -7,7 +7,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Portrait } from '../components/flare/portrait'
 import { SEO } from '../components/_index'
 
-const AboutPage = ({ data, location }) => (
+const AboutPage = ({ location }) => (
   <>
     <SEO title="About" location={location} />
     <Container maxW="container.md" py={20}>
@@ -52,16 +52,3 @@ const AboutPage = ({ data, location }) => (
 )
 
 export default AboutPage
-
-export const query = graphql`
-  {
-    profile: file(name: { eq: "profile-avatar-2020" }) {
-      id
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
