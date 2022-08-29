@@ -33,7 +33,8 @@ ssh root@216.125.129.17
 ssh-keygen -t rsa
 ```
 
-*Github Example*
+_Github Example_
+
 ```shell
  ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
