@@ -297,12 +297,18 @@ $nc-ac-tx: #ffffff;
     background: var($nc-lk-2);
   }
 
+  pre {
+    overflow-x: scroll;
+  }
+
   code,
   pre,
   kbd,
   samp {
     /* Set the font family for monospaced elements */
     // font-family: $nc-font-mono;
+    
+    
     margin-bottom: 2.5rem;
   }
 
@@ -446,9 +452,7 @@ $nc-ac-tx: #ffffff;
   }
 
   .toc {
-    position: sticky;
-    right: 2rem;
-    top: 0px;
+ 
     color: $gray-300;
     ol,
     ul {
