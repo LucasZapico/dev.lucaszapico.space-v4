@@ -32,6 +32,12 @@ module.exports = {
     //     apiToken: '',
     //   },
     // },
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-mdx',
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -42,31 +48,29 @@ module.exports = {
       resolve: 'gatsby-plugin-exclude',
       options: { paths: ['/templates/**', '.vault-stats*'] },
     },
-
-    'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-prettier-eslint',
-      options: {
-        prettier: {
-          patterns: [
-            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
-            '**/*.{css,scss,less}',
-            '**/*.{json,json5}',
-            '**/*.{graphql}',
-            '**/*.{md,mdx}',
-            '**/*.{html}',
-            '**/*.{yaml,yml}',
-          ],
-        },
-        eslint: {
-          patterns: '**/*.{js,jsx,ts,tsx}',
-          customOptions: {
-            fix: true,
-            cache: true,
-          },
-        },
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-prettier-eslint',
+    //   options: {
+    //     prettier: {
+    //       patterns: [
+    //         // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
+    //         '**/*.{css,scss,less}',
+    //         '**/*.{json,json5}',
+    //         '**/*.{graphql}',
+    //         '**/*.{md,mdx}',
+    //         '**/*.{html}',
+    //         '**/*.{yaml,yml}',
+    //       ],
+    //     },
+    //     eslint: {
+    //       patterns: '**/*.{js,jsx,ts,tsx}',
+    //       customOptions: {
+    //         fix: true,
+    //         cache: true,
+    //       },
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-remark-prismjs`,
       options: {
@@ -121,17 +125,14 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
+
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/favicon.png',
       },
     },
-    'gatsby-plugin-mdx',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
