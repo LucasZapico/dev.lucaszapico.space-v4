@@ -18,7 +18,14 @@ export default function ArticleTemplate({ path, pageContext, location }) {
   const { next, previous, node, title, tableOfContents } = pageContext
 
   const TOC = () => (
-    <Box paddingY={6} as="aside" className="toc">
+    <Box
+      position={{ base: 'static', md: 'sticky' }}
+      top="0px"
+      right="2rem"
+      paddingY={6}
+      as="aside"
+      className="toc"
+    >
       <Heading as="div" color="gray.200" mb={2} size="xl">
         Table of Contents
       </Heading>

@@ -31,7 +31,7 @@ const NoteCard = ({ note }) => {
   const noteTitle = capitalizeCase(title)
 
   return (
-    <CardOne colSpan={{ sm: 6, md: 3 }} as={GridItem}>
+    <CardOne colSpan={{ base: 6, md: 3 }} as={GridItem}>
       <Flex
         height="100%"
         justifyContent="space-between"
@@ -51,13 +51,13 @@ const NoteCard = ({ note }) => {
             last updated: {lastModified.slice(0, 10)}
           </Text>
         </Box>
-        <Box>
+        <Flex flexWrap="wrap">
           {categories.map((c) => {
             if (c != 'notes') {
-              return <Tag>{c}</Tag>
+              return <Tag mb={4}>{c}</Tag>
             }
           })}
-        </Box>
+        </Flex>
       </Flex>
     </CardOne>
   )
