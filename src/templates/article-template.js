@@ -1,4 +1,5 @@
 import {
+  Flex,
   Box,
   Breadcrumb,
   BreadcrumbItem,
@@ -127,12 +128,14 @@ export default function ArticleTemplate({ path, pageContext, location }) {
               {title}
             </Heading>
             <BreadCrumbs />
-            <Box py={6}>
+            <Flex flexWrap="wrap" py={6}>
               {node.frontmatter.categories &&
                 node.frontmatter.categories.map((cat, i) => (
-                  <Tag key={generate()}>{cat}</Tag>
+                  <Tag mb={4} key={generate()}>
+                    {cat}
+                  </Tag>
                 ))}
-            </Box>
+            </Flex>
             <Box
               display="flex"
               flexDirection={{ base: 'column-reverse', md: 'row' }}
