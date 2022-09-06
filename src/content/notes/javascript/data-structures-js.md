@@ -2,7 +2,7 @@
 title: 'Data Structures through JS'
 description: 'Examine common data structures through JS'
 date-created: '2021/03/15'
-last-modified: '2022/08/31'
+last-modified: '2022/09/05'
 isdraft: false
 categories: ['JavaScript', 'general', 'notes', 'data-structures']
 tags: ['JavaScript', 'general', 'notes', 'data-structures']
@@ -24,7 +24,7 @@ A collection of data that operates under LIFO principles.
 - routing, history objects in browsers
 
 
-A stack at it’s core is  an abstract concept and there is some fluidity with the properties of the definition. Different languages have varying degrees of rigor and patterns with how function is implemented. 
+A stack at it’s core is  an abstract concept and there is some fluidity with the properties of the definition. Different languages have varying degrees of rigor and patterns `with how function is implemented. 
 
 
  JavaScript doesn't have a default stack data type but the array object using `.push()` and `.pop()` is functionality a stack. 
@@ -82,7 +82,7 @@ class Stack {
 const node = (value) => {
     return {
         Node: value, 
-        next: nulli
+        next: null
     }
 }
 const stack = (size, insert, remove) => {

@@ -2,7 +2,7 @@
 title: 'JavaScript Algorithms'
 description: 'Notes on Algorithms patterns using JS'
 date-created: 2021/03/15
-last-modified: '2022/08/23'
+last-modified: '2022/09/04'
 isdraft: false
 categories: ['javaScript', 'algorithms', 'notes']
 tags: ['javaScript', 'algorithms', 'general', 'notes']
@@ -15,7 +15,7 @@ type: 'note'
 
 Write a function **Same**, which takes two arrays. The function should return `true` if every value in the array has it's corresponding value squared in the second array. The frequency of the values must be the same.
 
-**Naive Solution**
+**Native Solution**
 
 ```js
 function same(arr1, arr2) {
@@ -62,7 +62,7 @@ function same(arr1, arr2) {
 
 ### Problem - Anagram
 
-**Naive Solution**
+**Native Solution**
 
 ```js
 function isAnagram(a) {
