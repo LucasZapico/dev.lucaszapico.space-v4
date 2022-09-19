@@ -23,13 +23,7 @@ Homebrew centralized and makes the managment of packages and apps faster and mor
 
 ### Management of Multiple Versions 
 
-HomeBrew simplifies handling multiple versions by 
-
-## Standard App install process
-
-```mermaid 
-
-```
+HomeBrew simplifies handling multiple versions of languages such as Node and Python. 
 
 ## Common Commands
 
