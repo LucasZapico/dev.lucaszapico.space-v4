@@ -478,6 +478,9 @@ $nc-ac-tx: #ffffff;
     ol,
     ul {
       /* Replace the browser default padding */
+     p {
+         margin-bottom: 0px;
+     }
       padding-left: 0rem;
       list-style-type: none;
       * > ul {
@@ -487,7 +490,7 @@ $nc-ac-tx: #ffffff;
   }
 
   li {
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
   }
 
   ul ul,
