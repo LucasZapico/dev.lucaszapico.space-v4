@@ -1,23 +1,182 @@
 ---
-title: 'Markdown Catch'
-description: 'General notes on markdown process, config and workflows'
+title: 'Notes on Markdown and Cheatsheet'
+description: 'General notes on Markdown, process, config and workflows'
 date-created: '2022/07/15'
-last-modified: '2022/08/23'
+last-modified: '2022/09/20'
 isdraft: false
-categories: ['markdown', 'content', 'process', 'workflows']
-tags: ['markdown', 'content', 'process', 'workflows']
+categories: ['markdown', 'content', 'process', 'workflows', 'cheatsheet']
+tags: ['markdown', 'content', 'process', 'workflows', 'cheatsheet']
 type: 'note'
 ---
 
-## Tools
+## What is Markdown
+ 
+ Markdown is a plain text syntax that maps directly to HTML decoupling formating and copy. This allows content for be styled via css enhabling design freedom. 
+ 
+ Markdown also integrates seamlessly with most if not all programing languages thereby enhabling transforming, sorting, and search etc in a much more straight forward way compared to traditional wysiwyg editors such as word, paper, and gdocs. 
+ 
+ > 📔 Many WYSIWYG editors now export to markdown or have reworked their behavior to be markdown first. 
+ 
+## CheatSheet 
+ 
+### Basic Syntax 
+ 
+| Element         | Markdown Syntax                  |
+|-----------------|----------------------------------|
+| Heading         | # H1                             |
+| ## H2           |
+| ### H3          |
+| Bold            | **bold text**                    |
+| Italic          | *italicized text*                |
+| Blockquote      | > blockquote                     |
+| Ordered List    | 1. First item                    |
+| 2. Second item  |
+| 3. Third item   |
+| Unordered List  | - First item                     |
+| - Second item   |
+| - Third item    |
+| Code            | `code`                           |
+| Horizontal Rule | ---                              |
+| Link            | [title](https://www.example.com) |
+| Image           | ![alt text](image.jpg)           |
+ 
+### Extended Syntax
+| Element           | Markdown Syntax                                                                              |
+|-------------------|----------------------------------------------------------------------------------------------|
+| Table             | \| Syntax    \| Description \|<br/>\|-----------\|-------------\|<br/>\| Header    \| Title       \|<br/>\| Paragraph \| Text        \| 
+| Fenced Code Block | \`\`\`<br/>{<br/>  firstName": "John",<br/>  "lastName": "Smith",<br/>  "age: 25<br/>}\`\`\` |
+| Footnote          | Here's a sentence with a footnote. [^1]                                                      |
+|                                                                 |
+| [^1]: This is the footnote.                                     |
+| Heading ID                                                      | ### My Great Heading {#custom-id}                   |
+| Definition List                                                 | term                                                |
+| : definition                                                    |
+| Strikethrough                                                   | ~~The world is flat.~~                              |
+| Task List                                                       | - [x] Write the press release                       |
+| - [ ] Update the website                                        |
+| - [ ] Contact the media                                         |
+| Emoji                                                           |
+| (see also Copying and Pasting Emoji)                            | That is so funny! :joy:                             |
+| Highlight                                                       | I need to highlight these ==very important words==. |
+| Subscript                                                       | H~2~O                                               |
+| Superscript                                                     | X^2^                                                |
 
-- [vscdoe]()
-- [typora]()
-- [paper]()
 
-## Vscode
 
-### Configs
+
+### Headings 
+
+```txt 
+# H1 - Header One 
+## H2 - Header Two
+### H3 - Header Three
+#### H4 - Header Four 
+##### H5 - Header Five 
+###### H6 - Header Six
+``` 
+
+#### HTML Result
+
+```html 
+<h1>H1 - Heading One</h1>
+<h2>H2 - Heading Two</h2>
+<h3>H3 - Heading three</h3>
+<h4>H4 - Heading Four</h4>
+<h5>H5 - Heading Five</h5>
+<h6>H6 - Heading Six<h6>
+```
+
+#### Visual Example
+
+# H1 - Header One 
+## H2 - Header Two
+### H3 - Header Three
+#### H4 - Header Four 
+##### H5 - Header Five 
+###### H6 - Header Six
+
+### Text Styles 
+
+
+```txt 
+Some default text - Once upon a time in the land of England, there lived a web developer with too much time on their hands.
+**some strong text**
+*some italic text*
+```
+
+
+#### Other Text Styles
+
+> 💡 Note: some markdown flavors have more style such as underline, strikethrough and highlight
+
+```txt 
+~~some strikethrough~~
+==some highlighted words==
+```
+
+
+#### HTML Result
+```html 
+<p>Some default text - Once upon a time in the land of England, there lived a web developer with too much time on their hands.</p>
+<p><strong>some strong text</strong></p>
+<p><em>some italic text</em></p>
+```
+
+#### Visual Example
+
+Once upon a time in the land of England, there lived a web developer with too much time on their hands.
+**some strong text**
+*some italic text*
+ 
+
+## Markdown Tool and Apps
+
+Because markdown is written in plain text any text editor can be used to write markdown but there are some app nativily support a enhanced markdown experience.
+
+- [vscode](https://code.visualstudio.com/)
+- [obsidian](https://obsidian.md/)
+- [typora](https://typora.io/)
+- [paper writing app](https://apps.apple.com/us/app/paper-writing-app/id1143513744?mt=12)
+
+
+### [VSCode](https://code.visualstudio.com/)
+
+VSCode is an best in show text editor since 2016 primarlly tailored to programming but because of the modular plugin focused architeture of the app it can be easily configured to be a top teir markdown editor. 
+
+> VSCode affords complete flexability tailoring a markdown workflow though it leans toward the developers.
+ 
+#### Vscode Extensions for Markdown
+
+- [Markdown all in one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+- [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
+- [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)
+- [Markdown preview mermaid support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
+
+### [Obsidian](https://obsidian.md/)
+
+Obsidian has gained a huge following since 2022 after it's initial lunch in 2020. It is considered a knowleged base tool or "second brain" with many features and plugins enhabiling organizing data and the relationships between.
+
+> Obsidian has a decent plugin ecosystem and leans heavily to individual knowlege indexing. 
+
+Note: Though Obsidian sits on the file system it leverages a `.obsidian` directory to manage plugin configs and states, which can cause issue when used in a development pipeline. 
+
+*I personaly ran into some complexity layering it on top of a Gatsby development workflow with managing the content. I suspect there is a workaround but it was not a priority.*
+
+### [Typora](https://typora.io/)
+
+Typora is a text editor tailor for markdown focused on a clean, writing experience. It sits on top of the file system enabling seamless navigation on and organization of a content directory with directory tree view. 
+
+A notable quality of life feature is that typora enables custom css stylesheets allowing completely customizable writing enviroment. 
+
+### [Paper Writing App](https://apps.apple.com/us/app/paper-writing-app/id1143513744?mt=12)
+
+Paper is a polished markdown writing experience best in show for working with a single file. 
+
+
+
+## Reference
+
+### VSCode custom markdown config
 
 _setting.json_
 
@@ -59,4 +218,3 @@ _setting.json_
 
 ```
 
-## Reference

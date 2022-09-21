@@ -25,7 +25,9 @@ Homebrew centralized and makes the managment of packages and apps faster and mor
 
 HomeBrew simplifies handling multiple versions of languages such as Node and Python. 
 
-## Common Commands
+- [Solutions for manging multiple version of node on macOS](src/content/articles/solutions-for-managing-multiple-versions-of-node-on-macos.md)
+
+## CheatSheet
 
 Get info on a given formula
 
@@ -62,11 +64,6 @@ uninstall package
 ```sh
 brew uninstall <package-name>
 ```
-
-
-
-
-
 
 ## uninstall
 
