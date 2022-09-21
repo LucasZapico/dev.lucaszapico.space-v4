@@ -4,8 +4,8 @@ description: 'General notes on Markdown, process, config and workflows'
 date-created: '2022/07/15'
 last-modified: '2022/09/20'
 isdraft: false
-categories: ['markdown', 'content', 'process', 'workflows', 'cheatsheet']
-tags: ['markdown', 'content', 'process', 'workflows', 'cheatsheet']
+categories: ['markdown', 'process', 'workflows', 'cheatsheet']
+tags: ['markdown', 'process', 'workflows', 'cheatsheet']
 type: 'note'
 ---
 
@@ -88,12 +88,19 @@ type: 'note'
 
 #### Visual Example
 
-# H1 - Header One 
+<h1>H1 - Heading One</h1>
+<h2>H2 - Heading Two</h2>
+<h3>H3 - Heading three</h3>
+<h4>H4 - Heading Four</h4>
+<h5>H5 - Heading Five</h5>
+<h6>H6 - Heading Six<h6>
+
+<!-- # H1 - Header One 
 ## H2 - Header Two
 ### H3 - Header Three
 #### H4 - Header Four 
 ##### H5 - Header Five 
-###### H6 - Header Six
+###### H6 - Header Six -->
 
 ### Text Styles 
 
@@ -139,7 +146,7 @@ Because markdown is written in plain text any text editor can be used to write m
 - [paper writing app](https://apps.apple.com/us/app/paper-writing-app/id1143513744?mt=12)
 
 
-### [VSCode](https://code.visualstudio.com/)
+### [VSCode](https://code.visualstudio.com/) 
 
 VSCode is an best in show text editor since 2016 primarlly tailored to programming but because of the modular plugin focused architeture of the app it can be easily configured to be a top teir markdown editor. 
 

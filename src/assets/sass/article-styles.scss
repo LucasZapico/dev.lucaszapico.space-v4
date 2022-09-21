@@ -166,21 +166,42 @@ $nc-ac-tx: #ffffff;
   h6 {
     font-size: 0.875rem;
   }
+  
+  
 
   a {
     position: relative;
     color: $gray-200;
     &::after {
+        
       content: '';
       height: 2px;
-      width: 50px;
+      width: auto;
       // background-color: $color-four;
       background-color: $color-zero;
       position: absolute;
-      bottom: -1px;
-      left: 0px;
+      top: 0px;
+      right: -10px;
     }
+     
   }
+  h1,h2,h3,h4,h5,h6 {
+    a[href^="https:"] {
+    position: relative;
+
+    &::after {
+      color: $gray-300;
+      content: url('/icons/external-link-dark.svg');
+      height: 50px;
+      width: auto;
+      background-color: $color-zero;
+      position: absolute;
+      top: 0px;
+      right: -1.8rem;
+    }
+    }  
+  }
+ 
 
   a:hover {
     color: $gray-500;
