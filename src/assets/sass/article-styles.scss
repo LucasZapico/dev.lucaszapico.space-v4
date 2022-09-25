@@ -185,19 +185,33 @@ $nc-ac-tx: #ffffff;
     }
      
   }
-  h1,h2,h3,h4,h5,h6 {
-    a[href^="https:"] {
+   a[href^="https:"] {
     position: relative;
 
     &::after {
       color: $gray-300;
       content: url('/icons/external-link-dark.svg');
-      height: 50px;
-      width: auto;
+      height: auto;
+      width: 18px;
       background-color: $color-zero;
       position: absolute;
       top: 0px;
-      right: -1.8rem;
+      right: -1.6rem;
+    }
+    }  
+  h1,h2,h3,h4,h5,h6 {
+   a[href^="https:"] {
+    position: relative;
+
+    &::after {
+      color: $gray-300;
+      content: url('/icons/external-link-dark.svg');
+      height: auto;
+      width: 25px;
+      background-color: $color-zero;
+      position: absolute;
+      top: 0px;
+      right: -2.2rem;
     }
     }  
   }
@@ -318,65 +332,8 @@ $nc-ac-tx: #ffffff;
     background: var($nc-lk-2);
   }
 
-  pre {
-    overflow-x: scroll;
-  }
 
-  code,
-  pre,
-  kbd,
-  samp {
-    /* Set the font family for monospaced elements */
-    // font-family: $nc-font-mono;
-    
-    
-    margin-bottom: 2.5rem;
-  }
 
-  code,
-  samp,
-  kbd,
-  pre {
-    /* The main preformatted style. This is changed slightly across different cases. */
-    background: $gray-100;
-    border: 1px solid $gray-800;
-    border-radius: 4px;
-    padding: 3px 6px;
-    /* ↓ font-size is relative to containing element, so it scales for titles*/
-    font-size: 0.9em;
-  }
-
-  kbd {
-    /* Makes the kbd element look like a keyboard key */
-    border-bottom: 3px solid $nc-bg-3;
-  }
-
-  pre {
-    padding: 1rem 1.4rem;
-    max-width: 100%;
-    overflow: auto;
-  }
-
-  pre code {
-    /* When <code> is in a <pre>, reset it's formatting to blend in */
-    background: inherit;
-    font-size: inherit;
-    color: inherit;
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
-
-  code pre {
-    /* When <pre> is in a <code>, reset it's formatting to blend in */
-    display: inline;
-    background: inherit;
-    font-size: inherit;
-    color: inherit;
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
 
   details {
     /* Make the <details> look more "clickable" */
@@ -473,7 +430,9 @@ $nc-ac-tx: #ffffff;
   }
 
   .toc {
- 
+    @media screen and (min-width: 48rem){
+        padding-left: 1.5rem;
+    }
     color: $gray-300;
     ol,
     ul {
@@ -523,3 +482,63 @@ $nc-ac-tx: #ffffff;
     max-width: 100%;
   }
 }
+
+
+  kbd {
+    /* Makes the kbd element look like a keyboard key */
+    border-bottom: 3px solid $nc-bg-3;
+  }
+  pre {
+    padding: 1rem 1.4rem;
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  pre code {
+    /* When <code> is in a <pre>, reset it's formatting to blend in */
+    background: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  code pre {
+    /* When <pre> is in a <code>, reset it's formatting to blend in */
+    display: inline;
+    background: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  
+    pre {
+    overflow-x: scroll;
+  }
+
+  code,
+  pre,
+  kbd,
+  samp {
+    /* Set the font family for monospaced elements */
+    // font-family: $nc-font-mono;
+    
+    
+    margin-bottom: 2.5rem;
+  }
+
+  code,
+  samp,
+  kbd,
+  pre {
+    /* The main preformatted style. This is changed slightly across different cases. */
+    background: $gray-100;
+    border: 1px solid $gray-800;
+    border-radius: 4px;
+    padding: 3px 6px;
+    /* ↓ font-size is relative to containing element, so it scales for titles*/
+    font-size: 0.9em;
+  }

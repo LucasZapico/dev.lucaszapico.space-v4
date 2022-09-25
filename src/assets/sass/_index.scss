@@ -1,12 +1,14 @@
+// "breakpoints": ["0em", "30em", "48em", "62em", "80em", "96em"],
 @import './variables';
 @import './scrollbar';
 @import './article-styles.scss';
 @import './buttons-links.scss';
-@import './syntax-highlighting.scss';
 @import '~swiper/swiper.scss';
 @import '~swiper/components/navigation/navigation.scss';
 @import '~swiper/components/pagination/pagination.scss';
 @import '~swiper/components/scrollbar/scrollbar.scss';
+@import './prism-solarizedlight.css';
+@import './syntax-highlighting.scss';
 
 html {
   scroll-behavior: smooth;

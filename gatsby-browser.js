@@ -1,5 +1,6 @@
-import 'prismjs/themes/prism-solarizedlight.css'
 import './src/assets/sass/_index.scss'
+// import 'prismjs/themes/prism-solarizedlight.css'
+// import 'prismjs/themes/prism-solarized-dark-atom.css'
 
 import {
   CSSReset,
