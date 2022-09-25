@@ -20,7 +20,7 @@ export default function ArticleTemplate({ path, pageContext, location }) {
 
   const TOC = () => (
     <Box
-      position={{ base: 'static', md: 'sticky' }}
+      position={{ base: 'static', lg: 'sticky' }}
       top="0px"
       right="2rem"
       paddingY={6}
@@ -138,7 +138,7 @@ export default function ArticleTemplate({ path, pageContext, location }) {
             </Flex>
             <Box
               display="flex"
-              flexDirection={{ base: 'column-reverse', md: 'row' }}
+              flexDirection={{ base: 'column-reverse', lg: 'row' }}
               justifyContent="space-between"
               as="main"
               className="article-wrapper"
