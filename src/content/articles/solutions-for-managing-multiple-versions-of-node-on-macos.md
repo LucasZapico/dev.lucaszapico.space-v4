@@ -47,10 +47,15 @@ which node
 
 Add and alias to `.zshrc` for each Node version installed. 
 
-*.zshrc*
-```sh
+*Copy the following to .zshrc*
+```sh title=.zshrc
 alias node16='export PATH="/usr/local/opt/node@16/bin:$PATH"'
 alias node14='export PATH="/usr/local/opt/node@14/bin:$PATH"'
+```
+or from terminal
+```sh 
+echo -n alias node13='export PATH="/usr/local/opt/node@16/bin:$PATH"' >> ~/.zshrc
+echo -n alias node13='export PATH="/usr/local/opt/node@14/bin:$PATH"' >> ~/.zshrc
 ```
 
 > Refernece alias in CLI to switch between node versions 
