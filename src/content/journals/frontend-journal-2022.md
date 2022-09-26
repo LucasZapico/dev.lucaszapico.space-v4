@@ -16,6 +16,12 @@ Libing list of things in the frontend vers that caught my attention 2022.
 **[Awesome Github Profile READMEs](https://zzetao.github.io/awesome-github-profile/)**
 A collection of impressive custom github READMEs 
 
+## Developer Reference 
+
+List of 2022 Resources to find developer solutions. 
+
+- [devconnected](https://devconnected.com/)
+
 ## GitHub 
 
 [shields.io](https://shields.io/)
