@@ -50,6 +50,22 @@ mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar 
 git clone https://github.com/Homebrew/brew homebrew
 ```
 
+## Premission Fixes 
+
+**Error example** 
+
+```sh 
+ Permission denied @ rb_sysopen - /usr/local/var/homebrew/locks/icu4c.formula.lock
+```
+
+```sh
+sudo chown -R "$USER":admin /usr/local
+```
+
+```sh 
+sudo chown -R "$USER":admin /Library/Caches/Homebrew
+```
+
 ## References 
 
 [HomeBrew docs](https://docs.brew.sh)
