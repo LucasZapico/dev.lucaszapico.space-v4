@@ -5,7 +5,7 @@ date-created: '2022/05/11'
 last-modified: '2022/08/23'
 categories: ['best-practice', 'pattern', 'node', 'logging', 'dev-opts']
 tags: ['best-practice', 'pattern', 'node', 'logging', 'dev-opts']
-isdraft: false
+isdraft: true
 type: 'note'
 ---
 
