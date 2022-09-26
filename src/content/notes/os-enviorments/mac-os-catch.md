@@ -38,3 +38,8 @@ defaults read -g com.apple.mouse.scaling
 ```sh
 defaults write -g com.apple.mouse.scaling 8.0
 ```
+
+## Macos Starter Script 2022 
+
+`gist:LucasZapico/d6751e5ed72ef5c5dd5bcfe9f364130f#macos-starter-script-2022.sh`
+
