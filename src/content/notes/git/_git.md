@@ -11,10 +11,10 @@ type: 'note'
 
 # \_git
 
-- [[notes/git/catch]]
+
 - [[ssh]]
 
-### Git Ignoring GitIgnore
+### Solving Git Ignoring GitIgnore
 
 ```shell
 git rm -r --cached .
@@ -23,10 +23,25 @@ git commit -m "fixed untracked files"
 
 ```
 
-### Git undo `git add --all`
+### Revert a Commited Change with reset HEAD
 
-```shell
-git reset HEAD
+[How to Git Reset to HEAD - devconnected](https://devconnected.com/how-to-git-reset-to-head)
+
+
+Go back to `HEAD`
+```sh
+git reset --hard HEAD
+```
+
+Go back to commit before `HEAD`
+```sh 
+git reset --hard HEAD^
+git reset --hard HEAD~1
+```
+
+Go back two commits before `HEAD`
+```sh 
+git reset --hard HEAD~2
 ```
 
 ### Delete Local and Remote Branches
