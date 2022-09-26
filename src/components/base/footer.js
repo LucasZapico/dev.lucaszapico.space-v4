@@ -17,10 +17,10 @@ const ROUTES = [
     name: 'Home',
     path: '/',
   },
-  // {
-  //   name: 'Articles',
-  //   path: '/articles',
-  // },
+  {
+    name: 'Articles',
+    path: '/articles',
+  },
   {
     name: 'Notes',
     path: '/notes',

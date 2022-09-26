@@ -20,6 +20,7 @@ export const Tag = ({ hasBorder = true, hasBG = false, children, ...rest }) => {
       py={1}
       display="inline"
       mr={1}
+      mb={2}
       color={color}
       borderColor={hasBorder ? borderColor : ''}
       backgroundColor={hasBG ? backgroundColor : ''}
