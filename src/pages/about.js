@@ -19,8 +19,11 @@ const AboutPage = ({ location }) => (
         The Method
       </Heading>
       <Text>
-        My method is to immerse, discuss, ship, get feedback, and be patient
-        because understanding and quality both take time and effort.
+        Hi 👋, My name is Lucas Zapico. Mostly a frontend React developer from
+        USA who enjoys figuring how to make things for the web. I build
+        websites, web app, chrome extensions, REST API's and custom business
+        integrations. In my off time I enjoy the outdoors fishing 🎣, hiking 🥾,
+        and a bit of watercolor to relax.
       </Text>
       {/* {JSON.stringify(data, null, 4)} */}
       {/* <Img
