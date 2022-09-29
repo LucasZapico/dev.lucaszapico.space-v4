@@ -20,7 +20,7 @@ const Home = () => {
         </Link>
         {recentProjects && <ProjectSection recentProjects={recentProjects} />}
       </Container>
-      {/* {recentArticles && <ArticleSection recentArticles={recentArticles} />} */}
+      {recentArticles && <ArticleSection recentArticles={recentArticles} />}
     </>
   )
 }
@@ -29,7 +29,7 @@ export const query = graphql`
   query {
     recentArticles: allMarkdownRemark(
       filter: {
-        frontmatter: { isdraft: { eq: false }, type: { eq: "article" } }
+        frontmatter: { isdraft: { eq: false }, type: { ne: "project" } }
       }
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {

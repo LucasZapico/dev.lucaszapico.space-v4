@@ -9,7 +9,7 @@ categories:
   - 'operations'
 tags: ['email', 'improvmx']
 type: article
-isdraft: false
+isdraft: true
 ---
 
 ##
