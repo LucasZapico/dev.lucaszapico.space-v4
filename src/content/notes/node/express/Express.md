@@ -1,5 +1,5 @@
 ---
-title: 'Express'
+title: 'Express Validation Patterns'
 description: ''
 date-created: '2022/02/22'
 last-modified: '2022/08/23'
@@ -9,7 +9,6 @@ isdraft: false
 type: 'note'
 ---
 
-# Express
 
 ## Express Validation
 
@@ -49,9 +48,9 @@ app.post('/users', [
   }
 ```
 
-\_\_Example - abstracted
+**Example - abstracted**
 
-%%todo: enhance validation notes%%
+<!-- TODO: enhance validation notes -->
 
 _index.js_
 

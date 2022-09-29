@@ -43,6 +43,17 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-mermaid',
+            options: {
+              language: 'mermaid',
+              theme: 'dark',
+              //   viewport: {
+              //     width: 200,
+              //     height: 200,
+              //   },
+            },
+          },
+          {
             resolve: 'gatsby-remark-code-titles',
             options: {
               className: 'your-custom-class-name',

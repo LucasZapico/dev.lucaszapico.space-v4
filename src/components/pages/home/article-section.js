@@ -1,22 +1,29 @@
 import React from 'react'
-import { Link, Box, Container, Heading, Text } from '@chakra-ui/react'
+import { Link, Box, Container, Heading, Text, Flex } from '@chakra-ui/react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { navigate, Link as GatsbyLink } from 'gatsby'
 import { generate } from 'shortid'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
-import { CardOne } from '../../_index'
+import { CardOne, Tag } from '../../_index'
 
 SwiperCore.use([Navigation, Scrollbar, A11y])
 
 const ArticleSection = ({ recentArticles }) => (
   <Box py={20}>
     <Container maxW="container.xl" mb={10}>
-      <Heading as="h3" size="3xl">
-        Recent Articles
-      </Heading>
-      <Link as={GatsbyLink} to="/articles" variant="linkOne">
-        All Articles
-      </Link>
+      <Flex justifyContent="center" alignItems="center" flexDir="column">
+        <Heading as="h3" size="3xl">
+          Recent Activity
+        </Heading>
+        <Box>
+          <Link as={GatsbyLink} to="/articles" variant="linkOne" mr={4}>
+            All Articles
+          </Link>
+          <Link as={GatsbyLink} to="/notes" variant="linkOne">
+            All Notes
+          </Link>
+        </Box>
+      </Flex>
     </Container>
     <Box ml={{ base: 0, md: 20, lg: 40 }}>
       <Swiper
@@ -36,26 +43,37 @@ const ArticleSection = ({ recentArticles }) => (
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {recentArticles.edges.map((article, i) => (
-          <SwiperSlide key={generate()}>
-            <CardOne
-              className="link"
-              mt={6}
-              minH="20rem"
-              minW="20rem"
-              onClick={() => {
-                navigate(`/${article.node.fields.path}`)
-              }}
-            >
-              <Heading as="h4" size="md">
-                {article.node.frontmatter.title}
-              </Heading>
-              <Heading as="h5" variant="sec" size="md">
-                {article.node.frontmatter.description}
-              </Heading>
-            </CardOne>
-          </SwiperSlide>
-        ))}
+        {recentArticles.edges.map((article, i) => {
+          const { title, description, categories, tags } =
+            article.node.frontmatter
+          return (
+            <SwiperSlide key={generate()}>
+              <CardOne
+                className="link"
+                mt={6}
+                minH="20rem"
+                minW="20rem"
+                onClick={() => {
+                  navigate(`/${article.node.fields.path}`)
+                }}
+              >
+                <Box>
+                  <Heading as="h4" size="md" variant="sec">
+                    {title}
+                  </Heading>
+                  <Text as="h5" variant="sec" size="md">
+                    {description}
+                  </Text>
+                </Box>
+                <Flex flexWrap="wrap">
+                  {categories.map((cat, i) => (
+                    <Tag key={generate()}>{cat}</Tag>
+                  ))}
+                </Flex>
+              </CardOne>
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
     </Box>
   </Box>
