@@ -2,7 +2,15 @@ import React from 'react'
 
 import { graphql, Link as GatsbyLink } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { Box, Container, Button, Link, Heading, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Button,
+  Link,
+  Heading,
+  Text,
+  Flex,
+} from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Portrait } from '../components/flare/portrait'
 import { SEO } from '../components/_index'
@@ -19,14 +27,13 @@ const AboutPage = ({ location }) => (
         The Method
       </Heading>
       <Text>
-        My method is to immerse, discuss, ship, get feedback, and be patient
-        because understanding and quality both take time and effort.
+        Hi 👋, My name is Lucas Zapico. Mostly a frontend React developer from
+        USA who enjoys figuring how to make things for the web. I build
+        websites, web app, chrome extensions, REST API's and custom business
+        integrations. In my off time I enjoy the outdoors fishing 🎣, hiking 🥾,
+        and a bit of watercolor to relax.
       </Text>
-      {/* {JSON.stringify(data, null, 4)} */}
-      {/* <Img
-          fluid={data.profile.childImageSharp.fluid}
-          objectFit="contain"
-        /> */}
+
       <Heading as="h3" size="xl">
         The Objective
       </Heading>
@@ -37,13 +44,34 @@ const AboutPage = ({ location }) => (
         sometimes hilarious solutions that open collaboration fosters.
       </Text>
       <Heading as="h4" size="xl">
-        The Tools
+        The Stack
       </Heading>
       <Text>
         I am a React and JavaScript developer with experience and comfort across
         the entire stack. On the backend I prefer Nodejs or Python.
       </Text>
 
+      <Box my={6}>
+        <img src="https://skillicons.dev/icons?i=nextjs,gatsbyjs,react,javascript,angular,nodejs,express,python,flask,django,bash,mongodb,mysql,postgres,electron,graphql,git,docker,webpack,vercel,netlify,firebase,azure,heroku,vim,linux,tailwind,md,css,sass,html&perline=10" />
+      </Box>
+      <Heading as="h4" size="xl">
+        The Tool Chain
+      </Heading>
+      <Box my={6}>
+        <img src="https://skillicons.dev/icons?i=codepen,github,gitlab,vscode,figma&perline=10" />
+      </Box>
+      <Flex flexwrap="wrap" my={6}>
+        <img
+          alt="Faizan's GitHub stats"
+          width="406"
+          src="https://github-readme-stats.vercel.app/api?username=LucasZapico&custom_title=Github+Stats&bg_color=00000000&hide_border=true&show_icons=true&text_color=667799&title_color=ffe7a9&icon_color=ffe7a9"
+        />
+        <img
+          alt="Top Langs"
+          width="350"
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=LucasZapico&layout=compact&hide_border=true&bg_color=00000000&text_color=667799&custom_title=Top+Languages&title_color=ffe7a9"
+        />
+      </Flex>
       <Link as={GatsbyLink} to="/projects" variant="linkOne">
         Projects <ArrowForwardIcon />
       </Link>
