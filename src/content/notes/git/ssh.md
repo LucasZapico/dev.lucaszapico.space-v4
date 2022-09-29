@@ -1,8 +1,8 @@
 ---
 title: SSH Catch
-description:
-date-created: 2022-02-11
-last-modified: '2022/08/28'
+description: "General notes on common ssh tasks and actions"
+date-created: '2022/02/11'
+last-modified: '2022/09/28'
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false

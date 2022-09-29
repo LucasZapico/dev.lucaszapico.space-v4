@@ -1,18 +1,37 @@
 ---
-title: _git
-description:
-date-created: 2022-02-11
+title: git
+description: 'General catch of notes, cheatsheet and reference for git related functionality'
+date-created: '2022/02/11'
 last-modified: '2022/08/23'
-categories: ['git']
-tags: ['git']
+categories: ['git', 'cheatsheet', 'reference']
+tags: ['git', 'cheatsheet', 'reference']
 isdraft: false
 type: 'note'
 ---
 
-# \_git
+# git
 
+## Related
 
 - [[ssh]]
+
+## CheatSheet 
+
+### Check Git Configurations
+
+```sh 
+git config --global --list 
+git config --local --list 
+git config --system --list
+```
+
+### Get Remote Origin Url
+
+```shell
+git config --get remote.origin.url
+```
+
+## Reference for Common Challenge and Solutions
 
 ### Solving Git Ignoring GitIgnore
 
@@ -54,15 +73,14 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 ```
 
-**See Remote Url**
-
-```shell
-git config --get remote.origin.url
-```
-
 ## Multi User Challenge
 
 ```sh
 git credential --help
 ``
-```
+
+
+## Reference 
+
+[Atlassian git tutorials](https://www.atlassian.com/git/tutorials/)
+
