@@ -3,7 +3,7 @@ title: 'Data Structure Fundamentals'
 description: 'Note and reference on data structures at a generic level'
 date-created: '2022/09/28'
 last-modified: '2022/09/28'
-isdraft: false
+isdraft: true
 categories: [ 'data-structures','fundamentals', 'basics', 'notes']
 tags: ['data-structures','fundamentals', 'basics', 'notes']
 type: 'note'
