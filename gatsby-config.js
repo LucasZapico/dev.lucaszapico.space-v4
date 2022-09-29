@@ -46,7 +46,7 @@ module.exports = {
             resolve: 'gatsby-remark-mermaid',
             options: {
               language: 'mermaid',
-              theme: 'default',
+              theme: 'dark',
               //   viewport: {
               //     width: 200,
               //     height: 200,
