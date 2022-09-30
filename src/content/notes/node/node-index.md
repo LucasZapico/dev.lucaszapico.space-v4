@@ -1,6 +1,6 @@
 ---
-title: '_node'
-description:
+title: 'node index'
+description: "General notes, cheatsheet, tools and references for Node development"
 date-created: 2022/02/12
 last-modified: '2022/08/24'
 categories: ['node']
@@ -9,12 +9,17 @@ isdraft: true
 type: 'note'
 ---
 
-# \_node
 
 ## Project Architecture
 
 - [[organizing-express-api]]
 - [[project-setup-architecture]]
+
+## Hosting 
+
+### [Caprover](http://caprover.com/)
+
+- Previously Known as CaptainDuckDuck - Free and Open Source PaaS! 
 
 ## Reference
 

@@ -146,9 +146,16 @@ cd -
  cp <my-file> <directory-copy>/
  # copies given file to defined directory
 ```
+
 ```sh
-cp -R <source_folder> <destination_folder>
+cp -R /<source_folder> /<destination_folder>
 ```
+
+```sh 
+cp -R <source_dir>/ <des_dir>/
+# copyies contents of <source_dir> for <des_dir>
+```
+
 **Example**
 ```sh 
 cp -R ~/Documents ~/Documents-copy
