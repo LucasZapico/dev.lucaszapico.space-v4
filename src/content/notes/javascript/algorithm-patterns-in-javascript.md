@@ -2,7 +2,7 @@
 title: 'Algorithm Patterns in JavaScript'
 description: 'Notes on Algorithm patterns using JS'
 date-created: 2021/03/15
-last-modified: '2022/09/29'
+last-modified: '2022/10/02'
 isdraft: false
 categories: ['javaScript', 'algorithms', 'notes']
 tags: ['javaScript', 'algorithms', 'general', 'notes']
@@ -88,6 +88,26 @@ function isAnagram(a) {
   return false
 }
 ```
+
+### Multiple Pointer Patterns
+
+The pattern uses pointers or values that correspond to and index or position and move toward the beginning, end or middle based on a certain condition.
+
+> ✨ Efficient for solving problems with minimal space complexity.
+
+This pattern can be used on the following data structures;
+
+- array
+- string
+- linked list
+- doubly linked list
+
+pointer
+: a variable that is associated(points) to a single element in our data structure
+
+In this pattern we use two pointers that work through the data structure.
+
+<!-- TODO: add example of pointer behavior -->
 
 ## Stacks
 
