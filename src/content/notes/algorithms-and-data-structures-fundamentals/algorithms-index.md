@@ -13,6 +13,11 @@ type: 'note'
 
 A set of steps, instructions or actions to solve rigorously understood(defined) problem.
 
+- the steps of ana algorithm needs to be in a specific order 
+- steps need to be distinct
+- produce a result 
+- should complete(complete in a finite amount of time)
+
 ### General Generic Definitions
 
 - algorithms must have a clear problem statement
@@ -27,6 +32,8 @@ A set of steps, instructions or actions to solve rigorously understood(defined) 
 
 ### What is a "good" algorithms
 
+> there is no single way 
+
 - correctness
 - efficiency
 
@@ -34,7 +41,39 @@ A set of steps, instructions or actions to solve rigorously understood(defined) 
 
 - clear input
 - clear output
-- algori
+- will end 
+
+<!--- TODO: add link to correctness mathematical defintion -->
+
+#### Efficiency
+
+Algorithm efficiency is defined by two metrics **time** and **space** complexity
+
+> We analysis the **worst case** becuase it can never perform worst then the worst case
+
+Time complexity
+: home long it takes to complete a job 
+: in computer science this is defined as run time
+
+Space complexity
+: the amount of computer memory an algorithm takes
+
+- binary search 
+ - efficiency if the set is sequential and ordered
+- linear search 
+ - linear search maintians it's complexity regardless if the set is ordered
+ 
+ ### Binary Search 
+
+#### Correctness 
+
+- input: ordered list of values 
+- output: position of the target value
+
+#### Efficiency 
+
+
+
 
 ## Common Search Algorithms
 
