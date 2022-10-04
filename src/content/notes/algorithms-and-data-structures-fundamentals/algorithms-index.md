@@ -78,6 +78,7 @@ Space complexity
 ## Common Search Algorithms
 
 - linear/sequential/simple search
+- binary search
 - bubble sort
 - heap sort
 - quick sort
