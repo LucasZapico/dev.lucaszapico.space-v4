@@ -2,24 +2,26 @@
 title: 'General Software Development'
 description: ''
 date-created: 2021/03/15 14:19:17
-last-modified: 2021/09/01 19:15:36
+last-modified: '2022/10/23'
 isdraft: false
 categories: ['general', 'notes']
 tags: []
 type: 'note'
 ---
 
-# **General Notes On Software Development**
+## Documentation
 
----
+[Software requirements document - template - Bit.ai](https://bit.ai/templates/software-requirements-document-template)
 
-### _Description_
+[Software Specification - Perforce](https://www.perforce.com/blog/alm/how-write-software-requirements-specification-srs-document)
+
+## Description
 
 This document is a general catch from concepts and features that I feel should be referenced during the development of an application so as to ensure quality.
 
 ## Virtual Machines
 
-##### Why:
+### Why:
 
 Due to the diverse nature of operating systems in the digital ecosystem. It is imperative to test the digital product developed on as many configurations as possible thereby ensuring consistent functionality and user experience.
 

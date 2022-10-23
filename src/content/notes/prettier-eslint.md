@@ -2,12 +2,21 @@
 title: 'Eslint and Prettier General Config'
 description: 'My 2020 configuration of Prettier and Eslint'
 date-created: 2020/10/21
-last-modified: 2021/09/01 19:48:13
+last-modified: '2022/10/22'
 isdraft: false
 categories: ['dev-env', 'notes']
 tags: ['prettier', 'eslint']
 type: 'note'
 ---
+
+## File
+
+### Ignore next line
+
+```
+/* eslint-disable no-eval */
+
+```
 
 ## Machine
 
