@@ -11,9 +11,14 @@ const ElementsSection = () => (
     <Heading as="h3" size="2xl">
       UI elements
     </Heading>
+    <Heading as="div" size="xl">
+      Tags
+    </Heading>
     <Box>
       <Tag>Category one</Tag>
-      <Tag>Category Two</Tag>
+      <Tag hasBG hasBorder>
+        Category Two
+      </Tag>
       <Tag>Category Three</Tag>
     </Box>
   </Box>
@@ -23,10 +28,10 @@ const Styleguide = () => {
   return (
     <Box mheight="100vh" py={20}>
       <Container maxW="container.xl">
-        <Heading as="h1" size="4xl" variant="ogg">
+        <Heading as="h1" size="4xl">
           StyleGuide
         </Heading>
-        <Heading as="h2" variant="Alice" size="2xl" className="readable">
+        <Heading as="h2" size="2xl" className="readable" variant="sec">
           Collections of common styles used throughout the project
         </Heading>
 
