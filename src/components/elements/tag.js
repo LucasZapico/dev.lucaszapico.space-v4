@@ -25,7 +25,7 @@ export const Tag = ({ hasBorder = true, hasBG = false, children, ...rest }) => {
       borderColor={hasBorder ? borderColor : ''}
       backgroundColor={hasBG ? backgroundColor : ''}
     >
-      {value}
+      #{value}
     </Box>
   )
 }
