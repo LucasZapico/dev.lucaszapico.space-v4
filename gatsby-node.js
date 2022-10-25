@@ -19,6 +19,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
+    const { type } = node.frontmatter
     const pagePath = node.frontmatter.title
       .toLowerCase()
       .replaceAll(' ', '-')
@@ -27,7 +28,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `path`,
       node,
-      value: pagePath,
+      value: `${type}s/${pagePath}`,
     })
     logSp()
     log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
