@@ -216,6 +216,19 @@ const Notes = () => {
         <Heading as="h1" size="3xl">
           Notes
         </Heading>
+        <Text fontSize="sm" as="blockquote" maxW="650px">
+          ⚠️ Disclaimer: This is a personal public notes repository with the
+          primary goal of being useful to the author and not necessarily for
+          general use. It is meant to serve as;
+          <br />
+          <br />
+          1. A public reference for common "let me remember that snippet, rule,
+          gotcha etc"
+          <br />
+          2. Making my notes public forces me to edit, clarify and clean up
+          otherwise more raw notes all lead to the review of the material and
+          commitment to memory.
+        </Text>
       </Box>
       <Flex>
         <Box
@@ -223,7 +236,8 @@ const Notes = () => {
           backgroundColor="gray.800"
           pl={4}
           py={10}
-          flexBasis={{ base: 0, md: '25%' }}
+          display={{ base: 'none', md: 'block' }}
+          flexBasis={{ base: '0%', md: '25%' }}
         >
           <Heading>Subjects</Heading>
           <MemoSubjectTree tree={tree} />
