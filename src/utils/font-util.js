@@ -1,4 +1,7 @@
 const capitalizeCase = (string) => {
+  // console.log(`init
+  // ${string}`)
+
   const cleanStr = string.replaceAll(/^[a-zA-Z0-9]*$/gi, '')
   const splitOn = new RegExp('[-_ ]', 'i')
   const stg = cleanStr.split(splitOn)
