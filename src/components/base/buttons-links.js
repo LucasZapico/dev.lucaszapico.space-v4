@@ -32,13 +32,7 @@ export const formatePhoneBot = (phoneNumberString) => {
   return null
 }
 
-export const LinkOne = ({
-  children,
-  content,
-  icon,
-
-  ...rest
-}) => (
+export const LinkOne = ({ children, content, icon, ...rest }) => (
   <Link {...rest}>
     {children || content}
 

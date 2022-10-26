@@ -99,49 +99,74 @@ Shell variables
  env
 ```
 
+### CLI Navigations
 
 ```sh
- 'command' /dir > file.txt
- // will save the return of the command to the defined file
-```
-```sh
  pwd
- // print working directory
+ # print working directory
 ```
 ```sh
 cd
-//change directory
+# change directory
 ```
 ```sh
 cd -
-//change to most recent directory
+# change to most recent directory
 ```
+
+### Working with Files
+
+#### Save Result of Command to File
+
 ```sh
- touch my-file
- // makes a file
+ 'command' /dir > file.txt
+ # will save the return of the command to the defined file
+```
+
+#### Making Files and Directories
+```sh
+ touch <my-file>
+ # makes a file
 ```
 ```sh
  touch {file1,file2,file3}
  touch {01..1000}
- //makes all three defined files
+ # makes all three defined files
 ```
 ```sh
- mkdir directory-name/
- // make a folder/directory
+ mkdir <directory-name>/
+ # make a folder/directory
+```
+#### Organizing Files and Directories
+```sh
+ mv <my-file> <directory-name>/
+ # moves my-file to a given directory
 ```
 ```sh
- mv my-file directory-name/
- // moves my-file to a given directory
+ cp <my-file> <directory-copy>/
+ # copies given file to defined directory
 ```
- cp my-file directory-copy/
- // copies given file to defined directory
+
 ```sh
- rm some-file
- // removes defined file
+cp -R /<source_folder> /<destination_folder>
+```
+
+```sh 
+cp -R <source_dir>/ <des_dir>/
+# copyies contents of <source_dir> for <des_dir>
+```
+
+**Example**
+```sh 
+cp -R ~/Documents ~/Documents-copy
+```
+```sh
+ rm <some-file>
+ # removes defined file
 ```
 ```sh
  rm -r some-directory
- // removes defined directory and all children
+# removes defined directory and all children
 ```
 ```sh
  cat some-file

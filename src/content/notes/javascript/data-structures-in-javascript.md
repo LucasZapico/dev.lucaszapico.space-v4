@@ -1,0 +1,78 @@
+---
+title: 'Data Structures In JavaScript'
+description: 'Reference notes on data structures defined with JavaScript'
+date-created: '2022/10/17'
+last-modified: '2022/10/21'
+isdraft: false
+parent: 'javascript'
+categories: ['javascript', 'general', 'notes', 'reference', 'data-structure']
+tags: ['javascript', 'general', 'notes','reference', 'data-structure']
+type: 'note'
+---
+
+
+
+## Stack 
+
+### Definition 
+
+- linear data structure 
+- Last in first out (LIFO) or first in last out (first in last out)
+- operations on only one end
+- push add element to stack 
+- pop remove element from stack 
+
+#### Extended Definition 
+
+- peek return the last value added to the stack without changing the stack 
+- size return the size of the stack 
+
+### Stack Implementation in JavaScript 
+
+#### Array as a Stack
+
+There are many ways the definition of a stack can be implemented in JavaScript we will start with a sufficient implementation the build in array method. 
+
+```js 
+let stack = []
+
+stack.push('a')
+stack.push('b')
+stack.push('c')
+console.log(stack) // ['a', 'b', 'c']
+
+stack.pop() // 'c'
+console.log(stack) // ['a', 'b']
+```
+
+By constraining how we used the array object we can leverage it as a stack. This is useful when using a stack and it's properties is ideal for solving a challenge. 
+
+for example reverse a string; 
+
+```js 
+function reverse(str){
+    let stack = []
+    for(let i = 0; i < str.length; i++){
+        stack.push(str[i])
+    }
+    let reverseStr = ''
+    for(let j=0; j < str.length; j++){
+        reverseStr += stack.pop()
+    }
+    return reverseStr
+}
+
+reverse('hello world') // dlrow olleh
+```
+
+
+### Class Implementation Stack One 
+
+```js
+class Stack {
+   constructor(){
+
+   } 
+}
+
+```

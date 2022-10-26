@@ -1,23 +1,14 @@
 ---
 title: 'JavaScript Notes'
-description: ''
+description: 'General note catch for all things JavaScript'
 date-created: 2021/03/15
-last-modified: '2022/08/24'
+last-modified: '2022/10/06'
 isdraft: false
 categories: ['JavaScript', 'general', 'notes']
 tags: ['JavaScript', 'general', 'notes']
 type: 'note'
 ---
 
-# JavaScript Catch
-
-- [[fundamentals]]
-- [[promises]]
-- [[javaScript-objects-and-classes]]
-- [[asynchronous-code]]
-- [[async-await]]
-- [[promises]]
-- [[]]
 
 #### AJAX-(Asynchronous, JavaScript, and XML)
 
@@ -163,7 +154,6 @@ function findIndex(arr, callback){
 
 ---
 
-[[Frameworks]]
 
 ## Styling and Code Quality
 
@@ -175,6 +165,8 @@ function findIndex(arr, callback){
 ---
 
 ## Resources and Reference
+
+[You Don't Know JS - github](https://github.com/getify/You-Dont-Know-JS)
 
 Notes within this doc have been drawn from the following sources:
 

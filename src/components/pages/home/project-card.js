@@ -31,7 +31,7 @@ const ProjectCard = ({ project, i }) => {
                 return p > categories.length - 1 ? (
                   `${c}`
                 ) : (
-                  <span> {c} &#8226; </span>
+                  <span> #{c} &#8226; </span>
                 )
               }
             })}

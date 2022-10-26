@@ -5,7 +5,7 @@ const TypographySection = () => {
   const TypeOne = () => (
     <Box flexBasis={[100, 50]} py={10}>
       <Heading as="h3" size="2xl">
-        Noto Sans
+        Montserrat
       </Heading>
       <Heading as="h4" size="lg" variant="" mb={0}>
         ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -17,13 +17,13 @@ const TypographySection = () => {
   )
   const TypeTwo = () => (
     <Box flexBasis={[100, 50]} py={10}>
-      <Heading as="h3" size="2xl" variant="alice">
-        Alice
+      <Heading as="h3" size="2xl" variant="sec">
+        Montserrat
       </Heading>
-      <Heading as="h4" size="lg" variant="alice" mb={0}>
+      <Heading as="h4" size="lg" variant="sec" mb={0}>
         ABCDEFGHIJKLMNOPQRSTUVWXYZ
       </Heading>
-      <Heading as="h4" size="lg" variant="alice" mb={0}>
+      <Heading as="h4" size="lg" variant="sec" mb={0}>
         abcdefghijklmnopqrstuvwxyz
       </Heading>
     </Box>
@@ -52,7 +52,7 @@ const TypographySection = () => {
       <Flex flexWrap="wrap" justifyContent="space-between">
         <TypeOne />
         <TypeTwo />
-        <TypeThree />
+        {/* <TypeThree /> */}
       </Flex>
       <Divider />
       <Heading as="h4" size="xl" variant="Alice">
