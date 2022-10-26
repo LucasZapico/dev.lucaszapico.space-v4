@@ -108,7 +108,7 @@ const NoteCard = ({ note }) => {
   const noteTitle = capitalizeCase(title)
 
   return (
-    <CardOne key={generate()} colSpan={{ base: 6, md: 3 }} as={GridItem}>
+    <CardOne key={generate()} colSpan={{ base: 6, lg: 3 }} as={GridItem}>
       <Flex
         height="100%"
         justifyContent="space-between"
@@ -237,12 +237,12 @@ const Notes = () => {
           pl={4}
           py={10}
           display={{ base: 'none', md: 'block' }}
-          flexBasis={{ base: '0%', md: '25%' }}
+          flexBasis={{ base: '0%', md: '30%', lg: '25%' }}
         >
           <Heading>Subjects</Heading>
           <MemoSubjectTree tree={tree} />
         </Box>
-        <Box flexBasis={{ base: '100%', md: '75%' }}>
+        <Box flexBasis={{ base: '100%', md: '60%', lg: '75%' }}>
           <Container maxW="container.md" px={0} py={10}>
             <InputGroup>
               <InputLeftElement
