@@ -3,7 +3,7 @@ title: 'Gatsby Notes'
 description: 'Genernal notes on gatsby'
 date-created: 2020/30/09
 last-modified: 2021/09/01 19:47:01
-isdraft: false
+isdraft: true
 categories: ['gatsby', 'notes']
 tags: ['gatsby', 'env']
 type: 'note'
