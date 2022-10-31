@@ -31,6 +31,9 @@ HomeBrew simplifies handling multiple versions of languages such as Node and Pyt
 
 Get info on a given formula
 
+- version 
+- description
+
 ```shell
 brew info wget
 ```
