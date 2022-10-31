@@ -2,10 +2,10 @@
 title: 'Solutions for handling bot form submissions'
 description: 'Notes on solutions for handling bot form submissions'
 date-created: '2022/03/15'
-last-modified: '2022/10/02'
+last-modified: '2022/10/26'
 isdraft: true
 categories: ['bot', 'solutions', 'notes']
-tags: [['bot', 'solutions', 'notes']
+tags: ['bot', 'solutions', 'notes']
 type: 'note'
 ---
 
