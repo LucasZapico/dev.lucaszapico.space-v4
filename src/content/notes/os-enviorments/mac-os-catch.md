@@ -9,7 +9,47 @@ tags: ['macos', 'notes', 'workflow', 'cheatsheet']
 type: 'note'
 ---
 
-## Set hidden files in Finder to "show" or "hide"
+## Mac Intel Chip Boot Modes 
+
+[Support apple](https://support.apple.com/en-us/HT201255)
+
+
+- recovery mode 
+- internet recovery 
+
+### Recovery Mode 
+
+<Kbd>Command</Kbd> + <Kbd>R</Kbd>
+
+
+### Internet Recovery 
+
+<Kbd>Option</Kbd> + <Kbd>Command</Kbd> + <Kbd>R</Kbd>
+
+### Start Up Manager 
+
+This mode allow you to pick your boot location. For example if you have multiple OS's installed. 
+
+### Start In Safe Mode 
+
+Hold <Kbd>shift</Kbd>
+
+## Create Bootable USB From Recovery Mode 
+
+1. boot into recovery mode <Kbd>Command</Kbd> + <Kbd>R</Kbd>
+2. click disk utility
+3. ❗ View > Show All Devices
+4. click on the device in "External" 
+5. earse and formate to "Mac OS Extended(Journalized)
+6. quick disk utility 
+7. click on install OS <your-machine-os>
+8. walk through steps 
+9. choose install location (our formated USB)
+10. ✨ Done
+
+## MacOS Common Action CheatSheet 
+
+### Set hidden files in Finder to "show" or "hide"
 
 > 💡 For changes to take effect restart or `killall Finder`
 
@@ -25,7 +65,7 @@ defaults write com.apple.finder AppleShowAllFiles TRUE
 defaults write com.apple.finder AppleShowAllFiles FALSE
 ```
 
-## Increase Mouse/trackpad tracking speed
+### Increase Mouse/trackpad tracking speed
 
 **See current speed**
 
