@@ -1,5 +1,8 @@
-const path = require('path')
-const chalk = require('chalk')
+const path = require("path")
+const chalk = require("chalk")
+const handleMarkdown = require("./server/handle-markdown")
+const handleMdx = require("./server/handle-mdx")
+const readingTime = require(`reading-time`)
 
 const { log } = console
 const logSp = () =>
@@ -18,94 +21,27 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
     const { type } = node.frontmatter
     const pagePath = node.frontmatter.title
       .toLowerCase()
-      .replaceAll(' ', '-')
-      .replaceAll(' ', '')
-    // const value = createFilePath({ node, getNode })
+      .replaceAll(" ", "-")
+      .replaceAll(" ", "")
+    /**
+     * TODO: add reading time field
+     */
+
     createNodeField({
       name: `path`,
       node,
       value: `${type}s/${pagePath}`,
     })
-    logSp()
-    log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
+    // logSp()
+    // log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
   }
 }
 
-exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
-  const PostTemplate = path.resolve('src/templates/article-template.js')
-
-  const results = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: { frontmatter: { isdraft: { eq: false } } }
-        sort: { fields: frontmatter___date_created, order: DESC }
-      ) {
-        edges {
-          next {
-            frontmatter {
-              title
-            }
-            fields {
-              path
-            }
-          }
-          previous {
-            frontmatter {
-              title
-            }
-            fields {
-              path
-            }
-          }
-          node {
-            excerpt
-            fields {
-              path
-            }
-            id
-            html
-            tableOfContents(heading: "", maxDepth: 4)
-            wordCount {
-              words
-            }
-            frontmatter {
-              title
-              description
-              date_created
-              last_modified
-              isdraft
-              type
-              categories
-              tags
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  logSp()
-
-  await results.data.allMarkdownRemark.edges.forEach((edge) => {
-    const pagePath = edge.node.fields.path
-    log(pagePath)
-    if (!pagePath.includes('Index') || pagePath.length < 1) {
-      log(pagePath)
-      createPage({
-        path: pagePath,
-        component: PostTemplate,
-        context: {
-          next: edge.next,
-          node: edge.node,
-          previous: edge.previous,
-          title: edge.node.frontmatter.title,
-        },
-      })
-    }
-  })
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  await handleMarkdown({ actions, graphql, reporter })
+  await handleMdx({ actions, graphql, reporter })
 }
