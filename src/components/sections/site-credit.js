@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   List,
   Box,
@@ -8,25 +8,25 @@ import {
   ListIcon,
   OrderedList,
   UnorderedList,
-  MdCheckCircle,
-} from '@chakra-ui/react'
-import { generate } from 'shortid'
-import { LinkOne } from '../_index'
+} from "@chakra-ui/react"
+import { MdCheckCircle } from "@chakra-ui/icons"
+import { generate } from "shortid"
+import { LinkOne } from "components"
 
 const used = [
   {
-    name: 'Gatsby',
-    link: 'https://www.gatsbyjs.com/',
-    icon: '',
-    category: 'development',
-    for: 'Blazing fast React Frontend Framework',
+    name: "Gatsby",
+    link: "https://www.gatsbyjs.com/",
+    icon: "",
+    category: "development",
+    for: "Blazing fast React Frontend Framework",
   },
   {
-    name: 'React Spring',
-    link: 'https://react-spring.io/',
-    icon: '',
-    category: 'development',
-    for: ' Simple spring animation primitives for React',
+    name: "React Spring",
+    link: "https://react-spring.io/",
+    icon: "",
+    category: "development",
+    for: " Simple spring animation primitives for React",
   },
 ]
 

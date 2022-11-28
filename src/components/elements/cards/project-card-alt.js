@@ -1,11 +1,11 @@
-import React from 'react'
-import { CardOne, Tag } from '../../_index'
-import { Link as GatsbyLink } from 'gatsby'
-import { Gatsbyimage } from 'gatsby-plugin-image'
-import { Heading, Text, Box } from '@chakra-ui/react'
-import { generate } from 'shortid'
+import React from "react"
+import { CardOne, Tag } from "components"
+import { Link as GatsbyLink } from "gatsby"
+import { Gatsbyimage } from "gatsby-plugin-image"
+import { Heading, Text, Box } from "@chakra-ui/react"
+import { generate } from "shortid"
 
-const ProjectCard = ({ project }) => {
+const ProjectCardAlt = ({ project }) => {
   const { title, description, categories, tags } = project.node.frontmatter
   return (
     <CardOne
@@ -14,12 +14,12 @@ const ProjectCard = ({ project }) => {
       mt={6}
       to={`/${project.node.fields.path}`}
       as={GatsbyLink}
-      width={{ base: '50%', md: '45%', lg: '30%' }}
+      width={{ base: "50%", md: "45%", lg: "30%" }}
       display="flex"
       flexDirection="column"
       justifyContent="space-between"
     >
-      <Box width={{ base: '100%', lg: '40%' }} pr={{ base: 'auto', md: 4 }}>
+      <Box width={{ base: "100%", lg: "40%" }} pr={{ base: "auto", md: 4 }}>
         <Heading as="h4" size="lg">
           {/* {title} */}
           Project Card
@@ -29,7 +29,7 @@ const ProjectCard = ({ project }) => {
         </Heading> */}
         <Box>
           {categories.map((cat, i) => {
-            if (cat !== 'project') {
+            if (cat !== "project") {
               return <Tag key={generate()}>{cat}</Tag>
             }
           })}
@@ -43,4 +43,4 @@ const ProjectCard = ({ project }) => {
   )
 }
 
-export default ProjectCard
+export default ProjectCardAlt

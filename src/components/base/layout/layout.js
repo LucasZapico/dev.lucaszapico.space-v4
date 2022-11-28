@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { Box, useTheme, useColorMode } from '@chakra-ui/react'
-import Helmet from 'react-helmet'
-import { ArrowUpIcon } from '@chakra-ui/icons'
-import { Header, Footer, SEO } from '../_index'
+import React, { useEffect } from "react"
+import { Box, useTheme, useColorMode } from "@chakra-ui/react"
+import Helmet from "react-helmet"
+import { ArrowUpIcon } from "@chakra-ui/icons"
+import { Header, Footer, SEO } from "components"
 
 const ScrollToTop = () => (
   <Box
@@ -22,7 +22,7 @@ const ScrollToTop = () => (
       window.scrollTo(0, 0)
     }}
   >
-    <ArrowUpIcon style={{ height: '2rem', width: '2rem' }} />
+    <ArrowUpIcon style={{ height: "2rem", width: "2rem" }} />
   </Box>
 )
 
@@ -31,11 +31,11 @@ const TypeImports = () => (
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -45,12 +45,8 @@ const TypeImports = () => (
   </Helmet>
 )
 
-const Layout = ({ location, children }) => {
-  const theme = useTheme()
-
-  useEffect(() => {
-    console.log(theme)
-  }, [theme])
+const Layout = ({ location, children, pageContext }) => {
+  console.log(pageContext)
   return (
     <Box pb={20}>
       <SEO location={location} />

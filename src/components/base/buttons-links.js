@@ -1,4 +1,4 @@
-import { CopyIcon, EmailIcon, PhoneIcon } from '@chakra-ui/icons'
+import { CopyIcon, EmailIcon, PhoneIcon } from "@chakra-ui/icons"
 import {
   Box,
   Center,
@@ -7,14 +7,13 @@ import {
   IconButton,
   Tooltip,
   useToast,
-} from '@chakra-ui/react'
-import React, { useState } from 'react'
+} from "@chakra-ui/react"
+import React, { useState } from "react"
 
-import useClipboard from 'react-use-clipboard'
-// import { formatePhone, formatePhoneBot } from '../../helpers/index';
+import useClipboard from "react-use-clipboard"
 
 export const formatePhone = (phoneNumberString) => {
-  const cleaned = `${phoneNumberString}`.replace(/\D/g, '')
+  const cleaned = `${phoneNumberString}`.replace(/\D/g, "")
 
   const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
   if (match) {
@@ -24,7 +23,7 @@ export const formatePhone = (phoneNumberString) => {
 }
 
 export const formatePhoneBot = (phoneNumberString) => {
-  const cleaned = `${phoneNumberString}`.replace(/\D/g, '')
+  const cleaned = `${phoneNumberString}`.replace(/\D/g, "")
   const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
   if (match) {
     return `${match[1]}-${match[2]}-${match[3]}`
@@ -104,7 +103,7 @@ export const LinkPhone = (props) => {
             color={color}
             fontWeight="semibold"
             transition="all 0.4s ease-in-out"
-            _hover={{ color: 'brand.two' }}
+            _hover={{ color: "brand.two" }}
             href={`tel:+1${formatedPhoneBot}`}
           >
             <PhoneIcon />
@@ -112,7 +111,7 @@ export const LinkPhone = (props) => {
             {formatedPhone}
           </Link>
           <Tooltip
-            label={isCopied ? 'Copied' : 'copy to clipboard'}
+            label={isCopied ? "Copied" : "copy to clipboard"}
             aria-label="copy to clipboard"
             placement="right"
           >
@@ -124,10 +123,10 @@ export const LinkPhone = (props) => {
               onClick={() => {
                 setCopied()
                 return toast({
-                  title: 'Copied to Clipboard',
+                  title: "Copied to Clipboard",
                   description: `${children} copied to clipboard`,
-                  status: 'info',
-                  variant: 'top-accent',
+                  status: "info",
+                  variant: "top-accent",
                   duration: 2000,
                   isClosable: true,
                 })
@@ -161,7 +160,7 @@ export const LinkEmail = (props) => {
     >
       <Link
         transition="all 0.4s ease-in-out"
-        _hover={{ color: 'brand.two' }}
+        _hover={{ color: "brand.two" }}
         color={color}
         href={`mailto:${children}`}
       >
@@ -170,7 +169,7 @@ export const LinkEmail = (props) => {
         {children}
       </Link>
       <Tooltip
-        label={isCopied ? 'Copied' : 'copy to clipboard'}
+        label={isCopied ? "Copied" : "copy to clipboard"}
         aria-label="copy to clipboard"
         placement="right"
       >
@@ -182,10 +181,10 @@ export const LinkEmail = (props) => {
           onClick={() => {
             setCopied()
             return toast({
-              title: 'Copied to Clipboard',
+              title: "Copied to Clipboard",
               description: `${children} copied to clipboard`,
-              status: 'info',
-              variant: 'top-accent',
+              status: "info",
+              variant: "top-accent",
               duration: 2000,
               isClosable: true,
             })

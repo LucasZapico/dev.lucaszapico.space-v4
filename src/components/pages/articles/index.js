@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
-import { SearchIcon } from '@chakra-ui/icons'
+import React, { useState, useEffect } from "react"
+import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
+import { SearchIcon } from "@chakra-ui/icons"
 
 import {
   Box,
@@ -9,20 +9,20 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-} from '@chakra-ui/react'
-import { generate } from 'shortid'
-import { generateImageData } from 'gatsby-plugin-image'
-import ArticleCard from './article-card'
+} from "@chakra-ui/react"
+import { generate } from "shortid"
+import { generateImageData } from "gatsby-plugin-image"
+import { ArticleCard } from "components"
 
 const Articles = () => {
   const { recentArticles } = useStaticQuery(query)
   const [articles, setArticles] = useState(recentArticles.edges)
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("")
   const [results, setResults] = useState([])
 
   useEffect(() => {
     if (recentArticles && search.length > 0) {
-      console.log('art', recentArticles)
+      console.log("art", recentArticles)
       console.log(search)
       const searchResults =
         recentArticles &&
@@ -30,14 +30,14 @@ const Articles = () => {
           const title = article.node.frontmatter.title.toLowerCase()
           return title.includes(search)
         })
-      console.log('results', results)
+      console.log("results", results)
       if (searchResults.length > 0) {
         setArticles(searchResults)
       }
     } else {
       setResults([])
     }
-    console.log('a', articles)
+    console.log("a", articles)
   }, [search])
 
   return (
@@ -73,7 +73,16 @@ const Articles = () => {
           flexWrap="wrap"
         >
           {articles &&
-            articles.map((article, i) => <ArticleCard article={article} />)}
+            articles.map((edge, i) => {
+              const { frontmatter, fields } = edge.node
+              const cardObj = {
+                title: frontmatter.title,
+                description: frontmatter.description,
+                categories: frontmatter.categories,
+                path: fields.path,
+              }
+              return <ArticleCard key={generate()} cardObj={cardObj} />
+            })}
         </Container>
       </Container>
     </>

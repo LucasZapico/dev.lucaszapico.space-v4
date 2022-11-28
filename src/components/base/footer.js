@@ -1,49 +1,49 @@
-import { Box, Flex, Heading, Text, Divider, Link } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
+import { Box, Flex, Heading, Text, Divider, Link } from "@chakra-ui/react"
+import React, { useState } from "react"
+import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
 
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
-import { generate } from 'shortid'
-import moment from 'moment'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import Logo from '../../assets/mark.svg'
-import { LinkEmail, LinkOne, LinkPhone } from '../_index'
+import { generate } from "shortid"
+import moment from "moment"
+import { GatsbyImage } from "gatsby-plugin-image"
+import Logo from "assets/mark.svg"
+import { LinkEmail, LinkOne, LinkPhone } from "components"
 
 const ROUTES = [
   {
-    name: 'Home',
-    path: '/',
+    name: "Home",
+    path: "/",
   },
   {
-    name: 'Articles',
-    path: '/articles',
+    name: "Articles",
+    path: "/articles",
   },
   {
-    name: 'Notes',
-    path: '/notes',
+    name: "Notes",
+    path: "/notes",
   },
   {
-    name: 'Projects',
-    path: '/projects',
+    name: "Projects",
+    path: "/projects",
   },
   {
-    name: 'About',
-    path: '/about',
+    name: "About",
+    path: "/about",
   },
   // {
   //   name: 'Playground',
   //   path: '/playground',
   // },
   {
-    name: 'Style Guide',
-    path: '/styleguide',
+    name: "Style Guide",
+    path: "/styleguide",
   },
   {
-    name: 'Site Credits',
-    path: '/site-credits',
+    name: "Site Credits",
+    path: "/site-credits",
   },
 ]
 
@@ -76,16 +76,16 @@ const Footer = ({ title, description, location }) => {
           <Flex
             minHeight="100%"
             flexDirection={{
-              base: 'row',
+              base: "row",
 
-              md: 'row',
+              md: "row",
             }}
             flexWrap="wrap"
             justifyContent="space-between"
           >
             <Box
               // flexGrow="1"
-              flexBasis={{ base: '40%', md: 'auto' }}
+              flexBasis={{ base: "40%", md: "auto" }}
             >
               <Box
                 display="flex"
@@ -109,14 +109,14 @@ const Footer = ({ title, description, location }) => {
                       as={GatsbyLink}
                       to={l.path}
                     >
-                      {' '}
-                      {l.name}{' '}
+                      {" "}
+                      {l.name}{" "}
                     </LinkOne>
                   ))}
                 </Flex>
               </Box>
             </Box>
-            <Box flexGrow="1" flexBasis={{ base: '100%', md: 'auto' }}>
+            <Box flexGrow="1" flexBasis={{ base: "100%", md: "auto" }}>
               <Box
                 display="flex"
                 flexDirection="column"
@@ -139,7 +139,7 @@ const Footer = ({ title, description, location }) => {
               </Box>
             </Box>
 
-            <Box flexGrow="1" flexBasis={{ base: '100%', md: 'auto' }}>
+            <Box flexGrow="1" flexBasis={{ base: "100%", md: "auto" }}>
               <Box
                 display="flex"
                 flexDirection="column"

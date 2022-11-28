@@ -1,8 +1,8 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby"
 
-import { Helmet } from 'react-helmet'
-import PropTypes from 'prop-types'
-import React from 'react'
+import { Helmet } from "react-helmet"
+import PropTypes from "prop-types"
+import React from "react"
 
 const SEO = ({ title, description, image, article, location }) => {
   const { site } = useStaticQuery(query)
@@ -25,19 +25,19 @@ const SEO = ({ title, description, image, article, location }) => {
   }
 
   const RichSnippetSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
     name: seo.title,
     address: {
-      '@type': 'PostalAddress',
-      streetAddress: '704 Fir St',
-      addressLocality: 'Edmonds',
-      addressRegion: 'WA',
-      postalCode: '98020',
-      addressCountry: 'US',
+      "@type": "PostalAddress",
+      streetAddress: "704 Fir St",
+      addressLocality: "Edmonds",
+      addressRegion: "WA",
+      postalCode: "98020",
+      addressCountry: "US",
     },
     geo: {
-      '@type': 'GeoCoordinates',
+      "@type": "GeoCoordinates",
       latitude: 37.507912,
       longitude: -121.947052,
     },
