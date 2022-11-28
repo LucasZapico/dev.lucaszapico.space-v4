@@ -1,134 +1,53 @@
-import React from 'react'
-import { Flex, Text, Heading, Box, Container, Divider } from '@chakra-ui/react'
+import React from "react"
+import { Flex, Text, Heading, Box, Container, Divider } from "@chakra-ui/react"
+import { styleGuideHeaderColors } from "components/pages/styleguide"
+import TypographySizes from "components/pages/styleguide/typography/type-size"
+import TypeFamily from "components/pages/styleguide/typography/type-family"
+import TypeCompositions from "components/pages/styleguide/typography/type-compositions"
+import { TypeVariantSection } from "components/pages/styleguide/typography/type-variants"
+
+/**
+ * TODO: [x] Dynamiclly set the type name
+ *
+ * Typography StyleGuide
+ * - size
+ * - family type
+ * - color/variants
+ * - compositions
+ */
 
 const TypographySection = () => {
-  const TypeOne = () => (
-    <Box flexBasis={[100, 50]} py={10}>
-      <Heading as="h3" size="2xl">
-        Montserrat
-      </Heading>
-      <Heading as="h4" size="lg" variant="" mb={0}>
-        ABCDEFGHIJKLMNOPQRSTUVWXYZ
-      </Heading>
-      <Heading as="h4" size="lg" variant="" mb={0}>
-        abcdefghijklmnopqrstuvwxyz
-      </Heading>
-    </Box>
-  )
-  const TypeTwo = () => (
-    <Box flexBasis={[100, 50]} py={10}>
-      <Heading as="h3" size="2xl" variant="sec">
-        Montserrat
-      </Heading>
-      <Heading as="h4" size="lg" variant="sec" mb={0}>
-        ABCDEFGHIJKLMNOPQRSTUVWXYZ
-      </Heading>
-      <Heading as="h4" size="lg" variant="sec" mb={0}>
-        abcdefghijklmnopqrstuvwxyz
-      </Heading>
-    </Box>
-  )
-  const TypeThree = () => (
-    <Box flexBasis={[100, 50]} py={10}>
-      <Heading as="h3" size="2xl" variant="ogg">
-        Ogg
-      </Heading>
-      <Heading as="h4" size="lg" variant="ogg" mb={0}>
-        ABCDEFGHIJKLMNOPQRSTUVWXYZ
-      </Heading>
-      <Heading as="h4" size="lg" variant="ogg" mb={0}>
-        abcdefghijklmnopqrstuvwxyz
-      </Heading>
-    </Box>
-  )
   return (
-    <>
-      <Heading as="h3" size="2xl" variant="Alice">
+    <Box id="typography">
+      <Divider mb={6} />
+      <Heading as="h3" size="2xl" color={styleGuideHeaderColors.pri}>
         Typography
       </Heading>
-      <Heading as="h4" size="xl" variant="Alice">
+      <Heading as="div" size="xl" color={styleGuideHeaderColors.sec}>
         Font Family
       </Heading>
       <Flex flexWrap="wrap" justifyContent="space-between">
-        <TypeOne />
-        <TypeTwo />
-        {/* <TypeThree /> */}
+        <TypeFamily />
       </Flex>
-      <Divider />
-      <Heading as="h4" size="xl" variant="Alice">
+
+      <Heading as="h4" size="xl" color={styleGuideHeaderColors.sec}>
         Sizes
       </Heading>
+      <TypographySizes />
       <Text className="readable">
         All sizes are responsive and resize accordingly to best practices for
         various screen widths.
       </Text>
-      <Heading as="h4" size="4xl">
-        Size One
-      </Heading>
-      <Heading as="h4" size="3xl">
-        Size Two
-      </Heading>
-      <Heading as="h4" size="2xl">
-        Size Three
-      </Heading>
-      <Heading as="h4" size="xl">
-        Size Four
-      </Heading>
-      <Heading as="h4" size="lg">
-        Size Five
-      </Heading>
-      <Heading as="h4" size="md">
-        Size Six
-      </Heading>
-    </>
-  )
-}
-
-const HeaderSets = () => {
-  return (
-    <>
-      <Box py={10}>
-        <Heading as="h4" size="2xl" mb={0}>
-          Some amazing Header
-        </Heading>
-        <Heading as="h4" size="lg">
-          Some impressive subheader
-        </Heading>
-      </Box>
-      <Box py={10}>
-        <Heading as="h4" size="lg" marginBottom="-30px" variant="ogg">
-          Some impressive superheader
-        </Heading>
-        <Heading as="h4" size="3xl">
-          Some amazing Header
-        </Heading>
-      </Box>
-      <Box py={10}>
-        <Heading as="h4" size="2xl" variant="alice" mb={0}>
-          Some amazing Header
-        </Heading>
-        <Heading as="h4" size="lg">
-          Some impressive subheader
-        </Heading>
-      </Box>
-      <Box py={10}>
-        <Heading as="h4" size="3xl" variant="ogg" mb={0}>
-          Some amazing Header
-        </Heading>
-        <Heading as="h4" size="lg">
-          Some impressive subheader
-        </Heading>
-      </Box>
-    </>
+      <TypeVariantSection />
+    </Box>
   )
 }
 
 export const ContentSection = () => (
   <Box py={20}>
     <TypographySection />
-
+    <TypeCompositions />
     <Container maxW="container.md">
-      <HeaderSets />
       <Heading as="h3" size="2xl">
         Content
       </Heading>
