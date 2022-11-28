@@ -1,12 +1,12 @@
 ---
-title: 'Node Error Handling'
-description: 'General notes on node error handling patterns'
-date-created: '2022/05/10'
-last-modified: '2022/05/11'
+title: "Node Error Handling"
+description: "General notes on node error handling patterns"
+date-created: "2022/05/10"
+last-modified: "2022/05/11"
 isdraft: true
-categories: ['node', 'notes', 'code-quality']
-tags: ['node', 'notes', 'reference', 'error-handling', 'patterns']
-type: 'note'
+categories: ["node", "notes", "code-quality"]
+tags: ["node", "notes", "reference", "error-handling", "patterns"]
+type: "note"
 ---
 
 # Node Error Handling
@@ -15,11 +15,11 @@ type: 'note'
 
 ```javascript
 // express app
-app.get('/foo', async (req, res, next) => {
+app.get("/foo", async (req, res, next) => {
   try {
     // do stuff
     if (!stuff) {
-      const httpErr = new createError.Unauthorized('stuff failed')
+      const httpErr = new createError.Unauthorized("stuff failed")
       throw httpErr
     }
   } catch (err) {

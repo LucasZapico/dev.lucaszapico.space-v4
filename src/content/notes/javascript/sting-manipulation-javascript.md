@@ -17,53 +17,54 @@ type: 'note'
 
 ### Solution One
 
-```js 
-const a = 'enterprise'
-const name = `${a.slice(0, 1).toUpperCase()}${a.slice(1)}`;
+```js
+const a = "enterprise"
+const name = `${a.slice(0, 1).toUpperCase()}${a.slice(1)}`
 // Enterprise
 ```
+
 **or**
-```js 
-const a = "starship";
-const strArr = a.split('')
-const newStr = strArr[0].toUpperCase() + strArr.slice(1).join('')
+
+```js
+const a = "starship"
+const strArr = a.split("")
+const newStr = strArr[0].toUpperCase() + strArr.slice(1).join("")
 // Startship
 ```
+
 **or**
-```js 
-const a = "mountain";
-const strArr = a.split('')
-const newStr = [strArr[0].toUpperCase(), ...strArr.slice(1)].join('')
+
+```js
+const a = "mountain"
+const strArr = a.split("")
+const newStr = [strArr[0].toUpperCase(), ...strArr.slice(1)].join("")
 // Mountain
 ```
 
+### Multiple Words
 
-
-### Multiple Words 
-
-```js 
+```js
 const capitalizeCase = (string) => {
-  const cleanStr = string.replaceAll(/^[a-zA-Z0-9]*$/gi, '')
-  const splitOn = new RegExp('[-_ ]', 'i')
+  const cleanStr = string.replaceAll(/^[a-zA-Z0-9]*$/gi, "")
+  const splitOn = new RegExp("[-_ ]", "i")
   const stg = cleanStr.split(splitOn)
   const stringArr = []
   stg.forEach((s) => {
-    const t = s.split('')[0]
+    const t = s.split("")[0]
     if (t != null) {
-      const n = [t.toUpperCase(), ...s.slice(1)].join('')
+      const n = [t.toUpperCase(), ...s.slice(1)].join("")
       stringArr.push(n)
-    } 
+    }
   })
-  const result = stringArr.join(' ')
+  const result = stringArr.join(" ")
 
   return result
 }
 ```
 
-
-<!-- 
+<!--
 TODO: add 👇
-```js 
+```js
 
 const camelCase = (string) => {
   /**

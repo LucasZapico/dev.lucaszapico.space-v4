@@ -1,20 +1,20 @@
 ---
-title: 'JavaScript Design Patterns'
-description: ''
-date-created: '2022/10/20'
-last-modified: '2022/10/20'
+title: "JavaScript Design Patterns"
+description: ""
+date-created: "2022/10/20"
+last-modified: "2022/10/20"
 isdraft: true
-categories: ['general', 'design-patterns']
-tags: ['general', 'design-patterns']
-type: 'note'
+categories: ["general", "design-patterns"]
+tags: ["general", "design-patterns"]
+type: "note"
 ---
 
 ## Overview of Common Design Patterns
 
-- singleton 
-- facade 
+- singleton
+- facade
 - bridge(adapter)
-- strategy 
+- strategy
 - observer
 
 ## Factory Pattern
@@ -25,14 +25,10 @@ type: 'note'
 
 ## Singleton
 
-
-
-## Facade 
-
-
+## Facade
 
 ## Bridge(adapter)
 
-## Strategy 
+## Strategy
 
 ## Observer

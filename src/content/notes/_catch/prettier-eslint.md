@@ -1,18 +1,37 @@
 ---
-title: 'Eslint and Prettier General Reference Config'
-description: 'Genreal notes on configuration of Prettier and Eslint'
+title: "Eslint and Prettier General Reference Config"
+description: "Genreal notes on configuration of Prettier and Eslint"
 date-created: 2020/10/21
-last-modified: '2022/10/22'
+last-modified: "2022/10/22"
 isdraft: false
-categories: ['dev-env', 'notes']
-tags: ['prettier', 'eslint']
-type: 'note'
+categories: ["dev-env", "notes"]
+tags: ["prettier", "eslint"]
+type: "note"
 ---
 
+## CheatSheet
 
-## CheatSheet 
+## Check lint
+
+```shell
+TIMING=1 npm run lint
+```
 
 ### File Level
+
+```
+/* eslint-disable */
+```
+
+#### disable by rule on file
+
+```
+/* eslint no-use-before-define: 0 */  // --> OFF
+
+or
+
+/* eslint no-use-before-define: 2 */  // --> ON
+```
 
 #### Ignore next line
 
@@ -21,11 +40,16 @@ type: 'note'
 
 ```
 
+```
+Put /* eslint-disable-line */ at the end of the line(s),
+or /* eslint-disable-next-line */ right before the line.
+```
+
 ## Setting Up ESLint and Prettier
 
-### Machine Level 
+### Machine Level
 
-> 🗒️ Installing at the machine level is a matter of prefference 
+> 🗒️ Installing at the machine level is a matter of prefference
 
 ```shell
 brew install eslint
@@ -35,9 +59,9 @@ brew install eslint
 brew install prettier
 ```
 
-### Project Level 
+### Project Level
 
-#### VSCode Prep 
+#### VSCode Prep
 
 ```json:title=".vscode/setting.json"
 {
@@ -50,7 +74,7 @@ brew install prettier
 }
 ```
 
-To have this Eslint and Prettier handle all languages 
+To have this Eslint and Prettier handle all languages
 
 ```json:title=".vscode/setting.json"
 {
@@ -73,7 +97,6 @@ or configure by language
    //....
 }
 ```
-
 
 #### Node/JavaScript Project Setup
 
@@ -113,7 +136,6 @@ npx eslint --init
 }
 ```
 
-
 ##### Prettier Config Example
 
 ```json:title=".prettierrc.json"
@@ -126,7 +148,7 @@ npx eslint --init
 }
 ```
 
-##### Turning Rules off 
+##### Turning Rules off
 
 ```json:title=".eslint.json"
 {
@@ -137,10 +159,9 @@ npx eslint --init
 }
 ```
 
+#### TypeScript Project Setup
 
-#### TypeScript Project Setup 
-
-```sh 
+```sh
 npm i --dev @typescript-eslint/eslint-plugin
 ```
 
@@ -158,9 +179,6 @@ npm i --dev @typescript-eslint/eslint-plugin
   }
 }
 ```
-
-
-
 
 ## References
 

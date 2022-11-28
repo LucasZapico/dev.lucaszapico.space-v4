@@ -1,15 +1,21 @@
 ---
-title: 'webkit component checklist'
-description: 'An extensive list of components for webkit or design system'
-date-created: '2022/03/05'
-last-modified: '2022/08/23'
-categories: ['web-kit', 'design']
-tags: ['web-kit', 'design', 'note']
+title: "webkit component checklist"
+description: "An extensive list of components for webkit or design system"
+date-created: "2022/03/05"
+last-modified: "2022/08/23"
+categories: ["web-kit", "design"]
+tags: ["web-kit", "design", "note"]
 isdraft: false
-type: 'note'
+type: "note"
 ---
 
-### Base/Primitive
+## References for Design System, Pattern Library Structure
+
+[Alternative Structure to Atomic Design - Dennis Reimann](https://dennisreimann.de/articles/atomic-design-is-messy.html)
+
+[Design System and Pattern Libraries - noface](https://noface.co.uk/design-systems-pattern-libraries/)
+
+### Foundation : Base : Primitives : Atoms
 
 - [ ] typography
   - [ ] display

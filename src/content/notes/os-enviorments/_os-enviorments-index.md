@@ -1,12 +1,12 @@
 ---
-title: '_os-environments'
-description: ''
-date-created: '2022/02/24'
-last-modified: '2022/08/24'
-categories: ['os']
-tags: ['os']
+title: "_os-environments"
+description: ""
+date-created: "2022/02/24"
+last-modified: "2022/08/24"
+categories: ["os"]
+tags: ["os"]
 isdraft: true
-type: ''
+type: ""
 ---
 
 # \_os-environments

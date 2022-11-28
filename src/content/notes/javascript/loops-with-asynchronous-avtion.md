@@ -1,23 +1,23 @@
 ---
-title: 'Loops and Interators with Asynchronous Behabior in JavaScript'
-description: 'General note catch loops and interators over asynchronous actions in JavaScript'
-date-created: '2022/10/07'
-last-modified: '2022/10/07'
+title: "Loops and Interators with Asynchronous Behabior in JavaScript"
+description: "General note catch loops and interators over asynchronous actions in JavaScript"
+date-created: "2022/10/07"
+last-modified: "2022/10/07"
 isdraft: true
-categories: ['javascript','notes', 'reference']
-tags: ['javascript', 'general', 'notes', 'reference', 'loops', 'asynchronous']
-type: 'note'
+categories: ["javascript", "notes", "reference"]
+tags: ["javascript", "general", "notes", "reference", "loops", "asynchronous"]
+type: "note"
 ---
 
-## Loops over Asynchronous Behavior 
+## Loops over Asynchronous Behavior
 
-This is a reference for different design patterns for looping over an asynchronous function such as making API calls. 
-
+This is a reference for different design patterns for looping over an asynchronous function such as making API calls.
 
 <!-- TODO: enhance -->
+
 ```js
 for awiait (i of object){
-  
+
 }
 ```
 

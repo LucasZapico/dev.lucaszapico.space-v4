@@ -1,12 +1,12 @@
 ---
-title: 'Window Dev Notes 2022'
-description: 'General notes on making Windows Development better'
-date-created: '2022/05/22'
-last-modified: '2022/05/22'
+title: "Window Dev Notes 2022"
+description: "General notes on making Windows Development better"
+date-created: "2022/05/22"
+last-modified: "2022/05/22"
 isdraft: true
-categories: ['windows', 'notes', 'dev-env']
-tags: ['windows', 'notes', 'dev-env']
-type: 'notes'
+categories: ["windows", "notes", "dev-env"]
+tags: ["windows", "notes", "dev-env"]
+type: "notes"
 ---
 
 ## Chocolaty

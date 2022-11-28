@@ -1,17 +1,16 @@
 ---
-title: 'React Notes'
-description: 'General notes, cheatsheet and reference for Reactjs'
+title: "React Notes"
+description: "General notes, cheatsheet and reference for Reactjs"
 date-created: 2022/01/10
-last-modified: '2022/10/03'
+last-modified: "2022/10/03"
 isdraft: true
-categories: ['react', 'cheatsheet','reference', 'notes']
-tags: ['react', 'cheatsheet','reference', 'notes']
-type: 'note'
+categories: ["react", "cheatsheet", "reference", "notes"]
+tags: ["react", "cheatsheet", "reference", "notes"]
+type: "note"
 ---
 
 - `memo`
 - `useMemo`
-
 
 ## `memo`
 
@@ -21,12 +20,11 @@ type: 'note'
 
 ### High Level Guidline and Rules For `memo`
 
-> render if the props have changed 
+> render if the props have changed
 
 ## `useMemo`
 
-- comparing object/arrays 
-- 
+- comparing object/arrays
+-
 
 ## CheatSheet
-

@@ -1,18 +1,19 @@
 ---
-title: 'JavaScript Fundamentals'
-description: 'javascript fundamentals notes and examples'
+title: "JavaScript Fundamentals"
+description: "javascript fundamentals notes and examples"
 date-created: 2021/03/15
-last-modified: '2022/10/21'
+last-modified: "2022/10/21"
 isdraft: false
-parent: 'javascript'
-categories: ['JavaScript', 'general', 'notes']
-tags: ['JavaScript', 'general', 'notes', 'fundamentals']
-type: 'note'
+parent: "javascript"
+categories: ["JavaScript", "general", "notes"]
+tags: ["JavaScript", "general", "notes", "fundamentals"]
+type: "note"
 ---
 
 ## JavaScript Fundamentals
 
 ### Definitions
+
 #### The Stack
 
 The stack is an ordered data structure. That keeps track of the functions that have been invoked. The stack is modified when a function is invoked.
@@ -40,7 +41,6 @@ Functionality in the JavaScript runtime that checks the queue when the stack is 
 
 Single Threaded: Code execution is linear. Code that is running cannot be interrupted by something else going on in the program.
 
-## JavaScript Classes 
+## JavaScript Classes
 
 [Classes in JavaScript - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-

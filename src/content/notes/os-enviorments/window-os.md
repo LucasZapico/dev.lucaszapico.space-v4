@@ -1,12 +1,12 @@
 ---
-title: 'Window 10 Notes'
-description: 'Reference notes on window'
+title: "Window 10 Notes"
+description: "Reference notes on window"
 date-created: 2021/03/15 14:19:17
 last-modified: 2021/09/01 19:08:28
 isdraft: false
-categories: ['window', 'notes']
+categories: ["window", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
 # Window 10 OS Notes

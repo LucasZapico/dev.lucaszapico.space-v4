@@ -1,12 +1,12 @@
 ---
-title: 'SQL Notes'
-description: ''
+title: "SQL Notes"
+description: ""
 date-created: 2017/03/15 14:19:17
-last-modified: '2022/10/02'
+last-modified: "2022/10/02"
 isdraft: false
-categories: ['sql', 'notes']
+categories: ["sql", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
 ## Notes and Reference SQL Language

@@ -1,12 +1,12 @@
 ---
-title: 'prisma-orm'
-description: ''
-date-created: '2022/03/08'
-last-modified: '2022/08/11'
-categories: ['notes', 'prisma', 'orm', 'databases']
-tags: ['notes', 'prisma', 'orm', 'databases']
+title: "prisma-orm"
+description: ""
+date-created: "2022/03/08"
+last-modified: "2022/08/11"
+categories: ["notes", "prisma", "orm", "databases"]
+tags: ["notes", "prisma", "orm", "databases"]
 isdraft: true
-type: 'note'
+type: "note"
 ---
 
 # prisma-orm

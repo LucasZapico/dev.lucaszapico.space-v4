@@ -1,12 +1,12 @@
 ---
 title: Flask REST API Notes
 description: General Routing notes for Flask REST
-date-created: '2021/05/14 18:25:12'
-last-modified: '2022/08/24'
+date-created: "2021/05/14 18:25:12"
+last-modified: "2022/08/24"
 isdraft: true
-categories: ['flask', 'notes']
-tags: ['flask', 'notes', 'reference', 'api']
-type: 'note'
+categories: ["flask", "notes"]
+tags: ["flask", "notes", "reference", "api"]
+type: "note"
 ---
 
 **Requirement.txt**

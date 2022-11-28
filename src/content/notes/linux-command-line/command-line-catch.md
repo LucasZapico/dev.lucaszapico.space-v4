@@ -1,13 +1,19 @@
 ---
-title: 'Linux and Command Line'
-description: ''
+title: "Linux and Command Line"
+description: ""
 date-created: 2018/03/15 14:19:17
 last-modified: 2021/09/07 07:36:04
 isdraft: false
-categories: ['linux', 'command-line', 'notes']
+categories: ["linux", "command-line", "notes"]
 tags: []
-type: 'notes'
+type: "notes"
 ---
+
+#### Copy Current Dir to Clip board
+
+```sh
+pwd | pbcopy
+```
 
 #### Copying Files and Directories
 

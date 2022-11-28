@@ -1,12 +1,12 @@
 ---
-title: 'Auth Notes'
-description: 'A walk through on how to build pages with images from json data'
+title: "Auth Notes"
+description: "A walk through on how to build pages with images from json data"
 date-created: 2020/10/21
 last-modified: 2021/09/01 19:47:01
 isdraft: true
-categories: ['auth', 'notes']
+categories: ["auth", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
 - storage, stores token

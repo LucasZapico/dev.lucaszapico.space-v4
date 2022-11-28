@@ -1,20 +1,19 @@
 ---
-title: 'Import Exporting Patterns React Reference'
-description: 'General notes, cheatsheet and reference for importing and exporting components in Reactjs'
-date-created: '2022/10/25'
-last-modified: '2022/10/25'
+title: "Import Exporting Patterns React Reference"
+description: "General notes, cheatsheet and reference for importing and exporting components in Reactjs"
+date-created: "2022/10/25"
+last-modified: "2022/10/25"
 isdraft: false
-categories: ['react', 'cheatsheet','reference', 'notes']
-tags: ['react', 'cheatsheet','reference', 'notes']
-type: 'note'
+categories: ["react", "cheatsheet", "reference", "notes"]
+tags: ["react", "cheatsheet", "reference", "notes"]
+type: "note"
 ---
 
+## Importing and Exporting React Component Reference
 
-## Importing and Exporting React Component Reference 
+### Default Import Export
 
-### Default Import Export 
-
-#### Solution One 
+#### Solution One
 
 ```js:title=Components/Foo.js
 const Foo = () => {
@@ -23,6 +22,7 @@ const Foo = () => {
 
 export default Foo
 ```
+
 **or**
 
 ```js:title=Components/Foo.js
@@ -37,13 +37,14 @@ export default Foo
 import Foo from './Components/Foo'
 ```
 
-#### Solution Two 
+#### Solution Two
 
 ```js:title=Components/Foo.js
 export default Foo = () => {
     return (<div>Foo</div>)
 }
 ```
+
 **or**
 
 ```js:title=Components/Foo.js
@@ -56,9 +57,9 @@ export default function Foo(){
 import Foo from './Components/Foo'
 ```
 
-----
+---
 
-### Named Export  
+### Named Export
 
 #### Single Component
 
@@ -71,7 +72,9 @@ const Foo = () => {
 
 export { Foo }
 ```
+
 **or**
+
 ```js:title=Components/Foo.js
 function Foo() {
     return (<div>Foo</div>)
@@ -91,7 +94,9 @@ export const Foo = () => {
     return (<div>Foo</div>)
 }
 ```
+
 **or**
+
 ```js:title=Components/Foo.js
 export function Foo(){
     return (<div>Foo</div>)
@@ -104,7 +109,6 @@ import {Foo} from './Components/Foo'
 
 #### Export/Import Multiple Components From Single File
 
-
 ```js:title=Components/Elements.js
 const Foo = () => {
     return (<div>Foo</div>)
@@ -116,7 +120,9 @@ const Bar = () => {
 
 export { Foo, Bar }
 ```
+
 **or**
+
 ```js:title=Components/Elements.js
 function Foo() {
     return (<div>Foo</div>)
@@ -144,7 +150,9 @@ export const Bar = () => {
     return (<div>Foo</div>)
 }
 ```
+
 **or**
+
 ```js:title=Components/Foo.js
 export function Foo(){
     return (<div>Foo</div>)
@@ -154,8 +162,6 @@ export function Bar(){
     return (<div>Bar</div>)
 }
 ```
-
-
 
 ```js:title=App.js
 import { Foo, Bar } from './Components/Elements'
@@ -168,9 +174,9 @@ Using a component staging file can make managment of apps with many components s
 **Benefits of a component staging file**
 
 1. If we refactor a components file name **or** path we only need to change the path name in a single file
-2. Reduces the number of import statements 
+2. Reduces the number of import statements
 
-#### Handling Default Exports in Staging File 
+#### Handling Default Exports in Staging File
 
 **Simple Example**
 
@@ -188,7 +194,7 @@ export { default as Foo } from './Atoms/Foo'
 import {Foo} from './Components'
 ```
 
-**Exmaple - One** 
+**Exmaple - One**
 
 ```js:title=Components/Atoms/Foo.js
 export default Foo = () => {
@@ -201,7 +207,6 @@ export default Bar = () => {
     return (<div>Bar</div>)
 }
 ```
-
 
 ```js:title=Components/Atoms/Elements.js
 export const ElemntOne = () => {
@@ -222,9 +227,9 @@ export { ElemntOne, ElementTwo } from './Elements'
 
 ```js:title=App.js
 import {
-    Foo, 
-    Bar, 
-    ElemntOne, 
-    ElementTwo 
+    Foo,
+    Bar,
+    ElemntOne,
+    ElementTwo
 } from './Components'
 ```

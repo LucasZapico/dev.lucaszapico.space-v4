@@ -1,12 +1,12 @@
 ---
 title: git
-description: 'General catch of notes, cheatsheet and reference for git related functionality'
-date-created: '2022/02/11'
-last-modified: '2022/09/29'
-categories: ['git', 'cheatsheet', 'reference']
-tags: ['git', 'cheatsheet', 'reference']
+description: "General catch of notes, cheatsheet and reference for git related functionality"
+date-created: "2022/02/11"
+last-modified: "2022/09/29"
+categories: ["git", "cheatsheet", "reference"]
+tags: ["git", "cheatsheet", "reference"]
 isdraft: false
-type: 'note'
+type: "note"
 ---
 
 # git

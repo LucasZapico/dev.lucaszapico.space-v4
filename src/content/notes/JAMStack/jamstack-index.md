@@ -1,15 +1,15 @@
 ---
-title: 'JAMStack'
+title: "JAMStack"
 description: "General notes, cheatsheet, tools and references for JAMStack development"
-date-created: '2022/09/29'
-last-modified: '2022/09/29'
-categories: ['jamstack', 'reference', 'workflows']
-tags: ['jamstack', 'reference', 'workflows']
+date-created: "2022/09/29"
+last-modified: "2022/09/29"
+categories: ["jamstack", "reference", "workflows"]
+tags: ["jamstack", "reference", "workflows"]
 isdraft: true
-type: 'note'
+type: "note"
 ---
 
-## Hosting 
+## Hosting
 
 [Netlify]()
 [Vercel]()

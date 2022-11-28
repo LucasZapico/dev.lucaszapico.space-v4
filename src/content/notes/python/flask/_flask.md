@@ -1,10 +1,10 @@
 ---
 title: flask-catch
-description: ''
-date-created: '2022/02/11'
-last-modified: '2022/08/24'
-categories: ['flask', 'python']
-tags: ['flask', 'python']
+description: ""
+date-created: "2022/02/11"
+last-modified: "2022/08/24"
+categories: ["flask", "python"]
+tags: ["flask", "python"]
 isdraft: true
 type: note
 ---

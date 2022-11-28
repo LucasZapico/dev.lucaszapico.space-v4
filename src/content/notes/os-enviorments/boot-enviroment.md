@@ -1,15 +1,13 @@
 ---
 title: "Booting Os's"
-description: 'Reference notes on window'
+description: "Reference notes on window"
 date-created: 2021/03/15 14:19:17
 last-modified: 2021/10/06 10:31:55
 isdraft: false
-categories: ['window', 'notes']
+categories: ["window", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
-
-
 
 ## Set up USB drive with single ISO
 
@@ -20,18 +18,18 @@ The [ubuntu walk](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos) thro
 ## Set up USB drive with multiple ISO's
 
 1. partition the drive
-2. unmount the partition we wish to write to 
-3. 
+2. unmount the partition we wish to write to
+3.
 
-The most direct solution to this is to use the terminal. 
+The most direct solution to this is to use the terminal.
 
-### Example 
+### Example
 
-Assumes disk is partitioned, formatted and ISO's are downloaded. 
+Assumes disk is partitioned, formatted and ISO's are downloaded.
 
 1. identity target disk identifier: `diskutil list`
 2. unmount target: `diskutil unmount disk3s8`
-3. flash or burn iso to partition 
+3. flash or burn iso to partition
 
 ```shell
  sudo dd if=<path-to-iso>/ubuntu-21.04-desktop-amd64.iso of=/dev/rdisk3s9 bs=4m
@@ -39,34 +37,33 @@ Assumes disk is partitioned, formatted and ISO's are downloaded.
 
 > There is no progress bar so just wait it out, how long the ISO copy process takes depends on a variety of things, including the speed of the Mac, the speed of the target volume, and the size of the ISO file being copied or burned to the destination.
 
+## Partition usb
 
-## Partition usb 
+A usb drive can be partition from diskutility
 
-A usb drive can be partition from diskutility 
+> navigate to view and "show all devices"
 
-> navigate to view and "show all devices" 
-
-### Command Reference 
+### Command Reference
 
 #### `diskutil list`
 
-#### unmount disk 
+#### unmount disk
 
 `sudo umount /dev/<identifier>`
 
-or 
+or
 
 `diskutil unmount /dev/<identifier>`
 
 `diskutil unmount /dev/disk3s9`
 
-or 
+or
 
 `diskutil unmountDisk /dev/disk3`
 
-## Reference 
+## Reference
 
-#### Articles 
+#### Articles
 
 [Copy ISO to USB Mac os command line](https://osxdaily.com/2015/06/05/copy-iso-to-usb-drive-mac-os-x-command/)
 

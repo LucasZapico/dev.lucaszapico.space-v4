@@ -1,12 +1,12 @@
 ---
-title: 'Npm Notes 2020'
-description: 'General notes on Brew'
+title: "Npm Notes 2020"
+description: "General notes on Brew"
 date-created: 2021/06/02 08:38:24
 last-modified: 2021/06/02 08:39:57
 isdraft: true
-categories: ['npm', 'notes']
+categories: ["npm", "notes"]
 tags: []
-type: 'post'
+type: "post"
 ---
 
 ### double `&&`

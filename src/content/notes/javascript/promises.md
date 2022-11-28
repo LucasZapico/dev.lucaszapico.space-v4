@@ -1,12 +1,12 @@
 ---
-title: 'JavaScript Promises'
-description: 'javascript promises notes and examples'
+title: "JavaScript Promises"
+description: "javascript promises notes and examples"
 date-created: 2021/03/15
-last-modified: '2022/08/24'
+last-modified: "2022/08/24"
 isdraft: false
-categories: ['JavaScript', 'general', 'notes']
-tags: ['JavaScript', 'general', 'notes']
-type: 'note'
+categories: ["JavaScript", "general", "notes"]
+tags: ["JavaScript", "general", "notes"]
+type: "note"
 ---
 
 ### Promise:
@@ -140,9 +140,9 @@ A javascript promise either resolves when true or is rejected when false
 let p = new Promise((resolve, reject) => {
   let a = 1 + 1
   if (a == 2) {
-    resolve('success')
+    resolve("success")
   } else {
-    reject('failed')
+    reject("failed")
   }
 })
 

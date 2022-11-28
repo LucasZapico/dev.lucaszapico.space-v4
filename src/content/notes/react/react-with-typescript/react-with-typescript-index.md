@@ -1,14 +1,13 @@
 ---
-title: 'Reactjs With TypeScript Index'
-description: 'General notes, cheatsheet and reference for React TypeScript projects'
-date-created: '2022/10/28'
-last-modified: '2022/10/28'
+title: "Reactjs With TypeScript Index"
+description: "General notes, cheatsheet and reference for React TypeScript projects"
+date-created: "2022/10/28"
+last-modified: "2022/10/28"
 isdraft: false
-categories: ['reactjs', 'typescript', 'cheatsheet','reference', 'notes']
-tags: ['reactjs', 'typescript', 'cheatsheet','reference', 'notes']
-type: 'note'
+categories: ["reactjs", "typescript", "cheatsheet", "reference", "notes"]
+tags: ["reactjs", "typescript", "cheatsheet", "reference", "notes"]
+type: "note"
 ---
-
 
 [React TypeScript CheatSheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
 
@@ -16,13 +15,29 @@ type: 'note'
 
 ## React Props Cheatsheet
 
+### Ignore Type Errors
+
+#### Ignore TypeScript Errors on File
+
+```ts
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+```
+
+#### Ignore TypeScript Errors on Next Line
+
+```ts
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+```
+
 ### Basic Props Types
 
-```ts 
+```ts
 type AppProps = {
-    message: string;
-    count: number;
-    disabled: boolean;
+  message: string
+  count: number
+  disabled: boolean
 }
 ```
 
@@ -30,145 +45,140 @@ type AppProps = {
 
 #### Array
 
-```ts 
+```ts
 type AppProps = {
-    names: string[]
+  names: string[]
 }
 ```
 
 #### String Litteral Exact Values
 
-```ts 
+```ts
 type AppProps = {
-    status: "loading" | "success" | "error"
+  status: "loading" | "success" | "error"
 }
 ```
 
 ### Objects
 
-```ts 
+```ts
 type AppProps = {
-    /** interface with no required properties **/
-    obj: {};
-    /** useful placeholder **/
-    obj2: object;
+  /** interface with no required properties **/
+  obj: {}
+  /** useful placeholder **/
+  obj2: object
 }
 ```
 
-
 #### Single Object Multipe Types
 
-```ts 
+```ts
 type AppProps = {
-    obj: {
-        lkes: number;
-        id: string;
-        title: string;
-        description: string;
-    }
+  obj: {
+    lkes: number
+    id: string
+    title: string
+    description: string
+  }
 }
 ```
 
 #### Array of Objects
 
-```ts 
+```ts
 type AppProps = {
-    objArr: {
-        id: string;
-        title: string;
-        description: string;
-    }[];
+  objArr: {
+    id: string
+    title: string
+    description: string
+  }[]
 }
 ```
 
 #### Dictionaries
 
-```ts 
+```ts
 type AppProps = {
-    dict: {
-        [key: string]: TypeHere;
-    }
+  dict: {
+    [key: string]: TypeHere
+  }
 }
 ```
 
 or
 
-```ts 
+```ts
 type AppProps = {
-    dict: Record<string, TypeHere>
+  dict: Record<string, TypeHere>
 }
 ```
 
 <!-- add examples ^ -->
 
-### Function Types 
+### Function Types
 
-```ts 
+```ts
 type AppProps = {
-    onClick: () => void;
+  onClick: () => void
 }
 ```
 
-```ts 
+```ts
 type AppProps = {
-    onClick: (id: number) => void;
+  onClick: (id: number) => void
 }
 ```
 
 #### Function Type with Event
 
-```ts 
+```ts
 type AppProps = {
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    /**alternative**/
-    onClick: (event: React.MouseEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  /**alternative**/
+  onClick: (event: React.MouseEvent<HTMLInputElement>) => void
 }
 ```
 
 ### Other types
 
-```ts 
+```ts
 type AppProps = {
- optional?: OptionalType;
- 
+  optional?: OptionalType
 }
 ```
 
 ### setState type
 
-```ts 
+```ts
 type AppProps = {
- setState: React.Dispatch<React.SetStateAction<number>>;
+  setState: React.Dispatch<React.SetStateAction<number>>
 }
 ```
 
-### Typing React Component as Children 
+### Typing React Component as Children
 
 ```sh
 npm i @types/react
 ```
 
-```tsx 
+```tsx
 type FooProps = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
-export const Foo = ({children}: FooProps) => {
-    return <div>{children}</div>
+export const Foo = ({ children }: FooProps) => {
+  return <div>{children}</div>
 }
 ```
 
-## Examples 
-
-
+## Examples
 
 ## Simple Example of Baisc Prop Types
-
 
 ```ts title=app.tsx
 //....
 const App = () => {
-  return (  
+  return (
       <div>
         <Greet name="Ben"/>
         <MessageCount count={5}>
@@ -179,22 +189,22 @@ const App = () => {
 
 ```
 
-### `string` type 
+### `string` type
 
 ```ts title=component/greet.tsx
 type GreetProps = {
-    name: string
+  name: string
 }
 export const Greet = (props: GreetProps) => {
-    return (
-        <div>
-            <h3>Welcome to React TypeScript {props.name}</h3>
-        </div>
-    )
+  return (
+    <div>
+      <h3>Welcome to React TypeScript {props.name}</h3>
+    </div>
+  )
 }
 ```
 
-or 
+or
 
 ```ts title=component/greet.tsx
 type GreetProps = {
@@ -211,33 +221,30 @@ export const Greet = ({name}: GreetProps) => {
 
 ### `number` Type
 
-
 ```ts title=component/message.tsx
 type MessageProps = {
-    count: number
+  count: number
 }
-export const Greet = ({count}: MessageProps) => {
-    return (
-        <div>
-            <p>You have {count} messages</p>
-        </div>
-    )
+export const Greet = ({ count }: MessageProps) => {
+  return (
+    <div>
+      <p>You have {count} messages</p>
+    </div>
+  )
 }
 ```
 
-
 ### `boolean` Type
-
 
 ```ts title=component/DarkToggle .tsx
 type DarkToggleProps = {
-    isDark: boolean
+  isDark: boolean
 }
-export const Greet = ({isDark}: DarkToggleProps) => {
-    return (
-        <div>
-            <p>You are using dark mode {isDark ? "true": "false" }</p>
-        </div>
-    )
+export const Greet = ({ isDark }: DarkToggleProps) => {
+  return (
+    <div>
+      <p>You are using dark mode {isDark ? "true" : "false"}</p>
+    </div>
+  )
 }
 ```

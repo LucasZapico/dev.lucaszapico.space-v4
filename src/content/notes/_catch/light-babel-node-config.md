@@ -1,13 +1,13 @@
 ---
-title: 'Light Babel Node Config'
-description: 'My 2020 configuration of Prettier and Eslint'
+title: "Light Babel Node Config"
+description: "My 2020 configuration of Prettier and Eslint"
 date-created: 2019/07/21
-last-modified: '2022/10/02'
+last-modified: "2022/10/02"
 isdraft: false
-categories: ['dev-env', 'config', 'notes']
-tags: ['node', 'babel']
-featured: './charas-group.png'
-type: 'note'
+categories: ["dev-env", "config", "notes"]
+tags: ["node", "babel"]
+featured: "./charas-group.png"
+type: "note"
 ---
 
 [Source from rw;eruch](https://www.robinwieruch.de/minimal-node-js-babel-setup)

@@ -1,15 +1,15 @@
 ---
-title: 'CLI select and multi select Bash'
-description: 'Bash patterns for select and multi select'
-date-created: '2022/09/27'
-last-modified: '2022/09/27'
+title: "CLI select and multi select Bash"
+description: "Bash patterns for select and multi select"
+date-created: "2022/09/27"
+last-modified: "2022/09/27"
 isdraft: true
-categories: ['bash', 'pattern', 'reference']
-tags: ['bash', 'pattern', 'reference']
-type: 'note'
+categories: ["bash", "pattern", "reference"]
+tags: ["bash", "pattern", "reference"]
+type: "note"
 ---
 
-## Single select 
+## Single select
 
 ```sh title="single-select.sh"
 #!/bin/bash
@@ -38,7 +38,7 @@ done
 
 ```
 
-## Multi Select 
+## Multi Select
 
 ```sh title="multi-select.sh"
 #!/bin/bash

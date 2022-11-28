@@ -1,12 +1,12 @@
 ---
-title: 'Express Best Practices Patterns'
-description: ''
-date-created: '2022/03/08'
-last-modified: '2022/08/11'
-categories: ['best-practice', 'express', 'node']
-tags: ['notes', 'express', 'node']
+title: "Express Best Practices Patterns"
+description: ""
+date-created: "2022/03/08"
+last-modified: "2022/08/11"
+categories: ["best-practice", "express", "node"]
+tags: ["notes", "express", "node"]
 isdraft: false
-type: 'note'
+type: "note"
 ---
 
 # Express Best Practices Journal

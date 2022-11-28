@@ -1,10 +1,10 @@
 ---
-title: 'Inline Code Documentation'
-date-created: '2022/07/05'
-last-modified: '2022/08/23'
+title: "Inline Code Documentation"
+date-created: "2022/07/05"
+last-modified: "2022/08/23"
 description: Notes, resources and design patterns on documenting code
-categories: ['operation']
-tags: ['quality-of-life']
+categories: ["operation"]
+tags: ["quality-of-life"]
 draft: false
 ---
 

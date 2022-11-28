@@ -1,12 +1,12 @@
 ---
-title: 'Algorithm Patterns in JavaScript'
-description: 'Notes on Algorithm patterns using JS'
+title: "Algorithm Patterns in JavaScript"
+description: "Notes on Algorithm patterns using JS"
 date-created: 2021/03/15
-last-modified: '2022/10/02'
+last-modified: "2022/10/02"
 isdraft: false
-categories: ['javaScript', 'algorithms', 'notes']
-tags: ['javaScript', 'algorithms', 'general', 'notes']
-type: 'note'
+categories: ["javaScript", "algorithms", "notes"]
+tags: ["javaScript", "algorithms", "general", "notes"]
+type: "note"
 ---
 
 ## Frequency Counter Pattern
@@ -73,7 +73,7 @@ function isAnagram(a) {
   if (str1.length < 1 && str2.length < 1) {
     return true
   }
-  let str2Arr = str2.split('')
+  let str2Arr = str2.split("")
   for (s of str1) {
     const p = str2Arr.indexOf(s)
 
@@ -288,11 +288,11 @@ function mySet() {
 var setA = new mySet()
 var setB = new mySet()
 
-setA.add('a')
-setB.add('b')
-setB.add('c')
-setB.add('a')
-setB.add('d')
+setA.add("a")
+setB.add("b")
+setB.add("c")
+setB.add("a")
+setB.add("d")
 console.log(setA.values())
 console.log(setB.values())
 console.log(setA.subset(setB))
@@ -328,14 +328,14 @@ console.log(reverseString(txt)
 
 ```javascript
 function reverseString(text) {
-  let result = ''
+  let result = ""
   for (let i = text.length - 1; i >= 0; i--) {
     result += text[i]
   }
   return result
 }
 
-let txt = 'extra'
+let txt = "extra"
 console.log(reverseString(txt))
 ```
 
@@ -344,7 +344,7 @@ Using the **for...of** avaiable in ES6.
 
 ```javascript
 function reverseString(text) {
-  let results = ''
+  let results = ""
 
   for (let char of text) {
     result = char + result
@@ -359,14 +359,14 @@ This is a pattern using what is called **termianl case**. Without a terminal val
 
 ```javascript
 function reverseString(text) {
-  if (text === '') {
-    return ''
+  if (text === "") {
+    return ""
   } else {
     return reverseString(text.substr(1)) + text[0]
   }
 }
 
-let txt = 'extra'
+let txt = "extra"
 console.log(reverseString(txt))
 ```
 

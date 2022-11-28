@@ -1,14 +1,13 @@
 ---
-title: 'JavaScript Notes'
-description: 'General note catch for all things JavaScript'
+title: "JavaScript Notes"
+description: "General note catch for all things JavaScript"
 date-created: 2021/03/15
-last-modified: '2022/10/06'
+last-modified: "2022/10/06"
 isdraft: false
-categories: ['JavaScript', 'general', 'notes']
-tags: ['JavaScript', 'general', 'notes']
-type: 'note'
+categories: ["JavaScript", "general", "notes"]
+tags: ["JavaScript", "general", "notes"]
+type: "note"
 ---
-
 
 #### AJAX-(Asynchronous, JavaScript, and XML)
 
@@ -153,7 +152,6 @@ function findIndex(arr, callback){
 ```
 
 ---
-
 
 ## Styling and Code Quality
 
