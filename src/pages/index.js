@@ -1,12 +1,12 @@
-import { Box } from '@chakra-ui/react'
-import * as React from 'react'
+import { Box } from "@chakra-ui/react"
+import * as React from "react"
 
-import { Home } from '../components/_index'
+import { Home } from "components"
 import {
   BlurBlobOne,
   BlurBlobTwo,
   BlurBlobThree,
-} from '../components/flare/blur-blobs'
+} from "components/flare/blur-blobs"
 
 const Flare = () => (
   <Box
@@ -22,10 +22,10 @@ const Flare = () => (
     <Box position="relative" height="100%" width="100%" opacity="0.7">
       <Box pos="absolute" className="home-blob-one" right="0px" top="0px">
         <BlurBlobOne />
-      </Box>{' '}
+      </Box>{" "}
       <Box pos="absolute" left="0px" bottom="0px" className="home-blob-two">
         <BlurBlobTwo />
-      </Box>{' '}
+      </Box>{" "}
       <Box pos="absolute" left="0px" top="0px" className="home-blob-two">
         <BlurBlobThree />
       </Box>

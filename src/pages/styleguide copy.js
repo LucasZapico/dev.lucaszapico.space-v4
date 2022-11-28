@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   Text,
   Heading,
@@ -8,8 +8,8 @@ import {
   Link,
   Flex,
   Divider,
-} from '@chakra-ui/react'
-import { CardOne } from '../components/_index'
+} from "@chakra-ui/react"
+import { CardOne } from "components"
 
 const ColorPrimary = () => (
   <Flex flexWrap="wrap">
@@ -96,9 +96,9 @@ const LinkStyles = () => (
     </Link>
     <Box py={6}>
       <Text>
-        Quick: do{' '}
+        Quick: do{" "}
         <Link to="/" variant="linkInline">
-          {' '}
+          {" "}
           inline link
         </Link>
         you have a plan to become customized. Have you ever needed to

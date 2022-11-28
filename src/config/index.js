@@ -1,23 +1,23 @@
 const ROUTES = [
   {
-    name: 'Home',
-    path: '/',
+    name: "Home",
+    path: "/",
   },
   {
-    name: 'Projects',
-    path: '/projects',
+    name: "Projects",
+    path: "/projects",
   },
   // {
   //   name: 'Articles',
   //   path: '/articles',
   // },
   {
-    name: 'Notes',
-    path: '/notes',
+    name: "Notes",
+    path: "/notes",
   },
   {
-    name: 'About',
-    path: '/about',
+    name: "About",
+    path: "/about",
   },
 
   // {

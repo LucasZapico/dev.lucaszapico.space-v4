@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 
-import { graphql, Link as GatsbyLink } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { graphql, Link as GatsbyLink } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import {
   Box,
   Container,
@@ -10,10 +10,10 @@ import {
   Heading,
   Text,
   Flex,
-} from '@chakra-ui/react'
-import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { Portrait } from '../components/flare/portrait'
-import { SEO } from '../components/_index'
+} from "@chakra-ui/react"
+import { ArrowForwardIcon } from "@chakra-ui/icons"
+import { Portrait } from "components/flare/portrait"
+import { SEO } from "components"
 
 const AboutPage = ({ location }) => (
   <>
@@ -21,7 +21,7 @@ const AboutPage = ({ location }) => (
     <Container maxW="container.md" py={20}>
       <Portrait />
       <Heading as="h1" size="2xl">
-        I learn, analyze, create, and iterate.
+        About my development journey
       </Heading>
       <Heading as="h2" size="xl">
         The Method
