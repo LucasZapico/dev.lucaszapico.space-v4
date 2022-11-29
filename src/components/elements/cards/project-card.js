@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
-import { GridItem, Heading, Box, Text } from "@chakra-ui/react"
+import { GridItem, Heading, Box, Text, useColorMode } from "@chakra-ui/react"
 import { CardOne, Tag } from "components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { generate } from "shortid"
 
 const ProjectCard = ({ cardObj }) => {
+  const { colorMode } = useColorMode()
   const { defaultImage } = useStaticQuery(query)
   const {
     title = "",
@@ -36,7 +37,7 @@ const ProjectCard = ({ cardObj }) => {
               {subHeader}
             </Text>
           </Box>
-          <Box color="brand.four">
+          <Box color={colorMode === "dark" ? "brand.300" : "yellow.600"}>
             {categories.map((c, p) => {
               if (c !== "project") {
                 return p > categories.length - 1 ? (
