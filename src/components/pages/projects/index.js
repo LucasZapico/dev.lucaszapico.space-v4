@@ -10,11 +10,11 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Tag
+  Tag,
 } from "@chakra-ui/react"
 import { generate } from "shortid"
 import { generateImageData } from "gatsby-plugin-image"
-import { ProjectCard, ProjectSection, CardOne} from "components"
+import { ProjectCard, ProjectSection, CardOne } from "components"
 
 const TagCloud = ({ recentProjects, filter, setFilter }) => {
   const [cats, setCats] = useState({})
@@ -41,7 +41,14 @@ const TagCloud = ({ recentProjects, filter, setFilter }) => {
     <Flex flexWrap="wrap">
       {Object.keys(cats).map((c) => {
         return (
-          <Tag variant="sec" mr={2} mb={2} hasBG={filter === c} onClick={() => setFilter(c)}>
+          <Tag
+            key={generate()}
+            variant="sec"
+            mr={2}
+            mb={2}
+            hasBG={filter === c}
+            onClick={() => setFilter(c)}
+          >
             #{c}
           </Tag>
         )
@@ -52,7 +59,7 @@ const TagCloud = ({ recentProjects, filter, setFilter }) => {
 
 const Projects = () => {
   const { recentProjects } = useStaticQuery(query)
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState("")
   const [projects, setProjects] = useState(recentProjects)
 
   function handleFilter(currentFilter) {
@@ -67,7 +74,7 @@ const Projects = () => {
   useEffect(() => {
     const filteredProj = handleFilter(filter)
 
-    if (filter !== '') {
+    if (filter !== "") {
       setProjects((prev) => {
         return { edges: filteredProj }
       })
@@ -100,7 +107,6 @@ export const query = graphql`
       filter: {
         frontmatter: { isdraft: { eq: false }, type: { eq: "project" } }
       }
-      
     ) {
       edges {
         node {
