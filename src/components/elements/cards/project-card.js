@@ -49,7 +49,10 @@ const ProjectCard = ({ cardObj }) => {
             })}
           </Box>
         </Box>
-        <Box width={{ base: "100%", lg: "60%" }}>
+        <Box
+          filter={colorMode === "dark" ? "saturate(0.4)" : "saturate(0.6)"}
+          width={{ base: "100%", lg: "60%" }}
+        >
           <GatsbyImage image={image} alt={`${title} featured Image`} />
         </Box>
       </CardOne>
