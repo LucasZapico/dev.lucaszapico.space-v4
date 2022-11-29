@@ -8,10 +8,10 @@ import { Box } from "@chakra-ui/react"
 
 export const Tag = ({ hasBorder = true, hasBG = false, children, ...rest }) => {
   const value = children.toLowerCase().replaceAll(" ", "-")
-  const colorMode = "dark"
-  const color = colorMode === "light" || hasBG ? "gray.300" : "brand.one"
-  const borderColor = colorMode === "light" ? "brand.two" : "brand.one"
-  const backgroundColor = colorMode === "light" ? "brand.three" : "brand.one"
+  
+  // const color = colorMode === "light" || hasBG ? "gray.300" : "brand.one"
+  // const borderColor = colorMode === "light" ? "brand.two" : "brand.one"
+  // const backgroundColor = colorMode === "light" ? "brand.three" : "brand.one"
   return (
     <Box
       {...rest}
@@ -21,9 +21,9 @@ export const Tag = ({ hasBorder = true, hasBG = false, children, ...rest }) => {
       display="inline"
       mr={1}
       mb={2}
-      color={color}
-      borderColor={hasBorder ? borderColor : ""}
-      backgroundColor={hasBG ? backgroundColor : ""}
+      // color={color}
+      // borderColor={hasBorder ? borderColor : ""}
+      // backgroundColor={hasBG ? backgroundColor : ""}
     >
       #{value}
     </Box>
