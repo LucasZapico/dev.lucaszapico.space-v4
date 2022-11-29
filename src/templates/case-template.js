@@ -160,17 +160,12 @@ export default function CaseTemplate({
         <Container maxW="container.xl" my={10}>
           <Box my={10}>
             <Heading as="h3" size="xl">
-              More {node.frontmatter.type === "note" ? "Notes" : "/Articles"}
+              More Projects
             </Heading>
-            {node.frontmatter.type === "note" ? (
-              <LinkOne as={GatsbyLink} to="/notes">
-                All Notes
+            <LinkOne as={GatsbyLink} to="/notes">
+                All Projects
               </LinkOne>
-            ) : (
-              <LinkOne as={GatsbyLink} to="/articles">
-                All Articles
-              </LinkOne>
-            )}
+            
           </Box>
           <HalfByHalfSection
             right={previous !== null ? <PrevArticle /> : ""}
