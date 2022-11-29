@@ -10,10 +10,11 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Tag
 } from "@chakra-ui/react"
 import { generate } from "shortid"
 import { generateImageData } from "gatsby-plugin-image"
-import { ProjectCard, ProjectSection, CardOne, Tag } from "components"
+import { ProjectCard, ProjectSection, CardOne} from "components"
 
 const TagCloud = ({ recentProjects, filter, setFilter }) => {
   const [cats, setCats] = useState({})
@@ -40,8 +41,8 @@ const TagCloud = ({ recentProjects, filter, setFilter }) => {
     <Flex flexWrap="wrap">
       {Object.keys(cats).map((c) => {
         return (
-          <Tag mb={2} hasBG={filter === c} onClick={() => setFilter(c)}>
-            {c}
+          <Tag variant="sec" mr={2} mb={2} hasBG={filter === c} onClick={() => setFilter(c)}>
+            #{c}
           </Tag>
         )
       })}
@@ -51,27 +52,27 @@ const TagCloud = ({ recentProjects, filter, setFilter }) => {
 
 const Projects = () => {
   const { recentProjects } = useStaticQuery(query)
-  // const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState('')
   const [projects, setProjects] = useState(recentProjects)
 
-  // function handleFilter(currentFilter) {
-  //   return recentProjects.edges.filter((e, i) => {
-  //     const cats = e.node.frontmatter.categories
-  //     if (cats.includes(currentFilter)) {
-  //       return e
-  //     }
-  //   })
-  // }
+  function handleFilter(currentFilter) {
+    return recentProjects.edges.filter((e, i) => {
+      const cats = e.node.frontmatter.categories
+      if (cats.includes(currentFilter)) {
+        return e
+      }
+    })
+  }
 
-  // useEffect(() => {
-  //   const filteredProj = handleFilter(filter)
+  useEffect(() => {
+    const filteredProj = handleFilter(filter)
 
-  //   if (filter !== '') {
-  //     setProjects((prev) => {
-  //       return { edges: filteredProj }
-  //     })
-  //   }
-  // }, [filter])
+    if (filter !== '') {
+      setProjects((prev) => {
+        return { edges: filteredProj }
+      })
+    }
+  }, [filter])
 
   return (
     <>
@@ -79,13 +80,13 @@ const Projects = () => {
         <Heading as="h1" size="3xl">
           Projects and Work
         </Heading>
-        {/* {projects && (
+        {projects && (
           <TagCloud
             recentProjects={projects}
             setFilter={setFilter}
             filter={filter}
           />
-        )} */}
+        )}
         {projects && <ProjectSection recentProjects={projects} />}
       </Container>
     </>
@@ -99,7 +100,7 @@ export const query = graphql`
       filter: {
         frontmatter: { isdraft: { eq: false }, type: { eq: "project" } }
       }
-      limit: 4
+      
     ) {
       edges {
         node {
