@@ -1,16 +1,15 @@
 ---
-title: 'Type Foundries 2021'
-description: 'List of quality Typefoundries 2021'
+title: "Type Foundries 2021"
+description: "List of quality Typefoundries 2021"
 date-created: 2021/09/04
 last-modified: 2021/10/22 10:42:39
 isdraft: false
-categories: ['design', 'typography']
+categories: ["design", "typography"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
 ##
-
 
 ### [Font Share](https://www.fontshare.com/)
 
@@ -24,6 +23,6 @@ type: 'note'
 
 ### [Tunera](http://www.tunera.xyz/)
 
-### References 
+### References
 
 [Raphael Bastinde Font Foundry List](https://gitlab.com/raphaelbastide/libre-foundries)

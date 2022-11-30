@@ -2,14 +2,14 @@ const capitalizeCase = (string) => {
   // console.log(`init
   // ${string}`)
 
-  const cleanStr = string.replaceAll(/^[a-zA-Z0-9]*$/gi, '')
-  const splitOn = new RegExp('[-_ ]', 'i')
+  const cleanStr = string.replaceAll(/^[a-zA-Z0-9]*$/gi, "")
+  const splitOn = new RegExp("[-_ ]", "i")
   const stg = cleanStr.split(splitOn)
   const stringArr = []
   stg.forEach((s) => {
-    const t = s.split('')[0]
+    const t = s.split("")[0]
     if (t != null) {
-      const n = [t.toUpperCase(), ...s.slice(1)].join('')
+      const n = [t.toUpperCase(), ...s.slice(1)].join("")
       stringArr.push(n)
     } else {
       //     console.log(`
@@ -19,7 +19,7 @@ const capitalizeCase = (string) => {
       // `)
     }
   })
-  const result = stringArr.join(' ')
+  const result = stringArr.join(" ")
 
   return result
 }

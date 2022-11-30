@@ -1,12 +1,12 @@
 ---
-title: 'Design Journal 2020'
-description: ''
+title: "Design Journal 2020"
+description: ""
 date-created: 2021/04/02 21:24:00
-last-modified: '2022/08/26'
+last-modified: "2022/08/26"
 isdraft: false
-categories: ['frontend', 'design', 'journal']
-tags: ['journal', 'design']
-type: 'post'
+categories: ["frontend", "design", "journal"]
+tags: ["journal", "design"]
+type: "post"
 ---
 
 ## Trends

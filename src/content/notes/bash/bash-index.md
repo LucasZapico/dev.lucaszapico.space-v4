@@ -1,20 +1,19 @@
 ---
-title: 'Bash Catch and Cheatsheet'
-description: 'General notes on bash scripting, config and workflows'
-date-created: '2022/09/23'
-last-modified: '2022/08/23'
+title: "Bash Catch and Cheatsheet"
+description: "General notes on bash scripting, config and workflows"
+date-created: "2022/09/23"
+last-modified: "2022/08/23"
 isdraft: false
-categories: ['bash', 'cheatsheet', 'process', 'workflows', 'reference']
-tags: ['bash', 'cheatsheet', 'process', 'workflows', 'reference']
-type: 'note'
+categories: ["bash", "cheatsheet", "process", "workflows", "reference"]
+tags: ["bash", "cheatsheet", "process", "workflows", "reference"]
+type: "note"
 ---
-
 
 ## Cheatsheet
 
-### Basics 
+### Basics
 
-From within a CLI(command line interface) environment__Echo__
+From within a CLI(command line interface) environment**Echo**
 
 #### Print to terminal
 
@@ -72,9 +71,6 @@ echo -e "\e[1;43m This is text has a yellow background \e[0m"
  This text has a yellow background
 ```
 
-
-
-
 ### Basics Commands
 
 ```sh
@@ -87,7 +83,7 @@ echo -e "\e[1;43m This is text has a yellow background \e[0m"
 man <some-command>
 ```
 
-#### Get shell enviroment variables 
+#### Get shell enviroment variables
 
 Environmental
 : variables are variables that are defined for the current shell and are inherited by any child shells or processes. Environmental variables are used to pass information into processes that are spawned from the shell.
@@ -95,7 +91,7 @@ Environmental
 Shell variables
 : are variables that are contained exclusively within the shell in which they were set or defined. They are often used to keep track of ephemeral data, like the current working directory.
 
-```sh 
+```sh
  env
 ```
 
@@ -105,10 +101,12 @@ Shell variables
  pwd
  # print working directory
 ```
+
 ```sh
 cd
 # change directory
 ```
+
 ```sh
 cd -
 # change to most recent directory
@@ -124,24 +122,30 @@ cd -
 ```
 
 #### Making Files and Directories
+
 ```sh
  touch <my-file>
  # makes a file
 ```
+
 ```sh
  touch {file1,file2,file3}
  touch {01..1000}
  # makes all three defined files
 ```
+
 ```sh
  mkdir <directory-name>/
  # make a folder/directory
 ```
+
 #### Organizing Files and Directories
+
 ```sh
  mv <my-file> <directory-name>/
  # moves my-file to a given directory
 ```
+
 ```sh
  cp <my-file> <directory-copy>/
  # copies given file to defined directory
@@ -151,27 +155,32 @@ cd -
 cp -R /<source_folder> /<destination_folder>
 ```
 
-```sh 
+```sh
 cp -R <source_dir>/ <des_dir>/
 # copyies contents of <source_dir> for <des_dir>
 ```
 
 **Example**
-```sh 
+
+```sh
 cp -R ~/Documents ~/Documents-copy
 ```
+
 ```sh
  rm <some-file>
  # removes defined file
 ```
+
 ```sh
  rm -r some-directory
 # removes defined directory and all children
 ```
+
 ```sh
  cat some-file
  // returns contents of file
 ```
+
 ```sh
  file some-file.type
  // returns file type
@@ -179,45 +188,50 @@ cp -R ~/Documents ~/Documents-copy
  file index.html
  return: index.html: ASCII text
 ```
+
 ```sh
 vim some-file.type
 // opens file in vim for editing
 ```
+
 ```sh
 less some-file.type
 // opens file in less for editing.
 // note: in less 'h' opens up command navigation reference
 ```
+
 ```sh
 bg
 //(background) sends currently running script to the background
 ```
+
 ```sh
 fg
 //(foreground) brings scripts running in background to foreground
 ```
 
-## Bash 
+## Bash
 
-__Echo__
+**Echo**
 
 ```sh
 ~ echo "some text"
 // prints some text to the terminal
 ```
 
-### `which` 
+### `which`
+
 ```sh
 which some-command
 // file path to command
 ```
 
-### __Zsh__
+### **Zsh**
 
-####  Commands
+#### Commands
 
- ```
- // zsh commands
+```
+// zsh commands
 
 man some-command
 // opens manual for 'some-command'
@@ -225,13 +239,13 @@ man some-command
 whatis some-command
 // brief descrption of command
 
- ```
+```
 
----------------------------------------------------------
+---
 
------------------------------------------------------
+---
 
-### Network Status Commands ###
+### Network Status Commands
 
 ```
 netstat -ap tcp | grep -i "LISTEN"
@@ -254,32 +268,26 @@ kill -9 <PID>
 
 ```
 
+---
 
+---
 
+## Reference
 
-
---------------------------------------------------------------
-
----------------------------------------------------------------
-
-## Reference 
-
-| Directory/Folder                                             | Contents                                   |
-| ------------------------------------------------------------ | ------------------------------------------ |
-| /                                                            | root                                       |
-| /bin                                                         | binaries, programs                         |
-| /sbin                                                        | system binaries, system programs           |
-| /dev                                                         | devices: hard drives, keyboard, mouse, etc |
-| /etc                                                         | system configurations                      |
-| /home                                                        | user home directories                      |
-| /lib                                                         | libraries of code                          |
-| /tmp                                                         | temporary files                            |
-| /var                                                         | variousr, mostly files the system uses     |
+| Directory/Folder                                                | Contents                                   |
+| --------------------------------------------------------------- | ------------------------------------------ |
+| /                                                               | root                                       |
+| /bin                                                            | binaries, programs                         |
+| /sbin                                                           | system binaries, system programs           |
+| /dev                                                            | devices: hard drives, keyboard, mouse, etc |
+| /etc                                                            | system configurations                      |
+| /home                                                           | user home directories                      |
+| /lib                                                            | libraries of code                          |
+| /tmp                                                            | temporary files                            |
+| /var                                                            | variousr, mostly files the system uses     |
 | /usr </br> /usr/bin </br> /usr/etc </br>/urs/lib</br>/urs/local | user programs, tools and libraries         |
 
-
-
-------------------------------------------------------------------------------
+---
 
 ## Resources and Reference
 
@@ -293,6 +301,6 @@ Notes within this doc have been drawn from the following sources:
 
 [Linux Kernel Codeing Style](https://www.kernel.org/doc/Documentation/process/coding-style.rst)
 
-### Tutorials Corses and Guides 
+### Tutorials Corses and Guides
 
 [The Bash Guide - bash.academy](https://guide.bash.academy/)

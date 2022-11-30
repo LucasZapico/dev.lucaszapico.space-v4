@@ -1,12 +1,12 @@
 ---
-title: 'Npm Notes 2020'
-description: 'General notes on Brew'
+title: "Npm Notes 2020"
+description: "General notes on Brew"
 date-created: 2021/06/02 08:38:24
-last-modified: '2022/08/23'
+last-modified: "2022/08/23"
 isdraft: true
-categories: ['npm', 'notes']
-tags: ['npm', 'notes', 'reference']
-type: 'note'
+categories: ["npm", "notes"]
+tags: ["npm", "notes", "reference"]
+type: "note"
 ---
 
 **& vs &&**

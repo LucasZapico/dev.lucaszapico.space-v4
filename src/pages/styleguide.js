@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   Text,
   Heading,
@@ -8,8 +8,8 @@ import {
   Link,
   Flex,
   Divider,
-} from '@chakra-ui/react'
-import { Styleguide } from '../components/_index'
+} from "@chakra-ui/react"
+import { Styleguide } from "components"
 
 const StyleguidePage = () => {
   return (

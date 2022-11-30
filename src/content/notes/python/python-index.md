@@ -1,15 +1,15 @@
 ---
-title: 'Python Catch and Cheatsheet'
-description: 'General notes on python, cheatsheet, config, gochas, and workflows'
-date-created: '2022/09/29'
-last-modified: '2022/09/29'
+title: "Python Catch and Cheatsheet"
+description: "General notes on python, cheatsheet, config, gochas, and workflows"
+date-created: "2022/09/29"
+last-modified: "2022/09/29"
 isdraft: false
-categories: ['python', 'cheatsheet', 'process', 'workflows', 'reference']
-tags: ['python', 'cheatsheet', 'process', 'workflows', 'reference']
-type: 'note'
+categories: ["python", "cheatsheet", "process", "workflows", "reference"]
+tags: ["python", "cheatsheet", "process", "workflows", "reference"]
+type: "note"
 ---
 
-## Hosting 
+## Hosting
 
 ### [Appliku - Django in minutes](https://appliku.com/)
 

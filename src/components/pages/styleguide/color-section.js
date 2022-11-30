@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   Text,
   Heading,
@@ -8,40 +8,55 @@ import {
   Link,
   Flex,
   Divider,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react"
+import { styleGuideHeaderColors } from "components/pages/styleguide"
+import { Color } from "theme/colorStyles"
+
+/**
+ * TODO: enhance brand color handling
+ **/
 
 export const ColorPrimary = () => (
   <Flex flexWrap="wrap">
-    <Box height="200px" width="200px" bg="brand.zero" />
-    <Box height="200px" width="200px" bg="brand.one" />
-    <Box height="200px" width="200px" bg="brand.two" />
-    <Box height="200px" width="200px" bg="brand.three" />
-    <Box height="200px" width="200px" bg="brand.four" />
-    <Box height="200px" width="200px" bg="brand.five" />
+    {Object.keys(Color.yellow).map((g) => {
+      return <Box height="80px" width="80px" bg={Color.yellow[g]} />
+    })}
   </Flex>
 )
 
 export const ColorGrey = () => (
   <Flex flexWrap="wrap">
-    <Box height="200px" width="200px" bg="brand.zero" />
-    <Box height="200px" width="200px" bg="brand.one" />
-    <Box height="200px" width="200px" bg="mode.brand.two" />
-    <Box height="200px" width="200px" bg="brand.three" />
-    <Box height="200px" width="200px" bg="brand.four" />
-    <Box height="200px" width="200px" bg="brand.five" />
+    {Object.keys(Color.gray).map((g) => {
+      return <Box height="80px" width="80px" bg={Color.gray[g]} />
+    })}
   </Flex>
 )
 export const ColorSection = () => (
-  <Box py={20}>
+  <Box py={20} id="color">
     <Divider />
     <Box py={10}>
-      <Heading as="h3" size="2xl">
+      <Heading as="h3" size="2xl" color={styleGuideHeaderColors.pri}>
         Color Palette
       </Heading>
-      <Heading as="h4" variant="sec" size="lg">
+      <Heading as="h4" size="lg" color={styleGuideHeaderColors.sec}>
         Primary
       </Heading>
-      <ColorPrimary />
+      {Object.keys(Color).map((color) => {
+        return (
+          <Box>
+            <Heading as="div" size="lg" color={styleGuideHeaderColors.sec}>
+              {color}
+            </Heading>
+            <Flex flexWrap="wrap">
+              {Object.keys(Color[color]).map((c) => {
+                return <Box height="80px" width="80px" bg={Color[color][c]} />
+              })}
+            </Flex>
+          </Box>
+        )
+      })}
+      {/* <ColorPrimary />
+      <ColorGrey /> */}
     </Box>
   </Box>
 )

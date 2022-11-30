@@ -1,12 +1,12 @@
 ---
-title: 'General Software Development'
-description: ''
+title: "General Software Development"
+description: ""
 date-created: 2021/03/15 14:19:17
-last-modified: '2022/10/23'
+last-modified: "2022/10/23"
 isdraft: false
-categories: ['general', 'notes']
+categories: ["general", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
 ## Documentation

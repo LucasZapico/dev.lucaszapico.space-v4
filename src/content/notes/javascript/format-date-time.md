@@ -1,13 +1,13 @@
 ---
-title: 'format date time'
-description: ''
-date-created: '2022/02/15'
-last-modified: '2022/08/24'
+title: "format date time"
+description: ""
+date-created: "2022/02/15"
+last-modified: "2022/08/24"
 isdraft: false
-parent: 'javascript'
-categories: ['javascript', 'notes']
-tags: ['javascript', 'notes', 'reference']
-type: 'note'
+parent: "javascript"
+categories: ["javascript", "notes"]
+tags: ["javascript", "notes", "reference"]
+type: "note"
 ---
 
 ### Examples
@@ -30,13 +30,13 @@ console.log(date) // Tue Feb 15 2022
 
 ```javascript
 const options = {
-  timeZone: 'America/New_York',
-  month: 'short',
-  day: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
+  timeZone: "America/New_York",
+  month: "short",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
 }
-const date = new Date().toLocaleDateString('en-us', options)
+const date = new Date().toLocaleDateString("en-us", options)
 console.log(date) // Feb 15, 7:33 AM
 ```
 

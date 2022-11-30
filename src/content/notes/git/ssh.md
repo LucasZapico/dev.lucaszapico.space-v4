@@ -1,8 +1,8 @@
 ---
 title: SSH Catch
 description: "General notes on common ssh tasks and actions"
-date-created: '2022/02/11'
-last-modified: '2022/09/28'
+date-created: "2022/02/11"
+last-modified: "2022/09/28"
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
@@ -157,6 +157,36 @@ _.git/config_
    url = git@work-profile:username/work-project-two.git
 
 ...
+```
+
+## SSH Between Two Mac on LAN
+
+You can try the following but it can fail `Full Disk Access privileges.` error.
+
+```sh
+sudo systemsetup -setremotelogin on
+```
+
+If 👆that doesn't work try 👇
+
+```sh
+##Enabling SSH
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+```
+
+to turn remote access off as security best practice.
+
+```sh
+
+##Disabling SSH
+sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
+```
+
+### Check Status
+
+```sh
+#To check if is on or off
+sudo systemsetup -getremotelogin
 ```
 
 ## Reference

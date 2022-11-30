@@ -1,4 +1,7 @@
+import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby"
+import React, { useState, useEffect, memo } from "react"
 import {
+  Flex,
   Box,
   Breadcrumb,
   BreadcrumbItem,
@@ -6,22 +9,58 @@ import {
   Container,
   Heading,
   Text,
-} from '@chakra-ui/react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
-import { Link as GatsbyLink, graphql } from 'gatsby'
-import React from 'react'
-import { generate } from 'shortid'
-import { HalfByHalfSection, LinkOne, Tag } from '../components/_index'
+  Tag,
+  HStack,
+} from "@chakra-ui/react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import pathToJsonTree from "utils/path-to-json-tree"
+import { generate } from "shortid"
+import { HalfByHalfSection, LinkOne } from "components"
+import SubjectTree from "components/modules/subject-tree"
 
 export default function ArticleTemplate({ path, pageContext, location }) {
   const { next, previous, node, title, tableOfContents } = pageContext
-  console.log('article')
-  console.log(pageContext)
+  const { recentNotes } = useStaticQuery(query)
+  const [notes, setNotes] = useState(recentNotes.edges)
+  const [tree, setTree] = useState()
+
+  const makeDirTree = (edges) => {
+    let jsonTree = []
+    /* eslint-disable  */
+    for (const e of edges) {
+      const path = e.node.parent.relativePath
+      const link = e.node.fields.path
+      const i = path.replace("notes/", "").split("/")
+      jsonTree = pathToJsonTree(i, link, jsonTree)
+    }
+    return jsonTree
+  }
+
+  useEffect(() => {
+    if (recentNotes.edges.length > 0) {
+      const newTree = makeDirTree(recentNotes.edges)
+
+      setTree(newTree)
+    }
+  }, [])
+
+  /**
+   * Memo functions
+   */
+  const MemoSubjectTree = memo(SubjectTree)
 
   const TOC = () => (
-    <Box as="aside">
-      <Heading>Table of Contents</Heading>
+    <Box
+      position={{ base: "static", lg: "sticky" }}
+      top="0px"
+      right="2rem"
+      paddingY={6}
+      as="aside"
+      className="toc"
+    >
+      <Heading as="div" color="gray.200" mb={2} size="xl">
+        Table of Contents
+      </Heading>
       <Box
         as="nav"
         px={2}
@@ -89,8 +128,8 @@ export default function ArticleTemplate({ path, pageContext, location }) {
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink to="/articles" as={GatsbyLink}>
-            Articles
+          <BreadcrumbLink to="/notes" as={GatsbyLink}>
+            Notes
           </BreadcrumbLink>
         </BreadcrumbItem>
 
@@ -105,48 +144,111 @@ export default function ArticleTemplate({ path, pageContext, location }) {
     <>
       {/* <SEO location={location} title={title} /> */}
       <Box minHeight="100vh" pt={10} pb={10}>
-        <Container
-          maxW="container.xl"
-          py={10}
-          display="flex"
-          flexWrap="wrap"
-          flexDirection="row-reverse"
-        >
-          <TOC />
-          <Container maxW="container.md" py={10} px={10}>
-            <BreadCrumbs />
-            <Heading mt={6} mb={4} as="h1" size="xl">
+        <Box py={10} display="flex" flexWrap="wrap">
+          <Box
+            overflow="scroll"
+            // backgroundColor="gray.800"
+            pl={4}
+            py={10}
+            display={{ base: "none", md: "block" }}
+            flexBasis={{ base: "0%", md: "30%", lg: "25%" }}
+          >
+            <Heading variant="tri">Subjects</Heading>
+            <MemoSubjectTree tree={tree} />
+          </Box>
+          <Box
+            flexBasis={{ base: "100%", md: "60%", lg: "75%" }}
+            py={10}
+            px={10}
+          >
+            <Heading mt={6} mb={4} as="h1" size="2xl">
               {title}
             </Heading>
-            <Box py={6}>
+            <BreadCrumbs />
+            <HStack flexWrap="wrap" py={6}>
               {node.frontmatter.categories &&
                 node.frontmatter.categories.map((cat, i) => (
-                  <Tag key={generate()}>{cat}</Tag>
+                  <Tag variant="sec" key={generate()}>
+                    #{cat}
+                  </Tag>
                 ))}
-            </Box>
-            <main>
+            </HStack>
+            <Box
+              display="flex"
+              flexDirection={{ base: "column-reverse", lg: "row" }}
+              justifyContent="space-between"
+              as="main"
+              className="article-wrapper"
+            >
               <Box
+                width={{ md: "650px" }}
                 py={10}
-                className="article-wrapper"
                 dangerouslySetInnerHTML={{ __html: node.html }}
               />
-            </main>
-          </Container>
-        </Container>
+              <TOC width="20%" />
+            </Box>
+          </Box>
+        </Box>
 
         <Container maxW="container.xl" my={10}>
           <Box my={10}>
             <Heading as="h3" size="xl">
-              More Articles
+              More {node.frontmatter.type === "note" ? "Notes" : "/Articles"}
             </Heading>
-            <LinkOne to="/articles">All Articles</LinkOne>
+            {node.frontmatter.type === "note" ? (
+              <LinkOne as={GatsbyLink} to="/notes">
+                All Notes
+              </LinkOne>
+            ) : (
+              <LinkOne as={GatsbyLink} to="/articles">
+                All Articles
+              </LinkOne>
+            )}
           </Box>
           <HalfByHalfSection
-            right={previous !== null ? <PrevArticle /> : ''}
-            left={next !== null ? <NextArticle /> : ''}
+            right={previous !== null ? <PrevArticle /> : ""}
+            left={next !== null ? <NextArticle /> : ""}
           />
         </Container>
       </Box>
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    recentNotes: allMarkdownRemark(
+      filter: { frontmatter: { isdraft: { eq: false }, type: { eq: "note" } } }
+      sort: { fields: frontmatter___date_created, order: DESC }
+    ) {
+      edges {
+        node {
+          parent {
+            id
+            ... on File {
+              id
+              name
+              dir
+              relativeDirectory
+              relativePath
+            }
+          }
+          excerpt
+          id
+          fields {
+            path
+          }
+          frontmatter {
+            title
+            categories
+            description
+            tags
+            date_created
+            last_modified
+            type
+          }
+        }
+      }
+    }
+  }
+`

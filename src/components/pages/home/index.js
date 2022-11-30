@@ -1,13 +1,12 @@
-import React from 'react'
-import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
-import ArticleSection from './article-section'
-import HomeHero from './hero'
-import { ProjectSection } from '../../_index'
-import { Heading, Link, Container } from '@chakra-ui/react'
+import React from "react"
+import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
+import ArticleSection from "./article-section"
+import HomeHero from "./hero"
+import { ProjectSection } from "components"
+import { Heading, Link, Container } from "@chakra-ui/react"
 
 const Home = () => {
   const { recentArticles, recentProjects } = useStaticQuery(query)
-
   return (
     <>
       <HomeHero />
@@ -50,35 +49,38 @@ export const query = graphql`
       }
     }
 
-    recentProjects: allMarkdownRemark(
+    recentProjects: allMdx(
+      sort: { fields: frontmatter___date_created, order: DESC }
       filter: {
         frontmatter: { isdraft: { eq: false }, type: { eq: "project" } }
       }
-      sort: { fields: frontmatter___date_created, order: DESC }
       limit: 4
     ) {
       edges {
         node {
           id
-          fields {
-            path
-          }
           frontmatter {
-            title
+            path
             subHeader
             categories
-            description
+            date_created
+            title
             tags
+            isdraft
+            last_modified
+            link
             featuredImage {
               childImageSharp {
                 gatsbyImageData
               }
             }
           }
+          fields {
+            path
+          }
         }
       }
     }
   }
 `
-
 export default Home

@@ -1,32 +1,39 @@
-import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby'
-import React, { useEffect, useState } from 'react'
-import { generate } from 'shortid'
-import { useSpring, animated as a } from 'react-spring'
-import { Box, Container, Button, Link } from '@chakra-ui/react'
-import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
-import { useWindowSize } from '../../../hooks'
-import MobileNav from './mobile-nav'
+import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby"
+import React, { useEffect, useState } from "react"
+import { generate } from "shortid"
+import { useSpring, animated as a } from "react-spring"
+import {
+  useColorMode,
+  Box,
+  Container,
+  Button,
+  Link,
+  IconButton,
+} from "@chakra-ui/react"
+import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons"
+import { useWindowSize } from "../../../hooks"
+import MobileNav from "./mobile-nav"
 
 const ROUTES = [
   {
-    name: 'Home',
-    path: '/',
+    name: "Home",
+    path: "/",
   },
   {
-    name: 'Projects',
-    path: '/projects',
+    name: "Projects",
+    path: "/projects",
   },
   {
-    name: 'Articles',
-    path: '/articles',
+    name: "Articles",
+    path: "/articles",
   },
   {
-    name: 'Notes',
-    path: '/notes',
+    name: "Notes",
+    path: "/notes",
   },
   {
-    name: 'About',
-    path: '/about',
+    name: "About",
+    path: "/about",
   },
 
   // {
@@ -35,9 +42,23 @@ const ROUTES = [
   // },
 ]
 
-const DesktopNav = () => {
+export const DarkModeSwitch = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
+  const isDark = colorMode === "dark"
   return (
-    <Container maxW="container.xl" display={{ base: 'none', lg: 'block' }}>
+    <IconButton
+      icon={isDark ? <SunIcon /> : <MoonIcon />}
+      aria-label="Toggle Theme"
+      bg="transparent"
+      onClick={toggleColorMode}
+    />
+  )
+}
+
+const DesktopNav = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
+  return (
+    <Container maxW="container.xl" display={{ base: "none", lg: "block" }}>
       <Box
         display="flex"
         py={4}
@@ -58,12 +79,13 @@ const DesktopNav = () => {
             {r.name}
           </Link>
         ))}
+        <DarkModeSwitch />
       </Box>
     </Container>
   )
 }
 
-const nav = () => {
+const Nav = () => {
   const size = useWindowSize()
   const [show, setShow] = useState(false)
 
@@ -85,10 +107,9 @@ const nav = () => {
         as={Button}
         zIndex={show ? 0 : 10}
         onClick={() => {
-          console.log('click')
           setShow(true)
         }}
-        display={{ base: 'block', lg: 'none' }}
+        display={{ base: "block", lg: "none" }}
         variant="none"
       >
         <HamburgerIcon boxSize="1.5rem" />
@@ -101,4 +122,4 @@ const nav = () => {
   )
 }
 
-export default nav
+export default Nav

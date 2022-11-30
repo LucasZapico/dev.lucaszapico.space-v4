@@ -1,29 +1,29 @@
 ---
-title: 'More Advanced Formating Pattern Bash'
-description: 'General notes on Bash formating '
-date-created: '2022/09/23'
-last-modified: '2022/09/28'
+title: "More Advanced Formating Pattern Bash"
+description: "General notes on Bash formating "
+date-created: "2022/09/23"
+last-modified: "2022/09/28"
 isdraft: false
-categories: ['bash', 'process', 'workflows', 'reference']
-tags: ['bash', 'process', 'workflows', 'reference']
-type: 'note'
+categories: ["bash", "process", "workflows", "reference"]
+tags: ["bash", "process", "workflows", "reference"]
+type: "note"
 ---
 
-## Using `printf` 
+## Using `printf`
 
 ```sh
 printf "%s\n" "hello world from printf"
 hello world from printf
 ```
 
-```sh 
+```sh
 $ printf "%s\n" "hello printf" "in" "bash script"
 hello printf
 in
 bash script
 ```
 
-### Advanced Formating 
+### Advanced Formating
 
 #### Table
 

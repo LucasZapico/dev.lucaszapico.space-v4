@@ -1,44 +1,44 @@
 ---
-title: 'MySQL Notes'
-description: 'Notes'
+title: "MySQL Notes"
+description: "Notes"
 date-created: 2021/03/15 14:19:17
-last-modified: '2022/10/02'
+last-modified: "2022/10/02"
 isdraft: false
-categories: ['sql', 'notes']
+categories: ["sql", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
-### Installation
+## Installation
 
 Uppon download of dng mySQL shell and mySQL utilities expose mysql/bin to shell of choise
 
-> Example:
->
-> mySQL shell path and mySQL utilities path on system
->
-> ```
-> usr/local/mysql/bin && usr/local/mysql-shell/bin
-> ```
->
-> navigate to shell profiles .bashrc, .bash_profile or .zshrc add
->
-> ```
-> export PATH=${PATH}:/usr/local/mysql-shell/bin
-> export PATH=${PATH}:/usr/local/mysql/bin
-> ```
->
-> Open terminal of choice
->
-> ```
-> mysql -u user-name -p
-> ```
->
-> enter:
->
-> prompt for password
->
-> Sucess, we have entered the mysql shell
+#### Walk through - Example
+
+mySQL shell path and mySQL utilities path on system
+
+```
+usr/local/mysql/bin && usr/local/mysql-shell/bin
+```
+
+navigate to shell profiles .bashrc, .bash_profile or .zshrc add
+
+```
+export PATH=${PATH}:/usr/local/mysql-shell/bin
+export PATH=${PATH}:/usr/local/mysql/bin
+```
+
+Open terminal of choice
+
+```
+mysql -u user-name -p
+```
+
+enter:
+
+prompt for password
+
+Sucess, we have entered the mysql shell
 
 ```
 > shell mysql show databases;

@@ -1,12 +1,12 @@
 ---
-title: 'API Security'
-description: 'Notes '
+title: "API Security"
+description: "Notes "
 date-created: 2021/03/15 14:19:17
-last-modified: '2022/10/02'
+last-modified: "2022/10/02"
 isdraft: true
-categories: ['api', 'notes']
+categories: ["api", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
 # API Security

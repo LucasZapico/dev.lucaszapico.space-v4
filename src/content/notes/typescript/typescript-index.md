@@ -1,12 +1,12 @@
 ---
-title: 'Typescript Notes'
-description: 'General notes on typescript'
+title: "Typescript Notes"
+description: "General notes on typescript"
 date-created: 2022/01/10
-last-modified: '2022/08/11'
+last-modified: "2022/08/11"
 isdraft: true
-categories: ['typescript', 'notes']
-tags: ['typescript', 'notes']
-type: 'note'
+categories: ["typescript", "notes"]
+tags: ["typescript", "notes"]
+type: "note"
 ---
 
 ## What is Typescript
@@ -28,7 +28,7 @@ function add(num1, num2) {
   return num1 + num2
 }
 
-console.log(add('2', '3'))
+console.log(add("2", "3"))
 // 23
 ```
 
@@ -39,14 +39,14 @@ To handle this error in native JS we would either need to check for type with an
 ```javascript
 function add(num1, num2) {
   // check types
-  if (typeof num1 === 'number' && typeof num2 === 'number') {
+  if (typeof num1 === "number" && typeof num2 === "number") {
     return num1 + num2
   } else {
     return +num1 + +num2
   }
 }
 
-console.log(add('2', '3'))
+console.log(add("2", "3"))
 // 5
 ```
 
@@ -71,8 +71,8 @@ function add(num1: number, num2: number) {
   return num1 + num2
 }
 
-const n1 = '2'
-const n2 = '4'
+const n1 = "2"
+const n2 = "4"
 
 console.log(add(+n1, +n2))
 ```
@@ -97,7 +97,7 @@ console.log(add(+n1, +n2))
 
 ```typescript
 const person: object = {
-  name: 'max',
+  name: "max",
   age: 30,
 }
 ```
@@ -106,7 +106,7 @@ const person: object = {
 
 ```typescript
 const person: {} = {
-  name: 'max',
+  name: "max",
   age: 30,
 }
 ```
@@ -118,7 +118,7 @@ const person: {
   name: string
   age: number
 } = {
-  name: 'max',
+  name: "max",
   age: 30,
 }
 ```
@@ -126,7 +126,7 @@ const person: {
 #### Arrays
 
 ```typescript
-const hobbies: string[] = ['Sports', 'Cooking']
+const hobbies: string[] = ["Sports", "Cooking"]
 ```
 
 ```typescript
@@ -138,22 +138,22 @@ for (const hobby of hobbies) {
 #### Tuples [Docs](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#other-important-typescript-types)
 
 ```typescript
-const roles: [number, string] = [2, 'author']
+const roles: [number, string] = [2, "author"]
 ```
 
 _what tuples enforces_
 
 ```typescript
-const roles: [number, string] = [2, 'author']
+const roles: [number, string] = [2, "author"]
 // Type 'number' is not assignable to type 'string'
 roles[1] = 10
 ```
 
 ```typescript
-let roles: [number, string] = [2, 'author']
+let roles: [number, string] = [2, "author"]
 // Type '[number, string, string]' is not assignable to type '[number, string]'.
 // Source has 3 element(s) but target allows only 2.
-roles = [2, 'author', 'producer']
+roles = [2, "author", "producer"]
 ```
 
 **Exceptions**
@@ -161,7 +161,7 @@ roles = [2, 'author', 'producer']
 Typescript tuples does not enforce push errors
 
 ```typescript
-const roles: [number, string] = [2, 'author']
-roles.push('admin')
+const roles: [number, string] = [2, "author"]
+roles.push("admin")
 // (3) [2, 'author', 'admin']
 ```

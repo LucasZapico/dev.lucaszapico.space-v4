@@ -1,12 +1,12 @@
 ---
-title: 'C++ General Notes'
-description: ''
+title: "C++ General Notes"
+description: ""
 date-created: 2021/03/15 14:19:17
 last-modified: 2021/09/01 19:17:41
 isdraft: false
-categories: ['c++', 'notes']
+categories: ["c++", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
 # Notes for C++ Programing

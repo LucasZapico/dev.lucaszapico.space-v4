@@ -1,12 +1,12 @@
 ---
-title: 'Docker Notes 2020'
-description: 'General notes on Docker'
+title: "Docker Notes 2020"
+description: "General notes on Docker"
 date-created: 2020/10/21
-last-modified: '2022/10/02'
+last-modified: "2022/10/02"
 isdraft: false
-categories: ['cheatsheet', 'docker', 'notes']
-tags: ['cheatsheet', 'docker', 'notes']
-type: 'note'
+categories: ["cheatsheet", "docker", "notes"]
+tags: ["cheatsheet", "docker", "notes"]
+type: "note"
 ---
 
 ## Common Commands

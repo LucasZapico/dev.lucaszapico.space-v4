@@ -7,20 +7,22 @@ import {
   Container,
   Heading,
   Text,
-} from '@chakra-ui/react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+  Tag,
+  HStack,
+} from "@chakra-ui/react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import { Link as GatsbyLink, graphql } from 'gatsby'
-import React from 'react'
-import { generate } from 'shortid'
-import { HalfByHalfSection, LinkOne, Tag } from '../components/_index'
+import { Link as GatsbyLink, graphql } from "gatsby"
+import React from "react"
+import { generate } from "shortid"
+import { HalfByHalfSection, LinkOne } from "components"
 
 export default function ArticleTemplate({ path, pageContext, location }) {
   const { next, previous, node, title, tableOfContents } = pageContext
 
   const TOC = () => (
     <Box
-      position={{ base: 'static', lg: 'sticky' }}
+      position={{ base: "static", lg: "sticky" }}
       top="0px"
       right="2rem"
       paddingY={6}
@@ -98,10 +100,10 @@ export default function ArticleTemplate({ path, pageContext, location }) {
 
         <BreadcrumbItem>
           <BreadcrumbLink
-            to={node.frontmatter.type === 'note' ? '/notes' : '/articles'}
+            to={node.frontmatter.type === "note" ? "/notes" : "/articles"}
             as={GatsbyLink}
           >
-            {node.frontmatter.type === 'note' ? 'Notes' : 'Articles'}
+            {node.frontmatter.type === "note" ? "Notes" : "Articles"}
           </BreadcrumbLink>
         </BreadcrumbItem>
 
@@ -128,23 +130,23 @@ export default function ArticleTemplate({ path, pageContext, location }) {
               {title}
             </Heading>
             <BreadCrumbs />
-            <Flex flexWrap="wrap" py={6}>
+            <HStack flexWrap="wrap" py={6}>
               {node.frontmatter.categories &&
                 node.frontmatter.categories.map((cat, i) => (
-                  <Tag mb={4} key={generate()}>
-                    {cat}
+                  <Tag variant="sec" key={generate()}>
+                    #{cat}
                   </Tag>
                 ))}
-            </Flex>
+            </HStack>
             <Box
               display="flex"
-              flexDirection={{ base: 'column-reverse', lg: 'row' }}
+              flexDirection={{ base: "column-reverse", lg: "row" }}
               justifyContent="space-between"
               as="main"
               className="article-wrapper"
             >
               <Box
-                width={{ md: '650px' }}
+                width={{ md: "650px" }}
                 py={10}
                 dangerouslySetInnerHTML={{ __html: node.html }}
               />
@@ -156,9 +158,9 @@ export default function ArticleTemplate({ path, pageContext, location }) {
         <Container maxW="container.xl" my={10}>
           <Box my={10}>
             <Heading as="h3" size="xl">
-              More {node.frontmatter.type === 'note' ? 'Notes' : '/Articles'}
+              More {node.frontmatter.type === "note" ? "Notes" : "/Articles"}
             </Heading>
-            {node.frontmatter.type === 'note' ? (
+            {node.frontmatter.type === "note" ? (
               <LinkOne as={GatsbyLink} to="/notes">
                 All Notes
               </LinkOne>
@@ -169,8 +171,8 @@ export default function ArticleTemplate({ path, pageContext, location }) {
             )}
           </Box>
           <HalfByHalfSection
-            right={previous !== null ? <PrevArticle /> : ''}
-            left={next !== null ? <NextArticle /> : ''}
+            right={previous !== null ? <PrevArticle /> : ""}
+            left={next !== null ? <NextArticle /> : ""}
           />
         </Container>
       </Box>

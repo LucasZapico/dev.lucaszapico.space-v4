@@ -1,10 +1,19 @@
-import React from 'react'
-import { Link, Box, Container, Heading, Text, Flex } from '@chakra-ui/react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { navigate, Link as GatsbyLink } from 'gatsby'
-import { generate } from 'shortid'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
-import { CardOne, Tag } from '../../_index'
+import React from "react"
+import {
+  Link,
+  Box,
+  Container,
+  Tag,
+  Heading,
+  Text,
+  Flex,
+  HStack,
+} from "@chakra-ui/react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { navigate, Link as GatsbyLink } from "gatsby"
+import { generate } from "shortid"
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper"
+import { CardOne } from "components"
 
 SwiperCore.use([Navigation, Scrollbar, A11y])
 
@@ -40,12 +49,15 @@ const ArticleSection = ({ recentArticles }) => (
           1040: { slidesPerView: 3, spaceBetween: 50 },
           1400: { slidesPerView: 4, spaceBetween: 50 },
         }}
-        onSlideChange={() => console.log('slide change')}
+        onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
         {recentArticles.edges.map((article, i) => {
           const { title, description, categories, tags } =
             article.node.frontmatter
+          /**
+           * NOTE: the card below is custum becuase of the nature of swiper
+           */
           return (
             <SwiperSlide key={generate()}>
               <CardOne
@@ -58,18 +70,22 @@ const ArticleSection = ({ recentArticles }) => (
                 }}
               >
                 <Box>
-                  <Heading as="h4" size="md" variant="sec">
+                  <Heading as="h4" size="md" variant="tri">
                     {title}
                   </Heading>
-                  <Text as="h5" variant="sec" size="md">
+                  <Text as="h5" variant="sec" size="md" noOfLines={3}>
                     {description}
                   </Text>
                 </Box>
-                <Flex flexWrap="wrap">
-                  {categories.map((cat, i) => (
-                    <Tag key={generate()}>{cat}</Tag>
-                  ))}
-                </Flex>
+                <Box>
+                  <Flex flexWrap="wrap">
+                    {categories.map((cat, i) => (
+                      <Tag mb={2} mr={1} variant="sec" key={generate()}>
+                        #{cat}
+                      </Tag>
+                    ))}
+                  </Flex>
+                </Box>
               </CardOne>
             </SwiperSlide>
           )

@@ -2,9 +2,9 @@
 title: Jounral Q1
 description:
 date-created: 2022/02/13
-last-modified: '2022/08/11'
-categories: ['journal']
-tags: ['journal']
+last-modified: "2022/08/11"
+categories: ["journal"]
+tags: ["journal"]
 isdraft: false
 type: journal
 ---

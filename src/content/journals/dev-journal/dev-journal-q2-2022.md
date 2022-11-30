@@ -1,12 +1,12 @@
 ---
-title: 'dev-journal-q2-2022'
-description: 'general development journal 2022'
-date-created: '2022/04/22'
-last-modified: '2022/05/11'
-categories: ['journal', 'development']
-tags: ['journal', 'development']
+title: "dev-journal-q2-2022"
+description: "general development journal 2022"
+date-created: "2022/04/22"
+last-modified: "2022/05/11"
+categories: ["journal", "development"]
+tags: ["journal", "development"]
 isdraft: false
-type: 'journal'
+type: "journal"
 ---
 
 # Development Journal Q2 2022

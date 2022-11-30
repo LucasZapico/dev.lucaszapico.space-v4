@@ -1,6 +1,6 @@
-import { Box, Container, Heading } from '@chakra-ui/react'
-import React from 'react'
-import { SiteCredits } from '../components/_index'
+import { Box, Container, Heading } from "@chakra-ui/react"
+import React from "react"
+import { SiteCredits } from "components"
 
 const SiteCreditPage = () => {
   return (

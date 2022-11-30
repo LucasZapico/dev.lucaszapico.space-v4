@@ -6,7 +6,7 @@
 //   padding-right: 1em;
 //   padding-left: 0.75em;
 //   border-left: 0.25em solid #f99;
- 
+
 // }
 
 // .gatsby-highlight pre[class*='language-'] {
@@ -25,64 +25,62 @@
 //    }
 
 // }
- 
+
 .gatsby-remark-prismjs-copy-button {
-    margin-right: .5rem;
-    margin-top: .5rem;
-    position: relative;
-    background: none;
-    color: transparent;
-    
-    // display: none;
-    // width: 0px;
-    //  position: relative;
-    // overflow: hidden;
-      &:hover {
-          background-color: transparent;
-          &:before {
-            // background-color: $color-three;    
-          }
-          &:after {
-            //   background-color: $gray-700;
-          }
-      }
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  position: relative;
+  background: none;
+  color: transparent;
+
+  // display: none;
+  // width: 0px;
+  //  position: relative;
+  // overflow: hidden;
+  &:hover {
+    background-color: transparent;
     &:before {
-      content: '';
-      height: 20px;
-      width: 18px;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      padding-left: 1.5rem;
-      padding-right: 1.8rem;
-      position: absolute;
-      top: 0px;
-      right: .6rem;   
-      
-      background-color: red;
-      background: black;
-    
+      // background-color: $color-three;
     }
-     
-    &:after {   
-      content: url('/icons/clipboard.svg');
-      height: auto;
-      width: 18px;
-      border-radius: .5px;
-      background-color: $color-zero;
-      position: absolute;
-      top: 0px;
-      right: .5rem; 
+    &:after {
+      //   background-color: $gray-700;
     }
-  
+  }
+  &:before {
+    content: "";
+    height: 20px;
+    width: 18px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.8rem;
+    position: absolute;
+    top: 0px;
+    right: 0.6rem;
+
+    background-color: red;
+    background: black;
+  }
+
+  &:after {
+    content: url("/icons/clipboard.svg");
+    height: auto;
+    width: 18px;
+    border-radius: 0.5px;
+    background-color: $color-zero;
+    position: absolute;
+    top: 0px;
+    right: 0.5rem;
+  }
 }
 
 .gatsby-code-title {
   position: relative;
   margin-bottom: -2rem;
   padding: 0.5em 1em;
-  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
-    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
-    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+    "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+    "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier,
     monospace;
   background-color: $gray-900;
   color: $gray-100;

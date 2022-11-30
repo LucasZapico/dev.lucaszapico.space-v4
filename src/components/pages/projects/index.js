@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
-import { SearchIcon } from '@chakra-ui/icons'
+import React, { useState, useEffect } from "react"
+import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
+import { SearchIcon } from "@chakra-ui/icons"
 
 import {
   Flex,
@@ -10,11 +10,11 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-} from '@chakra-ui/react'
-import { generate } from 'shortid'
-import { generateImageData } from 'gatsby-plugin-image'
-import ProjectCard from './project-card'
-import { ProjectSection, CardOne, Tag } from '../../_index'
+  Tag,
+} from "@chakra-ui/react"
+import { generate } from "shortid"
+import { generateImageData } from "gatsby-plugin-image"
+import { ProjectCard, ProjectSection, CardOne } from "components"
 
 const TagCloud = ({ recentProjects, filter, setFilter }) => {
   const [cats, setCats] = useState({})
@@ -41,8 +41,15 @@ const TagCloud = ({ recentProjects, filter, setFilter }) => {
     <Flex flexWrap="wrap">
       {Object.keys(cats).map((c) => {
         return (
-          <Tag mb={2} hasBG={filter === c} onClick={() => setFilter(c)}>
-            {c}
+          <Tag
+            key={generate()}
+            variant="sec"
+            mr={2}
+            mb={2}
+            hasBG={filter === c}
+            onClick={() => setFilter(c)}
+          >
+            #{c}
           </Tag>
         )
       })}
@@ -52,7 +59,7 @@ const TagCloud = ({ recentProjects, filter, setFilter }) => {
 
 const Projects = () => {
   const { recentProjects } = useStaticQuery(query)
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState("")
   const [projects, setProjects] = useState(recentProjects)
 
   function handleFilter(currentFilter) {
@@ -67,7 +74,7 @@ const Projects = () => {
   useEffect(() => {
     const filteredProj = handleFilter(filter)
 
-    if (filter !== '') {
+    if (filter !== "") {
       setProjects((prev) => {
         return { edges: filteredProj }
       })
@@ -77,8 +84,8 @@ const Projects = () => {
   return (
     <>
       <Container maxW="container.xl">
-        <Heading as="h1" size="4xl">
-          Work
+        <Heading as="h1" size="3xl">
+          Projects and Work
         </Heading>
         {projects && (
           <TagCloud
@@ -95,29 +102,33 @@ const Projects = () => {
 
 export const query = graphql`
   query {
-    recentProjects: allMarkdownRemark(
+    recentProjects: allMdx(
+      sort: { fields: frontmatter___date_created, order: DESC }
       filter: {
         frontmatter: { isdraft: { eq: false }, type: { eq: "project" } }
       }
-      sort: { fields: frontmatter___date_created, order: DESC }
     ) {
       edges {
         node {
           id
-          fields {
-            path
-          }
           frontmatter {
-            title
+            path
             subHeader
             categories
-            description
+            date_created
+            title
             tags
+            isdraft
+            last_modified
+            link
             featuredImage {
               childImageSharp {
                 gatsbyImageData
               }
             }
+          }
+          fields {
+            path
           }
         }
       }

@@ -1,21 +1,21 @@
 ---
-title: 'Algorithms'
-description: 'Notes for reference on algorithms with C#'
-date-created: '2021/03/15'
-last-modified: '2022/10/02'
+title: "Algorithms"
+description: "Notes for reference on algorithms with C#"
+date-created: "2021/03/15"
+last-modified: "2022/10/02"
 isdraft: false
-categories: ['algorithms', 'notes']
-tags: ['algorithms', 'notes']
-type: 'note'
+categories: ["algorithms", "notes"]
+tags: ["algorithms", "notes"]
+type: "note"
 ---
 
 ## What is an algorithms
 
 A set of steps, instructions or actions to solve rigorously understood(defined) problem.
 
-- the steps of ana algorithm needs to be in a specific order 
+- the steps of ana algorithm needs to be in a specific order
 - steps need to be distinct
-- produce a result 
+- produce a result
 - should complete(complete in a finite amount of time)
 
 ### General Generic Definitions
@@ -32,7 +32,7 @@ A set of steps, instructions or actions to solve rigorously understood(defined) 
 
 ### What is a "good" algorithms
 
-> there is no single way 
+> there is no single way
 
 - correctness
 - efficiency
@@ -41,7 +41,7 @@ A set of steps, instructions or actions to solve rigorously understood(defined) 
 
 - clear input
 - clear output
-- will end 
+- will end
 
 <!--- TODO: add link to correctness mathematical defintion -->
 
@@ -52,28 +52,25 @@ Algorithm efficiency is defined by two metrics **time** and **space** complexity
 > We analysis the **worst case** becuase it can never perform worst then the worst case
 
 Time complexity
-: home long it takes to complete a job 
+: home long it takes to complete a job
 : in computer science this is defined as run time
 
 Space complexity
 : the amount of computer memory an algorithm takes
 
-- binary search 
- - efficiency if the set is sequential and ordered
-- linear search 
- - linear search maintians it's complexity regardless if the set is ordered
- 
- ### Binary Search 
+- binary search
+- efficiency if the set is sequential and ordered
+- linear search
+- linear search maintians it's complexity regardless if the set is ordered
 
-#### Correctness 
+### Binary Search
 
-- input: ordered list of values 
+#### Correctness
+
+- input: ordered list of values
 - output: position of the target value
 
-#### Efficiency 
-
-
-
+#### Efficiency
 
 ## Common Search Algorithms
 

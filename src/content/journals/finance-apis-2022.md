@@ -1,12 +1,12 @@
 ---
-title: 'Finance APIs 2022'
-description: ''
+title: "Finance APIs 2022"
+description: ""
 date-created: 2021/05/09 13:06:37
 last-modified: 2021/05/10 09:58:52
 isdraft: true
-categories: ['resources', 'journal', 'react']
-tags: ['react']
-type: 'post'
+categories: ["resources", "journal", "react"]
+tags: ["react"]
+type: "post"
 ---
 
 ## Finance API Journal 2022

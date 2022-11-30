@@ -1,83 +1,51 @@
-import { extendTheme } from '@chakra-ui/react'
-import { Color } from './color'
-import { Buttons, Links } from './buttons-links'
-import { Headings, Fonts, Texts } from './typography'
+import { extendTheme } from "@chakra-ui/react"
+import { mode } from "@chakra-ui/theme-tools"
+import LinkStyles from "theme/linkStyles"
+import { ButtonStyles } from "theme/buttonStyles"
+import { TagStyles } from "theme/tagStyles"
+import { Color } from "theme/colorStyles"
+import {
+  HeadingStyles,
+  TextStyles,
+  Fonts,
+  FontSizeScale,
+} from "theme/typographyStyles"
 
-const dark = {
-  zero: '#000000',
-  one: '#333333',
-  two: '#38383a',
-  three: '#e9e5e0',
-  four: '#f9f6f2',
-  five: '#FFFFFF',
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
 }
 
-const light = {
-  zero: '#FFFFFF',
-  one: '#f9f6f2',
-  two: '#e9e5e0',
-  three: '#38383a',
-  four: '#333333',
-  five: '#000000',
-}
-
-export const coreTheme = {
-  components: {
-    Heading: Headings,
-    Link: Links,
-    Button: Buttons,
-    Text: Texts,
-  },
+const theme = extendTheme({
+  config,
   fonts: Fonts,
-}
-
-export const darkTheme = extendTheme({
-  components: {
-    Heading: Headings,
-    Link: Links,
-    Button: Buttons,
-    Text: Texts,
-  },
-  fonts: Fonts,
+  fontSizes: FontSizeScale,
   colors: {
-    brand: {
-      zero: '#1A1E1B',
-      one: '#585D59',
-      two: '#3A403B',
-      three: '#FFE7A9',
-      four: '#FFE194',
-      five: '#C30202',
-      six: '#620101',
-    },
     ...Color,
   },
+  components: {
+    Tag: TagStyles,
+    Link: LinkStyles,
+    Buttons: ButtonStyles,
+    Heading: HeadingStyles,
+    Text: TextStyles,
+  },
   styles: {
-    global: {
-      body: {
-        bg: 'brand.zero',
-        color: 'gray.200',
-      },
+    global: ({ colorMode }) => {
+      return {
+        body: {
+          color: colorMode === "dark" ? "gray.100" : "gray.900",
+          bg: colorMode === "dark" ? "gray.900" : "white",
+        },
+        "*::placeholder": {
+          color: colorMode === "dark" ? "gray.100" : "gray.900",
+        },
+        "*, *::before, &::after": {
+          borderColor: colorMode === "dark" ? "gray.100" : "gray.900",
+        },
+      }
     },
   },
 })
-export const lightTheme = extendTheme({
-  coreTheme,
-  colors: {
-    brand: {
-      zero: '#FFFFFF',
-      one: '#f9f6f2',
-      two: '#e9e5e0',
-      three: '#38383a',
-      four: '#333333',
-      five: '#000000',
-    },
-  },
-  styles: {
-    global: {
-      body: {
-        bg: 'brand.zero',
-        color: 'brand.five',
-      },
-    },
-  },
-})
+
+export default theme

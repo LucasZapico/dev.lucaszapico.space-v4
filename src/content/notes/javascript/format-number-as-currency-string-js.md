@@ -1,21 +1,21 @@
 ---
-title: 'format number as currency string'
-description: ''
+title: "format number as currency string"
+description: ""
 date-created: 2018/03/15 14:19:17
-last-modified: '2022/08/24'
+last-modified: "2022/08/24"
 isdraft: false
-parent: 'javascript'
-categories: ['javascript', 'notes']
-tags: ['javascript', 'notes', 'reference']
-type: 'note'
+parent: "javascript"
+categories: ["javascript", "notes"]
+tags: ["javascript", "notes", "reference"]
+type: "note"
 ---
 
 ### Examples
 
 ```javascript
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
   minimumFractionDigits: 2,
 })
 

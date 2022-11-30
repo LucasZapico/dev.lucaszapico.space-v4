@@ -1,17 +1,17 @@
 ---
-title: 'Markdown Catch'
-description: 'General notes on markdown process, config and workflows'
-date-created: '2022/07/15'
-last-modified: '2022/08/23'
-isdraft: false
-categories: ['markdown', 'content', 'process', 'workflows']
-tags: ['markdown', 'content', 'process', 'workflows']
-type: 'note'
+title: "Markdown Catch"
+description: "General notes on markdown process, config and workflows"
+date-created: "2022/07/15"
+last-modified: "2022/08/23"
+isdraft: true
+categories: ["markdown", "content", "process", "workflows"]
+tags: ["markdown", "content", "process", "workflows"]
+type: "note"
 ---
 
 ## Tools
 
-- [vscdoe]()
+- [vscodee]()
 - [typora]()
 - [paper]()
 

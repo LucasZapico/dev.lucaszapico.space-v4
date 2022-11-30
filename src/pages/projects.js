@@ -1,6 +1,6 @@
-import { Box, Heading } from '@chakra-ui/react'
-import React from 'react'
-import { Projects } from '../components/_index'
+import { Box, Heading } from "@chakra-ui/react"
+import React from "react"
+import { Projects } from "components"
 
 const Cases = () => {
   return (

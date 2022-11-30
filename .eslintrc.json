@@ -15,7 +15,10 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "settings": {
+    "import/resolver": "src"
+  },
+  "plugins": ["react", "import"],
   "rules": {
     // "react/jsx-max-props-per-line": [1, { "maximum": 1 }],
     // "react/jsx-max-props-per-line": "off",

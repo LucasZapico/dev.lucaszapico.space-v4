@@ -1,14 +1,13 @@
 ---
-title: 'Express Validation Patterns'
-description: ''
-date-created: '2022/02/22'
-last-modified: '2022/08/23'
+title: "Express Validation Patterns"
+description: ""
+date-created: "2022/02/22"
+last-modified: "2022/08/23"
 categories: []
-tags: ['validation', 'express', 'notes', MOC]
+tags: ["validation", "express", "notes", MOC]
 isdraft: false
-type: 'note'
+type: "note"
 ---
-
 
 ## Express Validation
 
@@ -24,7 +23,7 @@ _index.js_
 
 ```javascript
 //...
-const { validationResult, body } = require('express-validator')
+const { validationResult, body } = require("express-validator")
 
 //...
 
@@ -32,13 +31,13 @@ const app = express()
 
 //...
 //... validator example
-app.post('/users', [
-  body('email')
+app.post("/users", [
+  body("email")
     .isLength({ min: 1 })
-    .withMessage('email must not be empty')
+    .withMessage("email must not be empty")
     .isEmail()
-    .withMessage('must be a valid email address'),
-  body('name').isLength({ min: 1 }).withMessage('name must not be empty'),
+    .withMessage("must be a valid email address"),
+  body("name").isLength({ min: 1 }).withMessage("name must not be empty"),
 ]),
   async (req, res) => {
     const errors = validationResult(req)
@@ -56,19 +55,19 @@ _index.js_
 
 ```javascript
 //...
-const { validationResult, body } = require('express-validator')
+const { validationResult, body } = require("express-validator")
 
 //...
 
 const app = express()
 
 const userValidation = [
-  body('email')
+  body("email")
     .isLength({ min: 1 })
-    .withMessage('email must not be empty')
+    .withMessage("email must not be empty")
     .isEmail()
-    .withMessage('must be a valid email address'),
-  body('name').isLength({ min: 1 }).withMessage('name must not be empty'),
+    .withMessage("must be a valid email address"),
+  body("name").isLength({ min: 1 }).withMessage("name must not be empty"),
 ]
 
 //... validation middleware
@@ -87,10 +86,10 @@ const simpleValiationResult = validationResult.withDefaults({
 
 //...
 //... validator example
-app.post('/users', userValidation, checkForErrors),
+app.post("/users", userValidation, checkForErrors),
   async (req, res) => {
     try {
-      return res.status(200).json({ message: 'valid input' })
+      return res.status(200).json({ message: "valid input" })
     } catch (err) {
       return res.status(500).json(err)
     }

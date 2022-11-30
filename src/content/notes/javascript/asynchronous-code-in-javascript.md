@@ -1,17 +1,17 @@
 ---
-title: 'Asynchronous Javascript'
-description: 'Asynchronous javascript notes and examples'
+title: "Asynchronous Javascript"
+description: "Asynchronous javascript notes and examples"
 date-created: 2021/03/15
-last-modified: '2022/10/08'
+last-modified: "2022/10/08"
 isdraft: true
-categories: ['JavaScript', 'general', 'notes']
-tags: ['JavaScript', 'general', 'notes', 'asynchronous']
-type: 'note'
+categories: ["JavaScript", "general", "notes"]
+tags: ["JavaScript", "general", "notes", "asynchronous"]
+type: "note"
 ---
 
 ## Asynchronous Code
 
-To understand the challenges or problems that asynchronous code solves let's put forward the following abstract example. Suppose we have a long-running function "alpha" in a synchronous program. Such that any functions following alpha will not execute until alpha is completed. One of the most obvious challenges this causes is apparent in the case of user input, the on-click events attached to a button or input would not be "listened for" because the program is handling alpha. 
+To understand the challenges or problems that asynchronous code solves let's put forward the following abstract example. Suppose we have a long-running function "alpha" in a synchronous program. Such that any functions following alpha will not execute until alpha is completed. One of the most obvious challenges this causes is apparent in the case of user input, the on-click events attached to a button or input would not be "listened for" because the program is handling alpha.
 
 The problems asynchrouns code solves are;
 
@@ -79,6 +79,6 @@ var intervalId = setInterval(function() {
 }, 1000);
 ```
 
-## Reference 
+## Reference
 
 [Introducing asynchronous JavaScript - Mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)

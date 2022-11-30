@@ -1,12 +1,12 @@
 ---
-title: 'SEO optimizations Notes 2021'
-description: ''
+title: "SEO optimizations Notes 2021"
+description: ""
 date-created: 2021/04/22 12:25:31
 last-modified: 2021/09/01 19:46:46
 isdraft: false
-categories: ['seo', 'notes', '2021']
-tags: ['reference', 'notes']
-type: 'note'
+categories: ["seo", "notes", "2021"]
+tags: ["reference", "notes"]
+type: "note"
 ---
 
 - product

@@ -2,10 +2,10 @@
 title: Functional Programming Design Patterns
 description:
 date-created: 2022-02-06
-last-modified: '2022/07/23'
-categories: ['design-patterns', 'functional-programing']
-tags: ['design-patterns', 'functional-programing']
-isdraft: false
+last-modified: "2022/10/31"
+categories: ["design-patterns", "functional-programing"]
+tags: ["design-patterns", "functional-programing"]
+isdraft: true
 type: note
 ---
 

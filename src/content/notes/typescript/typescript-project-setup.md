@@ -1,12 +1,12 @@
 ---
-title: 'typescript-project-setup'
-description: ''
-date-created: '2022/03/18'
-last-modified: '2022/08/24'
-categories: ['typescript', 'notes']
-tags: ['typescript', 'notes']
+title: "typescript-project-setup"
+description: ""
+date-created: "2022/03/18"
+last-modified: "2022/08/24"
+categories: ["typescript", "notes"]
+tags: ["typescript", "notes"]
 isdraft: true
-type: 'note'
+type: "note"
 ---
 
 # Typescript Project Setup

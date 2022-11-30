@@ -1,12 +1,12 @@
 ---
-title: 'Data Structure Fundamentals'
-description: 'Note and reference on data structures at a generic level'
-date-created: '2022/09/28'
-last-modified: '2022/09/30'
+title: "Data Structure Fundamentals"
+description: "Note and reference on data structures at a generic level"
+date-created: "2022/09/28"
+last-modified: "2022/09/30"
 isdraft: true
-categories: ['data-structures', 'fundamentals', 'basics', 'notes']
-tags: ['data-structures', 'fundamentals', 'basics', 'notes']
-type: 'note'
+categories: ["data-structures", "fundamentals", "basics", "notes"]
+tags: ["data-structures", "fundamentals", "basics", "notes"]
+type: "note"
 ---
 
 Data Structure is a collection of data that is organized for easy processing.

@@ -1,12 +1,12 @@
 ---
-title: 'Functional Vs Oop paradigms'
-description: ''
+title: "Functional Vs Oop paradigms"
+description: ""
 date-created: 2020/10/27
-last-modified: '2020/11/04'
+last-modified: "2020/11/04"
 isdraft: true
-categories: ['frontend', 'resource', '2020']
-tags: ['buttons']
-type: 'post'
+categories: ["frontend", "resource", "2020"]
+tags: ["buttons"]
+type: "post"
 ---
 
 ## What are Programing Paradigms

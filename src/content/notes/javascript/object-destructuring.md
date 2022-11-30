@@ -1,21 +1,21 @@
 ---
-title: 'Object Destructuring'
-description: 'Notes on object destructuring and the forms it can take'
+title: "Object Destructuring"
+description: "Notes on object destructuring and the forms it can take"
 date-created: 2018/03/15 14:19:17
 last-modified: 2021/10/04 09:27:43
 isdraft: false
-categories: ['javascript', 'notes']
+categories: ["javascript", "notes"]
 tags: []
-type: 'note'
+type: "note"
 ---
 
-Object destructuring the method of extracting properties at 
+Object destructuring the method of extracting properties at
 
 ## The problem it solves
 
 ### Examples
 
-__Without destructuring__
+**Without destructuring**
 
 ```javascript
 const car = {
@@ -29,7 +29,7 @@ const color = car.color
 const year = car.year
 ```
 
-__With desctructuring__
+**With desctructuring**
 
 ```javascript
 const car = {
@@ -45,9 +45,9 @@ console.log(color)
 // blue
 ```
 
-### Renaming In Destructure 
+### Renaming In Destructure
 
-```javascript 
+```javascript
 const car = {
   color: 'blue',
   model: 'ford',
@@ -60,8 +60,6 @@ const { color: c, model: mo, make: ma, year: yr} = car
 console.log(mo)
 // ford
 ```
-
-
 
 ```javascript
 ;(() => {

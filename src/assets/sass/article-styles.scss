@@ -9,10 +9,10 @@ $nc-lk-tx: #ffffff;
 $nc-ac-1: #79ffe1;
 $nc-ac-tx: #0c4047;
 
-$nc-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,
-  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$nc-font-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New',
+$nc-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$nc-font-mono: Consolas, monaco, "Ubuntu Mono", "Liberation Mono", "Courier New",
   Courier, monospace;
 
 $nc-tx-1: #ffffff;
@@ -166,15 +166,12 @@ $nc-ac-tx: #ffffff;
   h6 {
     font-size: 0.875rem;
   }
-  
-  
 
   a {
     position: relative;
     color: $gray-200;
     &::after {
-        
-      content: '';
+      content: "";
       height: 2px;
       width: auto;
       // background-color: $color-four;
@@ -183,14 +180,13 @@ $nc-ac-tx: #ffffff;
       top: 0px;
       right: -10px;
     }
-     
   }
-   a[href^="https:"] {
+  a[href^="https:"] {
     position: relative;
 
     &::after {
       color: $gray-300;
-      content: url('/icons/external-link-dark.svg');
+      content: url("/icons/external-link-dark.svg");
       height: auto;
       width: 18px;
       background-color: $color-zero;
@@ -198,24 +194,28 @@ $nc-ac-tx: #ffffff;
       top: 0px;
       right: -1.6rem;
     }
-    }  
-  h1,h2,h3,h4,h5,h6 {
-   a[href^="https:"] {
-    position: relative;
-
-    &::after {
-      color: $gray-300;
-      content: url('/icons/external-link-dark.svg');
-      height: auto;
-      width: 25px;
-      background-color: $color-zero;
-      position: absolute;
-      top: 0px;
-      right: -2.2rem;
-    }
-    }  
   }
- 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    a[href^="https:"] {
+      position: relative;
+
+      &::after {
+        color: $gray-300;
+        content: url("/icons/external-link-dark.svg");
+        height: auto;
+        width: 25px;
+        background-color: $color-zero;
+        position: absolute;
+        top: 0px;
+        right: -2.2rem;
+      }
+    }
+  }
 
   a:hover {
     color: $gray-500;
@@ -289,9 +289,9 @@ $nc-ac-tx: #ffffff;
 
   a button,
   button,
-  input[type='submit'],
-  input[type='reset'],
-  input[type='button'] {
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
     font-size: 1rem;
     display: inline-block;
     padding: 6px 12px;
@@ -309,9 +309,9 @@ $nc-ac-tx: #ffffff;
 
   a button[disabled],
   button[disabled],
-  input[type='submit'][disabled],
-  input[type='reset'][disabled],
-  input[type='button'][disabled] {
+  input[type="submit"][disabled],
+  input[type="reset"][disabled],
+  input[type="button"][disabled] {
     cursor: default;
     opacity: 0.5;
 
@@ -323,17 +323,14 @@ $nc-ac-tx: #ffffff;
   .button:enabled:hover,
   button:focus,
   button:enabled:hover,
-  input[type='submit']:focus,
-  input[type='submit']:enabled:hover,
-  input[type='reset']:focus,
-  input[type='reset']:enabled:hover,
-  input[type='button']:focus,
-  input[type='button']:enabled:hover {
+  input[type="submit"]:focus,
+  input[type="submit"]:enabled:hover,
+  input[type="reset"]:focus,
+  input[type="reset"]:enabled:hover,
+  input[type="button"]:focus,
+  input[type="button"]:enabled:hover {
     background: var($nc-lk-2);
   }
-
-
-
 
   details {
     /* Make the <details> look more "clickable" */
@@ -370,7 +367,7 @@ $nc-ac-tx: #ffffff;
 
   dd::before {
     /* Add an arrow to data table definitions */
-    content: '→ ';
+    content: "→ ";
   }
 
   hr {
@@ -430,16 +427,16 @@ $nc-ac-tx: #ffffff;
   }
 
   .toc {
-    @media screen and (min-width: 48rem){
-        padding-left: 1.5rem;
+    @media screen and (min-width: 48rem) {
+      padding-left: 1.5rem;
     }
     color: $gray-300;
     ol,
     ul {
       /* Replace the browser default padding */
-     p {
-         margin-bottom: 0px;
-     }
+      p {
+        margin-bottom: 0px;
+      }
       padding-left: 0rem;
       list-style-type: none;
       * > ul {
@@ -483,62 +480,60 @@ $nc-ac-tx: #ffffff;
   }
 }
 
+kbd {
+  /* Makes the kbd element look like a keyboard key */
+  border-bottom: 3px solid $nc-bg-3;
+}
+pre {
+  padding: 1rem 1.4rem;
+  max-width: 100%;
+  overflow: auto;
+}
 
-  kbd {
-    /* Makes the kbd element look like a keyboard key */
-    border-bottom: 3px solid $nc-bg-3;
-  }
-  pre {
-    padding: 1rem 1.4rem;
-    max-width: 100%;
-    overflow: auto;
-  }
+pre code {
+  /* When <code> is in a <pre>, reset it's formatting to blend in */
+  background: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
 
-  pre code {
-    /* When <code> is in a <pre>, reset it's formatting to blend in */
-    background: inherit;
-    font-size: inherit;
-    color: inherit;
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
+code pre {
+  /* When <pre> is in a <code>, reset it's formatting to blend in */
+  display: inline;
+  background: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
 
-  code pre {
-    /* When <pre> is in a <code>, reset it's formatting to blend in */
-    display: inline;
-    background: inherit;
-    font-size: inherit;
-    color: inherit;
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
-  
-    pre {
-    overflow-x: scroll;
-  }
+pre {
+  overflow-x: scroll;
+}
 
-  code,
-  pre,
-  kbd,
-  samp {
-    /* Set the font family for monospaced elements */
-    // font-family: $nc-font-mono;
-    
-    
-    margin-bottom: 2.5rem;
-  }
+code,
+pre,
+kbd,
+samp {
+  /* Set the font family for monospaced elements */
+  // font-family: $nc-font-mono;
 
-  code,
-  samp,
-  kbd,
-  pre {
-    /* The main preformatted style. This is changed slightly across different cases. */
-    background: $gray-100;
-    border: 1px solid $gray-800;
-    border-radius: 4px;
-    padding: 3px 6px;
-    /* ↓ font-size is relative to containing element, so it scales for titles*/
-    font-size: 0.9em;
-  }
+  margin-bottom: 2.5rem;
+}
+
+code,
+samp,
+kbd,
+pre {
+  /* The main preformatted style. This is changed slightly across different cases. */
+  background: $gray-100;
+  border: 1px solid $gray-800;
+  border-radius: 4px;
+  padding: 3px 6px;
+  /* ↓ font-size is relative to containing element, so it scales for titles*/
+  font-size: 0.9em;
+}

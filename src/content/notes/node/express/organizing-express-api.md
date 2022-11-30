@@ -2,11 +2,11 @@
 title: Organizing Express API
 description: Note and example for modularizing express api
 date-created: 2021/08/26
-last-modified: '2022/08/12'
+last-modified: "2022/08/12"
 isdraft: true
-categories: ['api', 'express', 'node', 'structure']
-tags: ['api', 'architecture', 'node', 'express']
-type: 'note'
+categories: ["api", "express", "node", "structure"]
+tags: ["api", "architecture", "node", "express"]
+type: "note"
 ---
 
 ## Directory Structure Example

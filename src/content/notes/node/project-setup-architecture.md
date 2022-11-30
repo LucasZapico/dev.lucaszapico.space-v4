@@ -1,10 +1,10 @@
 ---
-title: 'Notes on Project Setup'
-description: ''
+title: "Notes on Project Setup"
+description: ""
 date-created: 2022/02/09
-last-modified: '2022/08/24'
-categories: ['node', 'development', 'setup']
-tags: ['node', 'architecture', 'setup']
+last-modified: "2022/08/24"
+categories: ["node", "development", "setup"]
+tags: ["node", "architecture", "setup"]
 isdraft: true
 type: note
 ---

@@ -1,12 +1,12 @@
 ---
-title: 'HubDB'
-description: 'General notes on HubSpot Development'
-date-created: '2022/05/17'
-last-modified: '2022/08/23'
+title: "HubDB"
+description: "General notes on HubSpot Development"
+date-created: "2022/05/17"
+last-modified: "2022/08/23"
 isdraft: true
-categories: ['hubspot', 'notes']
-tags: ['hubspot', 'notes', 'hubdb']
-type: 'note'
+categories: ["hubspot", "notes"]
+tags: ["hubspot", "notes", "hubdb"]
+type: "note"
 ---
 
 - Custom objects are created through API call
@@ -83,29 +83,29 @@ Custom objects are located with default objects.
 ### Node Snippet
 
 ```js
-const hubspot = require('@hubspot/api-client')
+const hubspot = require("@hubspot/api-client")
 
-const hubspotClient = new hubspot.Client({ apiKey: 'YOUR_HUBSPOT_API_KEY' })
+const hubspotClient = new hubspot.Client({ apiKey: "YOUR_HUBSPOT_API_KEY" })
 
 const labels = {
-  singular: 'My object',
-  plural: 'My objects',
+  singular: "My object",
+  plural: "My objects",
 }
 const ObjectSchemaEgg = {
   labels,
-  requiredProperties: ['my_object_property'],
+  requiredProperties: ["my_object_property"],
   searchableProperties: [null],
-  primaryDisplayProperty: 'my_object_property',
+  primaryDisplayProperty: "my_object_property",
   secondaryDisplayProperties: [null],
   properties: [
     {
-      name: 'my_object_property',
-      label: 'My object property',
+      name: "my_object_property",
+      label: "My object property",
       isPrimaryDisplayLabel: true,
     },
   ],
-  associatedObjects: ['CONTACT'],
-  name: 'my_object',
+  associatedObjects: ["CONTACT"],
+  name: "my_object",
 }
 
 try {
@@ -114,7 +114,7 @@ try {
   )
   console.log(JSON.stringify(apiResponse.body, null, 2))
 } catch (e) {
-  e.message === 'HTTP request failed'
+  e.message === "HTTP request failed"
     ? console.error(JSON.stringify(e.response, null, 2))
     : console.error(e)
 }
