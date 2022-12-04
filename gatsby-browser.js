@@ -14,6 +14,7 @@ import React, { useEffect } from "react"
 import theme from "./src/theme"
 
 export const wrapRootElement = ({ cookies, element }) => {
+  console.log(theme)
   return (
     <ChakraProvider theme={theme}>
       <CSSReset />
