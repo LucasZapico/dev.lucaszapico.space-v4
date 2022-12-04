@@ -3,9 +3,6 @@ import React, { useState, useEffect, memo } from "react"
 import {
   Flex,
   Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
   Container,
   Heading,
   Text,
@@ -15,11 +12,19 @@ import {
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import pathToJsonTree from "utils/path-to-json-tree"
 import { generate } from "shortid"
-import { HalfByHalfSection, LinkOne } from "components"
+import { BreadCrumbGroup, HalfByHalfSection, LinkOne, MdxTOC } from "components"
 import SubjectTree from "components/modules/subject-tree"
+import MDXLayout from "components/base/layout/mdx-layout"
 
-export default function ArticleTemplate({ path, pageContext, location }) {
-  const { next, previous, node, title, tableOfContents } = pageContext
+
+export default function NoteTemplate({
+  children,
+  path,
+  pageContext,
+  location,
+}) {
+  const { next, previous, node, title } = pageContext
+  const { tableOfContents, fields } = node
   const { recentNotes } = useStaticQuery(query)
   const [notes, setNotes] = useState(recentNotes.edges)
   const [tree, setTree] = useState()
@@ -44,31 +49,9 @@ export default function ArticleTemplate({ path, pageContext, location }) {
     }
   }, [])
 
-  /**
-   * Memo functions
-   */
-  const MemoSubjectTree = memo(SubjectTree)
 
-  const TOC = () => (
-    <Box
-      position={{ base: "static", lg: "sticky" }}
-      top="0px"
-      right="2rem"
-      paddingY={6}
-      as="aside"
-      className="toc"
-    >
-      <Heading as="div" color="gray.200" mb={2} size="xl">
-        Table of Contents
-      </Heading>
-      <Box
-        as="nav"
-        px={2}
-        py={10}
-        dangerouslySetInnerHTML={{ __html: node.tableOfContents }}
-      />
-    </Box>
-  )
+
+
   const NextArticle = () => (
     <Box key={generate()}>
       <Box to={`/${next.fields.path}`} as={GatsbyLink}>
@@ -85,7 +68,7 @@ export default function ArticleTemplate({ path, pageContext, location }) {
           <Heading as="h4" size="lg">
             {next.frontmatter.title}
           </Heading>
-          <Text as="lg" dangerouslySetInnerHTML={{ __html: next.excerpt }} />
+          {/* <Text as="lg" dangerouslySetInnerHTML={{ __html: next.excerpt }} /> */}
         </Box>
       </Box>
     </Box>
@@ -107,38 +90,18 @@ export default function ArticleTemplate({ path, pageContext, location }) {
           <Heading as="h4" size="lg">
             {previous.frontmatter.title}
           </Heading>
-          <Text
+          {/* <Text
             as="lg"
             dangerouslySetInnerHTML={{
               __html: previous.excerpt,
             }}
-          />
+          /> */}
         </Box>
       </Box>
     </Box>
   )
 
-  const BreadCrumbs = () => (
-    <Box mt={6} mb={10}>
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <BreadcrumbLink to="/" as={GatsbyLink}>
-            Home
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <BreadcrumbLink to="/notes" as={GatsbyLink}>
-            Notes
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink>{title}</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
-    </Box>
-  )
+ 
 
   return (
     <>
@@ -154,7 +117,7 @@ export default function ArticleTemplate({ path, pageContext, location }) {
             flexBasis={{ base: "0%", md: "30%", lg: "25%" }}
           >
             <Heading variant="tri">Subjects</Heading>
-            <MemoSubjectTree tree={tree} />
+            <SubjectTree tree={tree} />
           </Box>
           <Box
             flexBasis={{ base: "100%", md: "60%", lg: "75%" }}
@@ -164,7 +127,7 @@ export default function ArticleTemplate({ path, pageContext, location }) {
             <Heading mt={6} mb={4} as="h1" size="2xl">
               {title}
             </Heading>
-            <BreadCrumbs />
+            <BreadCrumbsGroup pathArr={["note", title]} />
             <HStack flexWrap="wrap" py={6}>
               {node.frontmatter.categories &&
                 node.frontmatter.categories.map((cat, i) => (
@@ -180,12 +143,12 @@ export default function ArticleTemplate({ path, pageContext, location }) {
               as="main"
               className="article-wrapper"
             >
-              <Box
-                width={{ md: "650px" }}
-                py={10}
-                dangerouslySetInnerHTML={{ __html: node.html }}
-              />
-              <TOC width="20%" />
+                <MDXLayout>
+                <Box width={{ md: "650px" }} py={10}>
+                  {children}
+                </Box>
+              </MDXLayout>  
+              <MdxTOC tableOfContents={tableOfContents} pagePath={path} width="20%" />
             </Box>
           </Box>
         </Box>
@@ -217,8 +180,8 @@ export default function ArticleTemplate({ path, pageContext, location }) {
 
 export const query = graphql`
   query {
-    recentNotes: allMarkdownRemark(
-      filter: { frontmatter: { isdraft: { eq: false }, type: { eq: "note" } } }
+    recentNotes: allMdx(
+      filter: {frontmatter: {type: {eq: "note"}, isdraft: {eq: false}}}
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {
       edges {
