@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react"
+import { Heading, Box, Text, useColorMode } from "@chakra-ui/react"
 import React, { useState, useEffect, memo } from "react"
 import { generate } from "shortid"
 import { FiChevronRight, FiChevronDown } from "react-icons/fi"
@@ -6,6 +6,7 @@ import { LinkOne } from "components"
 import { Link as GatsbyLink } from "gatsby"
 
 const Subject = ({ t, depth }) => {
+  const { colorMode } = useColorMode()
   const [show, setShow] = useState(false)
 
   useEffect(() => {}, [show, setShow])
@@ -19,6 +20,7 @@ const Subject = ({ t, depth }) => {
         _hover={{ cursor: "pointer" }}
         display="flex"
         alignItems="center"
+        color={colorMode === "dark" ? "gray.300" : "gray.700"}
         onClick={() => setShow(!show)}
       >
         {!show ? <FiChevronRight /> : <FiChevronDown />}
@@ -30,7 +32,7 @@ const Subject = ({ t, depth }) => {
             if (c.children.length > 0) {
               return <Subject depth={depth + 1} key={generate()} t={c} />
             } else if (c.link) {
-              const name = c.name.replace(".md", "")
+              const title = c.name.replace(".md", "")
               return (
                 <Box
                   to={`/${c.link}`}
@@ -46,7 +48,7 @@ const Subject = ({ t, depth }) => {
                     fontSize="sm"
                     ml={depth * 6}
                   >
-                    <span>&#8226;</span> {name}
+                    <span>&#8226;</span> {title}
                   </Text>
                 </Box>
               )
@@ -59,7 +61,7 @@ const Subject = ({ t, depth }) => {
                   mb={4}
                   ml={depth * 6}
                 >
-                  <span>&#8226;</span> {name}
+                  <span>&#8226;</span> {title}
                 </Text>
               )
             }
@@ -75,18 +77,27 @@ const Subject = ({ t, depth }) => {
 const SubjectTree = ({ tree }) => {
   const depth = 0
   return (
-    <Box>
-      {tree &&
-        tree.map((t) => {
-          if (t.children.length > 0) {
-            return <Subject depth={depth + 1} key={generate()} t={t} />
-          }
-          return (
-            <Text key={generate()} fontSize="sm" as="div" mb={4} ml={depth * 4}>
-              {t.name}
-            </Text>
-          )
-        })}
+    <Box position="sticky" top={20} left="0px" minHeight="400px">
+      <Heading variant="tri">Subjects</Heading>
+      <Box overflowY="scroll">
+        {tree &&
+          tree.map((t) => {
+            if (t.children.length > 0) {
+              return <Subject depth={depth + 1} key={generate()} t={t} />
+            }
+            return (
+              <Text
+                key={generate()}
+                fontSize="sm"
+                as="div"
+                mb={4}
+                ml={depth * 4}
+              >
+                {t.name}
+              </Text>
+            )
+          })}
+      </Box>
     </Box>
   )
 }
