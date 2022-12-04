@@ -17,13 +17,31 @@ type: "note"
 TIMING=1 npm run lint
 ```
 
+## Support Absolute Paths
+
+```js:title=.eslint.json
+{
+  //...
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    } 
+  },
+  //...
+}
+```
+
+## Disable and Ignore Eslint
+
 ### File Level
 
 ```
 /* eslint-disable */
 ```
 
-#### disable by rule on file
+#### Disable by Rule on File
 
 ```
 /* eslint no-use-before-define: 0 */  // --> OFF
@@ -33,7 +51,7 @@ or
 /* eslint no-use-before-define: 2 */  // --> ON
 ```
 
-#### Ignore next line
+#### Ignore Next Line
 
 ```
 /* eslint-disable no-eval */
