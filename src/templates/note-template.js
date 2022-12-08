@@ -1,13 +1,15 @@
 import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby"
 import React, { useState, useEffect, memo } from "react"
 import {
-  Flex,
+  Grid,
+  GridItem,
   Box,
   Container,
   Heading,
+  Flex,
   Text,
   Tag,
-  HStack,
+  
 } from "@chakra-ui/react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import pathToJsonTree from "utils/path-to-json-tree"
@@ -15,7 +17,6 @@ import { generate } from "shortid"
 import { BreadCrumbGroup, HalfByHalfSection, LinkOne, MdxTOC } from "components"
 import SubjectTree from "components/modules/subject-tree"
 import MDXLayout from "components/base/layout/mdx-layout"
-
 
 export default function NoteTemplate({
   children,
@@ -28,6 +29,8 @@ export default function NoteTemplate({
   const { recentNotes } = useStaticQuery(query)
   const [notes, setNotes] = useState(recentNotes.edges)
   const [tree, setTree] = useState()
+
+  console.log(path)
 
   const makeDirTree = (edges) => {
     let jsonTree = []
@@ -48,9 +51,6 @@ export default function NoteTemplate({
       setTree(newTree)
     }
   }, [])
-
-
-
 
   const NextArticle = () => (
     <Box key={generate()}>
@@ -101,57 +101,53 @@ export default function NoteTemplate({
     </Box>
   )
 
- 
-
   return (
     <>
       {/* <SEO location={location} title={title} /> */}
-      <Box minHeight="100vh" pt={10} pb={10}>
-        <Box py={10} display="flex" flexWrap="wrap">
+      <Box minHeight="100vh">
+        <Grid templateColumns="repeat(12, 1fr)" gap={6}>
           <Box
-            overflow="scroll"
-            // backgroundColor="gray.800"
+            display={{ base: "none", lg: "block" }}
+            as={GridItem}
+            colSpan={{ base: 0, lg: 3 }}
             pl={4}
             py={10}
-            display={{ base: "none", md: "block" }}
-            flexBasis={{ base: "0%", md: "30%", lg: "25%" }}
           >
-            <Heading variant="tri">Subjects</Heading>
             <SubjectTree tree={tree} />
           </Box>
-          <Box
-            flexBasis={{ base: "100%", md: "60%", lg: "75%" }}
-            py={10}
-            px={10}
-          >
-            <Heading mt={6} mb={4} as="h1" size="2xl">
+
+          <Box mx="auto" px={{base: 4, md: 4, lg: 4}} pt={40} pb={20} as={GridItem} colSpan={{ base: 12, lg: 6 }}>
+            <Heading mt={6} mb={4} as="h1" size="xl">
               {title}
             </Heading>
-            <BreadCrumbsGroup pathArr={["note", title]} />
-            <HStack flexWrap="wrap" py={6}>
+            <BreadCrumbGroup pathArr={["note", title]} />
+            <Flex flexWrap="wrap" py={6}>
               {node.frontmatter.categories &&
                 node.frontmatter.categories.map((cat, i) => (
-                  <Tag variant="sec" key={generate()}>
+                  <Tag mr={1} mb={1} variant="sec" key={generate()}>
                     #{cat}
                   </Tag>
                 ))}
-            </HStack>
+            </Flex>
             <Box
-              display="flex"
-              flexDirection={{ base: "column-reverse", lg: "row" }}
-              justifyContent="space-between"
-              as="main"
-              className="article-wrapper"
-            >
-                <MDXLayout>
-                <Box width={{ md: "650px" }} py={10}>
-                  {children}
-                </Box>
-              </MDXLayout>  
-              <MdxTOC tableOfContents={tableOfContents} pagePath={path} width="20%" />
-            </Box>
+            display={{ base: "block", xl: "none" }}
+          >
+            <MdxTOC tableOfContents={tableOfContents} pagePath={path} />
           </Box>
-        </Box>
+            <MDXLayout>
+              <Box width={{ md: "650px" }} py={10}>
+                {children}
+              </Box>
+            </MDXLayout>
+          </Box>
+          <Box
+            as={GridItem}
+            display={{ base: "none", xl: "block" }}
+            colSpan={{ base: 0, lg: 3 }}
+          >
+            <MdxTOC tableOfContents={tableOfContents} pagePath={path} />
+          </Box>
+        </Grid>
 
         <Container maxW="container.xl" my={10}>
           <Box my={10}>
@@ -181,7 +177,7 @@ export default function NoteTemplate({
 export const query = graphql`
   query {
     recentNotes: allMdx(
-      filter: {frontmatter: {type: {eq: "note"}, isdraft: {eq: false}}}
+      filter: { frontmatter: { type: { eq: "note" }, isdraft: { eq: false } } }
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {
       edges {
