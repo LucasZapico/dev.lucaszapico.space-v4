@@ -13,6 +13,12 @@ export const CardOne = ({ content, children, ...rest }) => {
       _hover={{
         bg: colorMode === "dark" ? "gray.800" : "gray.100"
       }}
+      _active={{
+        bg: colorMode === "dark" ? "gray.700" : "gray.200"
+      }}
+      _focus={{
+        bg: colorMode === "dark" ? "gray.600" : "gray.300"
+      }}
       transition='all 0.2s ease-in-out'
       {...rest}
     >
