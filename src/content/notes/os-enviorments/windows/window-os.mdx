@@ -1,0 +1,180 @@
+---
+title: "Window 10 Notes"
+description: "Reference notes on window"
+date-created: 2021/03/15 14:19:17
+last-modified: '2022/12/14'
+isdraft: false
+categories: ["window", "notes"]
+tags: []
+type: "note"
+---
+
+import { Kbd } from '@chakra-ui/react'
+
+
+## Keyboard Shortcuts - Workflow
+
+<Kbd>win</Kbd> + <Kbd>left-arrow</Kbd>
+
+```
+ win + left-arrow
+// snap left
+
+win + right-arrow
+// snap right
+
+win + up-arrow
+// maximize window
+
+win + down-arrow
+// minimize window
+```
+
+## Screen Grab
+
+```txt
+ win + Shift + S
+```
+
+## Command Prompt Catch
+
+Command prompt is officially called Windows Command Processor.
+
+```
+> help
+// prints all commands
+
+> help some-command
+// prints documentation
+```
+
+```
+> mkdir
+// makes a directory
+```
+
+```
+set
+// list all env variables
+
+set <some-variable>
+// is the same as echo $<variable>
+```
+
+```
+ctrl + c
+
+```
+
+```
+> dir
+// show directories in given folder
+```
+
+```
+> attrib
+// set ownership on files and directories
+```
+
+```
+> cd
+// print current directory
+```
+
+```
+> chkdsk
+// checks filesystem and repairs filesystem
+```
+
+```
+> cls
+// clear window
+```
+
+```
+> copy
+
+```
+
+```
+> date
+> time
+```
+
+```
+> del
+//
+
+> deltree
+// recursively deletes entire directory tree
+```
+
+```
+> edit
+// simple text editor
+// Note the variable EDITOR should be set to the user's preferred editor
+```
+
+```
+> type
+// displays the contents of a text file
+```
+
+```
+> rename
+// renames file or files
+```
+
+### Logic and Conditionals
+
+```
+> if
+// performs a condistional processing in batch programs
+```
+
+```
+> for
+// runs a specified command for each file in a set of files
+```
+
+## PowerShell
+
+[Learning PowerShell](https://github.com/PowerShell/PowerShell/tree/master/docs/learning-powershell)
+[Cook Book - Power shell](https://docs.microsoft.com/en-us/powershell/scripting/samples/sample-scripts-for-administration?view=powershell-6)
+
+```powershell
+> Get-Command *-Service
+// show list of cmdlets
+```
+
+For a given **Service** user;
+
+```powershell
+Get-Help <some-service
+// to see documentation for service
+```
+
+#### Show list of Running Processes
+
+```powershell
+Get-Process
+```
+
+##### Show Directories
+
+```powershell
+ls
+// show current directories
+```
+
+### Quick Reference
+
+
+
+## RESOURCES
+
+[Command Prompt: What is is and how to use it](https://www.lifewire.com/command-prompt-2625840)
+
+[Window and unix command line equivalents](https://www.lemoda.net/windows/windows2unix/windows2unix.html)
+
+### REFERENCES
