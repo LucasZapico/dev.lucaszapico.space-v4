@@ -1,11 +1,11 @@
 ---
-title: "Booting Os's"
+title: "Booting OS's"
 description: "Reference notes on window"
 date-created: 2021/03/15 14:19:17
 last-modified: 2021/10/06 10:31:55
 isdraft: false
-categories: ["window", "notes"]
-tags: []
+categories: ["os", "notes", "boots"]
+tags: ["os", "notes", "boots"]
 type: "note"
 ---
 
