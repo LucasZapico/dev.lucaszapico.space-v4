@@ -12,6 +12,14 @@ export { default as ArticleCard } from "components/elements/cards/article-card-a
 export { Tag } from "components/elements/tag"
 export * from "components/elements/MDXComponents"
 
+/**
+ * Modules
+ */
+export { default as StackIconsGroup } from "components/modules/stack-icons-group"
+export { default as MdxTOC } from "components/modules/mdx-toc"
+export { default as BreadCrumbGroup } from "components/modules/breadcrumbs-group"
+export { default as ResponsiveHelper} from 'components/modules/dev-responsive-helper'
+
 // sections
 export { default as SiteCredits } from "components/sections/site-credit"
 export { default as ProjectSection } from "components/sections/project-section"
