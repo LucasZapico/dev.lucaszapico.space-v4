@@ -20,7 +20,7 @@
       "node": {
         "paths": ["src"]
       }
-    } 
+    }
   },
   "plugins": ["react", "import"],
   "rules": {
