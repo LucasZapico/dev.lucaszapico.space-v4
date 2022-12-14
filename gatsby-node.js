@@ -2,7 +2,7 @@ const path = require("path")
 const chalk = require("chalk")
 const readingTime = require(`reading-time`)
 const {
-  allMarkDownPagesQuery
+  allMarkDownPagesQuery,
 } = require("./server/graphql-query/markdown-pages")
 const { allMdxPageQuery } = require("./server/graphql-query/mdx-pages")
 
@@ -24,37 +24,33 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === `Mdx`) {
     const { type } = node.frontmatter
-   
-    if(node.frontmatter.title){
+
+    if (node.frontmatter.title) {
       const pagePath = node.frontmatter.title
-      .toLowerCase()
-      .replaceAll(" ", "-")
-      .replaceAll(" ", "")
-    /**
-     * TODO: add reading time field
-     */
-    // console.log(pagePath)
-    
-    createNodeField({
-      name: `path`,
-      node,
-      value: `${type}s/${pagePath}`,
-      
-    })
-    // logSp()
-    // log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
+        .toLowerCase()
+        .replaceAll(" ", "-")
+        .replaceAll(" ", "")
+      /**
+       * TODO: add reading time field
+       */
+      // console.log(pagePath)
+
+      createNodeField({
+        name: `path`,
+        node,
+        value: `${type}s/${pagePath}`,
+      })
+      // logSp()
+      // log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
+    }
+  } else {
+    //   console.log(
+    //     chalk.redBright(`
+    // =================================
+    //   `))
+    //   console.log(JSON.stringify(Object.keys(node)))
+    //   console.log(node.frontmatter)
   }
-    }
-    else {
-      console.log(
-        chalk.redBright(`
-    =================================  
-      `))
-  
-      console.log(JSON.stringify(Object.keys(node)))
-      console.log(node.frontmatter)
-    }
-    
 }
 
 const handleMarkdown = async ({ actions, graphql, reporter }) => {

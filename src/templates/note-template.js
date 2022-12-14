@@ -9,7 +9,6 @@ import {
   Flex,
   Text,
   Tag,
-  
 } from "@chakra-ui/react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import pathToJsonTree from "utils/path-to-json-tree"
@@ -116,7 +115,15 @@ export default function NoteTemplate({
             <SubjectTree tree={tree} />
           </Box>
 
-          <Box mx="auto" px={{base: 4, md: 4, lg: 4}} pt={40} pb={20} as={GridItem} colSpan={{ base: 12, lg: 6 }}>
+          <Box
+            mx="auto"
+            px={{ base: 4, md: 4, lg: 4 }}
+            pt={40}
+            pb={20}
+            as={GridItem}
+            colSpan={{ base: 12, lg: 6 }}
+          >
+            <Box maxW={{ md: "650px" }}>
             <Heading mt={6} mb={4} as="h1" size="xl">
               {title}
             </Heading>
@@ -129,16 +136,13 @@ export default function NoteTemplate({
                   </Tag>
                 ))}
             </Flex>
-            <Box
-            display={{ base: "block", xl: "none" }}
-          >
-            <MdxTOC tableOfContents={tableOfContents} pagePath={path} />
-          </Box>
+            <Box display={{ base: "block", xl: "none" }}>
+              <MdxTOC tableOfContents={tableOfContents} pagePath={path} />
+            </Box>
             <MDXLayout>
-              <Box width={{ md: "650px" }} py={10}>
-                {children}
-              </Box>
+              <Box py={10}>{children}</Box>
             </MDXLayout>
+            </Box>
           </Box>
           <Box
             as={GridItem}
