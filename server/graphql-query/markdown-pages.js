@@ -1,11 +1,12 @@
 const allMarkDownPagesQuery = `
 {
-  allMarkdownRemark(
-    filter: { frontmatter: { isdraft: { eq: false } } }
+  allMdx(
+    filter: {frontmatter: {type: {eq: "note"}, isdraft: {eq: false}}}
     sort: { fields: frontmatter___date_created, order: DESC }
   ) {
     edges {
       next {
+        excerpt
         frontmatter {
           title
         }
@@ -14,6 +15,7 @@ const allMarkDownPagesQuery = `
         }
       }
       previous {
+        excerpt
         frontmatter {
           title
         }
@@ -22,16 +24,16 @@ const allMarkDownPagesQuery = `
         }
       }
       node {
+        body
+        internal {
+          contentFilePath
+        }
         excerpt
         fields {
           path
         }
         id
-        html
-        tableOfContents(heading: "", maxDepth: 4)
-        wordCount {
-          words
-        }
+        tableOfContents(maxDepth: 4)
         frontmatter {
           title
           description

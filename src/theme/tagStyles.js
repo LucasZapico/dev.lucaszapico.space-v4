@@ -21,7 +21,7 @@ export const TagStyles = {
         bg: colorMode === "dark" ? "gray.900" : "gray.50",
         color: colorMode === "dark" ? "gray.600" : "gray.300",
         borderColor: colorMode === "dark" ? "gray.600" : "gray.300",
-        border: "2px",
+        border: "1px",
         borderRadius: "0px",
       },
     }),

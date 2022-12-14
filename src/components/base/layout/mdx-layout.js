@@ -13,6 +13,7 @@ import {
   UnorderedList,
   OrderedList,
   ListItem,
+  Code, 
 } from "@chakra-ui/react"
 import React from "react"
 import {
@@ -25,20 +26,10 @@ import {
   BlockQuoteMDX,
   LinkMDX,
   ResponsiveImageMDX,
+  TextMDX,
+  UnorderedListMdx,
 } from "components"
-
-export const TextMDX = ({ children, ...rest }) => {
-  const { colorMode } = useColorMode()
-  return (
-    <Text
-      {...rest}
-      fontWeight={colorMode === "dark" ? "500" : "300"}
-      color={colorMode === "dark" ? "gray.100" : "gray.700"}
-    >
-      {children}
-    </Text>
-  )
-}
+import { CodeBlockMdx } from "components/elements/Mdx/mdx-code-block"
 
 const MdxComponents = {
   h1: HeadingOneMDX,
@@ -48,12 +39,13 @@ const MdxComponents = {
   h5: HeadingFiveMDX,
   h6: HeadingSixMDX,
   p: TextMDX,
-  ul: UnorderedList,
+  ul: UnorderedListMdx,
   li: ListItem,
   ol: OrderedList,
   blockquote: BlockQuoteMDX,
-  // a: LinkMDX,
-  // img: ResponsiveImageMDX,
+  a: Link,
+  code: Code,
+  pre: CodeBlockMdx
 }
 
 const MDXLayout = ({ children }) => {

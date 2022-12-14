@@ -77,9 +77,17 @@ const Subject = ({ t, depth }) => {
 const SubjectTree = ({ tree }) => {
   const depth = 0
   return (
-    <Box position="sticky" top={20} left="0px" minHeight="400px">
-      <Heading variant="tri">Subjects</Heading>
-      <Box overflowY="scroll">
+    <Box
+      overflowY="scroll"
+      position="sticky"
+      top={20}
+      left="0px"
+      minHeight="100vh"
+    >
+      <Heading variant="tri" size="md">
+        Subjects
+      </Heading>
+      <Box>
         {tree &&
           tree.map((t) => {
             if (t.children.length > 0) {

@@ -8,7 +8,7 @@ const HomeHero = () => {
 
   const content = {
     header: "Hello, I am Lucas. Thanks for stopping by.",
-    subHeader: "Mostly a Frontend developer focusing on React.js.",
+    subHeader: "A Frontend developer focusing on React.js.",
   }
   return (
     <Box py={20}>
