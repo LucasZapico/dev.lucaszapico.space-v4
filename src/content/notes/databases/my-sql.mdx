@@ -1,0 +1,56 @@
+---
+title: "MySQL Notes"
+description: "Notes"
+date-created: 2021/03/15 14:19:17
+last-modified: '2022/12/14'
+isdraft: false
+categories: ["sql", "notes"]
+tags: []
+type: "note"
+---
+
+## Installation
+
+Uppon download of dng mySQL shell and mySQL utilities expose mysql/bin to shell of choise
+
+### Walk through - Example
+
+mySQL shell path and mySQL utilities path on system
+
+```sh
+usr/local/mysql/bin && usr/local/mysql-shell/bin
+```
+
+navigate to shell profiles .bashrc, .bash_profile or .zshrc add
+
+```sh
+export PATH=${PATH}:/usr/local/mysql-shell/bin
+export PATH=${PATH}:/usr/local/mysql/bin
+```
+
+Open terminal of choice
+
+```sh
+mysql -u user-name -p
+```
+
+enter:
+
+prompt for password
+
+Sucess, we have entered the mysql shell
+
+```sh
+> shell mysql show databases;
+//shows list of db's in current server
+```
+
+
+## Resources and Reference
+
+
+[MySQL Cheatsheet](https://gist.github.com/hofmannsven/9164408)
+
+-  Sheldon Ross M(2010). A first course in probability/ Sheldon Ross. - 8th ed. Upper Saddle River, NJ: Pearson Prentice Hall
+
+

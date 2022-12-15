@@ -1,0 +1,306 @@
+---
+title: "Bash Catch and Cheatsheet"
+description: "General notes on bash scripting, config and workflows"
+date-created: "2022/09/23"
+last-modified: '2022/12/14'
+isdraft: false
+categories: ["bash", "cheatsheet", "process", "workflows", "reference"]
+tags: ["bash", "cheatsheet", "process", "workflows", "reference"]
+type: "note"
+---
+
+## Cheatsheet
+
+### Basics
+
+From within a CLI(command line interface) environment**Echo**
+
+#### Print to terminal
+
+```sh:title=shell
+echo "some text"
+```
+
+```sh:title=shell
+echo "1\t2\t3"
+1\t2\t3
+
+echo -e "1\t2\t3"
+1	2	3
+```
+
+## Styling CLI
+
+### Text Color Codes
+
+| color   | code |
+| :------ | :--- |
+| Reset   | 0    |
+| black   | 30   |
+| red     | 31   |
+| green   | 32   |
+| yellow  | 33   |
+| blue    | 34   |
+| magenta | 35   |
+| cyan    | 36   |
+| white   | 37   |
+
+**Example - Print out blue text**
+
+```sh
+echo -e "\e[1;34m This is blue text \e[0m"
+ This is blue text
+```
+
+### Background Color Codes
+
+| color   | code |
+| :------ | :--- |
+| Reset   | 0    |
+| black   | 40   |
+| red     | 41   |
+| green   | 42   |
+| yellow  | 43   |
+| blue    | 44   |
+| magenta | 45   |
+| cyan    | 46   |
+| white   | 47   |
+
+```sh
+echo -e "\e[1;43m This is text has a yellow background \e[0m"
+ This text has a yellow background
+```
+
+### Basics Commands
+
+```sh
+> some-command some-option some-arguments
+```
+
+#### Get manual(documentation) for a given command.
+
+```sh
+man <some-command>
+```
+
+#### Get shell enviroment variables
+
+Environmental
+: variables are variables that are defined for the current shell and are inherited by any child shells or processes. Environmental variables are used to pass information into processes that are spawned from the shell.
+
+Shell variables
+: are variables that are contained exclusively within the shell in which they were set or defined. They are often used to keep track of ephemeral data, like the current working directory.
+
+```sh
+ env
+```
+
+### CLI Navigations
+
+```sh
+ pwd
+ # print working directory
+```
+
+```sh
+cd
+# change directory
+```
+
+```sh
+cd -
+# change to most recent directory
+```
+
+### Working with Files
+
+#### Save Result of Command to File
+
+```sh
+ 'command' /dir > file.txt
+ # will save the return of the command to the defined file
+```
+
+#### Making Files and Directories
+
+```sh
+ touch <my-file>
+ # makes a file
+```
+
+```sh
+ touch {file1,file2,file3}
+ touch {01..1000}
+ # makes all three defined files
+```
+
+```sh
+ mkdir <directory-name>/
+ # make a folder/directory
+```
+
+#### Organizing Files and Directories
+
+```sh
+ mv <my-file> <directory-name>/
+ # moves my-file to a given directory
+```
+
+```sh
+ cp <my-file> <directory-copy>/
+ # copies given file to defined directory
+```
+
+```sh
+cp -R /<source_folder> /<destination_folder>
+```
+
+```sh
+cp -R <source_dir>/ <des_dir>/
+# copyies contents of <source_dir> for <des_dir>
+```
+
+**Example**
+
+```sh
+cp -R ~/Documents ~/Documents-copy
+```
+
+```sh
+ rm <some-file>
+ # removes defined file
+```
+
+```sh
+ rm -r some-directory
+# removes defined directory and all children
+```
+
+```sh
+ cat some-file
+ // returns contents of file
+```
+
+```sh
+ file some-file.type
+ // returns file type
+ // example
+ file index.html
+ return: index.html: ASCII text
+```
+
+```sh
+vim some-file.type
+// opens file in vim for editing
+```
+
+```sh
+less some-file.type
+// opens file in less for editing.
+// note: in less 'h' opens up command navigation reference
+```
+
+```sh
+bg
+//(background) sends currently running script to the background
+```
+
+```sh
+fg
+//(foreground) brings scripts running in background to foreground
+```
+
+## Bash
+
+**Echo**
+
+```sh
+~ echo "some text"
+// prints some text to the terminal
+```
+
+### `which`
+
+```sh
+which some-command
+// file path to command
+```
+
+### **Zsh**
+
+#### Commands
+
+```
+// zsh commands
+
+man some-command
+// opens manual for 'some-command'
+
+whatis some-command
+// brief descrption of command
+
+```
+
+---
+
+---
+
+### Network Status Commands
+
+```
+netstat -ap tcp | grep -i "LISTEN"
+//
+
+netstat -ap tcp
+//
+
+sudo lsof -i -P -n | grep LISTEN
+//
+
+sudo lsof -PiTCP -sTCP:LISTEN
+//command/app, PID, user, FD, TYPE, DEVICE, SIZE, NODE, NAME(PORT)
+
+lsof -i tcp:<port>
+//command/app, PID, user, FD, TYPE, DEVICE, SIZE, NODE, NAME(defined-PORT)
+
+kill -9 <PID>
+//kill by process ID
+
+```
+
+---
+
+---
+
+## Reference
+
+| Directory/Folder                                                | Contents                                   |
+| --------------------------------------------------------------- | ------------------------------------------ |
+| /                                                               | root                                       |
+| /bin                                                            | binaries, programs                         |
+| /sbin                                                           | system binaries, system programs           |
+| /dev                                                            | devices: hard drives, keyboard, mouse, etc |
+| /etc                                                            | system configurations                      |
+| /home                                                           | user home directories                      |
+| /lib                                                            | libraries of code                          |
+| /tmp                                                            | temporary files                            |
+| /var                                                            | variousr, mostly files the system uses     |
+| /usr <br></br> /usr/bin <br></br> /usr/etc <br></br>/urs/lib<br></br>/urs/local | user programs, tools and libraries         |
+
+---
+
+## Resources and Reference
+
+Notes within this doc have been drawn from the following sources:
+
+[bash cheatsheet - devhints.io](https://devhints.io/bash)
+
+[Shell Sytle Guide- google](https://google.github.io/styleguide/shell.xml)
+
+[Bash Programming- Introduction How-To](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+
+[Linux Kernel Codeing Style](https://www.kernel.org/doc/Documentation/process/coding-style.rst)
+
+### Tutorials Corses and Guides
+
+[The Bash Guide - bash.academy](https://guide.bash.academy/)
