@@ -58,14 +58,18 @@ export const CodeBlockMdx = ({ children }) => {
   const { colorMode } = useColorMode()
   const className = children.props.className || ""
   const [language = "", fileName = ""] = className.split(":")
-  console.log("Children")
-  console.log(children)
-  console.log(className)
+  // console.log("Children")
+  // console.log(children)
+  // console.log(className)
 
   const matches = language.match(/language-(?<lang>.*)/)
   const lang = language?.replace("language-", "")
   const file = fileName?.replace("title=", "")
-  
+  /**
+   * handle if the code block is empty
+   */
+  if(!children.props.children ) return <></>
+
   const rawCode = children.props.children.trim()
   const theme = colorMode === "dark" ? dracula : duotoneLight
   return (
