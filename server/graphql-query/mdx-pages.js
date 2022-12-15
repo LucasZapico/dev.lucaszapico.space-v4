@@ -1,6 +1,6 @@
 const allMdxPageQuery = `{
   allMdx(
-    filter: {frontmatter: {isdraft: {eq: false}}}
+    filter: {frontmatter: {isdraft: {eq: false}, type: {eq: "project" }}}
     sort: {fields: frontmatter___date_created, order: DESC}
   ) {
     edges {
@@ -29,6 +29,7 @@ const allMdxPageQuery = `{
         tableOfContents(maxDepth: 4)
       }
       next {
+        excerpt
         frontmatter {
           title
         }
@@ -37,6 +38,7 @@ const allMdxPageQuery = `{
         }
       }
       previous {
+        excerpt
         frontmatter {
           title
         }

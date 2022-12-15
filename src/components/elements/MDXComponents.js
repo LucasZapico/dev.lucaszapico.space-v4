@@ -1,11 +1,31 @@
-import { Heading, Text, Box, Link, useColorMode } from "@chakra-ui/react"
+import {
+  Heading,
+  Text,
+  Box,
+  Link,
+  useColorMode,
+  UnorderedList,
+  OrderedList,
+  ListItem,
+} from "@chakra-ui/react"
 import React from "react"
 import { MagicLink } from "components"
 
-/***
+function getAnchor(text) {
+  console.log(text)
+  return text
+    .trim()
+    .replace(/[^a-z0-9 ]/g, "")
+    .replace(/[ ]/g, "-")
+    .toLowerCase()
+}
+
+/**
  * Headings
  */
 export const HeadingOneMDX = ({ children, ...rest }) => {
+  // const anchor = getAnchor(children)
+  // const link = `${anchor}`
   return (
     <Heading
       {...rest}
@@ -13,6 +33,7 @@ export const HeadingOneMDX = ({ children, ...rest }) => {
       fontWeight="800"
       // color={colorMode === 'dark' ? 'gray.400' : 'gray.800'}
       colorScheme="red"
+      // id={link}
     >
       {children}
     </Heading>
@@ -21,12 +42,15 @@ export const HeadingOneMDX = ({ children, ...rest }) => {
 
 export const HeadingTwoMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
+  // const anchor = getAnchor(children)
+  // const link = `${anchor}`
   return (
     <Heading
       {...rest}
       size="xl"
       fontWeight="800"
       color={colorMode === "dark" ? "gray.400" : "gray.800"}
+      // id={link}
     >
       {children}
     </Heading>
@@ -35,12 +59,15 @@ export const HeadingTwoMDX = ({ children, ...rest }) => {
 
 export const HeadingThreeMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
+  // const anchor = getAnchor(children)
+  // const link = `${anchor}`
   return (
     <Heading
       {...rest}
       size="lg"
       fontWeight="800"
       color={colorMode === "dark" ? "gray.400" : "gray.800"}
+      // id={link}
     >
       {children}
     </Heading>
@@ -49,12 +76,15 @@ export const HeadingThreeMDX = ({ children, ...rest }) => {
 
 export const HeadingFourMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
+  // const anchor = getAnchor(children)
+  // const link = `${anchor}`
   return (
     <Heading
       {...rest}
       size="md"
       fontWeight="800"
       color={colorMode === "dark" ? "gray.400" : "gray.800"}
+      // id={link}
     >
       {children}
     </Heading>
@@ -63,12 +93,15 @@ export const HeadingFourMDX = ({ children, ...rest }) => {
 
 export const HeadingFiveMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
+  // const anchor = getAnchor(children)
+  // const link = `${anchor}`
   return (
     <Heading
       {...rest}
       size="sm"
       fontWeight="800"
       color={colorMode === "dark" ? "gray.400" : "gray.800"}
+      // id={link}
     >
       {children}
     </Heading>
@@ -93,6 +126,19 @@ export const HeadingSixMDX = ({ children, ...rest }) => {
  * Content
  */
 
+export const TextMDX = ({ children, ...rest }) => {
+  const { colorMode } = useColorMode()
+  return (
+    <Text
+      {...rest}
+      fontWeight={colorMode === "dark" ? "500" : "300"}
+      color={colorMode === "dark" ? "gray.100" : "gray.700"}
+    >
+      {children}
+    </Text>
+  )
+}
+
 export const BlockQuoteMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
   return (
@@ -106,6 +152,16 @@ export const BlockQuoteMDX = ({ children, ...rest }) => {
     >
       {children}
     </Box>
+  )
+}
+
+export const UnorderedListMdx = ({ children, ...rest }) => {
+  const { colorMode } = useColorMode()
+  return (
+    <UnorderedList mb={4}
+    >
+      {children}
+    </UnorderedList>
   )
 }
 

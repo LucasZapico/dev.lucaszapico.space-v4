@@ -8,13 +8,14 @@ import {
   Heading,
   Text,
   Tag,
+  Link,
 } from "@chakra-ui/react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import { Link as GatsbyLink, graphql } from "gatsby"
 import React from "react"
 import { generate } from "shortid"
-import { HalfByHalfSection, LinkOne } from "components"
+import { HalfByHalfSection, LinkOne, MdxTOC } from "components"
 import MDXLayout from "components/base/layout/mdx-layout"
 
 export default function CaseTemplate({
@@ -23,29 +24,10 @@ export default function CaseTemplate({
   pageContext,
   location,
 }) {
-  console.log("case template")
-  const { next, previous, node, title, tableOfContents } = pageContext
+  const { next, previous, node, title } = pageContext
+  const { tableOfContents, fields } = node
+  // const { path } = fields
 
-  const TOC = () => (
-    <Box
-      position={{ base: "static", lg: "sticky" }}
-      top="0px"
-      right="2rem"
-      paddingY={6}
-      as="aside"
-      className="toc"
-    >
-      <Heading as="div" color="gray.200" mb={2} size="xl">
-        Table of Contents
-      </Heading>
-      <Box
-        as="nav"
-        px={2}
-        py={10}
-        dangerouslySetInnerHTML={{ __html: node.tableOfContents }}
-      />
-    </Box>
-  )
   const NextArticle = () => (
     <Box key={generate()}>
       <Box to={`/${next.fields.path}`} as={GatsbyLink}>
@@ -62,7 +44,10 @@ export default function CaseTemplate({
           <Heading as="h4" size="lg">
             {next.frontmatter.title}
           </Heading>
-          <Text as="lg" dangerouslySetInnerHTML={{ __html: next.excerpt }} />
+          <Text
+            fontSize="lg"
+            dangerouslySetInnerHTML={{ __html: next.excerpt }}
+          />
         </Box>
       </Box>
     </Box>
@@ -85,7 +70,7 @@ export default function CaseTemplate({
             {previous.frontmatter.title}
           </Heading>
           <Text
-            as="lg"
+            fontSize="lg"
             dangerouslySetInnerHTML={{
               __html: previous.excerpt,
             }}
@@ -152,7 +137,11 @@ export default function CaseTemplate({
                   {children}
                 </Box>
               </MDXLayout>
-              <TOC width="20%" />
+              <MdxTOC
+                tableOfContents={tableOfContents}
+                pagePath={path}
+                width="20%"
+              />
             </Box>
           </Container>
         </Container>
@@ -163,9 +152,8 @@ export default function CaseTemplate({
               More Projects
             </Heading>
             <LinkOne as={GatsbyLink} to="/notes">
-                All Projects
-              </LinkOne>
-            
+              All Projects
+            </LinkOne>
           </Box>
           <HalfByHalfSection
             right={previous !== null ? <PrevArticle /> : ""}

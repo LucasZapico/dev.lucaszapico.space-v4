@@ -4,7 +4,6 @@ const LinkStyles = {
     cursor: "pointer",
     textDecoration: "underline",
     outline: "none",
-
     color: "inherit",
     _hover: {
       textDecoration: "underline",
@@ -28,6 +27,20 @@ const LinkStyles = {
       },
       _focus: {
         color: "red.500",
+      },
+    },
+    aside: {
+      textDecoration: "none",
+      paddingTop: ".2rem",
+      paddingBottom: ".2rem",
+      _hover: {
+        color: "yellow.300",
+      },
+      _active: {
+        color: "yellow.400",
+      },
+      _focus: {
+        color: "yellow.500",
       },
     },
   },

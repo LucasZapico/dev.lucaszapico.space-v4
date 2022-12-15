@@ -73,7 +73,7 @@ export const HeadingStyles = {
       lineHeight: "tall",
     }),
     quo: ({ colorMode }) => ({
-      color: colorMode === "dark" ? "brand.300" : "brand.400",
+      color: colorMode === "dark" ? "brand.300" : "brand.500",
       fontWeight: 800,
       lineHeight: "tall",
     }),
@@ -87,7 +87,28 @@ export const TextStyles = {
     color: colorMode === "dark" ? "gray.200" : "gray.800",
     fontWeight: 500,
     letterSpacing: "0.1rem",
-    lineHeight: "6",
     marginBottom: 6,
   }),
+  sizes: {
+    "4xl": {},
+    "3xl": {},
+    "2xl": {},
+    xl: {
+      lineHeight: "9",
+    },
+    lg: {
+      lineHeight: "tall",
+    },
+    md: {
+      lineHeight: "tall",
+    },
+    sm: {},
+  },
+  variants: {
+    sec: ({ colorMode }) => ({
+      color: colorMode === "dark" ? "gray.400" : "gray.700",
+      fontWeight: 500,
+      lineHeight: "tall",
+    }),
+  }
 }
