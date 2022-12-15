@@ -1,0 +1,176 @@
+---
+title: "Algorithms"
+description: "Notes for reference on algorithms with C#"
+date-created: "2021/03/15"
+last-modified: '2022/12/05'
+isdraft: false
+categories: ["algorithms", "notes"]
+tags: ["algorithms", "notes"]
+type: "note"
+---
+
+## What is an algorithms
+
+A set of steps, instructions or actions to solve rigorously understood(defined) problem.
+
+- the steps of ana algorithm needs to be in a specific order
+- steps need to be distinct
+- produce a result
+- should complete(complete in a finite amount of time)
+
+### General Generic Definitions
+
+- algorithms must have a clear problem statement
+  - problem must be rigorously defined
+  - clear input
+  - clear output
+- specific set up instruction in a specific order
+- each step is unique(distinct)
+  - each step is atomic and cannot be broken down into subtasks
+- algorithm must produce a result
+- the algorithm must complete
+
+### What is a "good" algorithms
+
+> there is no single way
+
+- correctness
+- efficiency
+
+#### Correctness
+
+- clear input
+- clear output
+- will end
+
+<!--- TODO: add link to correctness mathematical defintion -->
+
+#### Efficiency
+
+Algorithm efficiency is defined by two metrics **time** and **space** complexity
+
+> We analysis the **worst case** becuase it can never perform worst then the worst case
+
+Time complexity
+: home long it takes to complete a job
+: in computer science this is defined as run time
+
+Space complexity
+: the amount of computer memory an algorithm takes
+
+- binary search
+- efficiency if the set is sequential and ordered
+- linear search
+- linear search maintians it's complexity regardless if the set is ordered
+
+### Binary Search
+
+#### Correctness
+
+- input: ordered list of values
+- output: position of the target value
+
+#### Efficiency
+
+## Common Search Algorithms
+
+- linear/sequential/simple search
+- binary search
+- bubble sort
+- heap sort
+- quick sort
+- insertion sort
+- selection sort
+- merge sort
+- pancake sort
+- permutation sort
+- cocktail sort
+- combo sort
+- counting sort
+- gnome sort
+- bead sort
+- radix sort
+- shell sort
+- sleep sort
+- strand sort
+
+## Value of Algorithms
+
+- compressing data
+- sorting
+- generating random numbers
+
+## Measuring Performance Between Algorithms
+
+### Big O Notation
+
+Why we need Big O notation
+What is Big O notation
+time complexity and space complexity
+
+For a given programing problem how do we know which solution is best?
+
+Big O notation gives us a numeric performance bench mark for
+
+```JavaScript
+function addUpTo(n){
+  let total = 0;
+  for (let i = 0; i <=0; i++ ){
+    total += i;
+  }
+  return total;
+}
+```
+
+```JavaScript
+function addUpTo(n){
+  return n * (n + 1 ) /2
+}
+```
+
+**Methods for measuring performance**
+
+```JavaScript
+function addUpTo(n){
+  let total = 0;
+  for (let i = 0; i <=0; i++ ){
+    total += i;
+  }
+  return total;
+}
+
+let t1 = performance.now()
+addUpTo(1000000)
+let t2 = performance.now()
+console.log(`Run time: ${(t2-t1)/ 1000} seconds`)
+```
+
+Manually timing is difficult to performance benchmark. Different machines and what processes are running will have performance results. For high performance algorithms the time difference may be so small that our timing measurements do not measure.
+
+**Methods for Measuring Performance**
+
+Counting time
+
+Counting the number of simple operations the computer has to perform
+
+Big O
+: Formally talk about how the runtime of an algorithm grows as the input grows.
+: Big O notation is a way to formalize fuzzy counting.
+: We say that an algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases
+
+- $f(n)$ could be linear $(f(n) = n)$
+- $f(n)$ could be quadratic $(f(n) = n^2)$
+- $f(n)$ could be constant $(f(n) = 1)$
+- $f(n)$ could be something entirely different
+
+## Reference
+
+[Algorithm Patterns in JavaScript](/algorithm-patterns-in-javascript)
+
+[JSBen](https://jsben.ch/)
+
+[Lynda: Learning C# Algorithms](https://www.lynda.com/C-tutorials/Learning-C-Algorithms/604241-2.html)
+
+[JS Algorithms and Data Structures Udemy](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/11198358#overview)
+
+[Algorithms and Data Structures Tutorial - Freecodecamp/treehouse](https://www.youtube.com/watch?v=8hly31xKli0)
