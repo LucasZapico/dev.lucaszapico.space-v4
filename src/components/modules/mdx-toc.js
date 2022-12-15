@@ -10,7 +10,10 @@ const TOCChildren = ({ pagePath, items, iterator }) => {
   return (
     <>
       {items.map((t) => {
-        const name = `${t.title.slice(0, 1).toUpperCase()}${t.title.slice(1)}`
+        console.log(typeof t.title)
+        console.log(t)
+        if(typeof t.title === "string"){
+          const name = `${t.title.slice(0, 1).toUpperCase()}${t.title.slice(1)}`
 
         if (Object.prototype.hasOwnProperty.call(t, "items")) {
           return (
@@ -44,7 +47,10 @@ const TOCChildren = ({ pagePath, items, iterator }) => {
             </Link>
           )
         }
-      })}
+      }
+      })
+    }
+        
     </>
   )
 }
