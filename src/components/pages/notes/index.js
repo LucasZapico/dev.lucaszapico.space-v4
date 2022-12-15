@@ -11,14 +11,13 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Divider,
   GridItem,
   Grid,
   Tag,
 } from "@chakra-ui/react"
 import { generate } from "shortid"
 import { generateImageData } from "gatsby-plugin-image"
-import { ArticleCard, CardOne, NoteCard } from "components"
+import { ArticleCard, CardOne, NoteCard, BreadCrumbGroup } from "components"
 import SubjectTree from "components/modules/subject-tree"
 import pathToJsonTree from "utils/path-to-json-tree"
 
@@ -35,7 +34,6 @@ const NoteGrid = ({ notes }) => {
  * Memo functions
  */
 const MemoNoteGrid = memo(NoteGrid)
-const MemoSubjectTree = memo(SubjectTree)
 
 const Notes = () => {
   const { recentNotes } = useStaticQuery(query)
@@ -88,19 +86,12 @@ const Notes = () => {
 
   return (
     <Container maxW="container.xl">
-      <Flex>
-        <Box
-          overflow="scroll"
-          // backgroundColor="gray.800"
-          pl={4}
-          py={10}
-          display={{ base: "none", md: "block" }}
-          flexBasis={{ base: "0%", md: "30%", lg: "25%" }}
-        >
-          <Heading variant="tri">Subjects</Heading>
-          <MemoSubjectTree tree={tree} />
+      <Grid templateColumns="repeat(12, 1fr)">
+        <Box as={GridItem} colSpan={{ base: 0, md: 3 }} pl={4} py={10}>
+          <SubjectTree tree={tree} />
         </Box>
-        <Box flexBasis={{ base: "100%", md: "60%", lg: "75%" }}>
+
+        <Box as={GridItem} colSpan={{ base: 12, md: 9 }}>
           <Container maxW="container.md" px={0} py={10}>
             <InputGroup>
               <InputLeftElement
@@ -143,15 +134,15 @@ const Notes = () => {
             <MemoNoteGrid notes={notes} />
           </Container>
         </Box>
-      </Flex>
+      </Grid>
     </Container>
   )
 }
 
 export const query = graphql`
   query {
-    recentNotes: allMarkdownRemark(
-      filter: { frontmatter: { isdraft: { eq: false }, type: { eq: "note" } } }
+    recentNotes: allMdx(
+      filter: { frontmatter: { type: { eq: "note" }, isdraft: { eq: false } } }
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {
       edges {

@@ -46,7 +46,6 @@ const TagCloud = ({ recentProjects, filter, setFilter }) => {
             variant="sec"
             mr={2}
             mb={2}
-            hasBG={filter === c}
             onClick={() => setFilter(c)}
           >
             #{c}

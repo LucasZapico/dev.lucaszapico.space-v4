@@ -31,6 +31,10 @@ import {
 } from "components"
 import { CodeBlockMdx } from "components/elements/Mdx/mdx-code-block"
 
+/**
+ * TODO: add support for definition md syntax
+ */
+
 const MdxComponents = {
   h1: HeadingOneMDX,
   h2: HeadingTwoMDX,

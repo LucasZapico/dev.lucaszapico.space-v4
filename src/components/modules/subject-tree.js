@@ -32,7 +32,7 @@ const Subject = ({ t, depth }) => {
             if (c.children.length > 0) {
               return <Subject depth={depth + 1} key={generate()} t={c} />
             } else if (c.link) {
-              const title = c.name.replace(".md", "")
+              const title = c.name.replace(".mdx", "")
               return (
                 <Box
                   to={`/${c.link}`}
