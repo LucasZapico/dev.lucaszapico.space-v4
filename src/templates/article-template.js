@@ -1,45 +1,29 @@
+import { Link as GatsbyLink } from "gatsby"
+import React from "react"
 import {
-  Flex,
+  Grid,
+  GridItem,
   Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
   Container,
   Heading,
+  Flex,
   Text,
   Tag,
-  HStack,
 } from "@chakra-ui/react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
-import { Link as GatsbyLink, graphql } from "gatsby"
-import React from "react"
 import { generate } from "shortid"
-import { HalfByHalfSection, LinkOne } from "components"
+import { BreadCrumbGroup, HalfByHalfSection, LinkOne, MdxTOC } from "components"
+import MDXLayout from "components/base/layout/mdx-layout"
 
-export default function ArticleTemplate({ path, pageContext, location }) {
-  const { next, previous, node, title, tableOfContents } = pageContext
+export default function ArticleTemplate({
+  children,
+  path,
+  pageContext,
+  location,
+}) {
+  const { next, previous, node, title } = pageContext
+  const { tableOfContents, fields } = node
 
-  const TOC = () => (
-    <Box
-      position={{ base: "static", lg: "sticky" }}
-      top="0px"
-      right="2rem"
-      paddingY={6}
-      as="aside"
-      className="toc"
-    >
-      <Heading as="div" color="gray.200" mb={2} size="xl">
-        Table of Contents
-      </Heading>
-      <Box
-        as="nav"
-        px={2}
-        py={10}
-        dangerouslySetInnerHTML={{ __html: node.tableOfContents }}
-      />
-    </Box>
-  )
   const NextArticle = () => (
     <Box key={generate()}>
       <Box to={`/${next.fields.path}`} as={GatsbyLink}>
@@ -56,7 +40,7 @@ export default function ArticleTemplate({ path, pageContext, location }) {
           <Heading as="h4" size="lg">
             {next.frontmatter.title}
           </Heading>
-          <Text as="lg" dangerouslySetInnerHTML={{ __html: next.excerpt }} />
+          {/* <Text as="lg" dangerouslySetInnerHTML={{ __html: next.excerpt }} /> */}
         </Box>
       </Box>
     </Box>
@@ -78,39 +62,14 @@ export default function ArticleTemplate({ path, pageContext, location }) {
           <Heading as="h4" size="lg">
             {previous.frontmatter.title}
           </Heading>
-          <Text
+          {/* <Text
             as="lg"
             dangerouslySetInnerHTML={{
               __html: previous.excerpt,
             }}
-          />
+          /> */}
         </Box>
       </Box>
-    </Box>
-  )
-
-  const BreadCrumbs = () => (
-    <Box mt={6} mb={10}>
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <BreadcrumbLink to="/" as={GatsbyLink}>
-            Home
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <BreadcrumbLink
-            to={node.frontmatter.type === "note" ? "/notes" : "/articles"}
-            as={GatsbyLink}
-          >
-            {node.frontmatter.type === "note" ? "Notes" : "Articles"}
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink>{title}</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
     </Box>
   )
 
@@ -118,42 +77,45 @@ export default function ArticleTemplate({ path, pageContext, location }) {
     <>
       {/* <SEO location={location} title={title} /> */}
       <Box minHeight="100vh" pt={10} pb={10}>
-        <Container
-          maxW="container.xl"
-          py={10}
-          display="flex"
-          flexWrap="wrap"
-          flexDirection="row-reverse"
-        >
-          <Container maxW="container.xl" py={10} px={10}>
-            <Heading mt={6} mb={4} as="h1" size="2xl">
-              {title}
-            </Heading>
-            <BreadCrumbs />
-            <HStack flexWrap="wrap" py={6}>
-              {node.frontmatter.categories &&
-                node.frontmatter.categories.map((cat, i) => (
-                  <Tag variant="sec" key={generate()}>
-                    #{cat}
-                  </Tag>
-                ))}
-            </HStack>
-            <Box
-              display="flex"
-              flexDirection={{ base: "column-reverse", lg: "row" }}
-              justifyContent="space-between"
-              as="main"
-              className="article-wrapper"
-            >
-              <Box
-                width={{ md: "650px" }}
-                py={10}
-                dangerouslySetInnerHTML={{ __html: node.html }}
-              />
-              <TOC width="20%" />
+        <Grid templateColumns="repeat(12, 1fr)" gap={6}>
+          <Box
+            mx="auto"
+            px={{ base: 4, md: 4, lg: 4 }}
+            pt={40}
+            pb={20}
+            as={GridItem}
+            colSpan={{ base: 12, lg: 6 }}
+          >
+            <Box maxW={{ md: "650px" }} mx="auto">
+              <Heading mt={6} mb={4} as="h1" size="2xl">
+                {title}
+              </Heading>
+              <BreadCrumbGroup pathArr={["articles", title]} />
+              <Flex flexWrap="wrap" py={6}>
+                {node.frontmatter.categories &&
+                  node.frontmatter.categories.map((cat, i) => (
+                    <Tag mr={1} mb={1} variant="sec" key={generate()}>
+                      #{cat}
+                    </Tag>
+                  ))}
+              </Flex>
+              <MDXLayout>
+                <Box py={10}>{children}</Box>
+              </MDXLayout>
             </Box>
-          </Container>
-        </Container>
+          </Box>
+          <Box
+            as={GridItem}
+            display={{ base: "none", xl: "block" }}
+            colSpan={{ base: 0, lg: 3 }}
+          >
+            <MdxTOC
+              tableOfContents={tableOfContents}
+              pagePath={path}
+              width="20%"
+            />
+          </Box>
+        </Grid>
 
         <Container maxW="container.xl" my={10}>
           <Box my={10}>
