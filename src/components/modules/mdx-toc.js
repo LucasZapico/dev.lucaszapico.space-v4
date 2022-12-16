@@ -64,12 +64,13 @@ const MdxTOC = ({ tableOfContents, pagePath }) => {
       py={6}
       px={4}
       as="aside"
+      
       // overflowY="scroll"
     >
       <Heading as="div" variant="tri" mb={2} size="md">
         Table of Contents
       </Heading>
-      <Box as="nav" >
+      <Box display="flex" flexDir="column" as="nav" >
         <TOCChildren
           items={tableOfContents.items}
           pagePath={pagePath}
