@@ -55,7 +55,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 const handleMarkdown = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  // const ArticleTemplate = path.resolve("src/templates/article-template.js")
+  const ArticleTemplate = path.resolve("src/templates/article-template.js")
   const NoteTemplate = path.resolve("src/templates/note-template.js")
 
   const results = await graphql(allMarkDownPagesQuery)
@@ -78,17 +78,17 @@ const handleMarkdown = async ({ actions, graphql, reporter }) => {
             title: edge.node.frontmatter.title,
           },
         })
-      } else {
-        // createPage({
-        //   path: pagePath,
-        //   component: `${ArticleTemplate}?__contentFilePath=${edge.node.internal.contentFilePath}`,
-        //   context: {
-        //     next: edge.next,
-        //     node: edge.node,
-        //     previous: edge.previous,
-        //     title: edge.node.frontmatter.title,
-        //   },
-        // })
+      }  else if (edge.node.frontmatter.type === "article") {
+        createPage({
+          path: pagePath,
+          component: `${ArticleTemplate}?__contentFilePath=${edge.node.internal.contentFilePath}`,
+          context: {
+            next: edge.next,
+            node: edge.node,
+            previous: edge.previous,
+            title: edge.node.frontmatter.title,
+          },
+        })
       }
     }
   })
