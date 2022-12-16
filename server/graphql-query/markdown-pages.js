@@ -1,7 +1,7 @@
 const allMarkDownPagesQuery = `
 {
   allMdx(
-    filter: {frontmatter: {type: {eq: "note"}, isdraft: {eq: false}}}
+    filter: {frontmatter: {type: {ne: "project"}, isdraft: {eq: false}}}
     sort: { fields: frontmatter___date_created, order: DESC }
   ) {
     edges {
