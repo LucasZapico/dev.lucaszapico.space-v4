@@ -34,7 +34,7 @@ const AboutPage = ({ location }) => (
         and a bit of watercolor to relax.
       </Text>
 
-      <Heading as="h3" size="xl">
+      {/* <Heading as="h3" size="xl">
         The Objective
       </Heading>
       <Text>
@@ -42,13 +42,13 @@ const AboutPage = ({ location }) => (
         The process itself is an addiction. I am energized by democratizing the
         creative process and exploring the unique, clever, strange, and
         sometimes hilarious solutions that open collaboration fosters.
-      </Text>
+      </Text> */}
       <Heading as="h4" size="xl">
         The Stack
       </Heading>
       <Text>
-        I am a React and JavaScript developer with experience and comfort across
-        the entire stack. On the backend I prefer Nodejs or Python.
+        I am a React.js and JavaScript developer with experience and comfort across
+        the entire stack. On the backend I prefer Node.js or Python.
       </Text>
 
       <Box my={6}>
