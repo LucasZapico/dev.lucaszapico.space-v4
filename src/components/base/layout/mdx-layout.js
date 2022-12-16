@@ -47,7 +47,7 @@ const MdxComponents = {
   li: ListItem,
   ol: OrderedList,
   blockquote: BlockQuoteMDX,
-  a: Link,
+  a: LinkMDX,
   code: Code,
   pre: CodeBlockMdx
 }

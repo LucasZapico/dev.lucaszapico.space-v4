@@ -1,3 +1,4 @@
+
 import {
   Heading,
   Text,
@@ -9,7 +10,7 @@ import {
   ListItem,
 } from "@chakra-ui/react"
 import React from "react"
-import { MagicLink } from "components"
+import { Link as GatsbyLink } from "gatsby"
 
 function getAnchor(text) {
   console.log(text)
@@ -165,19 +166,17 @@ export const UnorderedListMdx = ({ children, ...rest }) => {
   )
 }
 
-// export const LinkMDX = ({
-//   children,
-//   ...rest
-// }: {
-//   children: ReactNode | string
-// }) => {
-//   const { colorMode } = useColorMode()
-//   return (
-//     <MagicLink href="" {...rest} target="_blank">
-//       {children}
-//     </MagicLink>
-//   )
-// }
+export const LinkMDX = ({
+  children,
+  ...rest
+}) => {
+  const { colorMode } = useColorMode()
+  return (
+    <Link variant="linkInLine" as={GatsbyLink} {...rest} >
+      {children}
+    </Link>
+  )
+}
 
 // export const ResponsiveImageMDX = ({
 //   alt,

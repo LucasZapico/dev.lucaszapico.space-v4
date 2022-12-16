@@ -8,7 +8,7 @@ import { Box } from "@chakra-ui/react"
 
 export const Tag = ({ hasBorder = true, hasBG = false, children, ...rest }) => {
   const value = children.toLowerCase().replaceAll(" ", "-")
-  
+
   // const color = colorMode === "light" || hasBG ? "gray.300" : "brand.one"
   // const borderColor = colorMode === "light" ? "brand.two" : "brand.one"
   // const backgroundColor = colorMode === "light" ? "brand.three" : "brand.one"
