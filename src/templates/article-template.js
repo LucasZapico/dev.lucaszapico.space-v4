@@ -77,6 +77,7 @@ export default function ArticleTemplate({
     <>
       {/* <SEO location={location} title={title} /> */}
       <Box minHeight="100vh" pt={10} pb={10}>
+        <Container maxW="container.xl" >
         <Grid templateColumns="repeat(12, 1fr)" gap={6}>
           <Box
             mx="auto"
@@ -84,7 +85,7 @@ export default function ArticleTemplate({
             pt={40}
             pb={20}
             as={GridItem}
-            colSpan={{ base: 12, lg: 6 }}
+            colSpan={{ base: 12, lg: 8 }}
           >
             <Box maxW={{ md: "650px" }} mx="auto">
               <Heading mt={6} mb={4} as="h1" size="2xl">
@@ -107,7 +108,7 @@ export default function ArticleTemplate({
           <Box
             as={GridItem}
             display={{ base: "none", xl: "block" }}
-            colSpan={{ base: 0, lg: 3 }}
+            colSpan={{ base: 0, lg: 4 }}
           >
             <MdxTOC
               tableOfContents={tableOfContents}
@@ -116,6 +117,7 @@ export default function ArticleTemplate({
             />
           </Box>
         </Grid>
+        </Container>
 
         <Container maxW="container.xl" my={10}>
           <Box my={10}>
