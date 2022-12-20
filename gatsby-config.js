@@ -2,12 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
-  flags: {
-    PARALLEL_SOURCING: false,
-    FAST_DEV: false,
-    DEV_SSR: false,
-    PRESERVE_FILE_DOWNLOAD_CACHE: false,
-  },
+  
   siteMetadata: {
     title: "dev.lucaszapico.space-v4",
     description: "",
@@ -46,13 +41,9 @@ module.exports = {
         mdxOptions: {
           
           gatsbyRemarkPlugins: [
-            {
-              resolve: `gatsby-remark-images-anywhere`,
-              options: {
-                staticDir: "static",
-              },
-            }
-            
+            // {
+            //   resolve: `gatsby-remark-images-anywhere`, 
+            // }
           ],
         },
         
