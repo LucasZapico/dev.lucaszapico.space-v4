@@ -4,10 +4,13 @@
 .env.production 
 .env.staging 
 
+#
+.codesandbox/
+.codesandbox*
 
 # netlfiy 
 .netlify/
-.codesandbox/
+
 
 # obsidian 
 .vault*
