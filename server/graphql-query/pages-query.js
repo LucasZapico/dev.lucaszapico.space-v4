@@ -1,4 +1,4 @@
-const allMarkDownPagesQuery = `
+const contentPagesQuery = `
 {
   allMdx(
     filter: {frontmatter: {type: {ne: "project"}, isdraft: {eq: false}}}
@@ -9,6 +9,7 @@ const allMarkDownPagesQuery = `
         excerpt
         frontmatter {
           title
+          categories
         }
         fields {
           path
@@ -18,6 +19,7 @@ const allMarkDownPagesQuery = `
         excerpt
         frontmatter {
           title
+          categories
         }
         fields {
           path
@@ -49,4 +51,4 @@ const allMarkDownPagesQuery = `
   }
 }`
 
-module.exports = { allMarkDownPagesQuery }
+module.exports = { contentPagesQuery }
