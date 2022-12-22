@@ -13,7 +13,7 @@ import {
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import pathToJsonTree from "utils/path-to-json-tree"
 import { generate } from "shortid"
-import { BreadCrumbGroup, HalfByHalfSection, LinkOne, MdxTOC, CardOne } from "components"
+import { BreadCrumbGroup, HalfByHalfSection, LinkOne, MdxTOC } from "components"
 import SubjectTree from "components/modules/subject-tree"
 import MDXLayout from "components/base/layout/mdx-layout"
 
@@ -123,7 +123,7 @@ export default function NoteTemplate({
             as={GridItem}
             colSpan={{ base: 12, lg: 6 }}
           >
-            <Box maxW={{ md: "650px" }} mx="auto">
+            <Box maxW={{ md: "650px" }}>
             <Heading mt={6} mb={4} as="h1" size="xl">
               {title}
             </Heading>
@@ -169,9 +169,8 @@ export default function NoteTemplate({
             )}
           </Box>
           <HalfByHalfSection
-            
-            left={next !== null ?   <PrevArticle /> : ""}
-            right={previous !== null ? <NextArticle /> : ""}
+            right={previous !== null ? <PrevArticle /> : ""}
+            left={next !== null ? <NextArticle /> : ""}
           />
         </Container>
       </Box>
