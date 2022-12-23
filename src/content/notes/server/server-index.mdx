@@ -1,20 +1,88 @@
 ---
-title: "_server"
-description: ""
+title: "Servers Catch"
+description: "This is a general note catch for server setup, configuration and security best practices."
 date-created: "2022/02/16"
-last-modified: "2022/08/24"
+last-modified: '2022/12/22'
 categories: []
 tags: []
-isdraft: true
+isdraft: false
 type: ""
 ---
 
-# \_server
+This is a general note catch for server setup, configuration and security best practices.
 
-**ssh catch**
+Server configuration has a fair over lap with ssh and general Linux commands. Because of this overlap some content may be referenced only. 
 
-remote in
+[ssh notes](/notes/ssh-catch)
+
+
+
+## Access Remote Server 
 
 ```
 ssh -v user@IP-Address
 ```
+
+## Adding Users, Passwords and Groups via ClI
+
+### Add User
+
+```sh
+useradd <new-username>
+```
+
+#### Add Password to User 
+
+```sh 
+sudo passwd <new-username>
+# props for password and password confirmation
+```
+
+
+
+> ‼️ \#security when configuring a new server first add a new admin and disable the root user. 
+
+### Role Naming Convention 
+
+> 💡 The naming conventions are just general options. Also note that by using one of these hackers have a known vector to brut force a server. 
+
+`<auth-level>.<firstname>.<surname>@<domain>`
+
+#### Option One
+
+```txt
+EA-first.last # Enterprise Admin.
+
+DA-first.last # Domain Admin.
+
+SA-first.last # Server Admin.
+
+WA-first.last # Workstation Admin.
+
+First.last # user level.
+```
+
+#### Option Two 
+
+```txt
+Tier One (Domain Admin): t1.username
+
+Tier Two (Server-Only Admin): t2.username
+
+Tier Three (Workstation-Only Admin): t3.username
+
+(standard daily-driver): username
+```
+
+
+
+## New Server Checklist 
+
+- [ ] add new admin 
+- [ ] disable root admin
+
+## Reference
+
+[How to create users in Linux cli - linuxize](https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/)
+
+[system usersname - systemd.io](https://systemd.io/USER_NAMES/)
