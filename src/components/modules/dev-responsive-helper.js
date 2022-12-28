@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react"
 import useWindowSize from "hooks/use-window-size"
 import theme from "theme"
+import {generate} from 'shortid'
 
 const BreakPointTable = ({ breakpoints }) => {
   return (
@@ -21,7 +22,7 @@ const BreakPointTable = ({ breakpoints }) => {
       <Table size="sm" variant="simple">
         {Object.keys(breakpoints).map((b) => {
           return (
-            <Tr>
+            <Tr key={generate()}>
               <Td>{b}</Td>
               <Td>{parseInt(breakpoints[b].replace("em", "")) * 16}px</Td>
             </Tr>
@@ -73,8 +74,8 @@ const ResponsiveHelper = () => {
   useEffect(() => {
     currentSizeArr.forEach((el) => {
       const key = Object.keys(el)
-      console.log(parseInt(key[0]))
-      console.log(parseInt(key[0]) > width)
+      // console.log(parseInt(key[0]))
+      // console.log(parseInt(key[0]) > width)
       if(parseInt(key[0]) < width ){
         setCurrentSize(el[key[0]])
       }
