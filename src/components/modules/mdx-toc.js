@@ -10,8 +10,8 @@ const TOCChildren = ({ pagePath, items, iterator }) => {
   return (
     <>
       {items.map((t) => {
-        console.log(typeof t.title)
-        console.log(t)
+        // console.log(typeof t.title)
+        // console.log(t)
         if(typeof t.title === "string"){
           const name = `${t.title.slice(0, 1).toUpperCase()}${t.title.slice(1)}`
 
