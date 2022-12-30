@@ -3,8 +3,9 @@ title: Nextjs TypeScript Letter Shuffle
 subHeader: A TypeScript practice project
 path: /projects/nextjs-typescript-letter-shuffle/
 link: https://lettershuffle.lucaszapico.space/
+repo: "https://github.com/LucasZapico/letter-shuffle"
 date-created: 2022/10/15
-last-modified: '2022/12/16'
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -23,8 +24,9 @@ audio: ""
 type: "project"
 ---
 
-import { Text, Heading } from "@chakra-ui/react"
+import { Text, Heading, Link} from "@chakra-ui/react"
 import { StackIconsGroup } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 
 ![imgOne:](/images/projects/featured/letter-shuffle-1.png)
 
@@ -37,23 +39,30 @@ import { StackIconsGroup } from "components"
   always a fair amount of unknown complexity.
 </Heading>
 
+<Link  mb={6} asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
+
+<br></br>
+<br></br>
+
+<Link mb={6} asExternal variant="linkOne" href={props.pageContext.frontmatter.repo} target="_blank">{props.pageContext.frontmatter.title} - github<ExternalLinkIcon mx="2px" /></Link>
+
 ### Stack
 
 <StackIconsGroup iconArr={["chakraui", "gatsby", "netlify", "github", "mdx"]} />
 
 ### Objective
 
-This project is a bit of a meme. I origianlly built a [reorder-string - codepen](https://codepen.io/LucasZapico/pen/wvMqqwO) in 2016 as both a practice project in vanillajs and to solve my lack of ability to come up with "good" usernames.
+This project is a bit of a meme. I originally built a [reorder-string - codepen](https://codepen.io/LucasZapico/pen/wvMqqwO) in 2016 as both a practice project in vanilla.js and to solve my lack of ability to come up with "good" usernames.
 
-The resulting shuffler has been my username generater ever since just shuffling my actual name.
+The resulting shuffler has been my username generator ever since just shuffling my actual name.
 
 #### Features Coverage
 
-From a feature standpoint it's pretty straight forward. Takes in a string and returns a shuffled version of that string.
+From a feature standpoint, it's about as straightforward as they come. Takes in a string and returns a shuffled version of that string.
 
-![imgOne:](../../images/projects/letter-shuffle/letter-shuffle-ui-one.gif)
+![letter shuffle tour](/images/projects/letter-shuffle/letter-shuffle-ui-one.gif)
 
-The project architeture is a nice little boilderpalte with ready to scale support for;
+The project architecture is a nice little boilerplate with ready-to-scale support for;
 
 - advanced theming with Chakra-ui
 - MDX
@@ -68,9 +77,6 @@ way
 ### Deliverables
 
 - website
-- branding
-- design direction
 - user experience design
-- web design
 - development
-- email design and automation
+

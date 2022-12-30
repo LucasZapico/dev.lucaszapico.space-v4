@@ -4,7 +4,7 @@ subHeader: A welcoming experience focused on informing
 path: /projects/claire-morency-hypnotherapy/
 link: https://clairemorencyhypnotherapy.com/
 date-created: "2021/07/15"
-last-modified: '2022/12/22'
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -27,19 +27,26 @@ audio: ""
 type: "project"
 ---
 
-import { Box, Heading } from "@chakra-ui/react"
+import { Box, Heading, Link } from "@chakra-ui/react"
+import { StackIconsGroup } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 import Tour from 'videos/cm-hypno-quick-tour-compress.mp4'
 
-![imgOne:](/images/projects/featured/claire-morency-hypno.png)
+![showcase imgOne](/images/projects/featured/claire-morency-hypno.png)
 
 ## Summary
 
 <Heading as="div" size="md">
-  Claire Morency Hypnotherapy is a custom designed website highlighting brand and personality. The web experience is focused on making information on services and scheduling accessibility. The site is built with Gatsby.js and content types are handled with Netlify CMS.
+  Claire Morency Hypnotherapy was a custom website design and development highlighting brand and personality. The web experience focused on making the information on services and scheduling accessible. The site is built with Gatsby.js and content types are handled with Netlify CMS.
 </Heading>
 
 
-{/* ## Challenge */}
+
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
+
+### Stack 
+
+<StackIconsGroup iconArr={["chakraui", "gatsby", "graphql",  "netlify", "github", "googleanalytics"]} />
 
 
 
@@ -49,7 +56,7 @@ import Tour from 'videos/cm-hypno-quick-tour-compress.mp4'
   <source src={Tour} type="video/mp4" />
 </Box>
 
-A highly performant Gatsby site integrated with Netlify CMS. An engaging branded site that makes infromation gathering, scheduling easy for potential customer. Accessible content creation for non technical users. 
+A highly performant Gatsby site integrated with Netlify CMS. An engaging branded site that makes information gathering, and scheduling easy for potential customers. Accessible content creation for non-technical users. 
 
 #### Deliverables
 
@@ -61,3 +68,4 @@ A highly performant Gatsby site integrated with Netlify CMS. An engaging branded
 - development
 - email design and automation
 - scheduling solution
+- set up and integrated Netlify CMS

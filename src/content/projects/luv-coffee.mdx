@@ -6,7 +6,7 @@ repo: https://github.com/LucasZapico/luv-coffee-demo-2020
 link: https://luvcoffee2020.netlify.app/
 featuredImage: "../../images/projects/featured/luv-coffee-3-showcase.png"
 date-created: 2020/05/11
-last-modified: '2022/12/05'
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -30,22 +30,35 @@ audio: ""
 type: "project"
 ---
 
-{/* !["featured UI image" ](../assets/images/projects/luv-coffee-feature.png) */}
+import { Box, Heading, Link } from "@chakra-ui/react"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+import { StackIconsGroup } from "components"
+
+!["featured UI image" ](/images/projects/luv-coffee-feature.png)
 
 ## Summary
 
-### challenge
-
+<Heading as="div" size="md">
 Design a mock brand for a coffee shop and build out the shopping UI and UX,
+</Heading>
 
-### outcome
+
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
+
+### Stack 
+
+<StackIconsGroup iconArr={["sass", "gatsby", "github", "googleanalytics"]} />
+
+
+### Results
 
 A UX and UI designed in Figma and built with Gatsbyjs. The next step of this project is to work through the integration with Shopify API
 
-### deliverables
+### Deliverables
 
-- "website",
-- "user experience design",
-- "web design",
-- "development",
-- "user interface design"
+- website
+- user experience design
+- web design
+- development
+- user interface design
+- ui assets

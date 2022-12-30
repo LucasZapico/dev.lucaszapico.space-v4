@@ -3,8 +3,8 @@ title: Chancellor Consulting
 subHeader: A professional point of contact
 path: /projects/chancellor-consulting/
 link: https://chancellorconsulting.com/
-date-created: 2021/05/15
-last-modified: "2022/11/28"
+date-created: "2021/05/15"
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -27,26 +27,37 @@ audio: ""
 type: "project"
 ---
 
-[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
+import { Box, Heading, Link } from "@chakra-ui/react"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+import Tour from '/static/images/projects/chancellor-consulting/chancellor-consulting-tour.gif'
+import { StackIconsGroup } from "components"
 
-## summary:
+![showcase image of web ui](/images/projects/featured/chancellor-consutling.png)
 
-## challenge:
+## Summary
 
-Create a digital poetry and prose experience with CMS support.
+<Heading as="div" size="md">
+  Design and develop a professional web experience that showcases the years of experience and clients that Chancellor Consulting has worked with. The site is built with Gatsby.js and content types are handled with Netlify CMS.
+</Heading>
 
-### outcome:
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">Chancellor Consulting <ExternalLinkIcon mx="2px" /></Link>
 
-Produced a unique Gatsby site integrated with Netlify CMS enabling easy
-posting. Built a poetry and prose experience in a unique and meaningful
-way
+### Stack 
 
-**deliverables:**
+<StackIconsGroup iconArr={["chakraui", "gatsby", "graphql",  "netlify", "github", "googleanalytics"]} />
+
+
+
+### Results
+
+![letter shuffle tour](/images/projects/chancellor-consulting/chancellor-consulting-tour.gif)
+
+A blazing-fast Gatsby.js site with a user experience focused on showcasing the depth of experience and professionalism of the team.  
+
+#### Deliverables
 
 - website
-- branding
-- design direction
 - user experience design
 - web design
 - development
-- email design and automation
+- set up and integrated Netlify CMS

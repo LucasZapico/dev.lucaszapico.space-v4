@@ -4,7 +4,7 @@ subHeader: Dev.Portfolio 2020
 path: /projects/dev-portfolio-2020/
 link: https://devlucaszapico2020.netlify.app/
 date-created: 2021/05/15
-last-modified: "2022/08/23"
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -27,21 +27,28 @@ audio: ""
 type: "project"
 ---
 
-[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
+import { Box, Heading, Link } from "@chakra-ui/react"
+import Tour from '/static/images/projects/chancellor-consulting/chancellor-consulting-tour.gif'
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+import { StackIconsGroup } from "components"
 
-## summary:
 
-## challenge:
+![showcase image of web ui](/images/projects/featured/dev-portfoliov2.png)
 
-Create a digital poetry and prose experience with CMS support.
+## Summary
 
-### outcome:
+<Heading as="div" size="md">
+  Design and develop a personal professional portfolio of websites and project 
+</Heading>
 
-Produced a unique Gatsby site integrated with Netlify CMS enabling easy
-posting. Built a poetry and prose experience in a unique and meaningful
-way
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
 
-**deliverables:**
+
+### Stack 
+
+<StackIconsGroup iconArr={["sass", "gatsby", "netlify", "github", "googleanalytics"]} />
+
+#### Deliverables
 
 - website
 - branding
@@ -49,4 +56,5 @@ way
 - user experience design
 - web design
 - development
-- email design and automation
+- content 
+
