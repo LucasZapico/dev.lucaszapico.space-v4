@@ -1,0 +1,68 @@
+---
+title: "MacOS Catch"
+description: "A little reference for recovery mode actions"
+date-created: "2022/12/12"
+last-modified: '2022/12/22'
+isdraft: false
+categories: ["macos", "notes", "cheatsheet"]
+tags: ["macos", "notes", "workflow", "cheatsheet"]
+type: "note"
+---
+import { Box } from '@chakra-ui/react'
+import { Gist } from 'mdx-embed'
+
+## MacOS Common Action CheatSheet
+
+### Show List of Users
+
+
+**All Users Including Apps**
+npm 
+```sh
+dscl . list /Users
+```
+
+**User Accounts**
+
+```sh 
+dscl . list /Users | grep -v '_'
+```
+
+### Set hidden files in Finder to "show" or "hide"
+
+> 💡 For changes to take effect restart or `killall Finder`
+
+**Show hidden files**
+
+```sh
+defaults write com.apple.finder AppleShowAllFiles TRUE
+```
+
+**Hide hidden files**
+
+```sh
+defaults write com.apple.finder AppleShowAllFiles FALSE
+```
+
+### Increase Mouse/trackpad tracking speed
+
+**See current speed**
+
+```sh
+defaults read -g com.apple.mouse.scaling
+```
+
+**Edit speed**
+
+```sh
+defaults write -g com.apple.mouse.scaling 8.0
+```
+
+## Macos Starter Script 2022
+
+<Box as={Gist} mb={6} gistLink="LucasZapico/d6751e5ed72ef5c5dd5bcfe9f364130f" ></Box>
+
+
+
+
+`gist:LucasZapico/d6751e5ed72ef5c5dd5bcfe9f364130f#macos-starter-script-2022.sh`

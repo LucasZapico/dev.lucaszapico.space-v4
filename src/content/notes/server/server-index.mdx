@@ -2,11 +2,11 @@
 title: "Servers Catch"
 description: "This is a general note catch for server setup, configuration and security best practices."
 date-created: "2022/02/16"
-last-modified: '2022/12/22'
-categories: []
-tags: []
+last-modified: '2022/12/23'
+categories: ["server", "config", "reference", "init"]
+tags: ["server", "config", "reference", "init"]
 isdraft: false
-type: ""
+type: "note"
 ---
 
 This is a general note catch for server setup, configuration and security best practices.
@@ -15,7 +15,10 @@ Server configuration has a fair over lap with ssh and general Linux commands. Be
 
 [ssh notes](/notes/ssh-catch)
 
+## Configring A New Server Checklist 
 
+- [ ] add new admin 
+- [ ] disable root admin
 
 ## Access Remote Server 
 
@@ -31,6 +34,10 @@ ssh -v user@IP-Address
 useradd <new-username>
 ```
 
+```sh 
+id <new-username>
+```
+
 #### Add Password to User 
 
 ```sh 
@@ -38,9 +45,25 @@ sudo passwd <new-username>
 # props for password and password confirmation
 ```
 
+#### Add User to Group
 
+```sh
+sudo usermod -aG <group> <user-name>
+```
 
-> ‼️ \#security when configuring a new server first add a new admin and disable the root user. 
+#### Add User to Group
+
+```sh
+sudo usermod -d  <user-name> <group>
+```
+
+#### Delete User Group 
+
+```sh
+sudo groupdel <group>
+```
+
+> 🚨 security when configuring a new server first add a new admin and disable the root user. 
 
 ### Role Naming Convention 
 
@@ -74,15 +97,12 @@ Tier Three (Workstation-Only Admin): t3.username
 (standard daily-driver): username
 ```
 
-
-
-## New Server Checklist 
-
-- [ ] add new admin 
-- [ ] disable root admin
-
 ## Reference
+
+[Best Practices: production cloud server - vultr](https://www.vultr.com/docs/best-practices-for-ssh-on-a-production-cloud-server/)
 
 [How to create users in Linux cli - linuxize](https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/)
 
 [system usersname - systemd.io](https://systemd.io/USER_NAMES/)
+
+[Enable or Disable root login linux - linuxfordevices.com](https://www.linuxfordevices.com/tutorials/linux/enable-disable-root-login-in-linux)

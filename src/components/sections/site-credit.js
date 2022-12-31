@@ -9,7 +9,7 @@ import {
   OrderedList,
   UnorderedList,
 } from "@chakra-ui/react"
-import { MdCheckCircle } from "@chakra-ui/icons"
+import { CheckIcon } from "@chakra-ui/icons"
 import { generate } from "shortid"
 import { LinkOne } from "components"
 
@@ -36,7 +36,7 @@ const SiteCredits = () => {
       <List spacing={3}>
         {used.map((el, i) => (
           <ListItem key={generate()}>
-            <ListIcon as={MdCheckCircle} color="green.500" />
+            <ListIcon as={CheckIcon} color="green.500" />
             <LinkOne isExternal variant="LinkOne" href={el.link}>
               <Heading as="h6">{el.name}</Heading>
             </LinkOne>
