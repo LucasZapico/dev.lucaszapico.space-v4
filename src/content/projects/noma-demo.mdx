@@ -3,8 +3,8 @@ title: Noma - demo
 subHeader: Noma - demo
 path: /projects/noma/
 link: https://noma2020.netlify.app/
-date-created: 2019/05/15
-last-modified: "2022/08/22"
+date-created: "2019/05/15"
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -27,26 +27,35 @@ audio: ""
 type: "project"
 ---
 
-[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
 
-## summary:
+import { Box, Heading, Link } from "@chakra-ui/react"
+import { StackIconsGroup } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+import Tour from 'videos/cm-hypno-quick-tour-compress.mp4'
 
-## challenge:
+![showcase web ui ](/images/projects/featured/noma.png)
 
-Create a digital poetry and prose experience with CMS support.
 
-### outcome:
+## Summary
 
-Produced a unique Gatsby site integrated with Netlify CMS enabling easy
-posting. Built a poetry and prose experience in a unique and meaningful
-way
+<Heading as="div" size="md">
+A simple UI practice project creating a fictional UI for the Noma restaurant.  
+</Heading>
 
-**deliverables:**
+<Box mb={6}>
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
+</Box>
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.repo} target="_blank">{props.pageContext.frontmatter.title} - github<ExternalLinkIcon mx="2px" /></Link>
+
+
+### Stack 
+
+<StackIconsGroup iconArr={["gatsby", "graphql",  "netlify", "github"]} />
+
+
+#### Deliverables
 
 - website
-- branding
-- design direction
-- user experience design
 - web design
 - development
-- email design and automation
+

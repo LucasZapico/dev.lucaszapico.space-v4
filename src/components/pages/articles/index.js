@@ -43,7 +43,7 @@ const Articles = () => {
   return (
     <>
       <Container maxW="container.xl">
-        <Heading as="h1" size="4xl">
+        <Heading as="h1" size="3xl">
           Articles
         </Heading>
         <Container maxW="container.md" px={0} py={10}>
@@ -91,9 +91,9 @@ const Articles = () => {
 
 export const query = graphql`
   query {
-    recentArticles: allMarkdownRemark(
+    recentArticles: allMdx(
       filter: {
-        frontmatter: { isdraft: { eq: false }, type: { eq: "article" } }
+        frontmatter: { type: { eq: "article" }, isdraft: { eq: false } }
       }
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {
@@ -103,7 +103,7 @@ export const query = graphql`
           fields {
             path
           }
-          excerpt(format: HTML)
+          excerpt
           frontmatter {
             title
             categories

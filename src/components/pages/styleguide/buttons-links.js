@@ -61,8 +61,8 @@ const LinkStyles = () => (
     <Box py={6}>
       <Text>
         Quick: do{" "}
-        <Link to="/" variant="linkInline">
-          {" "}
+        <Link to="/" variant="linkInLine">
+          
           inline link
         </Link>
         you have a plan to become customized. Have you ever needed to

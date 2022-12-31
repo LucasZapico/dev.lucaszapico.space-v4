@@ -71,7 +71,7 @@ const DesktopNav = () => {
             activeClassName="active"
             fontSize="xl"
             mb={6}
-            variant="linkOne"
+            variant="navLink"
             key={generate()}
             as={GatsbyLink}
             to={r.path}

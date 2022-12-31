@@ -1,6 +1,5 @@
-import "./src/assets/sass/index.scss"
-// import 'prismjs/themes/prism-solarizedlight.css'
-// import 'prismjs/themes/prism-solarized-dark-atom.css'
+import "assets/sass/index.scss"
+
 
 import {
   CSSReset,
@@ -11,7 +10,7 @@ import {
 } from "@chakra-ui/react"
 // import { useColorModeValue, ColorModeProvider } from './src/context/_index';
 import React, { useEffect } from "react"
-import theme from "./src/theme"
+import theme from "theme"
 
 export const wrapRootElement = ({ cookies, element }) => {
   return (

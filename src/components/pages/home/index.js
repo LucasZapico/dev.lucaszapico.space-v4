@@ -26,9 +26,9 @@ const Home = () => {
 
 export const query = graphql`
   query {
-    recentArticles: allMarkdownRemark(
+    recentArticles: allMdx(
       filter: {
-        frontmatter: { isdraft: { eq: false }, type: { ne: "project" } }
+        frontmatter: { type: { ne: "project" }, isdraft: { eq: false } }
       }
       sort: { fields: frontmatter___date_created, order: DESC }
     ) {
@@ -38,7 +38,7 @@ export const query = graphql`
           fields {
             path
           }
-          excerpt(format: HTML)
+          excerpt
           frontmatter {
             title
             categories

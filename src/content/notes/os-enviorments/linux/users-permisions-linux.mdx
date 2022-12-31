@@ -1,0 +1,67 @@
+---
+title: "Linux distribution Environment Setup"
+description: ""
+date-created: "2022/02/16"
+last-modified: '2022/12/23'
+categories: ["linux", "setup", "reference"]
+tags: ["linux", "setup"]
+isdraft: false
+type: "note"
+---
+
+
+
+
+
+## Adding Users, Passwords and Groups 
+
+### Add User
+
+```sh
+useradd <new-username>
+```
+
+#### Add Password to User 
+
+```sh 
+sudo passwd <new-username>
+# props for password and password confirmation
+```
+
+### Change Permissions 
+
+| | | 
+|--| --| --| 
+| `u` | user | 
+| `g` | group | 
+| `o` | other people (everyone else) | 
+
+
+```sh 
+chmod o+w Bacon 
+```
+
+## CheatSheet 
+
+`d rwx r-x r-x`
+
+`owner` `group` `everyone` 
+
+`d`
+: `d` in the first place means the element is a directory 
+
+`-`
+: `-` elment is a file
+
+`r`
+: read
+
+`w`
+: write 
+
+`x`
+: excute
+
+
+
+

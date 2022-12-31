@@ -1,16 +1,17 @@
 ---
 title: Nextjs TypeScript Letter Shuffle
-subHeader: A TypeScript practice project 
+subHeader: A TypeScript practice project
 path: /projects/nextjs-typescript-letter-shuffle/
 link: https://lettershuffle.lucaszapico.space/
+repo: "https://github.com/LucasZapico/letter-shuffle"
 date-created: 2022/10/15
-last-modified: '2022/11/28'
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
   - project
   - web-site
-  - practice 
+  - practice
 tags:
   - next
   - typescript
@@ -23,27 +24,59 @@ audio: ""
 type: "project"
 ---
 
-[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
+import { Text, Heading, Link} from "@chakra-ui/react"
+import { StackIconsGroup } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 
-## Summary:
+![imgOne:](/images/projects/featured/letter-shuffle-1.png)
 
+## Summary
 
-## Challenge:
+<Heading as="div" variant="sec" size="md">
+  This little project was a "build something" with TypeScript, Next.js, and
+  Chakra. The reason for this is no matter how many "getting starter projects"
+  you spin up until you build and deploy an idea, no matter how trivial there is
+  always a fair amount of unknown complexity.
+</Heading>
 
-Create a digital poetry and prose experience with CMS support.
+<Link  mb={6} asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
 
-### Outcome:
+<br></br>
+<br></br>
+
+<Link mb={6} asExternal variant="linkOne" href={props.pageContext.frontmatter.repo} target="_blank">{props.pageContext.frontmatter.title} - github<ExternalLinkIcon mx="2px" /></Link>
+
+### Stack
+
+<StackIconsGroup iconArr={["chakraui", "gatsby", "netlify", "github", "mdx"]} />
+
+### Objective
+
+This project is a bit of a meme. I originally built a [reorder-string - codepen](https://codepen.io/LucasZapico/pen/wvMqqwO) in 2016 as both a practice project in vanilla.js and to solve my lack of ability to come up with "good" usernames.
+
+The resulting shuffler has been my username generator ever since just shuffling my actual name.
+
+#### Features Coverage
+
+From a feature standpoint, it's about as straightforward as they come. Takes in a string and returns a shuffled version of that string.
+
+![letter shuffle tour](/images/projects/letter-shuffle/letter-shuffle-ui-one.gif)
+
+The project architecture is a nice little boilerplate with ready-to-scale support for;
+
+- advanced theming with Chakra-ui
+- MDX
+- SVG
+
+### Outcome
 
 Produced a unique Gatsby site integrated with Netlify CMS enabling easy
 posting. Built a poetry and prose experience in a unique and meaningful
 way
 
-**deliverables:**
+### Deliverables
 
 - website
-- branding
-- design direction
 - user experience design
-- web design
 - development
-- email design and automation
+

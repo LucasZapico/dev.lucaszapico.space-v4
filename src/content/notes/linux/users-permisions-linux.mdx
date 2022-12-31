@@ -1,0 +1,170 @@
+---
+title: "Linux distribution Environment Setup"
+description: ""
+date-created: "2022/02/16"
+last-modified: '2022/12/22'
+categories: ["linux", "setup", "reference"]
+tags: ["linux", "setup"]
+isdraft: false
+type: "note"
+---
+
+
+### General  
+
+#### List All Users
+
+```sh 
+vim /etc/passwd
+```
+
+#### See Groups of User
+
+```sh 
+groups
+```
+
+#### Switch from User To Root 
+
+From a given user;
+
+```sh 
+sudo -i 
+```
+
+#### Switch from Root to User
+
+
+```sh
+su <user-name>
+```
+
+
+
+
+
+## Adding Users, Passwords and Groups 
+
+### Add User
+
+```sh
+useradd <new-username>
+```
+
+#### Add Password to User 
+
+```sh 
+sudo passwd <new-username>
+# props for password and password confirmation
+```
+
+#### Delete User 
+
+```sh
+deluser -r <user-name>
+```
+
+### Change Permissions 
+
+| | | 
+|--| --| --| 
+| `u` | user | 
+| `g` | group | 
+| `o` | other people (everyone else) | 
+
+#### Add A Permission 
+
+```sh
+chmod <permission-group>+<behavior> <file-or-dir-name>
+```
+
+**Example**
+
+```sh 
+chmod o+w foo.txt
+```
+
+```sh
+chmod g+w foo.txt
+
+```
+
+```sh 
+chmod o+g foo.txt
+```
+
+#### Remove Permission 
+
+```sh 
+chmod o-w foo.txt
+```
+
+
+## Set Permissions for group 
+
+```sh 
+chmod 754 foo.txt 
+# -rwxr-xr--
+```
+
+
+
+
+## CheatSheet 
+
+
+`d rwx r-x r-x`
+
+`owner` `group` `everyone` 
+
+`d`
+: `d` in the first place means the element is a directory 
+
+`-`
+: `-` elment is a file
+
+`r`
+: read
+
+`w`
+: write 
+
+`x`
+: excute
+
+
+
+7
+: rwx
+: read write and excute
+
+6
+: rw-
+: read and write
+
+5
+: r-x
+: read and excute
+
+4
+: r--
+: read
+
+2
+: -w-
+: write
+
+1
+: --x 
+: excute
+
+0
+: ---
+: no permisions
+
+## Reference 
+
+[user groups permissions - section.io](https://www.section.io/engineering-education/user-groups-and-permissions-linux/)
+
+[list linux users - linuxize.com](https://linuxize.com/post/how-to-list-users-in-linux/)
+

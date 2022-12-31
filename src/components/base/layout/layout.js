@@ -1,28 +1,36 @@
 import React, { useEffect } from "react"
 import { Box, useTheme, useColorMode } from "@chakra-ui/react"
 import Helmet from "react-helmet"
-import { ArrowUpIcon } from "@chakra-ui/icons"
-import { Header, Footer, SEO } from "components"
+import { ArrowUpIcon, ArrowDownIcon  } from "@chakra-ui/icons"
+import { Header, Footer, SEO, ResponsiveHelper } from "components"
 
 const ScrollToTop = () => (
   <Box
     pos="fixed"
     cursor="pointer"
-    backgroundColor="white"
+    backgroundColor="gray.300"
     opacity=".7"
     display="flex"
+    flexDir="column"
     justifyContent="center"
     alignItems="center"
     bottom="2rem"
-    borderRadius="100%"
+    borderRadius="md"
     right="2rem"
     width="50px"
-    height="50px"
+    
+    
+  >
+    <ArrowUpIcon 
     onClick={() => {
       window.scrollTo(0, 0)
     }}
-  >
-    <ArrowUpIcon style={{ height: "2rem", width: "2rem" }} />
+    style={{ height: "2rem", width: "2rem" }} />
+    <ArrowDownIcon 
+    onClick={() => {
+      window.scrollTo(0, 9999)
+    }}
+    style={{ height: "2rem", width: "2rem" }} />
   </Box>
 )
 
@@ -52,6 +60,7 @@ const Layout = ({ location, children, pageContext }) => {
       <SEO location={location} />
       <TypeImports />
       <Header location={location} />
+      <ResponsiveHelper/>
       <Box>{children}</Box>
       <ScrollToTop />
       <Footer location={location} />

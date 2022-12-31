@@ -2,12 +2,12 @@
 title: Modalero Shop
 subheader: A boutique shopping experience Reach Shopify experience
 description: ""
-link: "https://modalero-store-prototype-1.herokuapp.com/"
+link: "https://modalero-store-prototype.netlify.app"
 repo: "https://github.com/LucasZapico/modalero-store-prototype-1.0"
 featuredImage: "../../images/projects/featured/modalero-shop.png"
 path: "/projects/modalero-shop"
 date-created: 2020/09/10
-last-modified: "2022/11/28"
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -32,23 +32,35 @@ technology-stack:
 audio: ""
 ---
 
-[](../assets/images/projects/shoping-showcase-product.png)
+import { Box, Heading, Link } from "@chakra-ui/react"
+import { StackIconsGroup } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 
-## summary
+![showcase image of web ui ](/images/projects/featured/modalero-shop.png)
 
-### challenge
+## Summary
 
-Prototype a shopping experience for Modalero shop. Design and develop an
-accessible, engaging and intuitive experience. Focused on facilitating the
-discovery of new products, exploring of previous interest and, enabling
-informed purchase decisions.
+<Heading as="div" size="md">
+Prototype a shopping experience for Modalero shop. Design and develop an accessible, engaging and intuitive experience. Focused on facilitating the discovery of new products, exploring of previous interest and, enabling informed purchase decisions.
+</Heading>
 
-### outcome
+<Box mb={6}>
+  <Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
+</Box>
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.repo} target="_blank">{props.pageContext.frontmatter.title} - github<ExternalLinkIcon mx="2px" /></Link>
 
-An enhanced UX and UI designed in Figma and build with React home page
-preview ready for integration with Shopify API.
 
-### deliverables:
+
+
+### Stack 
+
+<StackIconsGroup iconArr={["react", "sass", "netlify", "github"  ]} />
+
+### Results
+
+An enhanced UX and UI designed in Figma and build with React home page preview ready for integration with Shopify API.
+
+### Deliverables
 
 - website
 - user experience design

@@ -4,7 +4,7 @@ subHeader: Yoga of Words is an uplifting poetry and prose experience
 path: /projects/yoga-of-words/
 link: https://yogaofwords.com/
 date-created: 2020/05/22/
-last-modified: "2022/11/23"
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -26,21 +26,30 @@ audio: /audio/yoga-of-words-i.mp3
 type: "project"
 ---
 
-imgOne: ../assets/images/projects/yogaofwords-showcase-1.png
+import { Box, Heading, Link } from "@chakra-ui/react"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+import { StackIconsGroup } from "components"
 
-## summary:
+![showcase image for web ui](/images/projects/featured/yoga-of-word-showcase.png)
 
-## challenge:
+## Summary
 
-Create a digital poetry and prose experience with CMS support.
+<Heading as="div" size="md">
+Created a digital poetry and prose experience with CMS support.
+</Heading>
 
-### outcome:
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
 
-Produced a unique Gatsby site integrated with Netlify CMS enabling easy
-posting. Built a poetry and prose experience in a unique and meaningful
-way
+### Stack 
 
-**deliverables:**
+<StackIconsGroup iconArr={["sass", "gatsby", "github", "googleanalytics"]} />
+
+
+### Results 
+
+Produced a unique Gatsby site integrated with Netlify CMS enabling easy posting. Built a poetry and prose experience in a unique and meaningful way.
+
+#### Deliverables
 
 - website
 - branding

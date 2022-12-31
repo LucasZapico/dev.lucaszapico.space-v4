@@ -34,24 +34,28 @@ const NoteCard = ({ note }) => {
         as={GatsbyLink}
         to={`/${note.node.fields.path}`}
       >
-        <Box>
-          <Heading as="h4" size="md" mb={2}>
+        <Flex flexGrow="1" justifyContent="space-between" direction="column">
+          <Heading variant="tri" as="h4" size="md" mb={2}>
             {noteTitle}
           </Heading>
-          <Text>{note.node.excerpt}</Text>
-          <Text mb={0} fontSize="xs">
-            published: {dateCreated.slice(0, 10)}
+          <Text noOfLines={4} fontSize="sm">
+            {note.node.excerpt}
           </Text>
-          <Text mb={4} fontSize="xs">
-            last updated: {lastModified.slice(0, 10)}
-          </Text>
-        </Box>
+          <Box opacity="0.8">
+            <Text variant="sec" mb={0} fontSize="xs">
+              published: {dateCreated.slice(0, 10)}
+            </Text>
+            <Text variant="sec" mb={4} fontSize="xs">
+              last updated: {lastModified.slice(0, 10)}
+            </Text>
+          </Box>
+        </Flex>
         <Flex flexWrap="wrap">
           {categories &&
             categories.map((c) => {
               if (c !== "notes") {
                 return (
-                  <Tag mb={2} mr={1} variant="sec" key={generate()}>
+                  <Tag size="sm" mb={2} mr={1} variant="sec" key={generate()}>
                     #{c}
                   </Tag>
                 )

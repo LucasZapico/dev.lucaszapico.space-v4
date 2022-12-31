@@ -2,9 +2,9 @@
 title: Portfolio 2017
 subHeader: Lucas Zapico Portfolio Site 2017
 path: /projects/portfolio-2017/
-link: https://lucaszapico2017.netlify.app/
-date-created: 2017/05/15
-last-modified: "2022/08/23"
+link: "https://lucaszapico2017.netlify.app/"
+date-created: 2'2022/12/29'
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -25,21 +25,33 @@ audio: ""
 type: "project"
 ---
 
-[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
 
-## summary:
+import { Box, Heading, Link } from "@chakra-ui/react"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+import { StackIconsGroup } from "components"
 
-## challenge:
+![showcase web ui](/images/projects/featured/portfoliov1.png)
 
-Create a digital poetry and prose experience with CMS support.
 
-### outcome:
 
-Produced a unique Gatsby site integrated with Netlify CMS enabling easy
-posting. Built a poetry and prose experience in a unique and meaningful
-way
+## Summary
 
-**deliverables:**
+<Heading as="div" size="md">
+A 2017 project portfolio 
+</Heading>
+
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
+
+
+
+
+### Stack 
+
+<StackIconsGroup iconArr={["sass", "jekyll", "github", "googleanalytics"]} />
+
+
+
+#### Deliverables
 
 - website
 - branding
@@ -47,4 +59,4 @@ way
 - user experience design
 - web design
 - development
-- email design and automation
+

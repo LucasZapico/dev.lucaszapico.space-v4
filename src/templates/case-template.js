@@ -8,13 +8,15 @@ import {
   Heading,
   Text,
   Tag,
+  Link,
+  useColorMode,
 } from "@chakra-ui/react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
-import { Link as GatsbyLink, graphql } from "gatsby"
-import React from "react"
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
+import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby"
+import React, { useEffect } from "react"
 import { generate } from "shortid"
-import { HalfByHalfSection, LinkOne } from "components"
+import { HalfByHalfSection, LinkOne, MdxTOC, CardOne } from "components"
 import MDXLayout from "components/base/layout/mdx-layout"
 
 export default function CaseTemplate({
@@ -23,77 +25,127 @@ export default function CaseTemplate({
   pageContext,
   location,
 }) {
-  console.log("case template")
-  const { next, previous, node, title, tableOfContents } = pageContext
+  const { colorMode } = useColorMode()
+  const { defaultImage } = useStaticQuery(query)
+  const {
+    next,
+    previous,
+    node: { frontmatter: { categories } = {}, tableOfContents, fields } = {},
+    title = "",
+  } = pageContext || {}
 
-  const TOC = () => (
-    <Box
-      position={{ base: "static", lg: "sticky" }}
-      top="0px"
-      right="2rem"
-      paddingY={6}
-      as="aside"
-      className="toc"
-    >
-      <Heading as="div" color="gray.200" mb={2} size="xl">
-        Table of Contents
-      </Heading>
-      <Box
-        as="nav"
-        px={2}
-        py={10}
-        dangerouslySetInnerHTML={{ __html: node.tableOfContents }}
-      />
-    </Box>
-  )
-  const NextArticle = () => (
-    <Box key={generate()}>
-      <Box to={`/${next.fields.path}`} as={GatsbyLink}>
-        {/* <Box>
-            <GatsbyImage
-              alt=""
-              image={
-                next.featuredImage.node.localFile.childImageSharp
-                  .gatsbyImageData
-              }
-            />
-          </Box> */}
-        <Box p={{ base: 5, md: 10 }}>
-          <Heading as="h4" size="lg">
-            {next.frontmatter.title}
-          </Heading>
-          <Text as="lg" dangerouslySetInnerHTML={{ __html: next.excerpt }} />
-        </Box>
-      </Box>
-    </Box>
-  )
+  const defaultImg = getImage(defaultImage)
 
-  const PrevArticle = () => (
-    <Box key={generate()}>
-      <Box as={GatsbyLink} to={`/${previous.fields.path}`}>
-        {/* <Box>
-            <GatsbyImage
-              alt=""
-              image={
-                previous.featuredImage.node.localFile.childImageSharp
-                  .gatsbyImageData
+  const NextArticle = () => {
+    const {
+      frontmatter: {
+        featuredImage = "",
+        subHeader = "",
+        title: nextTitle = "",
+        categories = [],
+      } = {},
+      fields: { path: nextPath = "" } = {},
+    } = next || {}
+
+    console.log("next")
+    console.log(next)
+
+    const nextImage =
+      featuredImage !== "" ? getImage(featuredImage) : defaultImg
+
+    return (next === {}) === false ? (
+      <CardOne key={generate()}>
+        {nextPath && (
+          <Box to={`/${nextPath}`} as={GatsbyLink}>
+            <Box>{nextImage && <GatsbyImage alt="" image={nextImage} />}</Box>
+
+            <Box p={{ base: 5, md: 10 }}>
+              <Heading as="h4" size="sm">
+                Next <ArrowForwardIcon boxSize={10} />
+              </Heading>
+              {nextTitle && (
+                <Heading as="h4" size="lg" variant="tri">
+                  {nextTitle}
+                </Heading>
+              )}
+              {subHeader && (
+                <Text noOfLines={4} fontSize="md">
+                  {subHeader}
+                </Text>
+              )}
+            </Box>
+            <Box color={colorMode === "dark" ? "brand.300" : "yellow.600"}>
+              {categories.map((c, p) => {
+                if (c !== "project") {
+                  return p > categories.length - 1 ? (
+                    `${c}`
+                  ) : (
+                    <span key={generate()}> #{c} &#8226; </span>
+                  )
+                }
+              })}
+            </Box>
+          </Box>
+        )}
+      </CardOne>
+    ) : (
+      <></>
+    )
+  }
+
+  const PrevArticle = () => {
+    const {
+      frontmatter: {
+        featuredImage = "",
+        subHeader = "",
+        title: prevTitle = "",
+        categories = [],
+      } = {},
+      fields: { path: prevPath } = {},
+    } = previous || {}
+
+    const prevImage =
+      featuredImage !== "" ? getImage(featuredImage) : defaultImg
+
+    console.log("previous")
+    console.log(previous)
+
+    return !(previous === {}) ? (
+      <CardOne key={generate()}>
+        <Box as={GatsbyLink} to={`/${prevPath}`}>
+          <Box>
+            <GatsbyImage alt="" image={prevImage} />
+          </Box>
+          <Box p={{ base: 5, md: 10 }}>
+            <Heading as="h4" size="sm">
+              <ArrowBackIcon boxSize={10} /> Prev
+            </Heading>
+
+            <Heading as="h4" size="lg" variant="tri">
+              {prevTitle}
+            </Heading>
+
+            <Text noOfLines={4} fontSize="md">
+              {subHeader}
+            </Text>
+          </Box>
+          <Box color={colorMode === "dark" ? "brand.300" : "yellow.600"}>
+            {categories.map((c, p) => {
+              if (c !== "project") {
+                return p > categories.length - 1 ? (
+                  `${c}`
+                ) : (
+                  <span key={generate()}> #{c} &#8226; </span>
+                )
               }
-            />
-          </Box> */}
-        <Box p={{ base: 5, md: 10 }}>
-          <Heading as="h4" size="lg">
-            {previous.frontmatter.title}
-          </Heading>
-          <Text
-            as="lg"
-            dangerouslySetInnerHTML={{
-              __html: previous.excerpt,
-            }}
-          />
+            })}
+          </Box>
         </Box>
-      </Box>
-    </Box>
-  )
+      </CardOne>
+    ) : (
+      <></>
+    )
+  }
 
   const BreadCrumbs = () => (
     <Box mt={6} mb={10}>
@@ -134,8 +186,8 @@ export default function CaseTemplate({
             </Heading>
             <BreadCrumbs />
             <Flex flexWrap="wrap" py={6}>
-              {node.frontmatter.categories &&
-                node.frontmatter.categories.map((cat, i) => (
+              {categories &&
+                categories.map((cat, i) => (
                   <Tag variant="sec" mb={4} mr={1} key={generate()}>
                     {cat}
                   </Tag>
@@ -152,7 +204,11 @@ export default function CaseTemplate({
                   {children}
                 </Box>
               </MDXLayout>
-              <TOC width="20%" />
+              <MdxTOC
+                tableOfContents={tableOfContents}
+                pagePath={path}
+                width="20%"
+              />
             </Box>
           </Container>
         </Container>
@@ -162,17 +218,27 @@ export default function CaseTemplate({
             <Heading as="h3" size="xl">
               More Projects
             </Heading>
-            <LinkOne as={GatsbyLink} to="/notes">
-                All Projects
-              </LinkOne>
-            
+            <LinkOne as={GatsbyLink} to="/projects">
+              All Projects
+            </LinkOne>
           </Box>
           <HalfByHalfSection
-            right={previous !== null ? <PrevArticle /> : ""}
-            left={next !== null ? <NextArticle /> : ""}
+            left={previous !== null ? <PrevArticle /> : <></>}
+            right={next !== null ? <NextArticle /> : <></>}
           />
         </Container>
       </Box>
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    defaultImage: file(relativePath: { eq: "illustration/6.png" }) {
+      name
+      childImageSharp {
+        gatsbyImageData
+      }
+    }
+  }
+`

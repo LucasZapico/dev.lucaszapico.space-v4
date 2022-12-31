@@ -1,8 +1,10 @@
 const path = require("path")
 const chalk = require("chalk")
 const readingTime = require(`reading-time`)
-const { allMarkDownPagesQuery } = require("./server/graphql-query/markdown-pages")
-const { allMdxPageQuery } = require("./server/graphql-query/mdx-pages")
+const {
+  contentPagesQuery,
+} = require("./server/graphql-query/pages-query")
+const { projectPageQuery } = require("./server/graphql-query/projects-query")
 
 const { log } = console
 const logSp = () =>
@@ -20,45 +22,55 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
+  if (node.internal.type === `Mdx`) {
     const { type } = node.frontmatter
-    const pagePath = node.frontmatter.title
-      .toLowerCase()
-      .replaceAll(" ", "-")
-      .replaceAll(" ", "")
-    /**
-     * TODO: add reading time field
-     */
 
-    createNodeField({
-      name: `path`,
-      node,
-      value: `${type}s/${pagePath}`,
-    })
-    // logSp()
-    // log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
+    if (node.frontmatter.title) {
+      const pagePath = node.frontmatter.title
+        .toLowerCase()
+        .replaceAll(" ", "-")
+        .replaceAll(" ", "")
+      /**
+       * TODO: add reading time field
+       */
+      // console.log(pagePath)
+
+      createNodeField({
+        name: `path`,
+        node,
+        value: `${type}s/${pagePath}`,
+      })
+      // logSp()
+      // log(chalk.greenBright('node field made', JSON.stringify(pagePath)))
+    }
+  } else {
+    //   console.log(
+    //     chalk.redBright(`
+    // =================================
+    //   `))
+    //   console.log(JSON.stringify(Object.keys(node)))
+    //   console.log(node.frontmatter)
   }
 }
 
-const handleMarkdown = async ({ actions, graphql, reporter }) => {
+const handleGeneralContent = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const PostTemplate = path.resolve("src/templates/article-template.js")
+  const ArticleTemplate = path.resolve("src/templates/article-template.js")
   const NoteTemplate = path.resolve("src/templates/note-template.js")
 
-  const results = await graphql(allMarkDownPagesQuery)
+  const results = await graphql(contentPagesQuery)
 
   if (results.errors) {
     reporter.panicOnBuild("Error loading Markdown result", results.errors)
   }
 
-  await results.data.allMarkdownRemark.edges.forEach((edge) => {
+  await results.data.allMdx.edges.slice().forEach((edge) => {
     const pagePath = edge.node.fields.path
     if (!pagePath.includes("Index") || pagePath.length < 1) {
       if (edge.node.frontmatter.type === "note") {
         createPage({
           path: pagePath,
-          component: NoteTemplate,
+          component: `${NoteTemplate}?__contentFilePath=${edge.node.internal.contentFilePath}`,
           context: {
             next: edge.next,
             node: edge.node,
@@ -66,10 +78,10 @@ const handleMarkdown = async ({ actions, graphql, reporter }) => {
             title: edge.node.frontmatter.title,
           },
         })
-      } else {
+      }  else if (edge.node.frontmatter.type === "article") {
         createPage({
           path: pagePath,
-          component: PostTemplate,
+          component: `${ArticleTemplate}?__contentFilePath=${edge.node.internal.contentFilePath}`,
           context: {
             next: edge.next,
             node: edge.node,
@@ -82,18 +94,17 @@ const handleMarkdown = async ({ actions, graphql, reporter }) => {
   })
 }
 
-
-const handleMdx = async ({ actions, graphql, reporter }) => {
+const handleProjects = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const CaseTemplate = path.resolve("src/templates/case-template.js")
 
-  const results = await graphql(allMdxPageQuery)
+  const results = await graphql(projectPageQuery)
 
   if (results.errors) {
     reporter.panicOnBuild("Error loading MDX result", results.errors)
   }
 
-  await results.data.allMdx.edges.forEach((edge) => {
+  await results.data.allMdx.edges.slice().forEach((edge) => {
     const pagePath = edge.node.fields.path
     if (!pagePath.includes("Index") || pagePath.length < 1) {
       createPage({
@@ -110,11 +121,7 @@ const handleMdx = async ({ actions, graphql, reporter }) => {
   })
 }
 
-
-
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  await handleMarkdown({ actions, graphql, reporter })
-  await handleMdx({ actions, graphql, reporter })
+  await handleGeneralContent({ actions, graphql, reporter })
+  await handleProjects({ actions, graphql, reporter })
 }
-
-
