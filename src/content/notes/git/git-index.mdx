@@ -9,11 +9,9 @@ isdraft: false
 type: "note"
 ---
 
-# git
-
 ## Related
 
-- [[ssh]]
+[general ssh notes](/notes/ssh-catch)
 
 ## CheatSheet
 
@@ -79,11 +77,25 @@ git push origin --delete remoteBranchName
 
 ```sh
 git credential --help
-``
+```
+
+### CheatSheet 
+
+#### Merge Priority 
+
+`theirs` or `ours`
+
+```sh
+git merge --strategy-option theirs <feature-branch> staging
+```
+
+```sh
+git merge -X theirs staging <bug-fix>
+```
 
 
 ## Reference
 
 [Atlassian git tutorials](https://www.atlassian.com/git/tutorials/)
 
-```
+
