@@ -168,10 +168,17 @@ export const UnorderedListMdx = ({ children, ...rest }) => {
 export const LinkMDX = ({ children, href, isExternal = false, ...rest }) => {
   const { colorMode } = useColorMode()
   return href.includes("http") ? (
-    <Link variant="linkOne" {...rest} href={href} target="_blank">
-      {children}
-       <ExternalLinkIcon mx="2px" />
-    </Link>
+    <Box mb={6}>
+      <Link
+        variant="linkOne"
+        {...rest}
+        href={href}
+        target="_blank"
+      >
+        {children}
+        <ExternalLinkIcon mx={2} mb={1}/>
+      </Link>
+    </Box>
   ) : (
     <Link variant="linkOne" as={GatsbyLink} {...rest} to={href}>
       {children}
