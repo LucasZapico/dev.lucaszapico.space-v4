@@ -14,7 +14,7 @@ module.exports = {
     image: "/opengraph-gen.png",
     phone: "‪",
     address: "Earth",
-    twitterUsername: "@lucas_zpaico_10",
+    twitterUsername: "@lucas_zapico_10",
     facebookUsername: "",
     linkedInUsername: "lucaszapico",
     redditUsername: "",
@@ -39,17 +39,14 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         mdxOptions: {
+          remarkPlugins: [
+            
+          ]
           
-          gatsbyRemarkPlugins: [
-            // {
-            //   resolve: `gatsby-remark-images-anywhere`, 
-            // }
-          ],
         },
         
       },
     },
-    // `gatsby-plugin-mdx-prismjs`,
     `gatsby-plugin-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,
