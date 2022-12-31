@@ -1,4 +1,3 @@
-
 import {
   Heading,
   Text,
@@ -10,6 +9,7 @@ import {
   ListItem,
 } from "@chakra-ui/react"
 import React from "react"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 import { Link as GatsbyLink } from "gatsby"
 
 function getAnchor(text) {
@@ -158,21 +158,22 @@ export const BlockQuoteMDX = ({ children, ...rest }) => {
 
 export const UnorderedListMdx = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
-  return (
-    <UnorderedList mb={4}
-    >
-      {children}
-    </UnorderedList>
-  )
+  return <UnorderedList mb={4}>{children}</UnorderedList>
 }
 
-export const LinkMDX = ({
-  children,
-  ...rest
-}) => {
+/**
+ * TODO: handle internal gatsbylinks vs external
+ */
+
+export const LinkMDX = ({ children, href, isExternal = false, ...rest }) => {
   const { colorMode } = useColorMode()
-  return (
-    <Link variant="linkInLine" as={GatsbyLink} {...rest} >
+  return href.includes("http") ? (
+    <Link variant="linkOne" {...rest} href={href} target="_blank">
+      {children}
+       <ExternalLinkIcon mx="2px" />
+    </Link>
+  ) : (
+    <Link variant="linkOne" as={GatsbyLink} {...rest} to={href}>
       {children}
     </Link>
   )
