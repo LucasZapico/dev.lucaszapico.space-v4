@@ -2,9 +2,9 @@ const path = require("path")
 const chalk = require("chalk")
 const readingTime = require(`reading-time`)
 const {
-  allMarkDownPagesQuery,
-} = require("./server/graphql-query/markdown-pages")
-const { allMdxPageQuery } = require("./server/graphql-query/mdx-pages")
+  contentPagesQuery,
+} = require("./server/graphql-query/pages-query")
+const { projectPageQuery } = require("./server/graphql-query/projects-query")
 
 const { log } = console
 const logSp = () =>
@@ -53,12 +53,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-const handleMarkdown = async ({ actions, graphql, reporter }) => {
+const handleGeneralContent = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  // const ArticleTemplate = path.resolve("src/templates/article-template.js")
+  const ArticleTemplate = path.resolve("src/templates/article-template.js")
   const NoteTemplate = path.resolve("src/templates/note-template.js")
 
-  const results = await graphql(allMarkDownPagesQuery)
+  const results = await graphql(contentPagesQuery)
 
   if (results.errors) {
     reporter.panicOnBuild("Error loading Markdown result", results.errors)
@@ -78,27 +78,27 @@ const handleMarkdown = async ({ actions, graphql, reporter }) => {
             title: edge.node.frontmatter.title,
           },
         })
-      } else {
-        // createPage({
-        //   path: pagePath,
-        //   component: `${ArticleTemplate}?__contentFilePath=${edge.node.internal.contentFilePath}`,
-        //   context: {
-        //     next: edge.next,
-        //     node: edge.node,
-        //     previous: edge.previous,
-        //     title: edge.node.frontmatter.title,
-        //   },
-        // })
+      }  else if (edge.node.frontmatter.type === "article") {
+        createPage({
+          path: pagePath,
+          component: `${ArticleTemplate}?__contentFilePath=${edge.node.internal.contentFilePath}`,
+          context: {
+            next: edge.next,
+            node: edge.node,
+            previous: edge.previous,
+            title: edge.node.frontmatter.title,
+          },
+        })
       }
     }
   })
 }
 
-const handleMdx = async ({ actions, graphql, reporter }) => {
+const handleProjects = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const CaseTemplate = path.resolve("src/templates/case-template.js")
 
-  const results = await graphql(allMdxPageQuery)
+  const results = await graphql(projectPageQuery)
 
   if (results.errors) {
     reporter.panicOnBuild("Error loading MDX result", results.errors)
@@ -122,6 +122,6 @@ const handleMdx = async ({ actions, graphql, reporter }) => {
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  await handleMarkdown({ actions, graphql, reporter })
-  await handleMdx({ actions, graphql, reporter })
+  await handleGeneralContent({ actions, graphql, reporter })
+  await handleProjects({ actions, graphql, reporter })
 }

@@ -4,7 +4,7 @@ subHeader: "Gatsby site with Wordpress headless CMS"
 path: /projects/statenweb/
 link: https://statenwebdemo.netlify.app/
 date-created: "2021/04/15"
-last-modified: "2022/11/28"
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -27,26 +27,30 @@ audio: ""
 type: "project"
 ---
 
-[imgOne:](../assets/images/projects/yogaofwords-showcase-1.png)
+import { Box, Heading, Link } from "@chakra-ui/react"
+import Tour from '/static/images/projects/chancellor-consulting/chancellor-consulting-tour.gif'
+import { StackIconsGroup } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 
-## summary:
+![showcase image of web ui](/images/projects/featured/staten-web.png)
 
-## challenge:
+## Summary
 
-Create a digital poetry and prose experience with CMS support.
+<Heading as="div" size="md">
+  Custom development of a Gatsby frontend and integartion with headless WordPress, that included support of Gutenberg Blocks and ACF fields.  
+</Heading>
 
-### outcome:
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
 
-Produced a unique Gatsby site integrated with Netlify CMS enabling easy
-posting. Built a poetry and prose experience in a unique and meaningful
-way
 
-**deliverables:**
+### Stack 
+
+<StackIconsGroup iconArr={["bootstrap", "gatsby","graphql", "netlify", "wordpress", "gutenberg", "github"  ]} />
+
+
+#### Deliverables
 
 - website
-- branding
-- design direction
-- user experience design
-- web design
 - development
-- email design and automation
+- custom headless CMS integration with WordPress
+

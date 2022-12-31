@@ -10,18 +10,18 @@ import {
 } from "@chakra-ui/react"
 import { styleGuideHeaderColors } from "components/pages/styleguide"
 
-const SetOne = () => {
-  return (
-    <Box>
-      <Heading as="div" size="2xl" mb={0}>
-        Some amazing Header
-      </Heading>
-      <Heading as="div" size="lg" mt={0}>
-        Some impressive subheader
-      </Heading>
-    </Box>
-  )
-}
+// const SetOne = () => {
+//   return (
+//     <Box>
+//       <Heading as="div" size="2xl" mb={0}>
+//         Some amazing Header
+//       </Heading>
+//       <Heading as="div" size="lg" mt={0}>
+//         Some impressive subheader
+//       </Heading>
+//     </Box>
+//   )
+// }
 
 const SetTwo = () => {
   return (
@@ -53,7 +53,7 @@ const HeaderSets = () => {
   return (
     <>
       <VStack spacing={10} justifyContent="flex-start" alignItems="flex-start">
-        <SetOne />
+        {/* <SetOne /> */}
         <SetTwo />
         <SetThree />
       </VStack>

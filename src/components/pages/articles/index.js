@@ -43,7 +43,7 @@ const Articles = () => {
   return (
     <>
       <Container maxW="container.xl">
-        <Heading as="h1" size="4xl">
+        <Heading as="h1" size="3xl">
           Articles
         </Heading>
         <Container maxW="container.md" px={0} py={10}>

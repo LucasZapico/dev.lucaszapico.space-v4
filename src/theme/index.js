@@ -26,7 +26,7 @@ const theme = extendTheme({
   components: {
     Tag: TagStyles,
     Link: LinkStyles,
-    Buttons: ButtonStyles,
+    Button: ButtonStyles,
     Heading: HeadingStyles,
     Text: TextStyles,
   },

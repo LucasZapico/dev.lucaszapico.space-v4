@@ -9,7 +9,8 @@ import {
   ListItem,
 } from "@chakra-ui/react"
 import React from "react"
-import { MagicLink } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+import { Link as GatsbyLink } from "gatsby"
 
 function getAnchor(text) {
   console.log(text)
@@ -157,27 +158,26 @@ export const BlockQuoteMDX = ({ children, ...rest }) => {
 
 export const UnorderedListMdx = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
-  return (
-    <UnorderedList mb={4}
-    >
-      {children}
-    </UnorderedList>
-  )
+  return <UnorderedList mb={4}>{children}</UnorderedList>
 }
 
-// export const LinkMDX = ({
-//   children,
-//   ...rest
-// }: {
-//   children: ReactNode | string
-// }) => {
-//   const { colorMode } = useColorMode()
-//   return (
-//     <MagicLink href="" {...rest} target="_blank">
-//       {children}
-//     </MagicLink>
-//   )
-// }
+/**
+ * TODO: handle internal gatsbylinks vs external
+ */
+
+export const LinkMDX = ({ children, href, isExternal = false, ...rest }) => {
+  const { colorMode } = useColorMode()
+  return href.includes("http") ? (
+    <Link variant="linkOne" {...rest} href={href} target="_blank">
+      {children}
+       <ExternalLinkIcon mx="2px" />
+    </Link>
+  ) : (
+    <Link variant="linkOne" as={GatsbyLink} {...rest} to={href}>
+      {children}
+    </Link>
+  )
+}
 
 // export const ResponsiveImageMDX = ({
 //   alt,

@@ -2,7 +2,7 @@
 title: "Eslint and Prettier General Reference Config"
 description: "Genreal notes on configuration of Prettier and Eslint"
 date-created: 2020/10/21
-last-modified: "2022/10/22"
+last-modified: '2022/12/14'
 isdraft: false
 categories: ["dev-env", "notes"]
 tags: ["prettier", "eslint"]
@@ -16,6 +16,25 @@ type: "note"
 ```shell
 TIMING=1 npm run lint
 ```
+
+## Support Absolute Paths	
+
+```js:title=.eslint.json	
+{	
+  //...	
+  "settings": {	
+    "import/resolver": {	
+      "node": {	
+        "paths": ["src"]	
+      }	
+    } 	
+  },	
+  //...	
+}	
+```	
+
+## Disable and Ignore Eslint	
+
 
 ### File Level
 

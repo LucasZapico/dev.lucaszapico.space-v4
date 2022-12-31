@@ -47,8 +47,9 @@ export const ContentSection = () => (
   <Box py={20}>
     <TypographySection />
     <TypeCompositions />
-    <Container maxW="container.md">
-      <Heading as="h3" size="2xl">
+    {/* TODO: 👇 this doesn't make sense becuase I handle this with mdx so I would have to import all of the mdx element to style this correctly */}
+    {/* <Box maxW="605px" mx="auto" >
+      <Heading as="div" size="2xl">
         Content
       </Heading>
       <Text>
@@ -57,11 +58,15 @@ export const ContentSection = () => (
         information is only half of the story; you also need to be able to
         convert raw information into usable skills.
       </Text>
+      <Heading as="div" size="xl">
+        Header 2
+      </Heading>
       <Text>
         For a lot of us, the gap between the two can lead to things like
         tutorial hell—getting stuck doing tutorial after tutorial without ever
         feeling like you're making substantive progress.
       </Text>
+      
       <Text>
         Learning how to learn effectively is super important, especially as a
         software developer; learning new things is practically the whole gig! If
@@ -73,12 +78,12 @@ export const ContentSection = () => (
         In this blog post, I'll share what I've learned about learning, and show
         you how I pick up new skills lickety-split!
       </Text>
-      {/* <Box py={10}>
+      <Box py={10}>
         <CardOne py={6}>
           <Heading as="h4">Card</Heading>
           <Heading as="h5">Sub header</Heading>
         </CardOne>
-      </Box> */}
-    </Container>
+      </Box>
+    </Box> */}
   </Box>
 )

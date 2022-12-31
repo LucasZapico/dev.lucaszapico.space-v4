@@ -2,12 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
-  flags: {
-    PARALLEL_SOURCING: false,
-    FAST_DEV: false,
-    DEV_SSR: false,
-    PRESERVE_FILE_DOWNLOAD_CACHE: false,
-  },
+  
   siteMetadata: {
     title: "dev.lucaszapico.space-v4",
     description: "",
@@ -19,7 +14,7 @@ module.exports = {
     image: "/opengraph-gen.png",
     phone: "‪",
     address: "Earth",
-    twitterUsername: "@lucas_zpaico_10",
+    twitterUsername: "@lucas_zapico_10",
     facebookUsername: "",
     linkedInUsername: "lucaszapico",
     redditUsername: "",
@@ -44,21 +39,14 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         mdxOptions: {
-          
-          gatsbyRemarkPlugins: [
-            {
-              resolve: `gatsby-remark-images-anywhere`,
-              options: {
-                staticDir: "static",
-              },
-            }
+          remarkPlugins: [
             
-          ],
+          ]
+          
         },
         
       },
     },
-    // `gatsby-plugin-mdx-prismjs`,
     `gatsby-plugin-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,

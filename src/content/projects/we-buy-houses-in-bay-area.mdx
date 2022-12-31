@@ -2,9 +2,9 @@
 title: We Buy Houses In Bay Area
 subHeader: A clean sales funnel focused on up front information
 path: /projects/we-buy-houses-in-bay-area/
-link: https://webuyhousesinbayarea.com/
-date-created: "2021/07/15"
-last-modified: '2022/11/28'
+link: https://webuyhomesinthebayarea-blue.netlify.app/
+date-created: "2021/08/15"
+last-modified: '2022/12/30'
 isdraft: false
 isComingSoon: false
 categories:
@@ -27,26 +27,41 @@ audio: ""
 type: "project"
 ---
 
-imgOne: ../assets/images/projects/yogaofwords-showcase-1.png
 
-## summary:
+import { Box, Heading, Link } from "@chakra-ui/react"
+import { StackIconsGroup } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+import Tour from 'videos/quick-tour-we-buy-homes-compress.mp4'
 
-## challenge:
+![showcase imgOne](/images/projects/featured/we-buy-houses.png)
 
-Create a digital poetry and prose experience with CMS support.
+## Summary 
 
-### outcome:
+<Heading as="div" size="md">
+  We Buy Houses In the Bay Area was a custom website design and development focusing on conversions and a modern look and feel. The site was built with Gatsby.js with content sources from Google Sheets, and WordPress as a Headless backend.
+</Heading>
 
-Produced a unique Gatsby site integrated with Netlify CMS enabling easy
-posting. Built a poetry and prose experience in a unique and meaningful
-way
+<Link asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
 
-**deliverables:**
+### Stack
 
+<StackIconsGroup iconArr={["chakraui", "gatsby", "netlify", "github", "googlesheets", "googleanalytics"]} />
+
+### Results
+
+<Box mb={6} as="video" controls autoplay="autoplay" muted="true" loop >
+  <source src={Tour} type="video/mp4" />
+</Box>
+
+A high-performance Gatsby site with strong SEO controls and content focused around the sales funnel. 
+
+#### Deliverables
+
+- SEO-optimized content management 
 - website
 - branding
 - design direction
 - user experience design
 - web design
 - development
-- email design and automation
+

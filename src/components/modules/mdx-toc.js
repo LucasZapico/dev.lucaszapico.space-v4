@@ -10,8 +10,8 @@ const TOCChildren = ({ pagePath, items, iterator }) => {
   return (
     <>
       {items.map((t) => {
-        console.log(typeof t.title)
-        console.log(t)
+        // console.log(typeof t.title)
+        // console.log(t)
         if(typeof t.title === "string"){
           const name = `${t.title.slice(0, 1).toUpperCase()}${t.title.slice(1)}`
 
@@ -64,12 +64,13 @@ const MdxTOC = ({ tableOfContents, pagePath }) => {
       py={6}
       px={4}
       as="aside"
+      
       // overflowY="scroll"
     >
       <Heading as="div" variant="tri" mb={2} size="md">
         Table of Contents
       </Heading>
-      <Box as="nav" >
+      <Box display="flex" flexDir="column" as="nav" >
         <TOCChildren
           items={tableOfContents.items}
           pagePath={pagePath}
