@@ -1,0 +1,167 @@
+---
+title: "Postgres Catch Notes"
+description: "General notes on postgres"
+date-created: "2021/03/15"
+last-modified: "2022/12/30"
+isdraft: true
+categories: ["postgres", "database"]
+tags: ["postgres", "notes", "database"]
+type: "note"
+---
+
+## Install Postgres
+
+```shell
+brew install postgresql 
+```
+
+### PSQL CLI 
+
+[pqsl docs](https://www.postgresql.org/docs/current/app-psql.html)
+
+#### Quit and Exit PSQL 
+
+```sh
+quit 
+```
+or 
+```sh
+\q
+```
+
+#### List Existing Databases 
+
+```sh 
+\l
+```
+
+#### Get Connection infor 
+
+```sh 
+\conninfo 
+```
+
+
+#### Common Gatcha and Errors 
+
+```txt
+psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  role "root" does not exist
+```
+
+In general `psql --username=postgres` should allow access to new database's 
+
+
+
+
+### Postgres via Brew
+
+#### Start Postgres
+
+```shell
+brew services start postgresql
+```
+
+#### Stop Postgres
+
+```shell
+brew services stop postgresql
+```
+
+#### Create New DB
+
+> 💡 The following assumes the control workflow is via brew and the commands above.
+
+```shell
+createdb <db-name>
+```
+
+#### Access Postgres 
+
+```sh 
+psql postgres
+```
+
+List DB's 
+
+```sh 
+\l 
+```
+
+You should see the database created above. 
+
+
+### From `psql` 
+
+```sh 
+CREATE DATABASE <db-name>;
+```
+
+#### Get Connection info 
+
+```sh
+\conninfo	
+# You are connected to database "bar" as user "postgres" via socket in "/tmp" at port "5432".
+```
+
+#### Switch DB's
+
+```sh 
+\connect <db-name>
+```
+or
+```sh 
+\c <db-name>
+```
+
+#### Create Users 
+
+[Create DB User Docs - postgresql](https://www.postgresql.org/docs/8.0/sql-createuser.html)
+
+```sh 
+CREATE USER <user-name>;
+```
+
+```sh 
+CREATE USER <user-name> WITH <param>;
+```
+**Example**
+
+```sh 
+CREATE USER db_admin WITH NOCREATEDB;
+```
+
+#### Add Access 
+
+```sh 
+ALTER USER db_admin WITH CREATEROLE;
+#  db_admin | Create role | {}
+```
+
+#### Remove Access 
+
+
+```sh 
+ALTER USER db_admin WITH NOCREATEROLE;
+#  db_admin | | {}
+``` 
+
+#### Remove Access 
+
+#### List Users 
+
+```sh 
+\du
+```
+
+
+
+*You are connected to database "test" as user "luca" via socket in "/tmp" at port "5432".*
+
+## GUI and Apps 
+
+[Dbngin](https://dbngin.com/)
+
+ All-in-One Database Version Management Tool
+
+
+
