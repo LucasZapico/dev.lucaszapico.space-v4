@@ -29,6 +29,33 @@ brew install iproute2mac
 
 ### `ip` Cheatsheet
 
+#### Get IP info from Domain 
+
+```sh 
+nslookup google.com
+
+# Server:		192.168.1.1
+# Address:	192.168.1.1#53
+
+# Non-authoritative answer:
+# Name:	google.com
+# Address: 142.250.69.206
+```
+
+```sh 
+nmap google.com -p 8080
+# Starting Nmap 7.93 ( https://nmap.org ) at 2023-01-03 12:48 PST
+# Nmap scan report for google.com (142.251.215.238)
+# Host is up (0.012s latency).
+# rDNS record for 142.251.215.238: sea09s35-in-f14.1e100.net
+
+# PORT     STATE    SERVICE
+# 8080/tcp filtered http-proxy
+
+# Nmap done: 1 IP address (1 host up) scanned in 0.28 seconds
+```
+
+
 - List all addresses `ip addr`
 - List IPv4 addresses `ip route`
 - List IPv6 addresses `ip -6 route`
