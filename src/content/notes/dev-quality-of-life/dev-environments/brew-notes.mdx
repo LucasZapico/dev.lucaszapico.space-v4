@@ -2,7 +2,7 @@
 title: "HomeBrew Notes"
 description: "General notes and cheatsheet for HomeBrew"
 date-created: "2020/10/21"
-last-modified: '2022/12/22'
+last-modified: '2023/02/16'
 isdraft: false
 categories: ["brew", "notes", "cheatsheet"]
 tags: ["brew", "notes", "dev-env", "cheatsheet"]
@@ -17,15 +17,24 @@ HomeBrew is or commonly called Brew is an open-source package manger that enable
 
 ## Why use HomeBrew
 
-### Software and Package Managment
+### Software and Package Management
 
-Homebrew centralized and makes the managment of packages and apps faster and more straight forward. Software can be installed directly from the CLI rather then going to a download page.
+Homebrew centralized and makes the management of packages and apps faster and more straight forward. Software can be installed directly from the CLI rather than going to a download page.
 
 ### Management of Multiple Versions
 
 HomeBrew simplifies handling multiple versions of languages such as Node and Python.
 
 - [Solutions for manging multiple version of node on macOS](src/content/articles/solutions-for-managing-multiple-versions-of-node-on-macos.md)
+
+## Bulk Management With `.Brewfile` or `.brewfile`
+
+### Backup Current Packages and Casks
+
+```sh
+brew bundle dump
+```
+
 
 ## CheatSheet
 
@@ -79,3 +88,7 @@ brew uninstall <package-name>
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 ```
+
+## Reference 
+
+[Brew Bundle Restore and Backup](https://tomlankhorst.nl/brew-bundle-restore-backup/)
