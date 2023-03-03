@@ -31,10 +31,17 @@ HomeBrew simplifies handling multiple versions of languages such as Node and Pyt
 
 ### Backup Current Packages and Casks
 
+[Gits ref for Brewfile](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f)
+
 ```sh
 brew bundle dump
 ```
 
+Create a `Brewfile` with a list of all current packages. To install packages from the `Brewfile` run `brew bundle`
+
+```sh
+brew bundle --file=~<path>/Brewfile
+```
 
 ## CheatSheet
 
@@ -53,7 +60,7 @@ Get info on a given formula
 brew info wget
 ```
 
-List current installed packages
+List currently installed packages
 
 ```sh
 brew list
