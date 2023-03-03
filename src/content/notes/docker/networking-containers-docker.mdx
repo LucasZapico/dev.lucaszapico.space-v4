@@ -1,0 +1,49 @@
+---
+title: "Docker Container Networking"
+description: "General notes on Docker Container Networking"
+date-created: '2023/03/03'
+last-modified: '2023/03/03'
+isdraft: false
+categories: ["cheatsheet", "docker", "notes", "networking"]
+tags: ["cheatsheet", "docker", "notes", "networking"]
+type: "note"
+---
+
+Networking containers enable a containerized app to communicate with the outside world. In many cases a given app may be dependent on a database or multiple services. We can "expose" to enable these interactions.
+
+## Expose 
+
+### Dockerfile 
+
+
+```dockerfile:title=dockerfile
+...
+EXPOSE 8080 
+...
+```
+
+We can also expose multiple ports 
+
+```dockerfile:title=dockerfile
+...
+EXPOSE 80
+EXPOSE 8080 
+EXPOSE 5432
+...
+```
+
+
+
+### CLI and Run Time 
+
+#### At `docker start` 
+
+#### At `docker run` 
+
+```sh 
+docker run --expose=8080 --name="port-demo" test
+```
+
+## Reference 
+
+[Docker Expose Ports - mend.io](https://www.mend.io/free-developer-tools/blog/docker-expose-port/)

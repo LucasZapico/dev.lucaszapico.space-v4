@@ -2,7 +2,7 @@
 title: "Docker Notes 2020"
 description: "General notes on Docker"
 date-created: 2020/10/21
-last-modified: "2022/10/02"
+last-modified: '2023/03/01'
 isdraft: false
 categories: ["cheatsheet", "docker", "notes"]
 tags: ["cheatsheet", "docker", "notes"]
@@ -11,51 +11,53 @@ type: "note"
 
 ## Common Commands
 
+
+
 ### Containers
 
-```shell
+```sh
 docker run node
 ```
 
-Runs and instance of an image. If the image does not exist docker will pull an instance
+Runs and instances of an image. If the image does not exist docker will pull an instance
 
-```shell
+```sh
 docker ps
 ```
 
 List running containers and basic information
 
-```shell
+```sh
 docker ps -a
 ```
 
 List containers both running or stopped and basic information
 
-```shell
+```sh
 docker stop silly_sammet
 ```
 
 Stops a running container
 
-```shell
+```sh
 docker rm silly_sammet
 ```
 
 Remove a stopped container run `docker ps -a` to confirm removal
 
-```shell
+```sh
 docker run -p 80:80 docker/getting-started
 ```
 
 Runs docker in the foreground
 
-```shell
+```sh
 docker run -d -p 80:80 docker/getting-started
 ```
 
 the `-d` flag will run docker in the background
 
-```shell
+```sh
 docker attach <id>
 ```
 
@@ -89,17 +91,19 @@ A tag is a flag to specify a particular flavor of an image, the command without 
 
 ### Images
 
+#### Show Images 
+
 ```shell
 docker images
 ```
 
-Shows a list of images
+#### Remove an Image
+ 
+> Note: the image cannot be in use by any container
 
 ```shell
 docker rmi node
 ```
-
-removes an image Note: the image cannot be in use by any container
 
 ```shell
 docker run node
@@ -136,7 +140,7 @@ docker build ./path/to/dir
 or **best practice** tag your image with a name
 
 ```shell
-docker build . -t imageName
+docker build . -t <imageName>
 ```
 
 ### Reference

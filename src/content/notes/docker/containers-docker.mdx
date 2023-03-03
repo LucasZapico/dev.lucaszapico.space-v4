@@ -1,0 +1,54 @@
+---
+title: "Docker Container Notes"
+description: "General Reference for on Docker Container Management"
+date-created: '2023/02/27'
+last-modified: '2023/03/03'
+isdraft: false
+categories: ["cheatsheet", "docker", "notes", 'container']
+tags: ["cheatsheet", "docker", "notes",  'container']
+type: "note"
+---
+
+
+## Container Management
+
+- `create`
+- `run`
+- `start` 
+
+- `create` creates a new container from an image but does not run
+- `run` is a combination command of `create` and `start`
+- `start` starts and already existing container 
+
+### Start Container 
+
+```sh
+docker start <container-name>
+```
+
+```sh
+docker run <image-name>
+```
+
+**Example**
+
+```sh 
+docker run app-foo
+```
+
+#### Start Container With Active Terminal 
+
+```sh 
+docker run -it <image-name>
+```
+
+```sh 
+docker run -it app-foo
+```
+
+#### Start Container with Bash 
+
+```sh 
+docker run -ti <image-name> /bin/bash
+```
+
