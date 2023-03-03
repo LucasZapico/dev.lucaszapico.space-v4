@@ -2,7 +2,7 @@
 title: "Postgres Catch Notes"
 description: "General notes on postgres"
 date-created: "2021/03/15"
-last-modified: "2022/12/30"
+last-modified: '2023/02/21'
 isdraft: true
 categories: ["postgres", "database"]
 tags: ["postgres", "notes", "database"]
@@ -11,8 +11,18 @@ type: "note"
 
 ## Install Postgres
 
-```shell
+```sh
 brew install postgresql 
+```
+
+### Connection 
+
+```sh 
+psql postgres://USERNAME:PASSWORD@<IP>:<PORT>/<DATABASE>
+```
+
+```sh 
+psql postgres://postgres@127.0.0.1:5444/base
 ```
 
 ### PSQL CLI 
@@ -153,8 +163,6 @@ ALTER USER db_admin WITH NOCREATEROLE;
 \du
 ```
 
-
-
 *You are connected to database "test" as user "luca" via socket in "/tmp" at port "5432".*
 
 ## GUI and Apps 
@@ -163,5 +171,7 @@ ALTER USER db_admin WITH NOCREATEROLE;
 
  All-in-One Database Version Management Tool
 
+## Reference 
 
+[Postgres Homebrew on Mac](https://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/)
 
