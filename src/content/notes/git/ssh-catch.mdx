@@ -2,7 +2,7 @@
 title: SSH Catch
 description: "General notes on common ssh tasks and actions"
 date-created: "2022/02/11"
-last-modified: '2022/12/15'
+last-modified: '2023/03/12'
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
@@ -11,16 +11,41 @@ type: note
 
 ## SSH Reference
 
+- creating keys 
+- common errors
+- ssh between machines 
+- handling ssh with git and different accounts 
+
 ssh into remote server
 
-```shell
+```sh
 ssh <remote-username>@<remote_domain/ip>
 ```
 
 **Examples**
 
-```shell
+```sh
 ssh root@216.125.129.17
+```
+
+### Move File or Directories between Machines 
+
+```sh 
+scp <source> <destination>
+```
+
+```sh
+scp /path/to/file username@:host/path/to/destination
+```
+
+```sh
+scp username@host:/path/to/file /path/to/destination
+```
+
+**Example** 
+
+```sh 
+scp foo@193.169.1.215:~/foo ~/foo 
 ```
 
 ## Set-Up
@@ -132,7 +157,7 @@ git clone git@work:username/my-work-project.git
 git clone git@personal:username/my-personal-project.git
 ```
 
-For reference this is the default behavior
+For reference, this is the default behavior
 
 ```sh
 git clone git@bitbucket.org:username/my-work-project.git
@@ -157,6 +182,8 @@ _.git/config_
 
 ## SSH Between Two Mac on LAN
 
+### Common Friction Points
+
 You can try the following but it can fail `Full Disk Access privileges.` error.
 
 ```sh
@@ -170,7 +197,7 @@ If 👆that doesn't work try 👇
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 ```
 
-to turn remote access off as security best practice.
+to turn remote access off as a security best practice.
 
 ```sh
 ## Disabling SSH
@@ -185,6 +212,8 @@ sudo systemsetup -getremotelogin
 ```
 
 ## Reference
+
+[Set up ssh key auth between machines](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)
 
 [how to set up ssh for multiple services](https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/)
 
