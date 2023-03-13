@@ -2,7 +2,7 @@
 title: SSH Catch
 description: "General notes on common ssh tasks and actions"
 date-created: "2022/02/11"
-last-modified: '2023/03/12'
+last-modified: '2023/03/13'
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
@@ -30,9 +30,11 @@ ssh root@216.125.129.17
 
 ### Move File or Directories between Machines 
 
+
 ```sh 
 scp <source> <destination>
 ```
+#### Files 
 
 ```sh
 scp /path/to/file username@:host/path/to/destination
@@ -46,6 +48,16 @@ scp username@host:/path/to/file /path/to/destination
 
 ```sh 
 scp foo@193.169.1.215:~/foo ~/foo 
+```
+
+#### Dir 
+
+```sh
+scp -r /path/to/dir username@:host/path/to/destination
+```
+
+```sh
+scp -r username@host:/path/to/dir /path/to/destination
 ```
 
 ## Set-Up
