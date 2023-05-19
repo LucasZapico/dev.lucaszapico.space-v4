@@ -2,7 +2,7 @@
 title: "Docker Postgres Reference"
 description: "General notes catch for a Postgres Docker instance"
 date-created: '2023/02/20'
-last-modified: '2023/03/02'
+last-modified: '2023/03/04'
 isdraft: false
 categories: ["cheatsheet", "docker", "notes", "postgres"]
 tags: ["cheatsheet", "docker", "notes", "postgres"]
@@ -62,6 +62,12 @@ docker exec -it pgsql-dev-2 bash
 
 ### Access Postgress From Container CLI
 
+#### PSQL with flags 
+
+```sh 
+psql -h <host:ip> -U <pg_user>
+```
+
 **Example**
 
 ```sh 
@@ -71,6 +77,32 @@ psql -h localhost -U postgres
 ```sh 
 psql -h 127.0.0.1 -U postgres
 ```
+
+OR 
+
+#### PSQL with Postgres URL
+
+```sh 
+psql postgres://<pg_user>:<pg_password>@<host>:<port>/<db_name>
+```
+
+```sh 
+psql postgres[ql]://[username[:password]@][host[:port],]/database[?parameter_list]
+```
+
+```sh 
+postgresql://sally:sallyspassword@dbserver.example:5555/userdata?connect_timeout=10&sslmode=require&target_session_attrs=primary
+```
+
+[More on postgres connection url - prisma.io](https://www.prisma.io/dataguide/postgresql/short-guides/connection-uris)
+
+**Example**
+
+```sh 
+psql postgres://postgres@127.0.0.1:5432/postgres
+```
+
+
 
 #### Trouble shooting
 

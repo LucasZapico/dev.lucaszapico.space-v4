@@ -2,7 +2,7 @@
 title: "Docker Container Networking"
 description: "General notes on Docker Container Networking"
 date-created: '2023/03/03'
-last-modified: '2023/03/03'
+last-modified: '2023/03/10'
 isdraft: false
 categories: ["cheatsheet", "docker", "notes", "networking"]
 tags: ["cheatsheet", "docker", "notes", "networking"]
@@ -42,6 +42,13 @@ EXPOSE 5432
 
 ```sh 
 docker run --expose=8080 --name="port-demo" test
+```
+
+### Troubleshooting 
+
+
+```sh
+grep -w <port>/tcp' /etc/services
 ```
 
 ## Reference 

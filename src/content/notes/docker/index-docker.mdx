@@ -2,7 +2,7 @@
 title: "Docker"
 description: ""
 date-created: "2022/09/11"
-last-modified: "2022/09/11"
+last-modified: '2023/04/10'
 categories: ["docker", "development", "dev-ops"]
 tags: ["docker", "development", "dev-ops", "hosting", "notes"]
 isdraft: true
@@ -11,6 +11,12 @@ type: "note"
 
 ```sh
 docker run -d -p 80:80 docker/getting-started
+```
+
+## auto restart docker container 
+
+```sh 
+docker run -d  --restart unless-stopped -p 3000:3000 --name <container-name> 
 ```
 
 ## `Dockerfile`
