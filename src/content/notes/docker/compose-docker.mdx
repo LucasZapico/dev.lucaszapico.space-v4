@@ -2,22 +2,9 @@
 title: "Docker Compose"
 description: "Reference for Docker Compose management"
 date-created: '2023/02/20'
-last-modified: '2023/04/11'
+last-modified: '2023/02/20'
 categories: ["docker", "development", "docker-compose"]
 tags: ["docker", "development", "docker-compose", "notes"]
 isdraft: true
 type: "note"
 ---
-
-## Running Services Individually 
-
-[Running Single Services Docker Compose Reference ](https://docs.docker.com/engine/reference/commandline/compose_run/#description)
-
-> Gotcha 🧶 , the mapped ports in the docker compose file are ignored 
-
-The port mapping defined in the docker compose file are ignored when running services individually. The docker team's reason for this is to avoid conflicts with a running service. 
-Personally, I disagree with this design decision and when handling this for the first time I spent a fair amount of time trying to pin down why my service wasn't mapping out of my container. 
-
-```sh
-docker compose --file <path-to-compose> run -p <external-port>:<internal-port> <service-name-in-compose>  
-```
