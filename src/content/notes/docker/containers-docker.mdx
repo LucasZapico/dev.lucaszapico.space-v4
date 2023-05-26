@@ -2,7 +2,7 @@
 title: "Docker Container Notes"
 description: "General Reference for on Docker Container Management"
 date-created: '2023/02/27'
-last-modified: '2023/03/10'
+last-modified: '2023/03/03'
 isdraft: false
 categories: ["cheatsheet", "docker", "notes", 'container']
 tags: ["cheatsheet", "docker", "notes",  'container']
@@ -12,28 +12,13 @@ type: "note"
 
 ## Container Management
 
-> 💡 By default, `docker run` or `docker create` do not make Docker ports accessible by services in the outside world. The port publish command need to be used to make an app accessible
+- `create`
+- `run`
+- `start` 
 
-### `create` vs `run` vs `start` 
-
-`run` 
-: The run command is both `create` and `start` commands. It is used to expedite creating a new container. 
-: `docker run --name <container-name> -it -p <external-port>:<internal-port> <image-name>`
-
-`create`
-: The create command creates a new container from an image but does not start it. 
-: `docker create --name <container-name> -p <external-port>:<internal-port> <image-name>` 
+- `create` creates a new container from an image but does not run
+- `run` is a combination command of `create` and `start`
 - `start` starts and already existing container 
-
-### Create Container 
-
-[docker create cli docs](https://docs.docker.com/engine/reference/commandline/create/)
-
-The following is simple example that assumes configuration in a dockerfile. 
-
-```sh 
-docker create --name <new-container-name> -p <external-port>:<internal-port>
-```
 
 ### Start Container 
 
@@ -41,6 +26,9 @@ docker create --name <new-container-name> -p <external-port>:<internal-port>
 docker start <container-name>
 ```
 
+```sh
+docker run <image-name>
+```
 
 **Example**
 
@@ -49,7 +37,6 @@ docker run app-foo
 ```
 
 #### Start Container With Active Terminal 
-
 
 ```sh 
 docker run -it <image-name>
