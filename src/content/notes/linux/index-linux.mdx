@@ -1,0 +1,179 @@
+---
+title: "Linux Index"
+description: ""
+date-created: '2023/02/27'
+last-modified: '2023/03/31'
+isdraft: true
+categories: ["linux", "command-line", "notes"]
+tags: []
+type: "notes"
+---
+
+
+
+```sh
+kill $(lsof -t -i:8080)
+```
+
+## Package Managers 
+
+- `apt` 
+- `apt-get` 
+- `snap`
+
+### `snap`
+
+#### Find Snap Package 
+
+```sh
+snap find <package-name>
+```
+
+#### Install Snap Package 
+
+```sh
+sudo snap install <package-name>
+```
+
+#### Remove Snap Package
+
+```sh
+sudo snap remove <package-name>
+```
+
+#### List Snap packages
+
+```sh
+snap list
+```
+
+## Living Tool Chain Gist 
+
+### Install packages list in file
+
+### Apt-Get List 
+
+```
+xargs sudo apt-get install <packages.txt>
+```
+
+```txt:title=apt-get-package.txt 
+# apt-get
+tmux
+lazydocker
+
+
+```
+
+```txt:title=snap-packages.txt
+# snap
+bpytop
+```
+## Tmux Cheatsheet 
+
+[tmux cheatsheet -](https://tmuxcheatsheet.com/)
+
+> 💡 Tmux has two modes similar to vim, one to interact with the current window or pane and the other to create, delete and navigate between windows, and panes.
+
+`CTRL + b` 
+
+### Session
+
+```sh
+tmux 
+```
+
+```sh
+tmux kill-session
+```
+
+### Window 
+
+From prefix 
+
+`CTRL + b` 
+
+#### Move between windows 
+
+```
+CTRL + b <window-prefix>
+``` 
+
+**Example**
+
+```
+CTRL + b 0
+```
+
+
+
+#### In Shell Commands
+
+List windows 
+
+```sh
+tmux list-window
+```
+
+create new window
+
+```sh
+tmux new-window
+```
+
+split window into two panes 
+
+```sh 
+tmux spit-window
+tmux spit-window -h // horizontal window
+tmux spit-window -v // vertical window
+```
+
+
+### Pane
+
+Kill current pane 
+
+```sh
+tmux kill-pane
+```
+
+```sh
+tmux list-pane
+```
+
+## Useful Linux CLI Tools
+
+[tmux](https://github.com/tmux/tmux/wiki/Getting-Started)
+
+Multiple window and panel support.
+
+{/* TODO: add tmux keyboard shortcuts */}
+
+[nmon]()
+
+```sh 
+apt install nmon
+```
+
+[mc]()
+
+`mc` it allows you to navigate and browse the files in your system. 
+
+```sh
+apt install mc
+```
+
+[neofetch]()
+
+A single command is all it takes to see a wealth of info about your Linux setup, from which distro you use to which kernel version you’re on, plus your desktop environment, window manager, theme, icon set, and a whole to more. 
+
+## Reference 
+
+[Linux List disk - linuxhandbook](https://linuxhandbook.com/linux-list-disks/)
+
+[Linux Directories explained in 100 sec - Firship](https://youtu.be/42iQKuQodW4)
+
+### CLI Tools 
+
+[CLI tools Linux](https://www.omgubuntu.co.uk/2021/11/best-command-line-tools-ubuntu-linux)
