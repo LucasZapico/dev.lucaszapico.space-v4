@@ -2,7 +2,7 @@
 title: "Electron Notes"
 description: "Genernal notes on electron"
 date-created: 2020/30/09
-last-modified: "2022/09/30"
+last-modified: '2023/03/27'
 isdraft: true
 categories: ["electron", "notes"]
 tags: ["electron", "env"]
@@ -20,3 +20,42 @@ const mainWindow = new BrowserWindow({
   },
 })
 ```
+
+## Inter-Process Communication (IPC)
+
+### Main to Render 
+
+
+### Render to Main 
+
+#### TypeSCript React Render to Main Simple Example
+
+```typescript:title=main.ts
+ipcMain.on('msg', (event, data) => {
+  log.info(data)
+})
+```
+
+```typescript:title=preload.ts
+contextBridge.exposeInMainWorld('electronAPI', {
+  message: () => ipcRenderer.send('msg', 'hello from render')
+})
+```
+
+```typescript:title=app.tsx
+const Button = () => {
+  const handleClick = async () => {
+    await window.electronAPI.foo()
+  }
+  return (
+    <button onClick={() => handleClick()}>Send Message to Main</button>
+  )
+}
+```
+
+
+
+### Electron Boilerplate and Starters 2022 - 2023 
+
+[Electron React Webpack Typescript 2023 - codesbiome](https://github.com/codesbiome/electron-react-webpack-typescript-2023)
+
