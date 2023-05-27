@@ -1,0 +1,63 @@
+---
+title: "Disk Management Linux"
+description: "General notes on Disk formatting"
+date-created: '2023/03/18'
+last-modified: '2023/04/10'
+isdraft: true
+categories: ["linux", "general", "reference", "disk"]
+tags: ["linux", "general", "reference", "disk"]
+type: "note"
+---
+
+### List Disks 
+
+```sh 
+ds
+```
+
+### Unmount 
+
+```sh
+sudo umount /dev/<diskid>
+```
+
+### Format
+
+```sh
+sudo mkfs.<file-system-type> /dev/<diskid>
+```
+
+```sh
+sudo mkfs.exfat /dev/sdb1
+```
+
+| cli code | format type       |
+| `vfat`   | FAT32 File system |🔨
+| `ntfs`   | NTFS file system  |
+| `exfat`  | exfat file system |
+
+### Verify format
+
+```sh
+sudo fsck /dev/sdb1
+```
+
+### 
+
+```sh 
+lsblk -f
+```
+
+```sh 
+ls /dev/disk/by-id
+```
+
+```sh
+lshw -c storage -c disk
+```
+
+## Reference
+
+[Linux format disk - phoenixnap.com](https://phoenixnap.com/kb/linux-format-usb)
+
+[format use drive linux - macuseof.com](https://www.makeuseof.com/how-to-format-usb-drive-on-linux/)
