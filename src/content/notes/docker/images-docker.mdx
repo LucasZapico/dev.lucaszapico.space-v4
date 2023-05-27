@@ -2,35 +2,9 @@
 title: "Docker Images Notes 2020"
 description: "General notes on Docker Images "
 date-created: '2023/02/20'
-last-modified: '2023/03/05'
+last-modified: '2023/02/20'
 isdraft: false
 categories: ["cheatsheet", "docker-image", "notes"]
 tags: ["cheatsheet", "docker-image", "notes"]
 type: "note"
 ---
-
-
-# Image Management
-
-## Build Docker Image from dockerfile 
-
-`docker build --tag <image-name> .`
-
-`docker build -t <image-name> .`
-
-Build Docker Image from Dockerfile with alt file name
-
-`docker build --file ./path/to/dockerfile --tag <image-name> .`  
-
-**Example**
-
-```
-
-```
-
-`docker build --file Dockerfile.dev --tag next-dev .`  
-
-## Build Docker Image CLI 
-
-This is useful for simple cases such as testing or playgrounds. In my opinion, the configuration of the image should only be used with five or less flags. Otherwise, a Dockerfile is the preferred method. 
-
