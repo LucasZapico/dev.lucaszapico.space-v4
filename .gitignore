@@ -15,6 +15,9 @@
 # obsidian 
 .vault*
 .obsidian/
+.trash/
+**.trash/
+
 
 node_modules/
 .cache/
