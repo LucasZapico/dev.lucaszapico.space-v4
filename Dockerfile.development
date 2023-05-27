@@ -1,0 +1,44 @@
+## Use an official Node.js runtime as a parent image
+FROM node:18-alpine
+RUN apk update
+WORKDIR /app
+COPY ./package.json ./
+COPY . .
+RUN rm -rf node_modules
+RUN npm install
+
+ENV NODE_ENV development
+EXPOSE 8001
+CMD ["npm", "run", "develop"]
+
+##
+## REFERENCE 
+## custom dockerfile reference for dev.lucaszapico.space
+#### IMAGE ###
+### Build
+# Build Docker Image from dockerfile 
+# `docker build --tag <image-name> .`
+# `docker build -t <image-name> .`
+#
+# Build Docker Image from Dockerfile with alt file name
+# `docker build --file ./path/to/dockerfile --tag <image-name> .`
+#  
+#### CONTAINER ###
+### Create Container
+# `docker create --name <container-name> -p 8006:8006 <image-name>`
+# `docker create --name <container-name> -p <external-port>:<internal-port> <image-name>`
+#
+### Start Container
+# `docker start -i <container-name>`
+#
+### Run Container
+## Docker Run is a combination of `create` and `start`
+# docker run --name <container-name> -it -p 8006:8006 <image-name>
+## example ##
+# docker run --name l-dev-gatsby -it -p 8006:8006 gatsby-dev
+#
+### Execute Command in Container
+# `docker exec -it <container-name> bash`
+## example 
+# `docker exec -it l-dev bash`
+##

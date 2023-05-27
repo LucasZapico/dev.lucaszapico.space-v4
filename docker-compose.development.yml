@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    container_name: gatsby-dev-luc
+    build:
+      context: . 
+      dockerfile: ./Dockerfile.development
+    ports:
+      - "8001:8001"

@@ -1,0 +1,11 @@
+node_modules/
+node_modules
+npm-debug.log
+.git
+.eslint*
+.prettier*
+.vscode
+Dockerfile*
+docker-compose.yml
+public
+.cache
