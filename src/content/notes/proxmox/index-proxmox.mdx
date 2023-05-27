@@ -1,0 +1,23 @@
+---
+title: "Proxmox Index"
+description: "General reference notes on proxmox"
+date-created: '2023/04/10'
+last-modified: '2023/04/10'
+isdraft: true
+categories: ["proxmox", "notes", "cheatsheet"]
+tags: ["proxmox", "notes", "cheatsheet"]
+type: "notes"
+---
+
+
+## How To Add Passthrough Harddrives to VM 
+
+```sh
+qm set <vm-id> -scsi1 /dev/disk/by-id/<hard-disk-id>
+```
+
+**Example**
+
+```sh
+qm set 101 -scsi1 /dev/disk/by-id/sata-WDC_WD60_EFAX-68JH4N1_DD202345240044-0:0
+```
