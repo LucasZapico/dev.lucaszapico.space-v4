@@ -1,0 +1,108 @@
+---
+title: "Index Go Lang"
+description: "General note catch of Go lang"
+date-created: '2023/04/14'
+last-modified: '2023/04/15'
+categories: ["go-lang", "development",]
+tags: ["go-lang", "development", "notes"]
+isdraft: true
+type: "note"
+---
+
+## Learning references
+
+[Go By Example - gobyexample](https://gobyexample.com/)
+
+Go by example is exactly what it sounds like, a nearly exhaustive set of examples of basic Go lang functionality.  
+
+---
+
+## Living CheatSheet
+
+## Working with File System
+
+### Moving and Coping Directories 
+
+#### Move Directories 
+
+The following use the `os` package
+
+```go
+import (
+  "os"
+)
+//...
+```
+
+**Example**
+
+```go 
+//...
+func main(){
+  source := "/path/to/input"
+  dest := "/path/to/dest"
+
+  err := os.Rename(source, dest)
+  if err != nill {
+    fmt.PrintLn("error moving directory", err)
+  }
+}
+
+```
+
+#### Copy Directories 
+
+**Example**
+
+```go 
+
+```
+
+### Reading and Writing to Directories 
+
+#### Read Contents of Directories
+
+### Moving and Coping Files
+
+#### Move File 
+
+**Example**
+
+```go 
+
+```
+
+#### Copy File 
+
+**Example**
+
+```go 
+
+```
+
+### Reading and Writing Files 
+
+Read all contents from file
+
+```go 
+func main() {
+  // read all contents from file from path
+	dat, err := os.ReadFile("./raw/bar.txt")
+  if err != nil {
+    fmt.PrintLn("err reading file")
+  }
+  fmt.PrintLn(dat)
+}
+```
+
+----
+
+- solution for colorizing 
+- solution pattern for logging 
+
+## Reference 
+
+- [golang cheat sheet - github](https://github.com/a8m/golang-cheat-sheet)
+- [go lang cheat sheet - devhints.io](https://devhints.io/go)
+- [go lang cheat sheet - quickref.me](https://quickref.me/go.html)
+

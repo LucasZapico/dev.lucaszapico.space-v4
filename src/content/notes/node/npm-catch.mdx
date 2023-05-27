@@ -2,12 +2,24 @@
 title: "Npm Notes 2020"
 description: "General notes on Brew"
 date-created: 2021/06/02 08:38:24
-last-modified: "2022/08/23"
+last-modified: '2023/04/10'
 isdraft: true
 categories: ["npm", "notes"]
 tags: ["npm", "notes", "reference"]
 type: "note"
 ---
+
+### List Global Packages 
+
+```sh
+npm list -g --depth 0
+```
+
+### Remove node_modules 
+
+```sh 
+npm install npkill -g
+```
 
 **& vs &&**
 
@@ -38,3 +50,4 @@ Runs script concurrently
 ```
 
 With `&` script 1 in parallel to script 2
+

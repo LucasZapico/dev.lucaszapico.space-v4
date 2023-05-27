@@ -2,7 +2,7 @@
 title: "Linux/Mac and Command Line"
 description: ""
 date-created: "2018/03/15"
-last-modified: '2022/12/23'
+last-modified: '2023/04/10'
 isdraft: false
 categories: ["linux", "command-line", "notes"]
 tags: []
@@ -11,9 +11,9 @@ type: "notes"
 
 ## Common Linux Commands
 
-#### Fundemental Commands
+#### Fundamental Commands
 
-#### Copy Current Dir to Clip board
+#### Copy Current Dir to Clipboard
 
 ```sh
 pwd | pbcopy
@@ -49,7 +49,7 @@ _v for verbose_
 cp -Rv dirOne/ dirTwo/
 
 # dirOne/ -> dirTwo
-# dirOne//item-1.txt -> dirTwo/item-1.txt
+# dirOne/item-1.txt -> dirTwo/item-1.txt
 ```
 
 
@@ -81,14 +81,7 @@ mv -v foo bar
 # foo -> bar/foo
 ```
 
-
-
-
-
-
 #### Remove Directories and Content
-
-
 
 **remove directory and contents**
 
@@ -104,3 +97,21 @@ rm -rfv dirOne
 
 _f force flag_
 _v verbose flag_
+
+
+### Rsync 
+
+```sh 
+rsync -av --exclude="node_modules" <source-dir>/ <destination-dri>/
+```
+
+```sh
+rsync -a --progress --exclude 'dir1' --exclude 'dir2' source_directory/ destination_directory/ && rm -r source_directory/
+```
+
+
+### Reference 
+
+[Rsync](https://linux.die.net/man/1/rsync)
+
+[rclone](https://rclone.org/dropbox/)
