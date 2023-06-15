@@ -12,21 +12,30 @@ import React from "react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import { Link as GatsbyLink } from "gatsby"
 
-function getAnchor(text) {
-  console.log(text)
-  return text
-    .trim()
+function makeAnchor(str) {
+  return str
+    .trim().toLowerCase()
     .replace(/[^a-z0-9 ]/g, "")
     .replace(/[ ]/g, "-")
-    .toLowerCase()
+    
 }
+
+function getAnchor(el) {
+  if (typeof el !== "string") {
+    return makeAnchor(el.props.children)
+  } else {
+    return makeAnchor(el)
+  }
+}
+
+
 
 /**
  * Headings
  */
 export const HeadingOneMDX = ({ children, ...rest }) => {
-  // const anchor = getAnchor(children)
-  // const link = `${anchor}`
+  const anchor = getAnchor(children)
+  const link = `${anchor}`
   return (
     <Heading
       {...rest}
@@ -34,7 +43,7 @@ export const HeadingOneMDX = ({ children, ...rest }) => {
       fontWeight="800"
       // color={colorMode === 'dark' ? 'gray.400' : 'gray.800'}
       colorScheme="red"
-      // id={link}
+      id={link}
     >
       {children}
     </Heading>
@@ -43,15 +52,17 @@ export const HeadingOneMDX = ({ children, ...rest }) => {
 
 export const HeadingTwoMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
-  // const anchor = getAnchor(children)
-  // const link = `${anchor}`
+  console.log(children)
+  const anchor = getAnchor(children)
+  const link = `${anchor}`
   return (
     <Heading
       {...rest}
       size="xl"
       fontWeight="800"
-      color={colorMode === "dark" ? "gray.400" : "gray.800"}
-      // id={link}
+      color={colorMode === "dark" ? "yellow.100" : "yellow.700"}
+      // color={colorMode === "dark" ? "gray.400" : "gray.800"}
+      id={link}
     >
       {children}
     </Heading>
@@ -67,7 +78,8 @@ export const HeadingThreeMDX = ({ children, ...rest }) => {
       {...rest}
       size="lg"
       fontWeight="800"
-      color={colorMode === "dark" ? "gray.400" : "gray.800"}
+      color={colorMode === "dark" ? "red.600" : "red.200"}
+      // color={colorMode === "dark" ? "gray.400" : "gray.800"}
       // id={link}
     >
       {children}
@@ -133,7 +145,7 @@ export const TextMDX = ({ children, ...rest }) => {
     <Text
       {...rest}
       fontWeight={colorMode === "dark" ? "500" : "300"}
-      color={colorMode === "dark" ? "gray.100" : "gray.700"}
+      color={colorMode === "dark" ? "gray.200" : "gray.700"}
     >
       {children}
     </Text>
@@ -169,14 +181,9 @@ export const LinkMDX = ({ children, href, isExternal = false, ...rest }) => {
   const { colorMode } = useColorMode()
   return href.includes("http") ? (
     <Box mb={6}>
-      <Link
-        variant="linkOne"
-        {...rest}
-        href={href}
-        target="_blank"
-      >
+      <Link variant="" {...rest} href={href} target="_blank">
         {children}
-        <ExternalLinkIcon mx={2} mb={1}/>
+        <ExternalLinkIcon mx={2} mb={1} />
       </Link>
     </Box>
   ) : (
