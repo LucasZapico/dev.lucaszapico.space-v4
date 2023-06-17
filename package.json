@@ -1,6 +1,10 @@
 {
   "name": "dev.lucaszapico.space-v4",
   "version": "1.0.0",
+  "engines" : { 
+    "node" : ">=16.0.0 <18.0.0"
+  },
+  "engineStrict" : true,
   "private": true,
   "description": "dev.lucaszapico.space-v4",
   "author": "Lucas Zapico",
