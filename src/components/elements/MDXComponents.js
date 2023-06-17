@@ -14,21 +14,31 @@ import { Link as GatsbyLink } from "gatsby"
 
 function makeAnchor(str) {
   return str
-    .trim().toLowerCase()
+    .trim()
+    .toLowerCase()
     .replace(/[^a-z0-9 ]/g, "")
     .replace(/[ ]/g, "-")
-    
 }
 
 function getAnchor(el) {
-  if (typeof el !== "string") {
+  if (typeof el === "object" && el.length > 1) {
+    console.log(el)
+    const arr = el.map((e) => {
+      if(!!e.props){
+        return e.props.children
+      }   else {
+        return e
+      }
+    })
+    console.log(arr)
+    const anchor = arr.join('-')
+    return makeAnchor(anchor)
+  } else if (typeof el !== "string") {
     return makeAnchor(el.props.children)
   } else {
     return makeAnchor(el)
   }
 }
-
-
 
 /**
  * Headings
@@ -52,7 +62,6 @@ export const HeadingOneMDX = ({ children, ...rest }) => {
 
 export const HeadingTwoMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
-  console.log(children)
   const anchor = getAnchor(children)
   const link = `${anchor}`
   return (
@@ -71,16 +80,16 @@ export const HeadingTwoMDX = ({ children, ...rest }) => {
 
 export const HeadingThreeMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
-  // const anchor = getAnchor(children)
-  // const link = `${anchor}`
+  const anchor = getAnchor(children)
+  const link = `${anchor}`
   return (
     <Heading
       {...rest}
       size="lg"
       fontWeight="800"
-      color={colorMode === "dark" ? "red.600" : "red.200"}
-      // color={colorMode === "dark" ? "gray.400" : "gray.800"}
-      // id={link}
+      // color={colorMode === "dark" ? "red.700" : "red.200"}
+      color={colorMode === "dark" ? "gray.400" : "gray.800"}
+      id={link}
     >
       {children}
     </Heading>
@@ -89,15 +98,15 @@ export const HeadingThreeMDX = ({ children, ...rest }) => {
 
 export const HeadingFourMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
-  // const anchor = getAnchor(children)
-  // const link = `${anchor}`
+  const anchor = getAnchor(children)
+  const link = `${anchor}`
   return (
     <Heading
       {...rest}
       size="md"
       fontWeight="800"
       color={colorMode === "dark" ? "gray.400" : "gray.800"}
-      // id={link}
+      id={link}
     >
       {children}
     </Heading>
@@ -106,15 +115,15 @@ export const HeadingFourMDX = ({ children, ...rest }) => {
 
 export const HeadingFiveMDX = ({ children, ...rest }) => {
   const { colorMode } = useColorMode()
-  // const anchor = getAnchor(children)
-  // const link = `${anchor}`
+  const anchor = getAnchor(children)
+  const link = `${anchor}`
   return (
     <Heading
       {...rest}
       size="sm"
       fontWeight="800"
       color={colorMode === "dark" ? "gray.400" : "gray.800"}
-      // id={link}
+      id={link}
     >
       {children}
     </Heading>
