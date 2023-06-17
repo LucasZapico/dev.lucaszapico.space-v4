@@ -6,9 +6,9 @@ const LinkStyles = {
   baseStyle: ({ colorMode }) => ({
     transition: "all 0.15s ease-out",
     cursor: "pointer",
-    textDecoration: "none",
+    textDecoration: "underline",
     outline: "none",
-    color: "inherit",
+    color: colorMode === "dark" ? "yellow.600" : "yellow.600",
     _hover: {
       textDecoration: "none",
     },
@@ -17,7 +17,10 @@ const LinkStyles = {
     },
   }),
   variants: {
+   
+  
     navLink: ({ colorMode }) => ({
+      textDecoration: "none",
       color: colorMode === "dark" ? "brand.300" : "brand.500",
       paddingLeft: "1rem",
       paddingRight: "1rem",
@@ -61,18 +64,20 @@ const LinkStyles = {
       textDecoration: "none",
       paddingTop: ".2rem",
       paddingBottom: ".2rem",
+      color: colorMode === "dark" ? "gray.300" : "gray.900",
       _hover: {
-        color: "yellow.300",
+        color: "gray.300",
       },
       _active: {
-        color: "yellow.400",
+        color: "gray.400",
       },
       _focus: {
-        color: "yellow.500",
+        color: "gray.500",
       },
     }),
     linkOne: ({ colorMode }) => ({
-      color: colorMode === "dark" ? "gray.100" : "gray.900",
+      textDecoration: "none",
+      color: colorMode === "dark" ? "gray.300" : "gray.900",
       paddingRight: "1rem",
       paddingLeft: "1rem",
       position: "relative",
@@ -82,7 +87,7 @@ const LinkStyles = {
         transition: "all 0.15s ease-out",
         zIndex: "-1",
         // bgGradient: 'linear(to-br, , brand.one 80%,  gray.100 )',
-        background: colorMode === "dark" ? "gray.100" : "gray.900",
+        background: colorMode === "dark" ? "gray.300" : "gray.900",
         position: "absolute",
         content: '""',
         height: "2px",
@@ -93,11 +98,11 @@ const LinkStyles = {
         right: "0%",
       },
       _active: {
-        color: colorMode === "dark" ? "gray.200" : "gray.800",
+        color: colorMode === "dark" ? "gray.300" : "gray.800",
         _after: {
           zIndex: "-1",
           // bgGradient: 'linear(to-br,  gray.100 80%,  brand.one )',
-          background: colorMode === "dark" ? "gray.200" : "gray.800",
+          background: colorMode === "dark" ? "gray.300" : "gray.800",
           position: "absolute",
 
           content: '""',
@@ -110,7 +115,7 @@ const LinkStyles = {
         // background: colorMode === "dark" ? "gray.200" : "gray.800",
         _after: {
           zIndex: "-1",
-          background: colorMode === "dark" ? "gray.200" : "gray.800",
+          background: colorMode === "dark" ? "gray.300" : "gray.800",
           position: "absolute",
           content: '""',
           width: "2px",
@@ -119,7 +124,7 @@ const LinkStyles = {
       },
     }),
     linkInLine: ({ colorMode }) => ({
-      color: "gray.100",
+      color: colorMode === "dark" ? "gray.300" : "gray.900",
       paddingRight: ".3rem",
       paddingLeft: ".3rem",
       position: "relative",
@@ -130,7 +135,7 @@ const LinkStyles = {
         transition: "all 0.15s ease-out",
         zIndex: "-1",
         // bgGradient: 'linear(to-br, , brand.one 80%,  gray.100 )',
-        background: colorMode === "dark" ? "gray.100" : "gray.900",
+        background: colorMode === "dark" ? "gray.300" : "gray.900",
         position: "absolute",
         content: '""',
         height: "2px",
@@ -141,11 +146,11 @@ const LinkStyles = {
         right: "0%",
       },
       _active: {
-        color: colorMode === "dark" ? "gray.200" : "gray.800",
+        color: colorMode === "dark" ? "gray.300" : "gray.900",
         _after: {
           zIndex: "-1",
           // bgGradient: 'linear(to-br,  gray.100 80%,  brand.one )',
-          background: colorMode === "dark" ? "gray.200" : "gray.800",
+          background: colorMode === "dark" ? "gray.300" : "gray.900",
           position: "absolute",
 
           content: '""',
