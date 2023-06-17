@@ -23,6 +23,11 @@ const theme = extendTheme({
   colors: {
     ...Color,
   },
+  sizes: {
+    "container": {
+      xxl: "1440px",
+    }
+  },
   components: {
     Tag: TagStyles,
     Link: LinkStyles,
@@ -34,7 +39,7 @@ const theme = extendTheme({
     global: ({ colorMode }) => {
       return {
         body: {
-          color: colorMode === "dark" ? "gray.100" : "gray.900",
+          color: colorMode === "dark" ? "gray.200" : "gray.900",
           bg: colorMode === "dark" ? "gray.900" : "white",
         },
         "*::placeholder": {
