@@ -40,9 +40,9 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         mdxOptions: {
           remarkPlugins: [
-            
-          ]
-          
+            // eslint-disable-next-line
+            // remarkGfm
+          ]          
         },
         
       },
