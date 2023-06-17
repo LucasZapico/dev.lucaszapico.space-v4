@@ -4,24 +4,37 @@ Project Description
 
 <em>[TODO.md spec & Kanban Board](https://bit.ly/3fCwKfM)</em>
 
+### Back-Log
+
 ### Todo
 
-- [ ] pull gists into notes?
-- [ ] add floating toc
+
+
 - [ ] add logo
 - [ ] add sub footer with policy and such
 - [ ] add tracking
 - [ ] add seo ??
 - [ ] add open graph image
-- [ ] add animations
+- [ ] ui/ux: add animations [chakra animation docs](https://chakra-ui.com/docs/components/transitions/props#scalefade-props)
 - [ ] a funnel contact me
-- [ ] make a distinction between notes and articles
 - [ ] add timeline to projects page
-- [ ] docker file for Node 16
+- [ ] ui/ux: enhance anchor tag links to have to margin
+- [ ] ui/ux: articles add markdown table support 
+- [ ] build: update to Gatsbyv5 
+- [ ] ui/ux: handle toc greater the view height
+
 
 ### In Progress
 
-- [ ] add hover and active state to card
-- [ ] dark and light mode
+- [ ] make a distinction between notes and articles
+- [ ] pull gists into notes?
+- [ ] ui: links: consistancy, check mobile nav
 
+- [ ] docker file for Node
 ### Done ✓
+
+- [x] add hover and active state to card
+- [x] add floating toc
+- [x] dark and light mode
+
+### Archive 

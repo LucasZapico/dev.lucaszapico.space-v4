@@ -8,3 +8,18 @@ tags: ["docker", "development", "docker-compose", "notes"]
 isdraft: true
 type: "note"
 ---
+
+### Rebuild image after adding new npm package to project
+
+```
+docker compose build
+```
+
+
+#### Refreshing Persistent Volumes
+
+Delete the volume between runs with 
+```
+docker-compose down --volumes
+```
+
