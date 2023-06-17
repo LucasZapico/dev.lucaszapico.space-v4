@@ -11,16 +11,22 @@ type: "note"
 
 This is a general note catch for server setup, configuration and security best practices.
 
-Server configuration has a fair over lap with ssh and general Linux commands. Because of this overlap some content may be referenced only. 
+Server configuration has a fair over lap with ssh and general Linux commands. Because of this overlap some content may be referenced only.
 
 [ssh notes](/notes/ssh-catch)
 
-## Configring A New Server Checklist 
+## Configring A New Server Checklist
 
-- [ ] add new admin 
+- [ ] add new admin
 - [ ] disable root admin
+- [ ] ssh
 
-## Access Remote Server 
+### Security Hardening
+
+- [ ] disable password login
+- [ ] change ssh port
+
+## Access Remote Server
 
 ```
 ssh -v user@IP-Address
@@ -34,13 +40,13 @@ ssh -v user@IP-Address
 useradd <new-username>
 ```
 
-```sh 
+```sh
 id <new-username>
 ```
 
-#### Add Password to User 
+#### Add Password to User
 
-```sh 
+```sh
 sudo passwd <new-username>
 # props for password and password confirmation
 ```
@@ -57,17 +63,17 @@ sudo usermod -aG <group> <user-name>
 sudo usermod -d  <user-name> <group>
 ```
 
-#### Delete User Group 
+#### Delete User Group
 
 ```sh
 sudo groupdel <group>
 ```
 
-> 🚨 security when configuring a new server first add a new admin and disable the root user. 
+> 🚨 security, when configuring a new server setup ssh first add a new admin and disable the root user and password login
 
-### Role Naming Convention 
+### Role Naming Convention
 
-> 💡 The naming conventions are just general options. Also note that by using one of these hackers have a known vector to brut force a server. 
+> 💡 The naming conventions are just general options. Also note that by using one of these hackers have a known vector to brut force a server.
 
 `<auth-level>.<firstname>.<surname>@<domain>`
 
@@ -85,7 +91,7 @@ WA-first.last # Workstation Admin.
 First.last # user level.
 ```
 
-#### Option Two 
+#### Option Two
 
 ```txt
 Tier One (Domain Admin): t1.username

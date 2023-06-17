@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react"
 import { Link as GatsbyLink, graphql, useStaticQuery } from "gatsby"
 import { capitalizeCase } from "utils/font-util"
+import { generate } from "shortid"
 
 const BreadCrumbGroup = ({ pathArr }) => {
   const {colorMode } = useColorMode()
@@ -23,7 +24,7 @@ const BreadCrumbGroup = ({ pathArr }) => {
           let title = ""
           title = b === "note" ? "notes" : b
           return (
-            <BreadcrumbItem>
+            <BreadcrumbItem key={generate()}>
               <BreadcrumbLink color={colorMode === "dark" ? "gray.400" : "gray.600"} to={`/${title}`} as={GatsbyLink}>
                 {capitalizeCase(title)}
               </BreadcrumbLink>

@@ -9,11 +9,13 @@ isdraft: false
 type: "note"
 ---
 
-# git
-
 ## Related
 
-- [[ssh]]
+[general ssh notes](/notes/ssh-catch)
+
+## Git Branching Strategies 
+
+[Git Branch Strategy - gitkraken](https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy)
 
 ## CheatSheet
 
@@ -42,7 +44,7 @@ git commit -m "fixed untracked files"
 
 ```
 
-### Revert a Commited Change with reset HEAD
+### Revert a Committed Change with reset HEAD
 
 [How to Git Reset to HEAD - devconnected](https://devconnected.com/how-to-git-reset-to-head)
 
@@ -79,11 +81,25 @@ git push origin --delete remoteBranchName
 
 ```sh
 git credential --help
-``
+```
+
+### CheatSheet 
+
+#### Merge Priority 
+
+`theirs` or `ours`
+
+```sh
+git merge --strategy-option theirs <feature-branch> staging
+```
+
+```sh
+git merge -X theirs staging <bug-fix>
+```
 
 
 ## Reference
 
 [Atlassian git tutorials](https://www.atlassian.com/git/tutorials/)
 
-```
+

@@ -3,7 +3,29 @@ import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
 import ArticleSection from "./article-section"
 import HomeHero from "./hero"
 import { ProjectSection } from "components"
-import { Heading, Link, Container } from "@chakra-ui/react"
+import { Heading, Flex, Box, Link, Container, Tag } from "@chakra-ui/react"
+import { generate } from "shortid"
+
+const technologies = [
+  "JavaScript",
+  "React",
+  "Nextjs",
+  "Gatsby",
+  "Node",
+  // "Bun",
+  "Express",
+  "Python",
+  "Pandas",
+  "Flask",
+  "Docker",
+  "Linux",
+]
+
+const learning = [
+  "GoLang",
+  "Machine Learning",
+  "PyTorch", 
+]
 
 const Home = () => {
   const { recentArticles, recentProjects } = useStaticQuery(query)
@@ -11,6 +33,26 @@ const Home = () => {
     <>
       <HomeHero />
       <Container maxW="container.xl">
+        <Heading size="md">Stuff I&apos;m Pretty Good At:</Heading>
+        <Flex flexWrap="wrap">
+          {technologies.map((t) => {
+            return (
+              <Tag mr={2} mb={2}variant="sec" key={generate()}>
+                #{t}
+              </Tag>
+            )
+          })}
+        </Flex>
+        <Heading size="md">Stuff I&apos;m Interested In or Learning:</Heading>
+        <Flex flexWrap="wrap">
+          {learning.map((t) => {
+            return (
+              <Tag mb={2} mr={2} variant="sec" key={generate()}>
+                #{t}
+              </Tag>
+            )
+          })}
+        </Flex>
         <Heading textAlign="center" as="h3" size="2xl">
           Recent Projects
         </Heading>

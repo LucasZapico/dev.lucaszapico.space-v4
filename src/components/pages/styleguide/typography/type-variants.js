@@ -17,13 +17,7 @@ import {
   FontSizeScale,
 } from "theme/typographyStyles"
 
-export const ColorGrey = () => (
-  <Flex flexWrap="wrap">
-    {Object.keys(Color.gray).map((g) => {
-      return <Box height="80px" width="80px" bg={Color.gray[g]} />
-    })}
-  </Flex>
-)
+
 export const TypeVariantSection = () => (
   <Box py={20} id="type-variants">
     <Box py={10}>

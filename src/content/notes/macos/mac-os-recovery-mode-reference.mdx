@@ -1,17 +1,13 @@
-<<<<<<< Updated upstream:src/content/notes/os-enviorments/macos/mac-os-recovery-mode-reference.mdx
-
-=======
 ---
 title: "MacOS Recovery Mode Reference and CheatSheet"
 description: "A little reference for recovery mode actions"
 date-created: "2022/12/12"
-last-modified: '2022/12/22'
+last-modified: '2023/03/18'
 isdraft: false
 categories: ["macos", "notes", "cheatsheet"]
 tags: ["macos", "notes", "workflow", "cheatsheet"]
 type: "note"
 ---
->>>>>>> Stashed changes:src/content/notes/macos/mac-os-recovery-mode-reference.mdx
 
 import { Kbd } from '@chakra-ui/react'
 
@@ -50,3 +46,31 @@ Hold <Kbd>shift</Kbd>
 8. walk through steps
 9. choose install location (our formated USB)
 10. ✨ Done
+
+### Erase Disk from CLI 
+
+#### Show Currently Mounted Disks 
+
+```sh 
+diskutil list
+```
+
+#### Erase Disk 
+
+| cli code | format type             |
+| `JHFS+`  | MacOS Extened Journaled |
+| `HFS+`   | MacOs Extened           |
+| `FAT32`  | MS Dos Fat              |
+| `ExFAT`  | ExFAT                   |
+
+```sh
+diskutil erasedisk <file-system> <disk-name> <disk-identifier>
+```
+
+```sh 
+diskutil erasedisk JHFS+ <disk-name> 
+```
+
+## Reference
+
+[format use on mac](https://www.macupdate.com/how-to/format-usb-on-mac)

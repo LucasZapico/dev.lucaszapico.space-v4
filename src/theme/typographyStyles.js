@@ -77,6 +77,36 @@ export const HeadingStyles = {
       fontWeight: 800,
       lineHeight: "tall",
     }),
+    sideNavHeader: ({ colorMode }) => ({
+      textDecoration: "none",
+      color: colorMode === "dark" ?  "gray.400" : "gray.700",
+      fontWeight: 700,
+      marginBottom: 4,
+      _active: {
+        color: colorMode === "dark" ? "gray.300" : "brand.500",
+      },
+      _focus: {
+        color: colorMode === "dark" ? "gray.400" : "brand.500",
+      },
+      _selected: {
+        color: colorMode === "dark" ? "gray.200" : "brand.500",
+      },
+      _expanded: {
+        color: colorMode === "dark" ? "yellow.600" : "yellow.700",
+        // color: colorMode === "dark" ? "gray.200" : "gray.600",
+      }
+    }),
+    sideNavLink: ({ colorMode }) => ({
+      color: colorMode === "dark" ? "gray.500" : "gray.700",
+      marginBottom: 0,
+      marginTop: 0,
+      fontWeight: 500,
+      textDecoration: "none",
+      _selected: {
+        color: colorMode === "dark" ? "yellow.600" : "yellow.700",
+      },
+    }),
+   
   },
   // The default `size` or `variant` values
   defaultProps: {},
@@ -110,5 +140,6 @@ export const TextStyles = {
       fontWeight: 500,
       lineHeight: "tall",
     }),
+    
   }
 }

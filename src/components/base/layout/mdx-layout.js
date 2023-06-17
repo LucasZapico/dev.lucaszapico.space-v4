@@ -1,6 +1,5 @@
 // TODO: sort out type error with MDX JSX.Element
 // 👇️ ts-nocheck ignores all ts errors in the file
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import Layout from "./layout"
 import { MDXProvider } from "@mdx-js/react"

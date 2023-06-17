@@ -2,12 +2,23 @@
 title: "General Reference For Networking"
 description: "General networking notes"
 date-created: "2022/10/26"
-last-modified: "2022/10/26"
+last-modified: '2023/03/12'
 isdraft: true
 categories: ["network", "general", "reference"]
 tags: ["network", "tools"]
 type: "note"
 ---
+
+## Tools 
+
+`ping`
+: ping is used to measure network response and resolve Hosts
+
+`dig`
+: Domain infromation groper is a domain tool and DNS utility 
+
+`nslookup` 
+: used for network diagnostics 
 
 - list ip's on LAN
 
@@ -29,6 +40,33 @@ brew install iproute2mac
 
 ### `ip` Cheatsheet
 
+#### Get IP info from Domain 
+
+```sh 
+nslookup google.com
+
+# Server:		192.168.1.1
+# Address:	192.168.1.1#53
+
+# Non-authoritative answer:
+# Name:	google.com
+# Address: 142.250.69.206
+```
+
+```sh 
+nmap google.com -p 8080
+# Starting Nmap 7.93 ( https://nmap.org ) at 2023-01-03 12:48 PST
+# Nmap scan report for google.com (142.251.215.238)
+# Host is up (0.012s latency).
+# rDNS record for 142.251.215.238: sea09s35-in-f14.1e100.net
+
+# PORT     STATE    SERVICE
+# 8080/tcp filtered http-proxy
+
+# Nmap done: 1 IP address (1 host up) scanned in 0.28 seconds
+```
+
+
 - List all addresses `ip addr`
 - List IPv4 addresses `ip route`
 - List IPv6 addresses `ip -6 route`
@@ -49,7 +87,17 @@ default via 192.168.0.1 dev en1
 255.255.255.255/32 dev en1  scope link
 ```
 
+## Cheatsheet
+
+### Get Local IP via CLI 
+
+```sh
+ipconfig getifaddr en1 # for wireless
+ipconfig getifaddr en0 # for ethernet
+```
+
 ## Reference
+
 
 [Linux Ip command alternative for mac](https://superuser.com/questions/687310/ip-command-in-mac-os-x-terminal)
 
@@ -58,3 +106,5 @@ default via 192.168.0.1 dev en1
 [cli bases linux tools - itsubuntu.com](https://itsubuntu.com/cli-based-linux-network-management-tools/)
 
 [linux networking commands](https://geekflare.com/linux-networking-commands/)
+
+[host ip - linuxhint](https://linuxhint.com/find-hostname-ip-linux/#:~:text=The%20simplest%20method%20to%20get,to%20communicate%20with%20a%20host.)

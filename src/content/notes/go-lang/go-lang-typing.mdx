@@ -1,0 +1,50 @@
+---
+title: "Notes on Typing In Go Lang"
+description: "General note catch of types Go lang"
+date-created: '2023/04/22'
+last-modified: '2023/04/22'
+categories: ["go-lang", "development", "typing"]
+tags: ["go-lang", "development", "notes",  "typing"]
+isdraft: true
+type: "note"
+---
+
+
+## Native Types 
+
+(basic types - go.dev/tour)[https://go.dev/tour/basics/11]
+
+```go 
+bool 
+string 
+int int8 int16 int32 int64
+uint uint8 uint16 uint32 uint64 uintptr 
+byte // alias for unit8
+rune // alias for int32
+float32 float64
+complex64 complex128
+```
+
+## Structs 
+
+Structs are typed collections of fields 
+
+
+```go
+//...
+type car struct {
+	make string
+	model string
+	year int
+}
+
+func main() {
+	c := car{make: "ford"}
+	// print new object
+	fmt.Printl(c)
+}
+```
+
+## Reference 
+
+[Structs](https://gobyexample.com/structs)

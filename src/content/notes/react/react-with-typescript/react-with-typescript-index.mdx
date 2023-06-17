@@ -2,7 +2,7 @@
 title: "Reactjs With TypeScript Index"
 description: "General notes, cheatsheet and reference for React TypeScript projects"
 date-created: "2022/10/28"
-last-modified: "2022/10/28"
+last-modified: '2023/06/16'
 isdraft: false
 categories: ["reactjs", "typescript", "cheatsheet", "reference", "notes"]
 tags: ["reactjs", "typescript", "cheatsheet", "reference", "notes"]
@@ -68,7 +68,7 @@ type AppProps = {
 }
 ```
 
-#### Single Object Multipe Types
+#### Single Object Multiple Types
 
 ```ts
 type AppProps = {
@@ -181,7 +181,7 @@ const App = () => {
         <DarkToggle isDark={true}>
     </div>
     )
-    }
+}
 
 ```
 
@@ -202,7 +202,7 @@ export const Greet = (props: GreetProps) => {
 
 or
 
-```ts title=component/greet.tsx
+```ts:title=component/greet.tsx
 type GreetProps = {
     name: string
 }
@@ -217,7 +217,7 @@ export const Greet = ({name}: GreetProps) => {
 
 ### `number` Type
 
-```ts title=component/message.tsx
+```ts:title=component/message.tsx
 type MessageProps = {
   count: number
 }
@@ -232,7 +232,7 @@ export const Greet = ({ count }: MessageProps) => {
 
 ### `boolean` Type
 
-```ts title=component/DarkToggle .tsx
+```ts:title=component/DarkToggle.tsx
 type DarkToggleProps = {
   isDark: boolean
 }

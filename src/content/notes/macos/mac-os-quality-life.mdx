@@ -2,7 +2,7 @@
 title: "MacOS Productivity CheatSheet"
 description: "Reference for little Mac commands and references"
 date-created: "2022/12/12"
-last-modified: "2022/12/12"
+last-modified: '2023/04/14'
 isdraft: false
 categories: ["macos", "notes", "cheatsheet"]
 tags: ["macos", "notes", "workflow", "cheatsheet"]
@@ -14,3 +14,23 @@ import { Kbd } from '@chakra-ui/react'
 ## Emoji Keyboard Shortcut 
 
 <Kbd>ctl</Kbd> + <Kbd>cmd</Kbd> + <Kbd>space</Kbd>
+
+## Change Default Icons 
+
+The default icons for Macos as of 2023 are located here 👇
+
+```
+/System/Library/CoreServices/CoreTypes.bundle/Contents/Resouces
+```
+
+As of OS 10.11 to change default icons system integrity protection have to be disable. 
+
+### Temporarily Disable System Integrity Protection 
+
+1. boot into recovery mode by holding <Kbd>CMD</Kbd> + <Kbd>r</Kbd> during restart 
+2. in terminal run `csrutil disable` 
+3. reboot and edit icons at the path above 
+4. when done boot back into recovery mode and run `csrutil enable` 
+
+
+

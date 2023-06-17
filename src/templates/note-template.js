@@ -16,6 +16,11 @@ import { generate } from "shortid"
 import { BreadCrumbGroup, HalfByHalfSection, LinkOne, MdxTOC } from "components"
 import SubjectTree from "components/modules/subject-tree"
 import MDXLayout from "components/base/layout/mdx-layout"
+import SideNavContainer from "components/modules/side-nav-container"
+import { atom, useAtom } from 'jotai'
+import { treeAtom } from "store"
+
+
 
 export default function NoteTemplate({
   children,
@@ -23,22 +28,31 @@ export default function NoteTemplate({
   pageContext,
   location,
 }) {
+  
   const { next, previous, node, title } = pageContext
   const { tableOfContents, fields } = node
   const { recentNotes } = useStaticQuery(query)
   const [notes, setNotes] = useState(recentNotes.edges)
   const [tree, setTree] = useState()
+  const [treeState, setTreeState] = useAtom(treeAtom)
+  const [currentEl, setCurrentEl] = useState([])
 
-  console.log(path)
+  useEffect(() => {
+    console.log('note template')
+    console.log(treeState)
+  }, [treeState, setTreeState])
 
   const makeDirTree = (edges) => {
     let jsonTree = []
     /* eslint-disable  */
     for (const e of edges) {
       const path = e.node.parent.relativePath
-      const link = e.node.fields.path
-      const i = path.replace("notes/", "").split("/")
-      jsonTree = pathToJsonTree(i, link, jsonTree)
+
+      if (path.match(/trash/gi) < 1) {
+        const link = e.node.fields.path
+        const i = path.replace("notes/", "").split("/")
+        jsonTree = pathToJsonTree(i, link, jsonTree)
+      }
     }
     return jsonTree
   }
@@ -104,8 +118,9 @@ export default function NoteTemplate({
     <>
       {/* <SEO location={location} title={title} /> */}
       <Box minHeight="100vh">
+        <Container maxW="container.xxl">
         <Grid templateColumns="repeat(12, 1fr)" gap={6}>
-          <Box
+          <SideNavContainer
             display={{ base: "none", lg: "block" }}
             as={GridItem}
             colSpan={{ base: 0, lg: 3 }}
@@ -113,7 +128,7 @@ export default function NoteTemplate({
             py={10}
           >
             <SubjectTree tree={tree} />
-          </Box>
+          </SideNavContainer>
 
           <Box
             mx="auto"
@@ -124,24 +139,26 @@ export default function NoteTemplate({
             colSpan={{ base: 12, lg: 6 }}
           >
             <Box maxW={{ md: "650px" }}>
-            <Heading mt={6} mb={4} as="h1" size="xl">
-              {title}
-            </Heading>
-            <BreadCrumbGroup pathArr={["note", title]} />
-            <Flex flexWrap="wrap" py={6}>
-              {node.frontmatter.categories &&
-                node.frontmatter.categories.map((cat, i) => (
-                  <Tag mr={1} mb={1} variant="sec" key={generate()}>
-                    #{cat}
-                  </Tag>
-                ))}
-            </Flex>
-            <Box display={{ base: "block", xl: "none" }}>
-              <MdxTOC tableOfContents={tableOfContents} pagePath={path} />
-            </Box>
-            <MDXLayout>
-              <Box py={10}>{children}</Box>
-            </MDXLayout>
+              <Heading mt={6} mb={4} as="h1" size="xl">
+                {title}
+              </Heading>
+              <BreadCrumbGroup pathArr={["note", title]} />
+              <Text fontSize="sm" mb={0} varinat="sec">Date Created: {node.frontmatter.date_created}</Text>
+              <Text fontSize="sm" varinat="sec">Last Update: {node.frontmatter.last_modified}</Text>
+              <Flex flexWrap="wrap" py={6}>
+                {node.frontmatter.categories &&
+                  node.frontmatter.categories.map((cat, i) => (
+                    <Tag mr={1} mb={1} variant="sec" key={generate()}>
+                      #{cat}
+                    </Tag>
+                  ))}
+              </Flex>
+              <Box display={{ base: "block", xl: "none" }}>
+                <MdxTOC tableOfContents={tableOfContents} pagePath={path} />
+              </Box>
+              <MDXLayout>
+                <Box py={10}>{children}</Box>
+              </MDXLayout>
             </Box>
           </Box>
           <Box
@@ -152,6 +169,7 @@ export default function NoteTemplate({
             <MdxTOC tableOfContents={tableOfContents} pagePath={path} />
           </Box>
         </Grid>
+        </Container>
 
         <Container maxW="container.xl" my={10}>
           <Box my={10}>

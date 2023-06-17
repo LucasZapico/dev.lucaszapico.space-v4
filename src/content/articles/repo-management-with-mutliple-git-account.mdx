@@ -1,0 +1,139 @@
+---
+title: "Repo management with multiple git accounts"
+description: ""
+date-created: '2023/03/10'
+last-modified: '2023/03/23'
+isdraft: false
+categories: ["ssh", "git", "workflow"]
+tags: ["javascript", "gotcha", "journal"]
+type: "article"
+---
+
+There are many reasons you might want to push code via ssh but under different identities or profiles.  
+
+## TLDR 
+
+Easily pushing up changes to one of the many git solutions is an essential part of any workflow and not likely to change anytime soon. Setting up ssh between local env and github, bitbucket etc is one of the first things we figure out on the developer journey. There may come a time when you don't have a separate machine setup for work or maybe you want to be able to push some code from your personal machine. Or you have a open source profile seperate from your professional profile. 
+
+## Create ssh key pairs for each service or machine
+
+Navigate to `~/.ssh` and generate a new private, public key pair.  
+
+```sh 
+ssh-keygen -t rsa 
+```
+
+You will be prompted to name the file, the convention that makes the most sense for me is `<identifier>.<domain>.key` for example `personal.github.key` or `organization.domain.key`. 
+
+### Associate Domain, host with key 
+
+Navigate to `~/.ssh/config`, if the file does not exist make it or open it in your favorite text editor. Add a config for each account. 
+
+```txt:title=config 
+...
+##
+## GITHUB
+##
+## Github Personal 
+Host personal.github.com 
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/personal.github.key
+    IdentitiesOnly yes
+## Github <some-organization>
+Host <organization>.github.com
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/<organization>.github.key
+...
+```
+
+## Add a custom domain to the local git repo config 
+
+When you `git init` a repo it creates a `./.git/` in this we can  
+
+
+```txt 
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = git@lucaszapico.github.com:LucasZapico/.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[pull]
+	rebase = true
+
+```
+
+
+
+## Example of my ssh config 
+
+Note the ip's are faked.  
+
+```txt:title=config 
+##
+## GITHUB
+##
+## Github Personal 
+Host personal.github.com 
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/personal.github.key
+    IdentitiesOnly yes
+## Github <some-organization>
+Host <organization>.github.com
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/<organization>.github.key
+## Vultr Admin
+Host Vultr.com
+    HostName <host-ip>
+    IdentityFile ~/.ssh/personal.vultr.key 
+##
+## LOCAL NETWORK MACHINES
+##
+Host 198.152.0.10
+    IdentityFile ~/.ssh/machine1.local.key
+# proxmox 
+Host 198.152.1.341
+    IdentityFile ~/.ssh/host.prox1.key
+# Fig ssh integration. Keep at the bottom of this file.
+Match all
+  Include ~/.fig/ssh
+
+##
+## REFERENCE
+##
+# Make new key pair
+# `ssh-keygen -t rsa`
+# `ssh-keygen -t ed25519 -C "your_email@example.com"`
+#
+#
+
+```
+
+
+#### Test Connections 
+
+```sh 
+ssh -T git@personal.github.com
+```
+
+### Reference 
+
+
+
+
+
+
+
+

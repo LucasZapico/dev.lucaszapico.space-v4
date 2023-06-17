@@ -54,7 +54,7 @@ const TypeImports = () => (
 )
 
 const Layout = ({ location, children, pageContext }) => {
-  console.log(pageContext)
+
   return (
     <Box pb={20}>
       <SEO location={location} />

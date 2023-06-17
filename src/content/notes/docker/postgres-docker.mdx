@@ -1,0 +1,81 @@
+---
+title: "Docker Postgres Reference"
+description: "General notes catch for a Postgres Docker instance"
+date-created: '2023/02/20'
+last-modified: '2023/03/02'
+isdraft: false
+categories: ["cheatsheet", "docker", "notes", "postgres"]
+tags: ["cheatsheet", "docker", "notes", "postgres"]
+type: "note"
+---
+
+
+
+## CLI Reference 
+
+## New And Start Actions
+
+#### Make New Container 
+
+```sh
+docker run --name <container-name> -it -e POSTGRES_PASSWORD=<postgres-password> -e POSTGRES_USER=<postgres-user> -p 5432:5432 <image-name>
+```
+
+**Example**
+
+```sh
+docker run --name pgsql-dev -it -e POSTGRES_PASSWORD=test1234 -e POSTGRES_USER=postgres -p 5432:5432 postgres
+```
+
+#### Start Existing Container 
+
+```sh 
+Usage:  docker start [OPTIONS] CONTAINER [CONTAINER...]
+
+Options:
+  -a, --attach               Attach STDOUT/STDERR and forward signals
+      --detach-keys string   Override the key sequence for detaching a container
+  -i, --interactive          Attach container's STDIN
+````
+
+```sh 
+docker start -ia <cotainer-name> 
+```
+
+**Example**
+
+```sh 
+docker start -ia pgsql-dev
+```
+
+### Bash Terminal in Container 
+
+```sh 
+docker exec -it <container-name> bash
+```
+
+**Example**
+
+```sh 
+docker exec -it pgsql-dev-2 bash
+```
+
+### Access Postgress From Container CLI
+
+**Example**
+
+```sh 
+psql -h localhost -U postgres
+```
+
+```sh 
+psql -h 127.0.0.1 -U postgres
+```
+
+#### Trouble shooting
+
+From within the container check what is running on a given port. 
+
+```sh
+grep -w '5432/tcp' /etc/services
+```
