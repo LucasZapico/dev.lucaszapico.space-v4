@@ -57,7 +57,8 @@ const CopyCode = ({code, ...rest}) => {
 export const CodeBlockMdx = ({ children }) => {
   const { colorMode } = useColorMode()
   const className = children.props.className || ""
-  const [language = "", fileName = ""] = className.split(":")
+  
+  const [language = "", fileName = ""] = className.split(/[ :]/)
   // console.log("Children")
   // console.log(children)
   // console.log(className)
@@ -83,7 +84,7 @@ export const CodeBlockMdx = ({ children }) => {
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => {
           // console.log(style)
-          console.log(children)
+          // console.log(children)
           const Code = () => tokens.map((line, i) => (
             <Box key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
