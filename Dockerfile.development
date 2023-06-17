@@ -2,14 +2,16 @@
 FROM node:18-alpine
 RUN apk update
 WORKDIR /app
-COPY ./package.json ./
+RUN npm install -g gatsby-cli
+COPY ./package.json .
 COPY . .
-RUN rm -rf node_modules
-RUN npm install
-
+RUN npm cache clean --force
+RUN npm install --legacy-peer-deps
 ENV NODE_ENV development
-EXPOSE 8001
-CMD ["npm", "run", "develop"]
+EXPOSE 8006
+# RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
+CMD ["gatsby", "develop", "-H", "0.0.0.0", "--port='8006'"]
+
 
 ##
 ## REFERENCE 
