@@ -37,7 +37,7 @@ const Home = () => {
         <Flex flexWrap="wrap">
           {technologies.map((t) => {
             return (
-              <Tag mr={2} variant="sec" key={generate()}>
+              <Tag mr={2} mb={2}variant="sec" key={generate()}>
                 #{t}
               </Tag>
             )
@@ -47,7 +47,7 @@ const Home = () => {
         <Flex flexWrap="wrap">
           {learning.map((t) => {
             return (
-              <Tag mr={2} variant="sec" key={generate()}>
+              <Tag mb={2} mr={2} variant="sec" key={generate()}>
                 #{t}
               </Tag>
             )
