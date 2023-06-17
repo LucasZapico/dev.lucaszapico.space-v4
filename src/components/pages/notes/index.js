@@ -20,6 +20,10 @@ import { generateImageData } from "gatsby-plugin-image"
 import { ArticleCard, CardOne, NoteCard, BreadCrumbGroup } from "components"
 import SubjectTree from "components/modules/subject-tree"
 import pathToJsonTree from "utils/path-to-json-tree"
+import SideNavContainer from "components/modules/side-nav-container"
+import { useAtom } from "jotai"
+import { treeAtom } from "store"
+
 
 const NoteGrid = ({ notes }) => {
   return (
@@ -39,6 +43,7 @@ const Notes = () => {
   const { recentNotes } = useStaticQuery(query)
   const [notes, setNotes] = useState(recentNotes.edges)
   const [search, setSearch] = useState("")
+  const [treeState, setTreeState] = useAtom(treeAtom)
   const [results, setResults] = useState([])
   const [tree, setTree] = useState()
 
@@ -47,9 +52,11 @@ const Notes = () => {
     /* eslint-disable  */
     for (const e of edges) {
       const path = e.node.parent.relativePath
-      const link = e.node.fields.path
-      const i = path.replace("notes/", "").split("/")
-      jsonTree = pathToJsonTree(i, link, jsonTree)
+      if (path.match(/trash/gi) < 1) {
+        const link = e.node.fields.path
+        const i = path.replace("notes/", "").split("/")
+        jsonTree = pathToJsonTree(i, link, jsonTree)
+      }
     }
     return jsonTree
   }
@@ -60,6 +67,7 @@ const Notes = () => {
 
       setTree(newTree)
     }
+    setTreeState([])
   }, [])
 
   useEffect(() => {
@@ -87,9 +95,17 @@ const Notes = () => {
   return (
     <Container maxW="container.xl">
       <Grid templateColumns="repeat(12, 1fr)">
-        <Box as={GridItem} colSpan={{ base: 0, md: 3 }} pl={4} py={10}>
-          <SubjectTree tree={tree} />
-        </Box>
+        <SideNavContainer
+          display={{ base: "none", lg: "block" }}
+          as={GridItem}
+          colSpan={{ base: 0, lg: 3 }}
+          pl={4}
+          py={10}
+        >
+          <SubjectTree
+            tree={tree}
+          />
+        </SideNavContainer>
 
         <Box as={GridItem} colSpan={{ base: 12, md: 9 }}>
           <Container maxW="container.md" px={0} py={10}>
