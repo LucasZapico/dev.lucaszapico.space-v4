@@ -22,6 +22,8 @@ Project Description
 - [ ] ui/ux: articles add markdown table support 
 - [ ] build: update to Gatsbyv5 
 - [ ] ui/ux: handle toc greater the view height
+- [ ] ui/ux: responsive: review notes xp on mobile
+- [ ] ui/ux: responsive: review mobile containers projects, article, notes
 
 
 ### In Progress
