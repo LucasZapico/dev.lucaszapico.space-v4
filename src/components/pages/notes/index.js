@@ -1,16 +1,19 @@
-import React, { useState, useEffect, memo } from "react"
+import React, { useState, useEffect, memo, useRef } from "react"
 import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
 import { SearchIcon } from "@chakra-ui/icons"
 import { capitalizeCase } from "utils/font-util"
 import {
+  Kbd,
   Text,
   Box,
+  Button,
   Flex,
   Heading,
   Container,
   Input,
   InputGroup,
   InputLeftElement,
+  InputRightElement,
   GridItem,
   Grid,
   Tag,
@@ -23,7 +26,7 @@ import pathToJsonTree from "utils/path-to-json-tree"
 import SideNavContainer from "components/modules/side-nav-container"
 import { useAtom } from "jotai"
 import { treeAtom } from "store"
-
+import { useKeyPressEvent } from "react-use"
 
 const NoteGrid = ({ notes }) => {
   return (
@@ -40,13 +43,24 @@ const NoteGrid = ({ notes }) => {
 const MemoNoteGrid = memo(NoteGrid)
 
 const Notes = () => {
+  const ref = useRef(null)
   const { recentNotes } = useStaticQuery(query)
   const [notes, setNotes] = useState(recentNotes.edges)
   const [search, setSearch] = useState("")
   const [treeState, setTreeState] = useAtom(treeAtom)
   const [results, setResults] = useState([])
   const [tree, setTree] = useState()
+  // handle cmd + k search function
+  useKeyPressEvent((e) => {
+    console.log(e)
+    if (e.metaKey && e.key == "k") {
+      console.log("meta")
 
+      console.log("meta and k")
+      ref.current.focus()
+
+    }
+  })
   const makeDirTree = (edges) => {
     let jsonTree = []
     /* eslint-disable  */
@@ -102,9 +116,7 @@ const Notes = () => {
           pl={4}
           py={10}
         >
-          <SubjectTree
-            tree={tree}
-          />
+          <SubjectTree tree={tree} />
         </SideNavContainer>
 
         <Box as={GridItem} colSpan={{ base: 12, md: 9 }}>
@@ -115,12 +127,22 @@ const Notes = () => {
                 children={<SearchIcon color="gray.300" />}
               />
               <Input
+                ref={ref}
                 type="text"
                 placeholder="Search"
                 size="lg"
                 defaultValue={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
+              <InputRightElement
+                width="6rem"
+                display="flex"
+                alignItems="center"
+              >
+                <Box>
+                  <Kbd>CMD</Kbd> <Kbd>K</Kbd>
+                </Box>
+              </InputRightElement>
             </InputGroup>
 
             {/* <Box>
