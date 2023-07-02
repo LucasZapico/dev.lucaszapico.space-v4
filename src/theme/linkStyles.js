@@ -25,6 +25,7 @@ const LinkStyles = {
       paddingLeft: "1rem",
       paddingRight: "1rem",
       paddingTop: ".5rem",
+      fontWeight: 800,
       paddingBottom: ".5rem",
       position: "relative",
       _after: {
