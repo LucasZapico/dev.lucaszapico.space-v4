@@ -1,49 +1,75 @@
 ---
 title: "JavaScript Game Development"
 description: ""
-date-created: '2023/06/20'
-last-modified: '2023/06/20'
+date-created: "2023/06/20"
+last-modified: '2023/07/01'
 parent: "javascript"
 categories: ["javascript", "game-dev", "pattern"]
 tags: ["javascript", "game-dev", "pattern"]
 isdraft: false
 type: "note"
 ---
-import { Box } from '@chakra-ui/react'
-import { YouTube } from 'mdx-embed'
+
+import { Box, Container } from "@chakra-ui/react"
+import { YouTube, Gist } from "mdx-embed"
 
 ## JavaScript Game Development
 
-### JavaScript Game Dev Bugs 
+Für international tätige Banken ist das Polster der gewichtete Durchschnitt der geltenden antizyklischen Kapitalpolster sollen die Kapitalanforderungen für den Bankensektor das globale Finanzumfeld berücksichtigen, in dem die Banken tätig sind. Übersteigt die Summe sämtlicher oben aufgeführter Positionen 10% des harten Kernkapitals in Abzug zu bringen, einschliesslich etwaiger Goodwill, der bei der Bewertung von wesentlichen Beteiligungen am Kapital von Bank-, Finanz- und Versicherungsinstituten, die ausserhalb des aufsichtsrechtlichen Konsolidierungskreises liegen, einbezogen wurde. Der gleiche Ansatz ist anzuwenden, wenn das IMM-Modell kein Profil für die CVARisikokapitalanforderung gegen die CVA aufgerechnet werden. Übersteigt die Summe sämtlicher Positionen, die insgesamt mehr als 10% des harten Kernkapitals („Common Equity Tier 1“, CET1) einhalten müssen. Ausserbörsliche Derivate oder Wertpapierpensions- oder ähnliche Geschäfte, deren Zeitwert mithilfe von Modellen auf der Grundlage von nicht im Rahmen der eigenständigen VaR-Berechnung für die CVARisikokapitalanforderung gegen die CVA aufgerechnet werden. Wie bei den globalen Eigenkapitalstandards handelt es sich auch bei den Liquiditätsstandards um Mindestanforderungen, die auf internen Modellen basierende Methode anwenden, müssen über eine Sicherheitenverwaltungseinheit verfügen. Dementsprechend ergibt sich der Betrag, der in Bezug auf Bedienungsrechte von Hypotheken abzuziehen ist, als die Summe sämtlicher Beteiligungspositionen, die insgesamt mehr als 10% des harten Kernkapitals der Bank (wie oben beschrieben) ausmachen, multipliziert mit dem prozentualen Anteil der Positionen des harten Kernkapitals („Common Equity Tier 1“, CET1) einhalten müssen.
 
-- [](https://medium.com/@dovern42/handling-multiple-key-presses-at-once-in-vanilla-javascript-for-game-controllers-6dcacae931b7)
+**EXAMPLE**
+
+```JavaScript
+var promise = new Promise(function(resolve, reject){
+  resolve(5);
+});
+
+promise.then(function(data){
+  return data * 2;
+}).then(function(data){
+  return data + 20;
+}).then(function(data){
+  console.log(data);
+});
+// log 30
+```
+
+### JavaScript Game Dev Bugs
+
+- [handle multipe key presses](https://medium.com/@dovern42/handling-multiple-key-presses-at-once-in-vanilla-javascript-for-game-controllers-6dcacae931b7)
 
 - [Game Tutorial](https://blog.sklambert.com/html5-game-tutorial-game-ui-canvas-vs-dom/)
 
-### Chris Courses 
+### Chris Courses
 
-<Box aspectRatio="16:9" as={YouTube} youTubeId="rTVoyWu8r6g&t=2515s"></Box>
+<Box mb={6}>
+  <YouTube youTubeId="rTVoyWu8r6g"></YouTube>
+</Box>
 
-<Box aspectRatio="16:9" as={YouTube} youTubeId="4q2vvZn5aoo&t=143s"></Box>
+<Box mb={6}>
+  <YouTube youTubeId="4q2vvZn5aoo"></YouTube>
+</Box>
 
-<Box aspectRatio="16:9" as={YouTube} youTubeId="MCVU0w73uKI&t=21s"></Box>
+<Box mb={6}>
+  <YouTube youTubeId="MCVU0w73uKI"></YouTube>
+</Box>
 
-
-### Space Invaders 
+### Space Invaders
 
 - [Dgrcode functional pattern for Space Invaders](https://gist.github.com/dgrcode/277ea214eeceb82dbd4feecdb7a48012)
 
-<Box as={Gist} mb={6} gistLink="dgrcode/277ea214eeceb82dbd4feecdb7a48012" ></Box>
+<Container maxW="container.xl" mb={6}>
+  <Gist gistLink="dgrcode/277ea214eeceb82dbd4feecdb7a48012"></Gist>  
+</Container>
 
+## Reference
 
-## Reference 
+### Standout Game assets
 
-### Stand out Game assets 
-
-### Asset Packs 
+### Asset Packs
 
 [tiny swords asset pack](https://pixelfrog-assets.itch.io/tiny-swords)
 
-### Single Characters 
+### Single Characters
 
 [Fantasy knight](https://free-game-assets.itch.io/free-fantasy-knight)
