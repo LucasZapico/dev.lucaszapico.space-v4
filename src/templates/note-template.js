@@ -37,10 +37,7 @@ export default function NoteTemplate({
   const [treeState, setTreeState] = useAtom(treeAtom)
   const [currentEl, setCurrentEl] = useState([])
 
-  useEffect(() => {
-    console.log('note template')
-    console.log(treeState)
-  }, [treeState, setTreeState])
+  useEffect(() => {}, [treeState, setTreeState])
 
   const makeDirTree = (edges) => {
     let jsonTree = []
@@ -119,12 +116,12 @@ export default function NoteTemplate({
       {/* <SEO location={location} title={title} /> */}
       <Box minHeight="100vh">
         <Container maxW="container.xxl">
-        <Grid templateColumns="repeat(12, 1fr)" gap={6}>
+        <Grid templateColumns="repeat(12, 1fr)" gap={{base: 0, lg: 6}}>
           <SideNavContainer
             display={{ base: "none", lg: "block" }}
             as={GridItem}
             colSpan={{ base: 0, lg: 3 }}
-            pl={4}
+            pl={{base: 0, lg: 4}}
             py={10}
           >
             <SubjectTree tree={tree} />
@@ -132,7 +129,7 @@ export default function NoteTemplate({
 
           <Box
             mx="auto"
-            px={{ base: 4, md: 4, lg: 4 }}
+            px={{ base: 0, md: 4, lg: 4 }}
             pt={40}
             pb={20}
             as={GridItem}
@@ -143,8 +140,8 @@ export default function NoteTemplate({
                 {title}
               </Heading>
               <BreadCrumbGroup pathArr={["note", title]} />
-              <Text fontSize="sm" mb={0} varinat="sec">Date Created: {node.frontmatter.date_created}</Text>
-              <Text fontSize="sm" varinat="sec">Last Update: {node.frontmatter.last_modified}</Text>
+              <Text fontSize="xs" mb={0} varinat="sec">Date Created: {node.frontmatter.date_created}</Text>
+              <Text fontSize="xs" varinat="sec">Last Update: {node.frontmatter.last_modified}</Text>
               <Flex flexWrap="wrap" py={6}>
                 {node.frontmatter.categories &&
                   node.frontmatter.categories.map((cat, i) => (
