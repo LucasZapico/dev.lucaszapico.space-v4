@@ -4,7 +4,7 @@ import { Notes } from "components"
 
 const NotesPage = () => {
   return (
-    <Box py={20}>
+    <Box pb={20}>
       <Notes />
     </Box>
   )
