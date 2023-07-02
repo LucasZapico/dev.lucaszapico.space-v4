@@ -27,11 +27,7 @@ const AboutPage = ({ location }) => (
         The Method
       </Heading>
       <Text>
-        Hi 👋, My name is Lucas Zapico. Mostly a frontend React developer from
-        USA who enjoys figuring how to make things for the web. I build
-        websites, web app, chrome extensions, REST API's and custom business
-        integrations. In my off time I enjoy the outdoors fishing 🎣, hiking 🥾,
-        and a bit of watercolor to relax.
+        Hi 👋, My name is Lucas Zapico a developer from USA who enjoys figuring how to make things for the web. I build websites, web app, chrome extensions,API's and custom business integrations. In my off time I enjoy the outdoors fishing 🎣, hiking 🥾.
       </Text>
 
       {/* <Heading as="h3" size="xl">
@@ -47,8 +43,7 @@ const AboutPage = ({ location }) => (
         The Stack
       </Heading>
       <Text>
-        I am a React.js and JavaScript developer with experience and comfort across
-        the entire stack. On the backend I prefer Node.js or Python.
+        I am a full stack developer working primaryily with JavaScript/Node and their frameworks, React.js, Next.js, Gatsby.js, and Express.js. I enjoy working with Python and have been learning Golang in my free time. 
       </Text>
 
       <Box my={6}>
