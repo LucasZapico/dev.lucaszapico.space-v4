@@ -27,7 +27,10 @@ const AboutPage = ({ location }) => (
         The Method
       </Heading>
       <Text>
-        Hi 👋, My name is Lucas Zapico a developer from USA who enjoys figuring how to make things for the web. I build websites, web app, chrome extensions,API's and custom business integrations. In my off time I enjoy the outdoors fishing 🎣, hiking 🥾.
+        Hi 👋, My name is Lucas Zapico a developer from USA who enjoys figuring
+        how to make things for the web. I build websites, web app, chrome
+        extensions,API's and custom business integrations. In my off time I
+        enjoy the outdoors fishing 🎣, hiking 🥾.
       </Text>
 
       {/* <Heading as="h3" size="xl">
@@ -43,7 +46,9 @@ const AboutPage = ({ location }) => (
         The Stack
       </Heading>
       <Text>
-        I am a full stack developer working primaryily with JavaScript/Node and their frameworks, React.js, Next.js, Gatsby.js, and Express.js. I enjoy working with Python and have been learning Golang in my free time. 
+        I am a full stack developer working primaryily with JavaScript/Node and
+        their frameworks, React.js, Next.js, Gatsby.js, and Express.js. I enjoy
+        working with Python and have been learning Golang in my free time.
       </Text>
 
       <Box my={6}>
@@ -55,15 +60,17 @@ const AboutPage = ({ location }) => (
       <Box my={6}>
         <img src="https://skillicons.dev/icons?i=codepen,github,gitlab,vscode,figma&perline=10" />
       </Box>
-      <Flex flexwrap="wrap" my={6}>
-        <img
+      <Flex flexWrap="wrap" my={6}>
+        <Box
+          as="img"
+          flexBasis="406"
           alt="Faizan's GitHub stats"
-          width="406"
           src="https://github-readme-stats.vercel.app/api?username=LucasZapico&custom_title=Github+Stats&bg_color=00000000&hide_border=true&show_icons=true&text_color=667799&title_color=ffe7a9&icon_color=ffe7a9"
         />
-        <img
+        <Box
           alt="Top Langs"
-          width="350"
+          as="img"
+          flexBasis="406"
           src="https://github-readme-stats.vercel.app/api/top-langs/?username=LucasZapico&layout=compact&hide_border=true&bg_color=00000000&text_color=667799&custom_title=Top+Languages&title_color=ffe7a9"
         />
       </Flex>
