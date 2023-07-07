@@ -15,6 +15,20 @@ html {
 }
 
 // animations
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  &.dark {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  &.light {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
 
 .home-blob {
   &-one {

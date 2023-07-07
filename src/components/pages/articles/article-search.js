@@ -5,6 +5,9 @@ import {
   InputGroup,
   InputLeftElement,
   Link,
+  Code,
+  Kbd,
+  InputRightElement,
   Container,
 } from "@chakra-ui/react"
 import { SearchIcon } from "@chakra-ui/icons"
@@ -48,6 +51,9 @@ const ArticleSearch = ({ publishedArticles }) => {
           defaultValue={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <InputRightElement width='4.5rem'>
+        <Kbd>CMD</Kbd><Kbd>K</Kbd>
+      </InputRightElement>
       </InputGroup>
       {results.length > 0 && (
         <Box

@@ -16,7 +16,7 @@ const Header = () => {
       width="100%"
       bg={colorMode === "dark" ? "gray.900" : "white"}
     >
-      <MemoNav />
+      {/* <MemoNav /> */}
     </Box>
   )
 }

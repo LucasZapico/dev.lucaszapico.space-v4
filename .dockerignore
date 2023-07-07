@@ -9,3 +9,4 @@ Dockerfile*
 docker-compose.yml
 public
 .cache
+.parcel-cache

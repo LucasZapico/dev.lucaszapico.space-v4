@@ -1,6 +1,10 @@
 {
   "name": "dev.lucaszapico.space-v4",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=16.0.0 <18.0.0"
+  },
+  "engineStrict": true,
   "private": true,
   "description": "dev.lucaszapico.space-v4",
   "author": "Lucas Zapico",
@@ -9,7 +13,7 @@
   ],
   "scripts": {
     "start:clean": "gatsby clean & gatsby develop",
-    "develop": "gatsby develop --port=8006",
+    "dev": "gatsby develop --port=8006",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -74,6 +78,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.6.0",
     "react-spring": "^9.2.4",
+    "react-use": "^17.4.0",
     "react-use-clipboard": "^1.0.7",
     "reading-time": "^1.5.0",
     "remark-frontmatter": "^4.0.1",

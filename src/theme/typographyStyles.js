@@ -39,23 +39,24 @@ export const HeadingStyles = {
       lineHeight: "base",
     },
     "2xl": {
+      fontSize: ['3xl', null, '4xl', '5xl'],
       lineHeight: "base",
     },
-    xl: {
+    "xl": {
       lineHeight: "base",
     },
-    lg: {
+    "lg": {
       lineHeight: "base",
     },
-    md: {
+    "md": {
       fontSize: "xl",
       lineHeight: "base",
     },
-    sm: {
+    "sm": {
       fontSize: "md",
       lineHeight: "base",
     },
-    xs: {
+    "xs": {
       fontSize: "sm",
       lineHeight: "base",
     },

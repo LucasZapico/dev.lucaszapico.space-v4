@@ -10,7 +10,14 @@ import {
   Link,
   IconButton,
 } from "@chakra-ui/react"
-import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons"
+import {
+  ArrowUpIcon,
+  ArrowDownIcon,
+  CloseIcon,
+  HamburgerIcon,
+  MoonIcon,
+  SunIcon,
+} from "@chakra-ui/icons"
 import { useWindowSize } from "../../../hooks"
 import MobileNav from "./mobile-nav"
 
@@ -42,6 +49,38 @@ const ROUTES = [
   // },
 ]
 
+export const ScrollToTop = () => (
+  <Box
+    cursor="pointer"
+    display="flex"
+    flexDir="column"
+    justifyContent="center"
+    alignItems="center"
+    borderRadius="md"
+    width="2rem"
+  >
+    <IconButton
+      size="sm"
+      bg="transparent"
+      //  style={{ height: "1rem", width: "1rem" }}
+      aria-label="scroll to top"
+      icon={<ArrowUpIcon />}
+      onClick={() => {
+        window.scrollTo(0, 0)
+      }}
+    />
+    <IconButton
+      size="sm"
+      bg="transparent"
+      aria-label="scroll to bottom"
+      icon={<ArrowDownIcon />}
+      onClick={() => {
+        window.scrollTo(0, 9999)
+      }}
+    />
+  </Box>
+)
+
 export const DarkModeSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const isDark = colorMode === "dark"
@@ -58,7 +97,12 @@ export const DarkModeSwitch = () => {
 const DesktopNav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <Container maxW="container.xl" display={{ base: "none", lg: "block" }}>
+    <Container
+      className={colorMode === "dark" ? "glass dark" : "glass light"}
+      bg={colorMode === "dark" ? "gray.900" : "white"}
+      maxW="container.xl"
+      display={{ base: "block", lg: "block" }}
+    >
       <Box
         display="flex"
         py={4}
@@ -66,11 +110,11 @@ const DesktopNav = () => {
         flexDirection="row"
         alignItems="center"
       >
+        <ScrollToTop />
         {ROUTES.map((r, i) => (
           <Link
             activeClassName="active"
-            fontSize="xl"
-            mb={6}
+            fontSize={{ base: "sm", md: "md", lg: "xl" }}
             variant="navLink"
             key={generate()}
             as={GatsbyLink}
@@ -98,8 +142,8 @@ const Nav = () => {
   }, [size])
 
   return (
-    <Box zIndex="99" width="100%" height="4rem">
-      <Box
+    <Box zIndex="99" width="100%">
+      {/* <Box
         position="fixed"
         top="0"
         left="0"
@@ -113,11 +157,20 @@ const Nav = () => {
         variant="none"
       >
         <HamburgerIcon boxSize="1.5rem" />
-      </Box>
+      </Box> */}
       <DesktopNav />
-      {size.width < 900 && (
+      {/* {size.width < 900 && (
         <MobileNav size={size} setShow={setShow} show={show} ROUTES={ROUTES} />
-      )}
+      )} */}
+    </Box>
+  )
+}
+
+export const NavContainer = () => {
+  const { colorMode } = useColorMode()
+  return (
+    <Box width="100%" zIndex={10} as="header" position="fixed" bottom="5" left="0">
+      <Nav />
     </Box>
   )
 }

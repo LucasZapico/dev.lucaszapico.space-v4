@@ -11,8 +11,8 @@ const HomeHero = () => {
     subHeader: "I'm a developer who enjoys building beutiful and functional web sites and web apps. ",
   }
   return (
-    <Box py={20}>
-      <Container maxW="container.xl">
+    <Box py={20} >
+      <Container  className={colorMode === "dark" ? "glass dark" : "glass light"}  maxW="container.xl">
         <Box maxW="850px">
           {colorMode === "light " ? (
             <Heading

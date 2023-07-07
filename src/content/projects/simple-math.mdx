@@ -1,0 +1,67 @@
+---
+title: Simple Math Monkey
+subHeader: "Next.js TypeScript math facts speed game."
+path: /projects/simple-math/
+link: https://simplemathmonkey.netlify.app/
+date-created: '2023/07/07'
+last-modified: '2023/07/07'
+isdraft: false
+isComingSoon: false
+categories:
+  - project
+  - web-app
+  - practice
+tags:
+  - next
+  - typescript
+  - development
+featuredImage: "../../images/projects/featured/simple-math.png"
+technology-stack:
+  - nextjs
+  - typescript
+audio: ""
+type: "project"
+---
+
+import { Text, Heading, Link} from "@chakra-ui/react"
+import { StackIconsGroup } from "components"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
+
+![imgOne:](/images/projects/featured/simple-math.png)
+
+## Summary
+
+<Heading as="div" variant="sec" size="md">
+  I realized I don't have many projects on my portfolio that are "really" functionality focused. So I decided to build a little speed math game. The project uses TypeScript, Next.js, and Chakra. I had some interesting challenges associated with state management and was able to dive into solutions such as Jotai, React-racker and looked at Context as a solution. 
+</Heading>
+
+<Link  mb={6} asExternal variant="linkOne" href={props.pageContext.frontmatter.link} target="_blank">{props.pageContext.frontmatter.title}<ExternalLinkIcon mx="2px" /></Link>
+
+<br></br>
+<br></br>
+
+### Stack
+
+<StackIconsGroup iconArr={["chakraui", "gatsby", "netlify", "github", "mdx"]} />
+
+### Objective
+
+Solve an array of math facts of various levels of difficulty before the timer runs out.
+
+#### Features Coverage
+
+From a feature standpoint, 
+
+- [x] 3 levels of difficulty for each operation
+- [x] time problems
+- [x] lives/tries
+- [x] dark/light mode 
+- [x] clean mobile play 
+- [x] score and local storage support 
+
+![simple math tour](/images/projects/simplemath/simplemath-1.gif)
+
+
+
+
+

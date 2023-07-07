@@ -24,16 +24,16 @@ const SideNavContainer = ({children, ...rest}) => {
   return (
     <Box
       {...rest}
-      display={{ base: "none", md: "flex" }}
+      display={{ base: "none", lg: "flex" }}
       className="side-nav"
       overflowY="scroll"
       position="sticky"
-      top={navHeight}
-      // top="0px"
+      // top={navHeight}
+      top="0px"
       left="0px"
       minW="15rem"
       px={4}
-      height={`calc(100vh - ${navHeight})`}
+      height="100vh"
     >
       {children}
       {/* <SideNav elements={arr}/> */}
