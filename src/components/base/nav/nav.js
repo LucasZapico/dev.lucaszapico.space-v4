@@ -3,12 +3,20 @@ import React, { useEffect, useState } from "react"
 import { generate } from "shortid"
 import { useSpring, animated as a } from "react-spring"
 import {
+  Flex,
+  Icon,
   useColorMode,
   Box,
   Container,
   Button,
   Link,
   IconButton,
+  MenuButton,
+  Fade,
+  ScaleFade,
+  useDisclosure,
+  Show,
+  Hide,
 } from "@chakra-ui/react"
 import {
   ArrowUpIcon,
@@ -96,6 +104,11 @@ export const DarkModeSwitch = () => {
 
 const DesktopNav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
+  const { isOpen, onToggle, onOpen } = useDisclosure()
+
+  const [show, setShow] = useState(false)
+  const routesOne = ROUTES.slice(0, 2)
+  const routesTwo = ROUTES.slice(2)
   return (
     <Container
       className={colorMode === "dark" ? "glass dark" : "glass light"}
@@ -111,7 +124,7 @@ const DesktopNav = () => {
         alignItems="center"
       >
         <ScrollToTop />
-        {ROUTES.map((r, i) => (
+        {routesOne.map((r, i) => (
           <Link
             activeClassName="active"
             fontSize={{ base: "sm", md: "md", lg: "xl" }}
@@ -123,6 +136,66 @@ const DesktopNav = () => {
             {r.name}
           </Link>
         ))}
+        <Show above="md">
+          {routesTwo.map((r, i) => (
+            <Link
+              activeClassName="active"
+              fontSize={{ base: "sm", md: "md", lg: "xl" }}
+              variant="navLink"
+              key={generate()}
+              as={GatsbyLink}
+              to={r.path}
+            >
+              {r.name}
+            </Link>
+          ))}
+        </Show>
+
+        <Box position="relative" display={{ base: "block", md: "none" }}>
+          {isOpen ? (
+            <Fade in={isOpen}>
+              <Icon onClick={onToggle} as={CloseIcon} />
+            </Fade>
+          ) : (
+            <Fade in={!isOpen}>
+              <Icon as={HamburgerIcon} onClick={onOpen} />
+            </Fade>
+          )}
+          {isOpen ? (
+            <ScaleFade initialScale={0.8} offsetY="-50%" in={isOpen}>
+              <Box
+                bg={colorMode === "dark" ? "gray.900" : "white"}
+                className={colorMode === "dark" ? "glass dark" : "glass light"}
+                transform="translate(50%, -100%)"
+                opacity="0.8"
+                position="absolute"
+                right="50%"
+                top="-40%"
+                px={4}
+                py={4}
+                as={Flex}
+                flexDir="column"
+              >
+                {routesTwo.map((r, i) => (
+                  <Link
+                    onClick={onToggle}
+                    activeClassName="active"
+                    fontSize={{ base: "sm", md: "md", lg: "xl" }}
+                    variant="navLink"
+                    key={generate()}
+                    as={GatsbyLink}
+                    to={r.path}
+                  >
+                    {r.name}
+                  </Link>
+                ))}
+              </Box>
+            </ScaleFade>
+          ) : (
+            <></>
+          )}
+        </Box>
+
         <DarkModeSwitch />
       </Box>
     </Container>
@@ -169,7 +242,14 @@ const Nav = () => {
 export const NavContainer = () => {
   const { colorMode } = useColorMode()
   return (
-    <Box width="100%" zIndex={10} as="header" position="fixed" bottom="5" left="0">
+    <Box
+      width="100%"
+      zIndex={10}
+      as="header"
+      position="fixed"
+      bottom="5"
+      left="0"
+    >
       <Nav />
     </Box>
   )

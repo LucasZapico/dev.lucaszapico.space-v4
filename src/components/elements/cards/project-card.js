@@ -37,7 +37,7 @@ const ProjectCard = ({ cardObj }) => {
               {subHeader}
             </Text>
           </Box>
-          <Box color={colorMode === "dark" ? "brand.300" : "yellow.600"}>
+          <Box mb={4} color={colorMode === "dark" ? "brand.300" : "yellow.600"}>
             {categories.map((c, p) => {
               if (c !== "project") {
                 return p > categories.length - 1 ? (

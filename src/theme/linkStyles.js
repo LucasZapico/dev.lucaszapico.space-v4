@@ -8,7 +8,7 @@ const LinkStyles = {
     cursor: "pointer",
     textDecoration: "underline",
     outline: "none",
-    color: colorMode === "dark" ? "yellow.600" : "yellow.600",
+    color: colorMode === "dark" ? "yellow.700" : "yellow.600",
     _hover: {
       textDecoration: "none",
     },

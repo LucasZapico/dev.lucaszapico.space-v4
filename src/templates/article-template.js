@@ -23,19 +23,22 @@ export default function ArticleTemplate({
 }) {
   const { next, previous, node, title } = pageContext
   const { tableOfContents, fields } = node
+  let imageNext = null
+  let imagePrev = null
+  if (next?.featuredImage?.node?.localFile?.childImageSharp.gatsbyImageData) {
+    imageNext =
+      next.featuredImage.node.localFile.childImageSharp.gatsbyImageData
+  }
+  if (previous?.featuredImage?.node?.localFile?.childImageSharp.gatsbyImageData) {
+    imagePrev =
+      previous.featuredImage.node.localFile.childImageSharp.gatsbyImageData
+  }
 
   const NextArticle = () => (
     <Box key={generate()}>
       <Box to={`/${next.fields.path}`} as={GatsbyLink}>
-        {/* <Box>
-            <GatsbyImage
-              alt=""
-              image={
-                next.featuredImage.node.localFile.childImageSharp
-                  .gatsbyImageData
-              }
-            />
-          </Box> */}
+        {/* {next.featuredImage.node.localFile.childImageSharp.gatsbyImageData} */}
+        <Box>{imageNext && <GatsbyImage alt="" image={imageNext} />}</Box>
         <Box p={{ base: 5, md: 10 }}>
           <Heading as="h4" size="lg">
             {next.frontmatter.title}
@@ -49,15 +52,7 @@ export default function ArticleTemplate({
   const PrevArticle = () => (
     <Box key={generate()}>
       <Box as={GatsbyLink} to={`/${previous.fields.path}`}>
-        {/* <Box>
-            <GatsbyImage
-              alt=""
-              image={
-                previous.featuredImage.node.localFile.childImageSharp
-                  .gatsbyImageData
-              }
-            />
-          </Box> */}
+        <Box>{imagePrev && <GatsbyImage alt="" image={imagePrev} />}</Box>
         <Box p={{ base: 5, md: 10 }}>
           <Heading as="h4" size="lg">
             {previous.frontmatter.title}
@@ -76,47 +71,46 @@ export default function ArticleTemplate({
   return (
     <>
       {/* <SEO location={location} title={title} /> */}
-      <Box minHeight="100vh" pt={10} pb={10}>
-        <Container maxW="container.xl" >
-        <Grid templateColumns="repeat(12, 1fr)" gap={6}>
-          <Box
-            mx="auto"
-            px={{ base: 4, md: 4, lg: 4 }}
-            pt={40}
-            pb={20}
-            as={GridItem}
-            colSpan={{ base: 12, lg: 8 }}
-          >
-            <Box maxW={{ md: "650px" }} mx="auto">
-              <Heading mt={6} mb={4} as="h1" size="2xl">
-                {title}
-              </Heading>
-              <BreadCrumbGroup pathArr={["articles", title]} />
-              <Flex flexWrap="wrap" py={6}>
-                {node.frontmatter.categories &&
-                  node.frontmatter.categories.map((cat, i) => (
-                    <Tag mr={1} mb={1} variant="sec" key={generate()}>
-                      #{cat}
-                    </Tag>
-                  ))}
-              </Flex>
-              <MDXLayout>
-                <Box py={10}>{children}</Box>
-              </MDXLayout>
+      <Box minHeight="100vh">
+        <Container maxW="container.xl">
+          <Grid templateColumns="repeat(12, 1fr)" gap={{ base: 0, lg: 6 }}>
+            <Box
+              mx="auto"
+              pt={40}
+              pb={20}
+              as={GridItem}
+              colSpan={{ base: 12, lg: 8 }}
+            >
+              <Box px={{ base: 0, md: 4, lg: 4 }} maxW={{ md: "650px" }}>
+                <Heading mt={6} mb={4} as="h1" size="2xl">
+                  {title}
+                </Heading>
+                <BreadCrumbGroup size="sm" pathArr={["articles", title]} />
+                <Flex flexWrap="wrap" py={6}>
+                  {node.frontmatter.categories &&
+                    node.frontmatter.categories.map((cat, i) => (
+                      <Tag mr={1} mb={1} variant="sec" key={generate()}>
+                        #{cat}
+                      </Tag>
+                    ))}
+                </Flex>
+                <MDXLayout>
+                  <Box py={10}>{children}</Box>
+                </MDXLayout>
+              </Box>
             </Box>
-          </Box>
-          <Box
-            as={GridItem}
-            display={{ base: "none", xl: "block" }}
-            colSpan={{ base: 0, lg: 4 }}
-          >
-            <MdxTOC
-              tableOfContents={tableOfContents}
-              pagePath={path}
-              width="20%"
-            />
-          </Box>
-        </Grid>
+            <Box
+              as={GridItem}
+              display={{ base: "none", xl: "block" }}
+              colSpan={{ base: 0, lg: 4 }}
+            >
+              <MdxTOC
+                tableOfContents={tableOfContents}
+                pagePath={path}
+                width="20%"
+              />
+            </Box>
+          </Grid>
         </Container>
 
         <Container maxW="container.xl" my={10}>

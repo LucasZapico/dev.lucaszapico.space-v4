@@ -149,9 +149,9 @@ export default function CaseTemplate({
 
   const BreadCrumbs = () => (
     <Box mt={6} mb={10}>
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <BreadcrumbLink to="/" as={GatsbyLink}>
+      <Breadcrumb >
+        <BreadcrumbItem >
+          <BreadcrumbLink size="sm" to="/" as={GatsbyLink}>
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
@@ -173,44 +173,40 @@ export default function CaseTemplate({
     <>
       {/* <SEO location={location} title={title} /> */}
       <Box minHeight="100vh" pt={10} pb={10}>
-        <Container
-          maxW="container.xl"
-          py={10}
-          display="flex"
-          flexWrap="wrap"
-          flexDirection="row-reverse"
-        >
-          <Container maxW="container.xl" py={10} px={10}>
-            <Heading mt={6} mb={4} as="h1" size="2xl">
-              {title}
-            </Heading>
-            <BreadCrumbs />
-            <Flex flexWrap="wrap" py={6}>
-              {categories &&
-                categories.map((cat, i) => (
-                  <Tag variant="sec" mb={4} mr={1} key={generate()}>
-                    {cat}
-                  </Tag>
-                ))}
-            </Flex>
-            <Box
-              display="flex"
-              flexDirection={{ base: "column-reverse", lg: "row" }}
-              justifyContent="space-between"
-              as="main"
-            >
-              <MDXLayout>
-                <Box width={{ md: "650px" }} py={10}>
-                  {children}
-                </Box>
-              </MDXLayout>
-              <MdxTOC
-                tableOfContents={tableOfContents}
-                pagePath={path}
-                width="20%"
-              />
+        <Container maxW="container.xl" py={10}>
+          <Box as={Flex} justifyContent="center">
+            <Box>
+              <Heading mt={6} mb={4} as="h1" size="2xl">
+                {title}
+              </Heading>
+              <BreadCrumbs />
+              <Flex flexWrap="wrap" py={6}>
+                {categories &&
+                  categories.map((cat, i) => (
+                    <Tag variant="sec" mb={4} mr={1} key={generate()}>
+                      {cat}
+                    </Tag>
+                  ))}
+              </Flex>
+              <Box
+                display="flex"
+                flexDirection={{ base: "column-reverse", lg: "row" }}
+                justifyContent="space-between"
+                as="main"
+              >
+                <MDXLayout>
+                  <Box width={{ md: "650px" }} py={10} mr={{ baser: 0, lg: 4 }}>
+                    {children}
+                  </Box>
+                </MDXLayout>
+                <MdxTOC
+                  tableOfContents={tableOfContents}
+                  pagePath={path}
+                  width="20%"
+                />
+              </Box>
             </Box>
-          </Container>
+          </Box>
         </Container>
 
         <Container maxW="container.xl" my={10}>

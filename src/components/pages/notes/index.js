@@ -17,6 +17,12 @@ import {
   GridItem,
   Grid,
   Tag,
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
+  AccordionIcon,
+  useColorMode,
 } from "@chakra-ui/react"
 import { generate } from "shortid"
 import { generateImageData } from "gatsby-plugin-image"
@@ -44,6 +50,7 @@ const MemoNoteGrid = memo(NoteGrid)
 
 const Notes = () => {
   const ref = useRef(null)
+  const { colorMode } = useColorMode()
   const { recentNotes } = useStaticQuery(query)
   const [notes, setNotes] = useState(recentNotes.edges)
   const [search, setSearch] = useState("")
@@ -58,7 +65,6 @@ const Notes = () => {
 
       console.log("meta and k")
       ref.current.focus()
-
     }
   })
   const makeDirTree = (edges) => {
@@ -153,19 +159,36 @@ const Notes = () => {
               <Heading as="h1" size="3xl">
                 Notes
               </Heading>
-              <Text fontSize="sm" as="blockquote" maxW="650px">
-                ⚠️ Disclaimer: This is a personal public notes repository with
-                the primary goal of being useful to the author and not
-                necessarily for general use. It is meant to serve as;
-                <br />
-                <br />
-                1. A public reference for common "let me remember that snippet,
-                rule, gotcha etc"
-                <br />
-                2. Making my notes public forces me to edit, clarify and clean
-                up otherwise more raw notes all lead to the review of the
-                material and commitment to memory.
-              </Text>
+              <Accordion
+                allowMultiple
+                borderColor={colorMode == "dark" ? "gray.700" : "gray.300"}
+              >
+                <AccordionItem>
+                  <AccordionButton>
+                    <Heading mb={0} mt={0} as="div" size="xs">
+                      ⚠️ Disclaimer:
+                    </Heading>
+                    <AccordionIcon />
+                  </AccordionButton>
+
+                  <AccordionPanel>
+                    {" "}
+                    <Text fontSize="sm" as="blockquote" maxW="650px">
+                      This is a personal public notes repository with the
+                      primary goal of being useful to the author and not
+                      necessarily for general use. It is meant to serve as;
+                      <br />
+                      <br />
+                      1. A public reference for common "let me remember that
+                      snippet, rule, gotcha etc"
+                      <br />
+                      2. Making my notes public forces me to edit, clarify and
+                      clean up otherwise more raw notes all lead to the review
+                      of the material and commitment to memory.
+                    </Text>
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
             </Box>
           </Container>
           <Container maxW="container.xl">
