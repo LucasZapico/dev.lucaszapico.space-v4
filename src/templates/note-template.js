@@ -130,7 +130,7 @@ export default function NoteTemplate({
           <Box
             mx="auto"
             px={{ base: 0, md: 4, lg: 4 }}
-            pt={40}
+            pt={20}
             pb={20}
             as={GridItem}
             colSpan={{ base: 12, lg: 6 }}
