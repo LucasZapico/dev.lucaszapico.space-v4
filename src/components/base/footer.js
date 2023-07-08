@@ -7,7 +7,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons"
 import PropTypes from "prop-types"
 
 import { generate } from "shortid"
-import moment from "moment"
+import * as dayjs from 'dayjs'
 import { GatsbyImage } from "gatsby-plugin-image"
 import Logo from "assets/mark.svg"
 import { LinkEmail, LinkOne, LinkPhone } from "components"
