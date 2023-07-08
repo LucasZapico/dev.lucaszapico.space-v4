@@ -1,0 +1,126 @@
+---
+title: "React.js State Management Pattern 2023"
+description: "Reference pattern for React.js state management"
+date-created: "2022/10/28"
+last-modified: '2023/07/08'
+isdraft: false
+categories: ["reactjs", "cheatsheet", "reference", "notes", "state-management"]
+tags: ["reactjs", "cheatsheet", "reference", "notes", "state-management"]
+type: "note"
+---
+
+import { Box, Container } from "@chakra-ui/react"
+import { YouTube, Gist } from "mdx-embed"
+
+## Pattern Two 
+
+Pattern pulled from [recat tracked](https://react-tracked.js.org/docs/quick-start/#install-react-tracked)
+
+```tsx title="store.tsx"
+import React, { ReactNode, createContext, useState, useContext } from 'react';
+
+const initialState = {
+  count: 0,
+  text: 'hello',
+};
+
+const useMyState = () => useState(initialState);
+
+const MyContext = createContext<ReturnType<typeof useMyState> | null>(null);
+
+export const useSharedState = () => {
+  const value = useContext(MyContext);
+  if (value === null) throw new Error('Please add SharedStateProvider');
+  return value;
+};
+
+export const SharedStateProvider = ({ children }: { children: ReactNode }) => (
+  <MyContext.Provider value={useMyState()}>{children}</MyContext.Provider>
+);
+
+```
+
+```tsx title="app.tsx"
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+import { SharedStateProvider } from './store';
+import Counter from './Counter';
+import TextBox from './TextBox';
+
+const App = () => (
+  <SharedStateProvider>
+    <div className="App">
+      <header className="App-header">
+        <Counter />
+        <TextBox />
+        <img src={logo} className="App-logo" alt="logo" />
+      </header>
+    </div>
+  </SharedStateProvider>
+);
+
+export default App;
+```
+
+## Pattern One
+
+```js title="FooContext.js"
+import React, {createContext, useContext, useState} from 'react'
+
+
+export const FooContext = createContext();
+export const FooProvider = ({children}) => {
+    const { foo, setFoo} = usState()
+    return (
+        <FooContext.Provider value={{foo, setFoo}}>
+            {children}
+        </FooContext.Provider>
+    )
+}
+
+export const useFooValue = () => useContext(FooContext)
+
+```
+
+```js title="index.js"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import * as serviceWorker from './serviceWorker'
+import {
+  FooProvider,
+} from './foo-context.js'
+
+Const App = () => { return (
+  <div>
+   <h1>Context Pattern 2020</h1>
+  </div>
+}
+
+ReactDOM.render(
+  <React.StrictMode>
+  	<FooProvider>
+    	<App />
+    </FooProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
+)
+````
+
+## Reference 
+
+[React Tracked](https://react-tracked.js.org/docs/quick-start/#install-react-tracked) is an extension of the context API handling rerenders in a more efficient way only triggering re-renders if the accessed property is changed.
+
+<Box mb={6}>
+  <YouTube youTubeId="6yBv-_COJkk"></YouTube>
+</Box>
+
+
+[Jotai](https://jotai.org/docs/core/atom) takes an atomic approach to global React state management with a model inspired by Recoil.
+
+
+
+<Box mb={6}>
+  <YouTube youTubeId="x9usS4l1VD0"></YouTube>
+</Box>
