@@ -154,11 +154,11 @@ const DesktopNav = () => {
         <Box position="relative" display={{ base: "block", md: "none" }}>
           {isOpen ? (
             <Fade in={isOpen}>
-              <Icon onClick={onToggle} as={CloseIcon} />
+              <IconButton aria-label='menu close' bg="transparent" onClick={onToggle} icon={<CloseIcon />} />
             </Fade>
           ) : (
             <Fade in={!isOpen}>
-              <Icon as={HamburgerIcon} onClick={onOpen} />
+              <IconButton  aria-label='menu open' bg="transparent" onClick={onToggle} icon={<HamburgerIcon />} />
             </Fade>
           )}
           {isOpen ? (

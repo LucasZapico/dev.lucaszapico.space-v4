@@ -1,0 +1,25 @@
+---
+title: "Chakra UI Catch"
+description: "General notes and references for working with Chakra ui"
+date-created: 2023/07/05'
+last-modified: '2023/07/05'
+isdraft: true
+categories: ["react", "chakraui"]
+tags: ["react", "chakraui"", "reference"]
+type: "note"
+---
+
+## Gotchas 
+
+### Animate Progress Bar 
+
+The [progress bar](https://chakra-ui.com/docs/components/progress/props) component doesn't go into how to animate it and after a little digging this hack was discovered. 
+
+```js
+// ....
+  <Progress
+        value={progress}
+        sx={{ '>[role="progressbar"]': { transition: "width 200ms ease-out" } }}
+      />
+// ....
+```
