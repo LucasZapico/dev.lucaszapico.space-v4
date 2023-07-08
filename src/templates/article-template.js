@@ -23,20 +23,22 @@ export default function ArticleTemplate({
 }) {
   const { next, previous, node, title } = pageContext
   const { tableOfContents, fields } = node
+  let imageNext = null
+  let imagePrev = null
+  if (next?.featuredImage?.node?.localFile?.childImageSharp.gatsbyImageData) {
+    imageNext =
+      next.featuredImage.node.localFile.childImageSharp.gatsbyImageData
+  }
+  if (previous?.featuredImage?.node?.localFile?.childImageSharp.gatsbyImageData) {
+    imagePrev =
+      previous.featuredImage.node.localFile.childImageSharp.gatsbyImageData
+  }
 
   const NextArticle = () => (
     <Box key={generate()}>
       <Box to={`/${next.fields.path}`} as={GatsbyLink}>
         {/* {next.featuredImage.node.localFile.childImageSharp.gatsbyImageData} */}
-        <Box>
-            <GatsbyImage
-              alt=""
-              image={
-                next.featuredImage.node.localFile.childImageSharp
-                  .gatsbyImageData
-              }
-            />
-          </Box>
+        <Box>{imageNext && <GatsbyImage alt="" image={imageNext} />}</Box>
         <Box p={{ base: 5, md: 10 }}>
           <Heading as="h4" size="lg">
             {next.frontmatter.title}
@@ -50,15 +52,7 @@ export default function ArticleTemplate({
   const PrevArticle = () => (
     <Box key={generate()}>
       <Box as={GatsbyLink} to={`/${previous.fields.path}`}>
-        {/* <Box>
-            <GatsbyImage
-              alt=""
-              image={
-                previous.featuredImage.node.localFile.childImageSharp
-                  .gatsbyImageData
-              }
-            />
-          </Box> */}
+        <Box>{imagePrev && <GatsbyImage alt="" image={imagePrev} />}</Box>
         <Box p={{ base: 5, md: 10 }}>
           <Heading as="h4" size="lg">
             {previous.frontmatter.title}
@@ -82,13 +76,12 @@ export default function ArticleTemplate({
           <Grid templateColumns="repeat(12, 1fr)" gap={{ base: 0, lg: 6 }}>
             <Box
               mx="auto"
-              
               pt={40}
               pb={20}
               as={GridItem}
               colSpan={{ base: 12, lg: 8 }}
             >
-              <Box  px={{ base: 0, md: 4, lg: 4 }} maxW={{ md: "650px" }}>
+              <Box px={{ base: 0, md: 4, lg: 4 }} maxW={{ md: "650px" }}>
                 <Heading mt={6} mb={4} as="h1" size="2xl">
                   {title}
                 </Heading>
