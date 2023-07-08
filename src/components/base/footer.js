@@ -103,7 +103,7 @@ const Footer = ({ title, description, location }) => {
                     <LinkOne
                       activeClassName="active"
                       mb={4}
-                      // variant="linkOne"
+                      
                       fontSize="sm"
                       key={generate()}
                       as={GatsbyLink}
@@ -120,11 +120,11 @@ const Footer = ({ title, description, location }) => {
               <Box
                 display="flex"
                 flexDirection="column"
-                justifyContent="space-between"
+                justifyContent="flex-start"
                 px={{ base: 2, sm: 6 }}
                 pt={{ base: 10, md: 20 }}
               >
-                <Heading as="h4" size="md" mb={6} variant="sec">
+                <Heading as="h4" size="md" mb={0} variant="sec">
                   Contact
                 </Heading>
                 {/* <Box>
