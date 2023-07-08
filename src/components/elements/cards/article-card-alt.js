@@ -11,6 +11,7 @@ const ArticleCard = ({ cardObj }) => {
     <CardOne
       key={generate()}
       className="link"
+      
       mt={6}
       to={`/${path}`}
       as={GatsbyLink}
