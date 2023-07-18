@@ -20,6 +20,8 @@
 
 
 node_modules/
+node_modules
+**node_modules/
 .cache/
 public
 .eslintcache
@@ -104,7 +106,9 @@ wp-config.php
 #/wp-content/themes
 # End of https://www.toptal.com/developers/gitignore/api/macos,react,wordpress
 # Local Netlify folder
+.netlify/
 .netlify
+**.netlify/
 # @netlify/plugin-gatsby ignores start
 netlify/functions/gatsby
 # @netlify/plugin-gatsby ignores end

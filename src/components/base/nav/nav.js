@@ -145,6 +145,7 @@ const DesktopNav = () => {
               key={generate()}
               as={GatsbyLink}
               to={r.path}
+              onClick={onToggle}
             >
               {r.name}
             </Link>
