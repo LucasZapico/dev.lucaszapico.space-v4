@@ -23,3 +23,27 @@ Delete the volume between runs with
 docker-compose down --volumes
 ```
 
+### Handling Docker Files in Project Subdirectory 
+
+- [docker using copy  when dockerfile is in subdirectory  - stackoverflow](https://stackoverflow.com/questions/47785706/docker-using-copy-when-the-dockerfile-is-located-in-a-subdirectory)
+
+Suppose the following directory structure, to support a nested structure some extra configuration is required. 
+
+```txt
+|-src/
+	|-docker/
+		|-Dockerfile.development
+		|-docker-compose.development.yml
+```
+
+
+I found that handling the concern in the docker-compose file seems to be the most straightforward. This can be done by adding; 
+
+```yml:title="docker-compose.development.yml"
+# ...
+		build:
+			context: .. # path to root
+			dockerfile: ./docker/Dockerfile.development # path to docker file from root
+# ...
+```
+
