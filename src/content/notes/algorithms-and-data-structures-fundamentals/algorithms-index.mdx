@@ -2,12 +2,15 @@
 title: "Algorithms"
 description: "Notes for reference on algorithms with C#"
 date-created: "2021/03/15"
-last-modified: '2022/12/14'
+last-modified: "2023/08/04"
 isdraft: false
 categories: ["algorithms", "notes"]
 tags: ["algorithms", "notes"]
 type: "note"
 ---
+
+import { Box, Container } from "@chakra-ui/react"
+import { YouTube, Gist } from "mdx-embed"
 
 ## What is an algorithms
 
@@ -145,7 +148,7 @@ let t2 = performance.now()
 console.log(`Run time: ${(t2-t1)/ 1000} seconds`)
 ```
 
-Manually timing is difficult to performance benchmark. Different machines and what processes are running will have performance results. For high performance algorithms the time difference may be so small that our timing measurements do not measure.
+Manually timing is difficult to performance benchmark. Different machines and what processes are running will have performance results. For high-performance algorithms, the time difference may be so small that our timing measurements do not measure it.
 
 **Methods for Measuring Performance**
 
@@ -157,6 +160,15 @@ Big O
 : Formally talk about how the runtime of an algorithm grows as the input grows.
 : Big O notation is a way to formalize fuzzy counting.
 : We say that an algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases
+
+#### Big O notions
+
+**linear time**: **O(n)** 
+**Constant Time**: **O(1)**
+**Quadratic time**: **O(n^2)** $O(n^2)$
+**Cubic Time**: **O(n^3)** or $O(n^3)$
+
+
 
 - $f(n)$ could be linear $(f(n) = n)$
 - $f(n)$ could be quadratic $(f(n) = n^2)$
@@ -173,13 +185,22 @@ Big O
 
 ## Reference
 
+- [LeetCode Patterns - github](https://github.com/seanprashad/leetcode-patterns)
+
+### Courses 
+
+[Algorithm Patterns for Coding Interview(leetcode) - Kantan Coding](https://www.youtube.com/watch?v=cpgAULF6Vpw&list=PL7g1jYj15RUOjoeZAJsWjwV8XUo9r0hwc&pp=iAQB)
+
+<Box mb={6}>
+	<YouTube youTubeId="cpgAULF6Vpw"></YouTube>
+</Box>
+
+
 - [Algorithm Patterns in JavaScript](/algorithm-patterns-in-javascript)
-- [JSBen](https://jsben.ch/)
-- [Lynda: Learning C# Algorithms](https://www.lynda.com/C-tutorials/Learning-C-Algorithms/604241-2.html)
 - [JS Algorithms and Data Structures Udemy](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/11198358#overview)
 - [Algorithms and Data Structures Tutorial - Freecodecamp/treehouse](https://www.youtube.com/watch?v=8hly31xKli0)
 
 ### Tools
 
 - [Time Complexity Calculator](https://www.timecomplexity.ai/)
-
+- [JSBen](https://jsben.ch/)
