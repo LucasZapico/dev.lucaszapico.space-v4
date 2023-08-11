@@ -19,6 +19,127 @@ Go by example is exactly what it sounds like, a nearly exhaustive set of example
 
 ## Living CheatSheet
 
+### Basics Core Concepts
+
+#### Convention
+- All packages should be a single lowercase word. 
+- variable names should be camel casing
+
+### Functions 
+
+```go
+func (<var_one> <type_one>, <var_two> <type_two>) <return_type> {
+	//...stuff
+} 
+```
+
+**Example**
+
+```go
+func (a int, b int) float64 {
+	return a/b
+}
+```
+
+#### Declaring and Using Function in another Function
+
+```go
+//....
+//👇 will not work ❌
+func foo(){
+
+	func bar() {
+		//...stuff
+		fmt.Printl('hello bar')
+	}
+	
+	bar()
+}
+```
+
+```go
+//....
+//👇 will work ✅
+func foo(){
+
+	bar := func() {
+		//...stuff
+		fmt.Printl('hello bar')
+	}
+	
+	bar()
+}
+```
+
+
+#### Switch and if can take initializations
+
+```go
+//....
+func foo() error {
+	return fmt.Error("foo error")
+}
+
+if err := foo(); err != nil {
+	fmt.Println(err)
+}
+
+//...
+```
+
+
+## Testing 
+
+
+
+### Loops 
+
+```go
+for count := 0; count <= 10; count++ {
+	fmt.Println(count)
+}
+```
+
+
+```go
+intArr := []int{2,4,6,8,10,22}
+for i, val := range intArr {
+	fmt.Println(i)
+}
+```
+
+
+### Arrays 
+
+
+```go
+// [n]T: n = length of the array and T is the type
+var foo [5]int
+
+```
+
+#### Array of Arrays 
+
+Initializing an array of arrays is done using [composite Literals - go.dev](https://go.dev/ref/spec#Composite_literals).
+
+```go
+arrs := [][]int{[]int{1,2,3},[]int[4,5,6]}
+//or 
+arrTwo := [][]int{{1,2,3},{4,5,6}}
+```
+
+
+
+```go
+var arrayint = [...]int{1,2,3,4} 
+arrayInt := [1,2,3,4]
+fmt.Println(arrayint, "\n") // [1 2 3 4]
+```
+
+## Work With File System
+
+```
+
 ## Working with File System
 
 ### Moving and Coping Directories 
