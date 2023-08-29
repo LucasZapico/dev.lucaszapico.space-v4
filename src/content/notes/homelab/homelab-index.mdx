@@ -3,7 +3,7 @@ title: "Homelab Index"
 description: "General notes catch on homelab stuff"
 date-created: '2023/04/10'
 last-modified: '2023/06/07'
-isdraft: true
+isdraft: false
 categories: ["homelab", "notes"]
 tags: ["homelab", "notes"]
 type: "notes"
@@ -50,3 +50,12 @@ graph TB
 	j-- "smb mnt"-->d
 	
 ```
+
+
+## Good Practice Catch 
+
+#### Do not permanently mount into `/mnt`  
+
+[mnt directories disappearing - stackexchange](https://unix.stackexchange.com/questions/1986/mnt-directories-disappearing)
+
+> Directory is provided so that the system administrator may temporarily mount a filesystem as needed.
