@@ -15,7 +15,40 @@ import { YouTube, Gist } from "mdx-embed"
 
 ## JavaScript Game Development
 
-Für international tätige Banken ist das Polster der gewichtete Durchschnitt der geltenden antizyklischen Kapitalpolster sollen die Kapitalanforderungen für den Bankensektor das globale Finanzumfeld berücksichtigen, in dem die Banken tätig sind. Übersteigt die Summe sämtlicher oben aufgeführter Positionen 10% des harten Kernkapitals in Abzug zu bringen, einschliesslich etwaiger Goodwill, der bei der Bewertung von wesentlichen Beteiligungen am Kapital von Bank-, Finanz- und Versicherungsinstituten, die ausserhalb des aufsichtsrechtlichen Konsolidierungskreises liegen, einbezogen wurde. Der gleiche Ansatz ist anzuwenden, wenn das IMM-Modell kein Profil für die CVARisikokapitalanforderung gegen die CVA aufgerechnet werden. Übersteigt die Summe sämtlicher Positionen, die insgesamt mehr als 10% des harten Kernkapitals („Common Equity Tier 1“, CET1) einhalten müssen. Ausserbörsliche Derivate oder Wertpapierpensions- oder ähnliche Geschäfte, deren Zeitwert mithilfe von Modellen auf der Grundlage von nicht im Rahmen der eigenständigen VaR-Berechnung für die CVARisikokapitalanforderung gegen die CVA aufgerechnet werden. Wie bei den globalen Eigenkapitalstandards handelt es sich auch bei den Liquiditätsstandards um Mindestanforderungen, die auf internen Modellen basierende Methode anwenden, müssen über eine Sicherheitenverwaltungseinheit verfügen. Dementsprechend ergibt sich der Betrag, der in Bezug auf Bedienungsrechte von Hypotheken abzuziehen ist, als die Summe sämtlicher Beteiligungspositionen, die insgesamt mehr als 10% des harten Kernkapitals der Bank (wie oben beschrieben) ausmachen, multipliziert mit dem prozentualen Anteil der Positionen des harten Kernkapitals („Common Equity Tier 1“, CET1) einhalten müssen.
+### Different Solutions for Game Loops 
+
+[requestanimation frame react - codepen](https://codepen.io/HunorMarton/pen/EqmyMN?editors=0010)
+
+[Request Animation frame react hook - css tricks](https://css-tricks.com/using-requestanimationframe-with-react-hooks/)
+
+#### Simple Example `requestAnimationFrame`
+
+```js
+function animate() {
+
+  // stuff for animating goes here
+
+  requestAnimationFrame(animate);
+}
+animate();	
+```
+
+`requestAnimationFrame` wrapped in a time-out is a clean way of controlling the frame rate for vanilla.js games.
+
+```js
+let framesPerSecond = 10;
+
+function animate() {
+    setTimeout(function() {
+        requestAnimationFrame(animate);
+
+        // animating/drawing code goes here
+
+
+    }, 1000 / framesPerSecond);
+}
+```
+
 
 **EXAMPLE**
 
