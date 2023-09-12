@@ -1,0 +1,97 @@
+---
+title: "IPC Electron Notes"
+description: "General notes on electron ipc patterns"
+date-created: '2023/08/19'
+last-modified: '2023/03/27'
+isdraft: true
+categories: ["electron", "notes"]
+tags: ["electron", "env"]
+type: "note"
+---
+
+## IPC Cheatsheet
+
+### Get Async Data From Main Process On Func Call
+
+> Non blocking
+
+```mermaid 
+---
+title: Main -> Renderer
+---
+flowchart LR 
+	id1[event(call): Renderer] --> id2[Main] 
+	id2--data-->id1
+```
+
+```ts:title="renderer/index.ts"
+// This can be in it's own file 
+// in react component etc
+async function handleGetData(){
+	const data = await window.api.getData()
+	console.log(data)
+}
+```
+
+```ts:title="main/preload.ts"
+const WINDOW_API = {
+	getData: () => ipcRenderer.invoke('get/data')
+}
+contextBridge.exposeInMainWorld('api', WINDOW_API)
+
+export type WINDOW_API_TYPE = typeof WINDOW_API
+```
+
+```ts:title="main/index.ts"
+//...boilerplate
+// listen for invoke
+ipcMain.handle('get/data', async (event, args) => {
+	return {
+		message: "I'm async data",
+		data: [1,2,3,4,5]
+	};
+});
+```
+
+
+### Get sync Data From Main Process On Func Call
+
+> blocking
+
+```mermaid 
+---
+title: Main -> Renderer
+---
+flowchart LR 
+	id1[event(call): Renderer] --> id2[Main] 
+	id2--data-->id1
+```
+
+```ts:title="renderer/index.ts"
+// This can be in it's own file 
+// in react component etc
+function handleGetDataSync(){
+	const data = window.api.getDataSync()
+	console.log(data)
+}
+```
+
+```ts:title="main/preload.ts"
+const WINDOW_API = {
+	getDataSync: () => ipcRenderer.sendSync('get/dataSync')
+}
+contextBridge.exposeInMainWorld('api', WINDOW_API)
+
+export type WINDOW_API_TYPE = typeof WINDOW_API
+```
+
+```ts:title="main/index.ts"
+//...boilerplate
+
+ipcMain.on('get/dataSync',(event, args) => {
+	event.returnValue = {
+		message: "I'm sync data",
+		data: [1,2,3,4,5]
+	};
+});
+```
