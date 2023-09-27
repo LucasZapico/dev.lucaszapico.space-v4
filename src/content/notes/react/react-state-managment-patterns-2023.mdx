@@ -10,9 +10,12 @@ type: "note"
 ---
 
 import { Box, Container } from "@chakra-ui/react"
-import { YouTube, Gist } from "mdx-embed"
+import { CodeSandbox, YouTube, Gist } from "mdx-embed"
 
-## Pattern Two 
+
+## Context API
+
+### Pattern Two 
 
 Pattern pulled from [recat tracked](https://react-tracked.js.org/docs/quick-start/#install-react-tracked)
 
@@ -64,7 +67,7 @@ const App = () => (
 export default App;
 ```
 
-## Pattern One
+### Pattern One
 
 ```js title="FooContext.js"
 import React, {createContext, useContext, useState} from 'react'
@@ -107,6 +110,13 @@ ReactDOM.render(
   document.getElementById('root')
 )
 ````
+
+## Jotai 
+
+### AtomWithReducer 
+
+<Box as={CodeSandbox} mb={6} codeSandboxId="jotai-atomwithreducer-example-1-xz6yc8?file=/src/index.js" ></Box>
+
 
 ## Reference 
 
