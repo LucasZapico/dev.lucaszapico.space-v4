@@ -1,0 +1,42 @@
+---
+title: "Methods for generating empty and stubbed js arrays"
+description: "Cheatsheet for generating empty and stubbed js arrays"
+date-created: "2024/02/10"
+last-modified: "2024/02/10"
+isdraft: false
+parent: "javascript"
+categories: ["javascript", "general", "cheatsheet", "notes"]
+tags: ["javascript", "general", "cheatsheet", "notes"]
+type: "note"
+---
+
+
+```js
+new Array(3).fill(0)
+```
+
+### Push Method
+
+```js
+
+const LEN = 3 
+const arr = []
+for (let i=0; i<LEN; i++){
+  arr.push(0)
+}
+// [0,0,0]
+```
+
+###  Mapping method
+> Personally I think the mapping methods are the cleanest and most versatile 
+
+```js
+const arr = Array.from({length: 3}, () => 0)
+// [0, 0, 0]
+
+```
+
+```js
+const arr = Array.from({length: 3}, (x,i) => i)
+// [0, 1, 2]
+```
