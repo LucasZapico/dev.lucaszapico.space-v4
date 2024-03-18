@@ -2,16 +2,55 @@
 title: "Cron Jobs Cheatsheet"
 description: "General cheatsheet for cron jobs"
 date-created: "2024/02/29"
-last-modified: "2024/02/29"
+last-modified: "2024/03/01"
 isdraft: false
 categories: ["shell", "cheatsheet", "cronjob", "reference"]
 tags: ["shell", "cheatsheet", "cronjob", "reference"]
 type: "note"
 ---
 
+{/* 👇 this is...wut? */}
+> A common gotcha is setting cronjobs as user vs root
+
 ### Shell Script Cheatsheet for Macos 
 
+```sh
+crontab -e # edit cron jobs
+```
+
+```sh
+```
 
 ```sh
 crontab -l # list all cron jobs
+```
+
+## Tools and Reference
+
+[cronttab.guru](https://crontab.guru/)
+
+### Debugging CronJobs 
+
+> Dry run the script we are trying to run and ensure it works as expected. 
+
+```sh 
+ps ax | grep cron
+```
+
+
+
+#### Check Cronjobs work
+
+```sh 
+sudo crontab -e
+```
+
+```sh
+* * * * * /bin/echo "cron works" >> /tmp/file 2>>/tmp/error
+```
+
+```sh
+```
+
+```sh 
 ```
