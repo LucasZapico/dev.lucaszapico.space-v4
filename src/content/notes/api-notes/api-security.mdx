@@ -13,8 +13,23 @@ type: "note"
 
 ## Generate Secret Key 
 
-```
+```sh
 openssl rand -base64 64
+```
+
+**Alternative**
+
+In Python shell or file
+
+```python
+>>> import secrets
+>>> token_bytes(16)  
+b'\xebr\x17D*t\xae\xd4\xe3S\xb6\xe2\xebP1\x8b'
+>>> token_hex(16)  
+'f9bf78b9a18ce6d46a0cd2b0b86df9da'
+>>> token_urlsafe(16)  
+'Drmhze6EPcv0fN_81Bj-nA'
+
 ```
 
 
