@@ -2,7 +2,7 @@
 title: "Typescript Notes"
 description: "General notes on typescript"
 date-created: 2022/01/10
-last-modified: "2022/08/11"
+last-modified: "2024/03/17"
 isdraft: true
 categories: ["typescript", "notes"]
 tags: ["typescript", "notes"]
@@ -166,6 +166,74 @@ roles.push("admin")
 // (3) [2, 'author', 'admin']
 ```
 
+## Object with keys of specific type 
+
+[an-index-signature-parameter-type - stack overflow](https://stackoverflow.com/questions/54438012/an-index-signature-parameter-type-cannot-be-a-union-type-consider-using-a-mappe)
+
+```typescript
+// object we want to type
+// const colorObj = {
+//	red: "#FF0000",
+//	blue: "#2700FF",
+//	green: "#00FF22"
+// }
+
+type ColorKeyType = "red" | "green" | "blue"
+
+type ColorObjType = {
+	[key in ColorKeyType]: string
+}
+
+
+```
+
+## Omit and Exclue Example 
+
+- [Official typeScript utils - exclude](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)
+
+- [Official typeScript utils - omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)
+
+### Omit 
+
+Omit is used for object types
+
+```typescript
+export type HeadingProps = {
+  noCaps?: boolean;
+  size?: SizeType;
+  as?: HeadingAsType;
+  variant?: 'pri' | 'sec' | 'tir' | 'default';
+  color?: 'pri' | 'sec' | 'tri';
+  children: string | ReactNode;
+  className?: string;
+  textColor?: string;
+  id?: string;
+  rest?: Object;
+};
+
+export type HeadingObjProps = Omit<HeadingProps, 'children'> & {
+  child: string;
+};
+```
+
+### Exlcude
+
+Exclude is used for union types 
+
+```typescript
+export type SizeType = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+
+/**
+ * Container Types
+ */
+export type ContainerSizeType = Exclude<SizeType, '2xl' | '3xl' | 'xxs'>;
+```
+
+
+
+
 ## Reference 
 
 [extending types in typescript - webtips.dev](https://www.webtips.dev/solutions/extending-types-in-typescript)
+
+[objects-and-records - type-level-typescript.com](https://type-level-typescript.com/objects-and-records)
