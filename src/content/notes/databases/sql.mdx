@@ -44,29 +44,29 @@ Though the addition of each of these formats are best practice and general conve
 
 ```SQL
 SELECT * FROM table;
-// returns all columns from some table
+-- returns all columns from some table
 
 SELECT * FROM table WHERE condition
-// returns all columns from some table where a condition is met
+-- returns all columns from some table where a condition is met
 
 SELECT * FROM database.table WHERE condition
-// in some cases the database needs to be specified, though many SQL databases server have default databases that a query will be aplied to
+-- in some cases the database needs to be specified, though many SQL databases server have default databases that a query will be aplied to
 ```
 
 Examples Select:
 
 ```SQL
 SELECT FirstName FROM Employee;
-// returns Firstname column from employee
+-- returns Firstname column from employee
 
 SELECT FirstName, LastName FROM Employee;
-// returns 2 columns FirstName and LastName
+-- returns 2 columns FirstName and LastName
 
 SELECT *  FROM Employee;
-// returns all columns from employee table
+-- returns all columns from employee table
 
 SELECT *  FROM Employee WHERE LastName = 'Smith';
-// returns all columns where lastname is equal to Smith
+-- returns all columns where lastname is equal to Smith
 ```
 
 #### Insert Statement
@@ -159,4 +159,5 @@ Sucess, we have entered the mysql shell
 
 Notes within this doc have been drawn from the following sources:
 
-[MySQL shell CheatSheet](https://gist.github.com/hofmannsven/9164408)
+- [MySQL shell CheatSheet](https://gist.github.com/hofmannsven/9164408)
+- [node sqlite cheatsheet - CodeCademy](https://www.codecademy.com/learn/connecting-javascript-and-sql/modules/learn-node-sqlite-module/cheatsheet)

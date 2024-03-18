@@ -1,0 +1,107 @@
+---
+title: "Sqlite Catch Notes"
+description: "General notes on sqlite"
+date-created: "2021/03/15"
+last-modified: '2023/02/21'
+isdraft: true
+categories: ["sqlite", "database"]
+tags: ["sqlite", "notes", "database"]
+type: "note"
+---
+
+## Table Operations
+
+### Create New Table 
+
+```sql
+CREATE TABLE 'users' (
+	`user_id` integer PRIMARY KEY,
+	`username` varchar(255),
+  `useremail` varchar(255),
+  `role` varchar(255),
+  `date_created` timestamp
+)
+```
+
+#### Column Modifiers 
+
+- `PRIMARY`
+- `UNIQUE`
+- `CHECK`
+- `FOREIGN`
+
+```sql 
+CREATE TABLE 'foo' (
+	'id' integer PRIMARY KEY, -- define primary key 
+	'foo_one' varchar(255) NOT NULL -- required column 
+)
+```
+
+#### Create New Table With Foreign Key Reference
+
+```sql
+CREATE TABLE 'log' (
+	`log_id` integer PRIMARY KEY,
+	`user_id` varchar(255) REFERENCES users(`user_id`)
+  `type` varchar(255),
+  `timestamp` timestamp,
+  `date_created` timestamp
+)
+```
+
+
+
+### Insert Record 
+
+### Create Relation - add foreign key ref 
+
+```sql
+ALTER TABLE 
+```
+
+## CheatSheet 
+
+### Table with timestamped records 
+
+```sql 
+CREATE TABLE `foo` (
+	`id` integer PRIMARY KEY, 
+	`date_created` DATETIME DEFAULT CURRENT_TIMESTAMP
+)
+```
+
+### Updating the constraints on a table 
+
+> Sqlite doesn't have a way to update constraints on a table after it has been created
+
+The current best practice is to make a tmp table with the desired constraints copy the table data over then drop the original table and rename the tmp table with the original name. 
+
+**Example**
+
+This example assumes an existing `users` table missing constraints
+
+```sql
+-- create new table with updated constraints 
+BEGIN TRANSACTION;
+
+CREATE TABLE IF NOT EXISTS `users_tmp` (
+	`user_id` integer PRIMARY KEY,
+	`username` varchar(255) NOT NULL UNIQUE,
+	`useremail` varchar(255) NOT NULL UNIQUE,
+	`role` varchar(255) DEFAULT `user`,
+	`date_created` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+-- move all existing data from users -> users_tmp
+-- INSERT INTO Destination SELECT * FROM Source;
+INSERT INTO `users_tmp` SELECT * FROM `users`;
+-- Delete drop original table 
+DROP TABLE IF EXISTS `users`;
+ALTER TABLE `users_tmp` RENAME TO `users`;
+COMMIT;
+```
+
+
+## GUI's
+
+## Reference 
+

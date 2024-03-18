@@ -1,0 +1,80 @@
+---
+title: "Notes on Node SQLite"
+description: "General note and reference for Node SQLite"
+date-created: "2023/08/22"
+last-modified: "2023/08/22"
+isdraft: false
+categories: ["sql", "sqlite", "notes", "reference"]
+tags: ["sql", "notes", "reference"]
+type: "note"
+---
+
+## Notes and Reference SQL Language
+
+### Callback Pattern Sqlite queries
+
+```js
+//....
+import db from './config/db'
+
+//....
+
+//....
+/**
+ * Read all records and all their columns from some given table.
+ */
+const read = async ({ table }) => {
+	const stmt = `SELECT * FROM ${table}`
+	let res = {}
+	// all 
+  db.all(stmt, (error, data) => {
+    logger.info('---all');
+    console.log(`${JSON.stringify(data)} `);
+  });
+  return res;
+};
+
+const read = async ({ table }) => {
+	const stmt = `SELECT * FROM ${table}`
+	// all 
+	let res = {}
+  db.each(stmt, (error, row) => {
+	  logger.info('--each');
+	// This will be printed everytime a row is returned
+		console.log(`${JSON.stringify(row)} `);
+	});
+  return res;
+};
+
+```
+
+### Async Await Pattern with Sqlite queries
+
+```js
+//....
+import db from './config/db'
+import { promisify } from "util";
+//....
+
+// Use the promise pattern for SQLite so we don't end up in callback hell.
+const query = promisify(db.all).bind(db);
+
+//....
+/**
+ * Read all records and all their columns from some given table.
+ */
+const read = async ({ table }) => {
+	const stmt = `SELECT * FROM ${table}`
+  const res = await query(stmt);
+  return res;
+};
+
+//....
+```
+
+
+[Understaing ](https://www.grouparoo.com/blog/understanding-types-sqlite-node)
+
+## Resources and Reference
+
+[Codecademy Sqlite Cheatsheet](https://www.codecademy.com/learn/connecting-javascript-and-sql/modules/learn-node-sqlite-module/cheatsheet)
