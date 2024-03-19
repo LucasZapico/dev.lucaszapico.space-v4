@@ -1,0 +1,144 @@
+---
+title: "Go Lang Modules, Packages and Functions"
+description: "Notes and gotchas Go Lang Packages, Modules and Functions"
+date-created: "2024/03/04"
+last-modified: "2024/03/05"
+categories: ["go-lang", "development", "project", "conventions", "patterns", "architecture"]
+tags: ["go-lang", "development", "project", "conventions", "patterns"]
+isdraft: true
+type: "note"
+---
+
+## Packages and Modules 
+
+For some reason each time I hop into golang I have to figure this out again....
+
+### Trivial Example
+
+Suppose we have a module "foo" which we initialize with `go mod init foo` 
+
+```golang
+go mod init foo
+```
+
+Now our directory structure looks like this 
+
+```
+foo/
+	|- main.go
+	|- go.mod
+```
+
+our main.go file looks like this 
+
+```golang
+package main
+import (
+	"fmt"
+
+)
+
+func main() {
+	fmt.Println("Hello, World!")
+}
+```
+
+We can check our 
+
+```sh 
+go run main.go
+// Hello, World!
+```
+
+### Handling The Same Packages Different File 
+
+Extending the previous example, we can add a new file `bar.go` to the `foo` package. 
+
+```
+foo/
+	|- main.go
+  |- bar.go
+	|- go.mod
+
+```
+
+```golang:main.go
+//.... 
+func main() {
+  fmt.Println("Hello, Main")
+  bar()
+}
+```
+
+```golang:bar.go
+//...
+package main 
+
+import (
+	"fmt"
+)
+
+func bar() {
+  fmt.Println("Hello, Bar!")
+}
+```
+
+In my opinion, this is a bit of a gotcha. Running `go run main.go` will not produce the expected result of;
+
+```sh 
+Hello, Main
+Hello, Bar!
+```
+
+rather it will produce an error 
+
+```sh
+# command-line-arguments
+./main.go:11:2: undefined: bar
+```
+
+There are three straightforward ways to handle this. 
+
+1. Run `go run *.go`
+2. Run `go build` and then run the executable `./foo`
+3. Run `go run main.go bar.go`
+
+### Sub Modules 
+
+Extending our initial trivial example, we can add a sub module `baz` to the `foo` module. 
+
+```
+example/
+	|- main.go
+  |- foo/foo.go
+	|- go.mod
+```
+
+```golang:main.go 
+package main
+
+import (
+	"example/foo"
+	"fmt"
+)
+
+func main() {
+	fmt.Println("Hello, main!")
+	foo.Bar()
+	
+}
+
+```
+
+
+```golang:foo/foo.go 
+package foo
+
+import "fmt"
+
+func Bar() {
+	fmt.Println("Hello, foo!")
+}
+
+
+```
