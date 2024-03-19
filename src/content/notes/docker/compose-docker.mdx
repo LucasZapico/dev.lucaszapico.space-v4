@@ -47,3 +47,19 @@ I found that handling the concern in the docker-compose file seems to be the mos
 # ...
 ```
 
+## Docker Compose Command Reference 
+
+```sh 
+# docker compose --env-file <path/to/env> --file <path/to/compose> up
+docker compose --env-file .env.production --file docker-compose.production.yml up
+
+# up detach 
+docker compose --env-file .env.development --file docker-compose.development.yml up -d
+
+# build
+docker compose --env-file ./env/.env.development --file ./docker/docker-compose.development.yml up --build
+
+# build detached 
+docker compose --env-file ./env/.env.development --file ./docker/docker-compose.development.yml up --build -d
+```
+
