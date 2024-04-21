@@ -2,7 +2,7 @@
 title: "Index Go Lang"
 description: "General note catch of Go lang"
 date-created: '2023/04/14'
-last-modified: '2023/04/15'
+last-modified: "2024/03/16"
 categories: ["go-lang", "development",]
 tags: ["go-lang", "development", "notes"]
 isdraft: true
@@ -22,8 +22,21 @@ Go by example is exactly what it sounds like, a nearly exhaustive set of example
 ### Basics Core Concepts
 
 #### Convention
+
 - All packages should be a single lowercase word. 
 - variable names should be camel casing
+
+### Structs 
+
+```go 
+//...
+type dwarf struct {
+	name string 
+	age int
+	height float64
+	weapon: []string[]
+}
+```
 
 ### Functions 
 
@@ -104,7 +117,8 @@ for count := 0; count <= 10; count++ {
 ```go
 intArr := []int{2,4,6,8,10,22}
 for i, val := range intArr {
-	fmt.Println(i)
+	fmt.Println(i) // index
+	fmt.Println(val) // value at index
 }
 ```
 
@@ -197,7 +211,7 @@ func main(){
 
 **Example**
 
-```go 
+```golang
 
 ```
 
@@ -205,7 +219,7 @@ func main(){
 
 Read all contents from file
 
-```go 
+```golang
 func main() {
   // read all contents from file from path
 	dat, err := os.ReadFile("./raw/bar.txt")
@@ -220,6 +234,9 @@ func main() {
 
 - solution for colorizing 
 - solution pattern for logging 
+
+
+
 
 ## Reference 
 
