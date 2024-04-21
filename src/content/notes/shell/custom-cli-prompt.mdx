@@ -1,0 +1,64 @@
+---
+title: "Custom Cli Prompt"
+description: "Customizing the command line prompt in bash and zsh"
+date-created: "2024/04/21"
+last-modified: "2024/04/21"
+isdraft: false
+categories: ["shell", "catch", "reference", "cli", 'prompt']
+tags: ["shell", "catch", "reference", "cli", 'prompt']
+type: "note"
+---
+
+
+## Get our current prompt 
+
+```sh 
+echo $PS1
+```
+
+Our prompt is defined in our shell profile file. For example `.bashrc` or `.zshrc`. Either navigate to where the rc file is located. Normally in the user root, or use the following command to find the file. 
+
+```sh 
+grep PS1 ~/.bash_profile
+```
+
+## Common Prompts
+
+### User@Hostname
+
+```sh 
+export PS1="\u@\h"
+```
+or edit the `.bashrc` or `.zshrc` file directly 
+
+```txt:title=".bashrc"
+# ...
+PS1="\u@\h"
+# ...
+```
+
+### Differentiate Root User form Normal User
+
+A common use case is to differentiate the root user from a normal user. 
+
+{/* TODO: validate this */}
+```sh
+export PS1="\u@\H \W:\$ "
+```
+
+
+```sh
+
+{/* TODO: 
+- add the success fail promp refernce 
+- add the git branch prompt reference
+- add the time prompt reference
+- add the user@hostname prompt reference
+- add the path prompt reference
+- add the custom prompt reference
+
+*/}
+
+## Reference 
+
+[how to set up linux prompt - cyberciti.biz](https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html)
