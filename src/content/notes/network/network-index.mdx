@@ -2,7 +2,7 @@
 title: "General Reference For Networking"
 description: "General networking notes"
 date-created: "2022/10/26"
-last-modified: '2023/03/12'
+last-modified: "2024/03/26"
 isdraft: true
 categories: ["network", "general", "reference"]
 tags: ["network", "tools"]
@@ -94,6 +94,13 @@ default via 192.168.0.1 dev en1
 ```sh
 ipconfig getifaddr en1 # for wireless
 ipconfig getifaddr en0 # for ethernet
+```
+
+### Get Information on Given Port 
+
+```sh 
+netstate -ano -p tcp | grep 8080
+
 ```
 
 ## Reference
