@@ -2,7 +2,7 @@
 title: "HomeLab journal"
 description: "A place for reference and docs of my homelab experience"
 date-created:  "2024/03/17"
-last-modified: "2024/03/26"
+last-modified: "2024/04/12"
 isdraft: false
 categories: ["development", "homelab"]
 tags: ["development", "homelab"]
@@ -19,6 +19,34 @@ I have been hacking on homelabs for a while now, more than a year less than five
   - 6T of storage RAID 4 managed with TrueNas 
   - ubuntu server 
 
+## Homelab Dump
+
+### Dashboards
+
+[Heimdall](https://heimdall.site/)
+[homepage](https://gethomepage.dev/latest/)
+
+### Hypervisors
+
+Current choice: Proxmox
+
+[Proxmox](https://www.proxmox.com/en/)
+
+### DNS
+
+- [Pi-hole](https://github.com/pi-hole/docker-pi-hole)
+
+
+### Media Servers 
+
+#### Visual 
+
+Current Choice: Jellyfin
+
+[Jellyfin](https://jellyfin.org/)
+[Plex](https://www.plex.tv/)
+
+
 ## Objectives 
 
 ### I want to manage and host
@@ -31,7 +59,7 @@ I have been hacking on homelabs for a while now, more than a year less than five
 
 #### Dev Services 
 
-- some sort of load-blancing and cluster solution 
+- some sort of load-balancing and cluster solution 
 - local dns
 - local git server?
 - local ci/cd solution?
@@ -46,6 +74,18 @@ I have been hacking on homelabs for a while now, more than a year less than five
 
 
 ## User Stories 
+
+### Service Health Monitoring and Uptime
+
+This has a couple of different parts. 
+
+- I want checks that ensure that deps of services such as nas driver are up and running before containers spin up. 
+- I want checks that ensure a service is working as expected.
+- I want users(including myself) to be able to send me a message if the service is down and I want to ensure that I get that message.
+
+If my server shuts down accidentally, I have to ssh in and remount my nas drives on my ubuntu server then restart any containers that are dependent on them. Such as jellyfin and audiobookshelf. This is extremely fragile and I need to find a more robust solution. 
+
+
 
 ###  Local and Public Network Human Readable and Rememberable Domain Names
 
@@ -65,9 +105,9 @@ As a maintainer, I want a clear logging solution to debug issues with my service
 
 ### Local DNS 
 
-Trom my research their seem to be two options. 
+From my research their seem to be two options. 
 
-- [Pi-hle](https://github.com/pi-hole/docker-pi-hole)
+- [Pi-hole](https://github.com/pi-hole/docker-pi-hole)
 - [Adguard dns](https://adguard-dns.io/en/public-dns.html)
 - [Unbound](https://nlnetlabs.nl/projects/unbound/about/)
 - [Dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html)
