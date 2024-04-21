@@ -2,9 +2,103 @@
 title: "Docker Images Notes 2020"
 description: "General notes on Docker Images "
 date-created: '2023/02/20'
-last-modified: '2023/02/20'
+last-modified: "2024/03/30"
 isdraft: false
 categories: ["cheatsheet", "docker-image", "notes"]
 tags: ["cheatsheet", "docker-image", "notes"]
 type: "note"
 ---
+
+## REFERENCE  
+
+Custom dockerfile reference for TypeScript Node Express API Service Starter
+
+## IMAGE
+
+### Build
+
+Build Docker Image from dockerfile
+
+`docker build --tag <image-name> .`
+
+`docker build -t <image-name> .`  
+
+Build Docker Image from Dockerfile with alt file name
+
+`docker build --file ./path/to/dockerfile --tag <image-name> .`
+
+**Example**
+
+`docker build --file Dockerfile.development --tag ts-express/zoho-api-service`
+
+## CONTAINER 
+
+### Create Container
+
+`docker create --name <container-name> --port <external-prot>:<internal-port> <image-name>`
+
+`docker create --name <container-name> <image-name>`
+
+  
+
+# Example
+
+`docker create --name ts-express-zoho-api-service-1 ts-express/zoho-api-service`
+
+  
+  
+
+## Start Container
+
+`docker start -i <container-name>`
+
+**Example**
+
+`docker start -i ts-express-zoho-api-service-1`
+
+  
+
+## Run Container
+
+Docker Run is a combination of `create` and `start`
+
+```sh
+docker run --name <container-name> -it -p 3333:3333 <image-name>
+```
+
+  
+
+**Example**
+
+```sh
+docker run --name -it ts-express-zoho-api-service-1 -p 3333:3333 ts-express/zoho-api-service
+```
+
+  
+### Hot Reload Watch
+
+
+```sh
+docker run --name <container-name> -v $PWD:/app -v app/node_modules -p 3333:3333 <image-name>
+
+```
+
+  
+
+## Execute Command in Container
+
+```sh 
+docker exec -it <container-name> bash
+```
+or
+```sh 
+docker exec -it <container-name> sh
+```
+
+# example
+
+`docker exec -it l-dev bash`
+
+```sh 
+docker exec -it <container-name> sh
+```
