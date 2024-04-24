@@ -2,7 +2,7 @@
 title: "Shell Index"
 description: "Catch for shell stuff"
 date-created: "2024/03/17"
-last-modified: "2024/03/17"
+last-modified: "2024/04/21"
 isdraft: false
 categories: ["shell", "catch", "reference"]
 tags: ["shell", "catch", "reference"]
@@ -10,6 +10,30 @@ type: "note"
 ---
 
 ## Quality of Life 
+
+### Reload Config after changes without closing terminal 
+
+```sh 
+source ~/.bashrc # or .zshrc
+
+
+```
+
+### Custom Prompts 
+
+In your `.bashrc` or `.zshrc` file you can add custom prompts to your terminal. 
+
+```txt:title=".bashrc"
+PROMPT="%(?.%F{green}->.%F{red}->)%f %B%F%n@%m-%1~%f%b "
+```
+
+This results as a prompt that looks like this: 
+
+```sh
+-> user@hostname-<parentofcurrentdir>
+```
+
+
 
 ### [exa](https://github.com/ogham/exa)
 
