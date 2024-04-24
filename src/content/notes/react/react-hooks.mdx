@@ -13,6 +13,26 @@ type: "note"
 
 [wrapping react usestate with typesrcript - kentcdodds](https://kentcdodds.com/blog/wrapping-react-use-state-with-type-script)
 
+### UseReducer 
+
+[useReducer - react.dev](https://react.dev/reference/react/useReducer)
+
+`useReducer` is an alternative to `useState` and enables more fine tune control over state changes. 
+
+```ts
+import { Reducer, useReducer } from 'react';
+
+const toggleReducer = (state: boolean, nextValue?: any) =>
+  typeof nextValue === 'boolean' ? nextValue : !state;
+
+const useToggle = (initialValue: boolean): [boolean, (nextValue?: any) => void] => {
+  return useReducer<Reducer<boolean, any>>(toggleReducer, initialValue);
+};
+
+export default useToggle;
+```
+
+
 ### Common Custom Hooks Reference 
 
 #### useTimeout
@@ -23,33 +43,21 @@ Code lifted from [usetimeout - joshwcomeau](https://www.joshwcomeau.com/snippets
 import React from 'react';
 
 export default function useTimeout(callback, delay) {
-
   const timeoutRef = React.useRef(null);
-
   const savedCallback = React.useRef(callback);
 
   React.useEffect(() => {
-
     savedCallback.current = callback;
-
   }, [callback]);
-
+  
   React.useEffect(() => {
-
     const tick = () => savedCallback.current();
-
     if (typeof delay === 'number') {
-
       timeoutRef.current = window.setTimeout(tick, delay);
-
       return () => window.clearTimeout(timeoutRef.current);
-
     }
-
   }, [delay]);
-
   return timeoutRef;
-
 };
 ```
 
@@ -59,29 +67,18 @@ Code lifted from [useInterval - joshwcomeau](https://www.joshwcomeau.com/snippet
 
 ```js
 function useInterval(callback, delay) {
-
   const intervalRef = React.useRef(null);
-
   const savedCallback = React.useRef(callback);
-
   React.useEffect(() => {
-
     savedCallback.current = callback;
-
   }, [callback]);
 
   React.useEffect(() => {
-
     const tick = () => savedCallback.current();
-
     if (typeof delay === 'number') {
-
       intervalRef.current = window.setInterval(tick, delay);
-
       return () => window.clearInterval(intervalRef.current);
-
     }
-
   }, [delay]);
 
   return intervalRef;
