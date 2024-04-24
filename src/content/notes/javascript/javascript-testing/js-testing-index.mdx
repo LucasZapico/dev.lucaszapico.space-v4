@@ -1,3 +1,14 @@
+---
+title: "JavaScript Testing"
+description: ""
+date-created: "2024/01/24"
+last-modified: "2024/03/17"
+isdraft: false
+categories: ["js-test"]
+tags: ["js-test"]
+type: "note"
+---
+
 ## Reference 
 
 - [Jestjs](https://jestjs.io/docs/getting-started)
@@ -6,3 +17,32 @@
 - [Karma](https://karma-runner.github.io/3.0/)
 - [Cypress](https://www.browserstack.com/automate/cypress)
 
+## Jest 
+
+### Example Single Test
+
+```js:title="foo.js"
+export function foo(a,b){
+	return a + b
+}
+```
+
+```js:title="foo.test.js"
+import foo from "./foo.js"
+
+test('test foo', async () => {
+	expect(foo(3, 6)).toBe(9);
+});
+```
+
+### Test Specific Path 
+
+```shell
+jest path/to/my-test.js
+```
+
+or 
+
+```shell
+npm test -- path/to/my-test.js
+```
