@@ -1,0 +1,71 @@
+---
+title: gitignore
+description: "General catch of notes, cheatsheet and reference for git ignore related"
+date-created: "2023/11/12"
+last-modified: "2024/04/28"
+categories: ["git", "gitignore", "cheatsheet", "reference"]
+tags: ["git", "gitignore", "cheatsheet", "reference"]
+isdraft: false
+type: "note"
+---
+
+## CheatSheet 
+
+Ignore the contents of dir `foo/` 
+
+```txt:.gitignore
+foo/*
+```
+
+Ignore dir `foo/` anywhere in the project this is a bit overkill
+
+```txt:.gitignore 
+**/foo/**
+```
+
+### Example using .env 
+
+```txt:.gitignore
+**.env**
+```
+
+This ignores 
+
+```
+.env
+.env.foo
+.env.*
+foo/.env
+foo/.env.*
+foo/bar/.env.*
+```
+
+
+## Gotchas 
+
+### Vscode
+
+Heavy handed handle, this ignores `.vscode` anyware in a project and any sub configs
+
+```
+**/.vscode/**
+```
+
+
+
+
+
+```txt:.gitignore
+
+.vscode/*
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/*.code-snippets
+
+```
+
+## References 
+
+[gitignore reference - atlassian](https://www.atlassian.com/git/tutorials/saving-changes/gitignore)
