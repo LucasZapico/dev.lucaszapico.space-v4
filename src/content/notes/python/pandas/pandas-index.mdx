@@ -1,0 +1,96 @@
+---
+title: "Pandas Reference and Cheatsheet"
+description: "General notes on pandas, cheatsheet, config, gochas, and workflows"
+date-created: "2024/04/19"
+last-modified: "2024/07/08"
+isdraft: false
+categories: ["python", "pandas", "cheatsheet", "process", "workflows", "reference"]
+tags: ["python", "cheatsheet", "pandas", "process", "workflows", "reference"]
+type: "note"
+---
+
+## Pandas Reference 
+
+
+## Cleaning Data Checklist 
+
+- checking duplicates 
+- data types 
+- missing values 
+- unique (non na values)
+- drop duplicates 
+
+
+---
+
+## Cheatsheet 
+
+### Remove Nan 
+
+```python 
+# remove any row with nan
+df.dropna()
+# remove row only when all values are nan
+df.dropna(how='all')
+# remove row only when specific column values are nan
+df.dropna(subset=['column_one', 'column_two'])
+```
+
+```python  
+df.dropna(how='all', inplace=True)
+```
+
+The `inplace=True` argument will modify the original DataFrame.
+
+#### Remove Duplicates 
+
+```python 
+# remove any row with duplicates
+df.drop_duplicates()
+```
+
+
+### Export 
+
+```python
+# export to csv
+df.to_csv('file_name.csv')
+```
+
+---
+title: Pandas Catch 
+data: 2019-06-25T8:35:15+07:00
+draft: true
+---
+
+
+#### Checking Duplicates 
+
+```python 
+df.duplicates().sum()
+# sum of duplicated values
+```
+
+#### Checking Datatypes 
+
+```python 
+df.info()
+# returns headers and data types 
+```
+
+#### Missing Values 
+
+```python 
+df.isnull().sum()
+# sum of missing values 
+```
+
+#### Unique Values 
+
+```python 
+df.nunique(drop=True)
+```
+##### Working with Multiple data set 
+
+- are the property/header names consistent? 
+
