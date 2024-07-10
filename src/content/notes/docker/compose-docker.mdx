@@ -2,7 +2,7 @@
 title: "Docker Compose"
 description: "Reference for Docker Compose management"
 date-created: '2023/02/20'
-last-modified: '2023/02/20'
+last-modified: "2024/07/10"
 categories: ["docker", "development", "docker-compose"]
 tags: ["docker", "development", "docker-compose", "notes"]
 isdraft: true
@@ -15,6 +15,17 @@ type: "note"
 docker compose build
 ```
 
+## Docker Compose Volumes 
+
+> ‼️ gotcha: use explicit paths, `/home/foo/<path-to-dir>` rather than 🙅‍♂️ `~/<path-to-dir>` or `${HOME}/<path-to-dr>`. There might be a way to do this but it was not obvious with my research pass
+
+```docker.compose 
+version: "3"
+services:
+	foo:
+		volumes: 
+			- ./bar:/app/bar
+```
 
 #### Refreshing Persistent Volumes
 
