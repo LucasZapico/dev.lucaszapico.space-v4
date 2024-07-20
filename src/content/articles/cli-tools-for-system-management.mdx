@@ -2,7 +2,7 @@
 title: "Cli Tools For System Management"
 description: "List and reference for CLI tools to manage workspace"
 date-created: '2023/02/24'
-last-modified: '2023/07/07'
+last-modified: "2024/07/20"
 featuredImage: "../../images/ai-images/general2.png"
 isdraft: true
 categories: ["cli", "tools", "notes"]
@@ -10,49 +10,8 @@ tags: ["cli", "tools", "notes"]
 type: "notes"
 ---
 
-### [Npkill](https://www.npmjs.com/package/npkill)
+## Network 
 
-Bulk remove node_modules from directories
-
-### [Procs](https://github.com/dalance/procs)
-
-#### Install 
-
-```sh 
-brew install procs
-```
-
-#### Usage 
-
-```sh 
-procs
-```
-
-
-### [Duf](https://github.com/muesli/duf)
-
-#### Install 
-
-```sh 
-brew install duf
-```
-
-#### Usage 
-
-```sh 
-duf
-```
-
-
-### [Trippy](https://github.com/fujiapple852/trippy)
-
-Trippy combines the functionality of traceroute and ping and is designed to assist with the analysis of networking issues.
-
-### Install 
-
-```sh
-brew install trippy
-```
 
 ### [BandWhich](https://github.com/imsnif/bandwhich)
 
@@ -68,35 +27,29 @@ brew install bandwhich
 bandwhich
 ```
 
+### [Trippy](https://trippy.cli.rs/) 🦄
 
-### [Glances](https://github.com/nicolargo/glances)
+[trippy repo](https://github.com/fujiapple852/trippy)
 
-#### Install 
+Trippy combines the functionality of traceroute and ping and is designed to assist with the analysis of networking issues.
 
-```sh 
-brew install glances
+### Install 
+
+```sh
+brew install trippy
 ```
 
-#### Usage 
+### Usage 
 
 ```sh 
-glances
+trip example.com
 ```
 
+-------------------
 
-### [exa](https://github.com/ogham/exa)
 
-#### Install 
+## Machine 
 
-```sh 
-brew install exa
-```
-
-#### Usage 
-
-```sh 
-exa --icons -la --git
-```
 
 ### [bpytop](https://github.com/aristocratos/bpytop)
 
@@ -114,6 +67,81 @@ brew install bpytop
 bpytop
 ```
 
+
+
+### [Glances](https://github.com/nicolargo/glances)
+
+#### Install 
+
+```sh 
+brew install glances
+```
+
+#### Usage 
+
+```sh 
+glances
+```
+
+### [Duf](https://github.com/muesli/duf) 🦄
+
+Disk Usage/Free Utility - a better 'df' alternative
+
+#### Install 
+
+```sh 
+brew install duf
+```
+
+#### Usage 
+
+```sh 
+duf
+```
+
+
+### [Procs](https://github.com/dalance/procs)
+
+A modern replacement for `ps`. `ps` short for "process status" is a command line util to display information on running processes. `procs` enhances and extends this functionality.
+
+#### Install 
+
+```sh 
+brew install procs
+```
+
+#### Usage 
+
+```sh 
+procs
+```
+
+----------
+
+## Development Tools 
+
+### [Npkill](https://www.npmjs.com/package/npkill) 🦄
+
+Bulk remove node_modules from directories
+
+
+### [eza](https://github.com/eza-community/eza) 
+
+A modern, maintained replacement for ls
+
+> previously [exa](https://github.com/ogham/exa) but the project is no longer maintained, `eza` is a maintained fork
+
+#### Install 
+
+```sh 
+brew install eza
+```
+
+#### Usage 
+
+```sh 
+eza --icons -la --git
+```
 
 ### [LazyGit](https://github.com/jesseduffield/lazygit)
 
