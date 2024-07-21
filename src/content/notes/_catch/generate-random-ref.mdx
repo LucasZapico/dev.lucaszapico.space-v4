@@ -1,0 +1,70 @@
+---
+title: "Generate Rand Keys"
+description: "A little reference on generate ran keys"
+date-created: "2024/07/21"
+last-modified: "2024/07/21"
+isdraft: true
+categories: ["ref", "security", "cheatsheet"]
+tags: ["ref", "security"]
+type: "notes"
+---
+
+## Methods 
+
+### [OpenSSL](https://www.openssl.org/)
+
+ OpenSSL is a cryptography toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) network protocols and related cryptography standards required by them.
+
+One of the most straight forward methods is to use the OpenSSL tool kit
+
+#### Benefits 
+
+- comes with most machine os
+- simple command works in cli
+
+openssl rand [-base64 | hex]
+
+```sh 
+openssl rand --base64 2
+# bHg=
+
+openssl rand --base64 4
+# 05kdpQ==
+
+openssl rand --base64 8
+# QA0G0DFk4hw=
+
+openssl rand --base64 16
+# e872upqUs9h5tD+V63xYiA==
+
+openssl rand --base64 32
+# lZ5qpHOpb7B++5xMArEu2Kzbsssr+dVdspFFwFCV+Z8=
+
+openssl rand --base64 64
+# F3LGFJwxuWq/6bM0MKMtZYQB2MuUcbKTdJWyqneKMNXBgc/bViFGLkUmIjwvDfih5hWb4E6pV3VlQeHyw7EsFw==
+```
+
+```sh 
+openssl rand -hex 2
+# ce1a
+openssl rand -hex 
+# 2e6b2a30
+
+openssl rand -hex 8
+# 556a72df614874c3
+
+openssl rand -hex 16
+# 519f4d4e1487d233b55f911013e3d2d2
+
+openssl rand -hex 32
+# 8850796b0570b44595dddb97c2ffc7a463d836259d626d271df25c1eebb08a63
+
+openssl rand -hex 64
+# 2910ef982c4c7ca7791cda19a50a614b97bf64a0b1705644f6e7f655aa82a98f48dd0e34081f97e70a2feffaaa28bf2e0b559cf5c28faea5ab3f5123eb56cfb0
+
+
+```
+
+## Reference 
+
+[cheat.sh](https://cheat.sh/openssl)
