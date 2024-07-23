@@ -2,7 +2,7 @@
 title: "Linux distribution Environment Setup"
 description: ""
 date-created: "2022/02/16"
-last-modified: '2023/03/18'
+last-modified: "2024/07/23"
 categories: ["linux", "setup", "reference"]
 tags: ["linux", "setup"]
 isdraft: true
@@ -33,3 +33,31 @@ sudo apt-get install gnome-tweak-tool -y && gnome-tweak-tool
 ### HomeBrew on Linux 
 
 [Homebrew on linux - digitalocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-homebrew-on-linux)
+
+### Clipboard form command line 
+
+[clipx](https://github.com/astrand/xclip/tree/master)
+
+```sh 
+brew install clipx
+```
+
+Copy your uptime into the selection for pasting:
+	`uptime | xclip`
+
+	Copy your password file for pasting:
+	`xclip /etc/passwd`
+
+	Save some text you have Edit | Copied in a web browser:
+	`xclip -o -sel clip > webpage.txt`
+
+	Open a URL selected in an email client
+	`mozilla 'xclip -o'`
+
+	Copy XA_PRIMARY to XA_CLIPBOARD
+	`xclip -o | xclip -sel clip`
+
+	In command mode in vim, select some lines of text, then press shift-:
+	for an ex prompt, and use this command to copy the selected lines of
+	text to the primary X selection:
+	!xclip -f
