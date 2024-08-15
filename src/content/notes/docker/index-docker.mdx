@@ -2,7 +2,7 @@
 title: "Docker"
 description: ""
 date-created: "2022/09/11"
-last-modified: "2024/07/19"
+last-modified: "2024/08/15"
 categories: ["docker", "development", "dev-ops"]
 tags: ["docker", "development", "dev-ops", "hosting", "notes"]
 isdraft: true
@@ -10,15 +10,83 @@ type: "note"
 ---
 
 
+## Setting up 
+
+### Linux 
+
+[apt install linux](https://docs.docker.com/engine/install/ubuntu/)
+
+### Troubleshooting 
+
+#### Permission Denied 
+
+```
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: 
+````
+
+
+##### Solutions
+
+1. reboot and log in again 
+
+#### Check Docker Group 
+
+```sh 
+ sudo groupadd docker
+```
+
+```sh 
+sudo usermod -aG docker $USER
+```
+
+```sh 
+sudo reboot -n
+```
+
+#### Adjust permission on `/var/run/docker.sock`
+
+```sh 
+sudo chmod 666 /var/run/docker.sock
+
+```
+
 
 ## TroubleShooting Cheat Sheet 
 
 ## Restart Docker 
 
 Linux ubuntu
+
 ```sh 
-udo systemctl restart docker
+sudo systemctl restart docker
 ```
+
+Macos 
+
+```sh 
+osascript -e 'quit app "Docker"'
+
+```
+or 
+
+```sh 
+killall Docker\ Desktop
+```
+
+### Open docker 
+
+Macos
+```sh 
+open /Applications/Docker.app
+```
+
+Linux ubuntu
+
+```sh 
+docker
+
+```
+
 
 List the image and container names with their associated ports in a clean table
 
