@@ -2,13 +2,54 @@
 title: "Proxmox Index"
 description: "General reference notes on proxmox"
 date-created: '2023/04/10'
-last-modified: '2023/04/10'
+last-modified: "2024/08/15"
 isdraft: true
 categories: ["proxmox", "notes", "cheatsheet"]
 tags: ["proxmox", "notes", "cheatsheet"]
 type: "notes"
 ---
 
+## Passthrough HDD/SSH/Physical disks
+
+[Passthrough VM on Proxmox](https://dannyda.com/2020/08/26/how-to-passthrough-hdd-ssd-physical-disks-to-vm-on-proxmox-vepve/)
+
+Setting up a disk pass through requires a little configuration. 
+
+```
+apt install lshw 
+```
+List storage disks attached to our node
+
+```
+lshw -class disk -class storage
+```
+
+### List Disk By id
+
+> This method is more resilient then `/dev/sba`
+
+```sh 
+lsblk |awk 'NR==1{print $0" DEVICE-ID(S)"}NR>1{dev=$1;printf $0" ";system("find /dev/disk/by-id -lname \"*"dev"\" -printf \" %p\"");print "";}'|grep -v -E 'part|lvm'
+```
+
+
+
+## Set up 
+
+- trueNas 
+- ubuntu server 
+
+## TrueNas 
+
+
+
+## Ubuntu Server 
+
+## Windows 
+
+## Fedora 
+
+## Debian 
 
 ## How To Add Passthrough Harddrives to VM 
 
