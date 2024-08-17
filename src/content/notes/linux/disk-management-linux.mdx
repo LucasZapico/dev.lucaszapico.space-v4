@@ -1,18 +1,86 @@
 ---
-title: "Disk Management Linux"
+title: "Disk PCIE Management Linux"
 description: "General notes on Disk formatting"
 date-created: '2023/03/18'
-last-modified: '2023/04/10'
+last-modified: "2024/08/17"
 isdraft: true
 categories: ["linux", "general", "reference", "disk"]
 tags: ["linux", "general", "reference", "disk"]
 type: "note"
 ---
 
+## Set up Disk HDD/SSD 
+
+[debidan fdisk docs](https://manpages.debian.org/bookworm/fdisk/fdisk.8.en.html)
+
+list hardware `-C` `-class` disk
+
+```sh 
+sudo lshw -class disk
+```
+
+```sh 
+sudo parted /dev/<disk>
+
+```
+Use `(parted) help` to get a quick overview of commands
+
+> `gpt` is convesion 2024
+
+```sh 
+(parted) mklabel gpt
+```
+
+Basic config, `mkpart` partition name `primary`, file system type `ext4` start `0%` end `100%`
+
+```sh 
+parted mkpart  
+```
+
+⚠️ check with `(parted) print` then `(parted) quite`
+
+Format disk 
+
+```sh 
+sudo mkfs -t ext4 /dev/<disk>
+```
+
+Create mount point 
+
+```sh 
+sudo mkdir /media/<ssd/hdd>
+```
+
+Update `/etc/fstab`, 
+
+> In general using the id is considered more resilient as in some rare cases the path can change.
+
+
+```sh 
+ls -l /dev/disk/by-uuid
+```
+
+```txt 
+/dev/disk/by-uuid/{uuid} /media/<lable> ext4 default 0 2
+```
+
+
+or 
+
+```txt 
+/dev/<disk> /media/<lable> ext4 default 0 2
+```
+
+
+
 ### List Disks 
 
 ```sh 
 ds
+```
+
+```sh 
+lshw -class disk
 ```
 
 ### Unmount 
@@ -61,3 +129,24 @@ lshw -c storage -c disk
 [Linux format disk - phoenixnap.com](https://phoenixnap.com/kb/linux-format-usb)
 
 [format use drive linux - macuseof.com](https://www.makeuseof.com/how-to-format-usb-drive-on-linux/)
+
+[setting up new drive linux](https://akrabat.com/setting-up-a-new-hard-drive-in-linux/)
+
+### tools 
+
+```
+brew install duf 
+```
+
+## Partitioning Systems Refs 
+
+`aix` provides support for the volumes used in IBM’s AIX (which introduced what we now know as LVM);
+`amiga` provides support for the Amiga’s RDB partitioning scheme;
+`bsd` provides support for BSD disk labels;
+`dvh` provides support for SGI disk volume headers;
+`gpt` provides support for GUID partition tables;
+`mac` provides support for old (pre-GPT) Apple partition tables;
+`msdos` provides support for DOS-style MBR partition tables;
+`pc98` provides support for PC-98 partition tables;
+`sun` provides support for Sun’s partitioning scheme;
+`loop` provides support for raw disk access (loopback-style) — I’m not sure about the uses for this one.
