@@ -1,0 +1,110 @@
+---
+title: "Rsync cheatsheet"
+description: "Catch for rsync commands"
+date-created: "2024/07/18"
+last-modified: "2024/08/17"
+isdraft: false
+categories: ["shell", "catch", "reference", 'rsync']
+tags: ["shell", "catch", "reference", 'rsync']
+type: "note"
+---
+
+### Sync contents of dir into destination
+
+```sh 
+rsync -avz /path/source/ /path/destination 
+```
+
+### Syncing folder src into dest:
+
+```sh 
+rsync -avz ./src /dest
+```
+
+#### Syncing the content of src into dest:
+
+```sh 
+rsync -avz ./src/ /dest
+```
+
+### Exclude 
+
+```sh 
+rsync -avz --exclude=node_modules  ./src /dest
+```
+
+
+### Remove After Sync 
+
+```sh 
+rsync --remove-source-files -options /path/to/src/ /path/to/dest
+rsync --remove-source-files -options /path/to/src/ computerB:/path/to/dest
+rsync --remove-source-files -av /path/to/src/*.avi computerB:/path/to/dest
+```
+
+
+## Flags 
+
+### Archive `-a` `--archive`
+
+```sh 
+rsync -a /path/source/ /path/dest/
+```
+
+### Verbose `-v` `--verbose`
+
+```sh 
+rsync -v /path/source/ /path/dest/
+```
+```sh 
+rsync --verbose /path/source/ /path/dest/
+```
+
+
+## Reference 
+
+```sh 
+--archive, -a            archive mode; equals -rlptgoD (no -H,-A,-X)
+
+--acls, -A               preserve ACLs (implies --perms)
+--xattrs, -X             preserve extended attributes
+--hard-links, -H                       preserve hard links
+
+--exclude-from={'list.txt'}.        there is a corresponding --include-from
+--exclude={'*.txt','dir3','dir4'}   there is a corresponding --include
+
+--dry-run, -n            perform a trial run with no changes made
+--list-only              list the files instead of copying them
+--ignore-existing        don't overwrite existing files, no matter what
+--max-delete=NUM         don't delete more than NUM files (SET TO 0 OR LOW NUMBER FOR SAFETY)
+--one-file-system, -x    ensure that you stay inside the SRC file system 
+
+--atimes -U              preserve access (use) times
+--crtimes, -N            preserve create times (newness)
+--times, -t              preserve modification times
+
+--numeric-ids            don't map uid/gid values by user/group name (more efficient)
+--delete-after           wait until end to process deletes (much more efficient than deleting during)
+--partial                allows you to resume an interrupted transfer
+
+--progress               show which file is being copied (not stored in log file!!)
+--itemize-changes, -i    output a change-summary for all updates 
+                         has complex output. (see below for a link)
+--log-file=FILE          useful when using --itemize
+--verbose, -v            increase verbosity
+--info=FLAGS             fine-grained informational verbosity
+--human-readable, -h     output numbers in a human-readable format
+--stats                  provide statistics at the end
+
+--size-only              skip files that match in size (know what you're doing)
+--ignore-times, -I       don't skip files that match size and time (when in doubt...)
+--checksum -c            skip based on checksums, not mod-time & size
+
+--sparse                 turn sequences of nulls into sparse blocks
+--bwlimit                limit the impact of the rsync on the network (in kb/sec)
+
+--chmod=CHMOD            affect file and/or directory permissions
+--usermap=STRING         custom username mapping 
+--groupmap=STRING        custom groupname mapping (STRING is not simply
+--chown=USER:GROUP       simple username/groupname mapping
+````
