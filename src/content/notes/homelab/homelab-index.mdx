@@ -2,7 +2,7 @@
 title: "Homelab Index"
 description: "General notes catch on homelab stuff"
 date-created: '2023/04/10'
-last-modified: '2023/06/07'
+last-modified: "2024/08/11"
 isdraft: false
 categories: ["homelab", "notes"]
 tags: ["homelab", "notes"]
@@ -10,46 +10,11 @@ type: "notes"
 ---
 
 
-## Self Hosted Picks 
-
--  [dashy](https://dashy.to/)
-The Ultimate Homepage for your Homelab
+More in depth [homelab journal](/journals/homelab-journal/homelab-journal-index.mdx)
 
 
-## 2023 HomeLab Setup
+## PiHole 
 
-```mermaid 
-graph TB
-	a[Proxmox]-->b[Truenas]
-	a-->c[Ubuntu Server]
-	c-->subA
-	b-->subB
-	subB -- "smba" -->subC
-	subgraph subA[Docker]
-		direction LR
-		d[Jellyfin]
-		e[Uptime-kuma]
-		f[Potainer]
-		g[WoodpeckerCI]
-		h[strapiCMS's]
-		i[Node Services]
-		i[GoLang Services]
-	end
-	subgraph subB[Storage]
-		direction RL
-		j[(smb:media)]
-		k[(smb:file system)]
-		l[(ISCSI)]
-	end
-	subgraph subC[LocalMachines]
-		m[machine One]
-		n[machine Two]
-		o[machine Three]
-	end
-
-	j-- "smb mnt"-->d
-	
-```
 
 
 ## Good Practice Catch 
@@ -59,3 +24,21 @@ graph TB
 [mnt directories disappearing - stackexchange](https://unix.stackexchange.com/questions/1986/mnt-directories-disappearing)
 
 > Directory is provided so that the system administrator may temporarily mount a filesystem as needed.
+
+## References 
+
+[Awesome Selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)
+
+### Alternatives 
+
+### DNS 
+
+
+### HomePages
+
+- [Awesome Selfhosted - Dashboards](https://github.com/awesome-selfhosted/awesome-selfhosted#personal-dashboards)
+- [Road to homelab - home page guide](https://roadtohomelab.blog/homelab-homepage-guide/)
+
+-  [dashy](https://dashy.to/)
+The Ultimate Homepage for your Homelab
+- [heimdall](https://heimdall.site/)

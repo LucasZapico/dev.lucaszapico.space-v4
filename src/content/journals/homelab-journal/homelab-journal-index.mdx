@@ -2,7 +2,7 @@
 title: "HomeLab journal"
 description: "A place for reference and docs of my homelab experience"
 date-created:  "2024/03/17"
-last-modified: "2024/04/12"
+last-modified: "2024/07/28"
 isdraft: false
 categories: ["development", "homelab"]
 tags: ["development", "homelab"]
@@ -19,6 +19,50 @@ I have been hacking on homelabs for a while now, more than a year less than five
   - 6T of storage RAID 4 managed with TrueNas 
   - ubuntu server 
 
+## 2023 HomeLab Setup
+
+```mermaid 
+graph TB
+	a[Proxmox]-->b[Truenas]
+	a-->c[Ubuntu Server]
+	c-->subA
+	b-->subB
+	subB -- "smba" -->subC
+	subgraph subA[Docker]
+		direction LR
+		d[Jellyfin]
+		e[Uptime-kuma]
+		f[Potainer]
+		g[WoodpeckerCI]
+		h[strapiCMS's]
+		i[Node Services]
+		i[GoLang Services]
+	end
+	subgraph subB[Storage]
+		direction RL
+		j[(smb:media)]
+		k[(smb:file system)]
+		l[(ISCSI)]
+	end
+	subgraph subC[LocalMachines]
+		m[machine One]
+		n[machine Two]
+		o[machine Three]
+	end
+
+	j-- "smb mnt"-->d
+
+	
+```
+
+### Guiding Questions 
+
+- what is a homelab
+- what is the value of a homelab(highlevel)
+    - what is the value of each service
+
+
+---
 ## Homelab Dump
 
 ### Dashboards
@@ -36,7 +80,6 @@ Current choice: Proxmox
 
 - [Pi-hole](https://github.com/pi-hole/docker-pi-hole)
 
-
 ### Media Servers 
 
 #### Visual 
@@ -45,6 +88,9 @@ Current Choice: Jellyfin
 
 [Jellyfin](https://jellyfin.org/)
 [Plex](https://www.plex.tv/)
+
+### Backup Solutions 
+
 
 
 ## Objectives 
@@ -122,3 +168,5 @@ From my research their seem to be two options.
 ### Moives, Shows, Other 
 
 ### Audiobooks
+
+
