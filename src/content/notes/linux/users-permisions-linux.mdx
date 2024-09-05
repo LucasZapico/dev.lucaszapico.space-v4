@@ -2,7 +2,7 @@
 title: "Linux distribution Environment Setup"
 description: ""
 date-created: "2022/02/16"
-last-modified: "2024/03/20"
+last-modified: "2024/07/17"
 categories: ["linux", "setup", "reference"]
 tags: ["linux", "setup"]
 isdraft: false
@@ -57,6 +57,20 @@ useradd <new-username>
 sudo passwd <new-username>
 # props for password and password confirmation
 ```
+
+#### Add USer to Group 
+
+```sh 
+sudo usermod -aG <groupname> <username>
+```
+
+```sh 
+sudo usermod -aG wheel sysadmin
+
+sudo usermod -aG sudo sysadmin
+```
+
+
 
 #### Delete User 
 

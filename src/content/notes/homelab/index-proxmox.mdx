@@ -2,7 +2,7 @@
 title: "Proxmox Index"
 description: "General reference notes on proxmox"
 date-created: '2023/04/10'
-last-modified: "2024/08/16"
+last-modified: "2024/08/20"
 isdraft: true
 categories: ["proxmox", "notes", "cheatsheet"]
 tags: ["proxmox", "notes", "cheatsheet"]
@@ -26,6 +26,14 @@ List storage disks attached to our node
 lshw -class disk -class storage
 ```
 
+### PCIE 
+
+List PCI
+
+```sh 
+lspci
+```
+
 ### List Disk By id
 
 > This method is more resilient then `/dev/sba`
@@ -39,6 +47,23 @@ lsblk |awk 'NR==1{print $0" DEVICE-ID(S)"}NR>1{dev=$1;printf $0" ";system("find 
 [Proxmox gpu passthrough ubuntu](https://nopresearcher.github.io/Proxmox-GPU-Passthrough-Ubuntu/)
 
 [official pci passthrough](https://pve.proxmox.com/wiki/PCI_Passthrough)
+
+## Resize 
+
+utils
+```sh 
+df -h 
+lsblk
+```
+
+```sh
+parted /dev/sda
+print and Fix
+resizepart and choose correct partition and 100%FREE flag
+pvresize /dev/sda3
+lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+```
 
 ## Set up 
 
