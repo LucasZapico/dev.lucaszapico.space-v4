@@ -1,0 +1,55 @@
+---
+title: "SSL and TSL"
+description: ""
+date-created: "2024/08/15"
+last-modified: "2024/08/15"
+isdraft: true
+categories: ["ssl", "tsl", "notes"]
+tags: ["ssl", "tsl", "notes"]
+type: "note"
+---
+
+
+## Generation of a Self Signed Certificate
+
+### Generate Self Signed Cert wtih Openssl
+
+Generation of a self-signed SSL certificate involves a simple 3-step procedure:
+
+### STEP 1: Create the server private key
+
+```sh
+openssl genrsa -out cert.key 2048
+```
+
+### STEP 2: Create the certificate signing request (CSR)
+
+```sh
+openssl req -new -key cert.key -out cert.csr
+```
+
+### STEP 3: Sign the certificate using the private key and CSR
+
+```sh
+openssl x509 -req -days 3650 -in cert.csr -signkey cert.key -out cert.crt
+```
+
+Congratulations! You now have a self-signed SSL certificate valid for 10 years.
+
+### Generate Self Signed Cert with Mkcert
+
+[mkcert](https://github.com/FiloSottile/mkcert)
+
+```sh 
+mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
+```
+
+```
+Created a new certificate valid for the following names 📜
+ - "example.com"
+ - "*.example.com"
+ - "example.test"
+ - "localhost"
+ - "127.0.0.1"
+ - "::1"
+```

@@ -24,6 +24,9 @@ One of the most straight forward methods is to use the OpenSSL tool kit
 
 openssl rand [-base64 | hex]
 
+> Its a good practice to trim out chars that can be interpreted as escape or newline 
+> `| tr -d '\n'`
+
 ```sh 
 openssl rand --base64 2
 # bHg=
