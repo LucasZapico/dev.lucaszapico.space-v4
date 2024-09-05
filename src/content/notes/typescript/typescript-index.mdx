@@ -2,7 +2,7 @@
 title: "Typescript Notes"
 description: "General notes on typescript"
 date-created: 2022/01/10
-last-modified: "2024/03/17"
+last-modified: "2024/09/04"
 isdraft: true
 categories: ["typescript", "notes"]
 tags: ["typescript", "notes"]
@@ -18,6 +18,8 @@ Typescript delivers new features or simpler features to what would be more compl
 Out of the box, TypeScript uses types for extra error checking.
 
 ### Why use TypeScript
+
+TypeScript creates guard rails to your projects. It imposess strick rules and by following these rules our projects become more resilient. Because the rules are implemented at a low level of our project it is a default not and "opt in" requirment to develop.
 
 **Example**
 
@@ -112,6 +114,8 @@ const person: {} = {
 ```
 
 **Explicit Object Typing**
+
+> A type should always lean toward teh specific
 
 ```typescript
 const person: {
@@ -229,7 +233,13 @@ export type SizeType = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
 export type ContainerSizeType = Exclude<SizeType, '2xl' | '3xl' | 'xxs'>;
 ```
 
+## Nullish Coalescing Operators `??`
 
+`??` The nullish coalescing operator provides a fallback value when a variable might be null or undefined. 
+
+```ts 
+const foo = userInputName ?? ""
+```
 
 
 ## Reference 
