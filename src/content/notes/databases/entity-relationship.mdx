@@ -1,0 +1,113 @@
+---
+title: Entity Relationships
+description: "Quick reference and catch for notes, good practice, etc on entity relationships"
+date-created: "2024/08/11"
+last-modified: "2024/08/11"
+categories: ["database"]
+tags: ["database", "entity-relationship"]
+isdraft: true
+type: note
+---
+
+
+## Syntax and Conventions
+
+A convention for entity relationship diagrams.
+
+Rectangles: This Entity Relationship Diagram symbol represents entity types
+Ellipses : Symbol represent attributes
+Diamonds: This symbol represents relationship types
+Lines: It links attributes to entity types and entity types with other relationship types
+Primary key: attributes are underlined
+Double Ellipses: Represent multi-valued attributes
+
+```mermaid 
+flowchart LR
+    id3[entity]
+    id4[[weak entity]]
+    id1{relationship}
+    id5{{weak relationship}}
+    id2(attribute)
+    id6((multivalued attribute))
+
+```
+
+## Relationship Cardinality 
+
+One-to-One Relationships
+One-to-Many Relationships
+May to One Relationships
+Many-to-Many Relationships
+
+
+### Mandatory One or Required One to Required One
+
+```mermaid 
+erDiagram
+  Alpha ||--|| Beta : ""
+```
+
+### Required One to Optional One 
+
+```mermaid 
+erDiagram
+  Alpha ||--o| Beta : ""
+```
+
+### Required one to Required Many 
+
+```mermaid 
+erDiagram
+  Alpha ||--|{ Beta : ""
+```
+
+### Required one to Optional Many 
+
+```mermaid 
+erDiagram
+  Alpha ||--o{ Beta : ""
+```
+
+### Required one to Optional Many 
+
+```mermaid 
+erDiagram
+  Alpha ||--o{ Beta : ""
+```
+
+
+
+
+```mermaid 
+
+    id3[entity]
+    id4[[weak entity]]
+    id1{relationship}
+    id5{{weak relationship}}
+    id2(attribute)
+    id6((multivalued attribute))
+
+```
+
+
+
+
+## Reference 
+
+### Mermaid Syntax Cheatsheet
+
+possible cardinalities.
+
+| Value (left) |	Value (right) |	Meaning |
+| --- | ---| ----|
+| `|o` |	`o|` | 	Zero or one |
+| `\||`|	`\||`	| Exactly one |
+| `}o` | `o{` | Zero or more (no upper limit) |    |                              |
+| `}\|`    |           `\|{` | One or more (no upper limit) |
+
+### Tools 
+
+- [Mermaid Live](https://mermaid.live)
+
+In general, I think mermaid should be used first and formost if the readability can be maintained.
+
