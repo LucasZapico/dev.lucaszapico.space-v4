@@ -2,10 +2,79 @@
 title: "Ansible"
 description: "Notes and reference on setting up and implementing Ansible"
 date-created: "2024/08/20"
-last-modified: "2024/08/20"
+last-modified: "2024/09/19"
 isdraft: true
 categories: ["linux", "ansible", "dev-quality-life", "network",  "notes"]
 tags: ["linux", "ansible", "dev-quality-life", "network",  "notes"]
 type: "notes"
 ---
+
+## Init 
+
+Ansible requires a control machine which can then execute Ansible playbooks to provision and setup any machine we can ssh into.
+
+1. ssh into our control machine 
+
+
+```sh 
+pipx install ansible-core 
+```
+
+[Alternative install methods](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible-with-pipx)
+
+
+### Define Host Inventory 
+
+This config defines the machines ansible can interact with and allows for some advanced confiration.
+
+```yml:file=/etc/ansible/hosts.yml
+localNetork:
+  hosts:
+    192.168.1.152:
+webservers:
+  hosts:
+    foo.exmaple.com
+```
+
+### Set up Playbooks 
+
+Ansible Playbooks offer a repeatable, reusable, simple configuration management and multi-machine deployment system, one that is well suited to deploying complex applications.
+
+[Ansible Playbook docs](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html)
+
+
+#### Run shell cmds
+
+[Ansible Sheel Cmd docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html)
+
+```yml:file=playbook.yml
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote
+  ansible.builtin.shell: somescript.sh >> somelog.txt
+
+- name: Run a command that uses non-posix shell-isms (in this example /bin/sh doesn't handle redirection and wildcards together but bash does)
+  ansible.builtin.shell: cat < /tmp/*txt
+  args:
+    executable: /bin/bash
+```
+
+## Ref 
+
+[Ansible Docs](https://docs.ansible.com/ansible/latest/index.html)
+
+----
+
+## Action Checklist 
+
+### Linux Server 
+
+
+1. git
+2. zsh 
+3. rsync 
+4. brew
+5. vim
+6. ohmyzsh 
+7. neofetch 
+8. glances 
+
 
