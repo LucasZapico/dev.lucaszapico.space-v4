@@ -17,7 +17,7 @@
 .obsidian/
 .trash/
 **.trash/
-
+**.canvas
 
 node_modules/
 node_modules
