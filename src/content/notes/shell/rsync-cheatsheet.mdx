@@ -2,12 +2,18 @@
 title: "Rsync cheatsheet"
 description: "Catch for rsync commands"
 date-created: "2024/07/18"
-last-modified: "2024/08/17"
+last-modified: "2024/09/19"
 isdraft: false
 categories: ["shell", "catch", "reference", 'rsync']
 tags: ["shell", "catch", "reference", 'rsync']
 type: "note"
 ---
+
+### Sync to remote server
+
+```sh
+rsync -avz /path/to/source/ user@remotehost:/path/to/destination
+```
 
 ### Sync contents of dir into destination
 
