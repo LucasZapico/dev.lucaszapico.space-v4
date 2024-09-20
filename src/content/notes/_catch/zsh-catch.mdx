@@ -2,16 +2,36 @@
 title: "Zsh Catch"
 description: "A little reference Zsh configuration"
 date-created: "2022/12/24"
-last-modified: '2022/12/24'
+last-modified: "2024/09/20"
 isdraft: false
 categories: ["zsh", "genreal", "reference"]
 tags: ["zsh", "genreal", "reference"]
 type: "note"
 ---
 
-## Custom Prompt 
+## Custom Prompts
+
 
 [Official Docs - zsh](https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion)
+
+### Custom Sucess/Fail 
+
+```txt:file=~/zshrc 
+SUCCESS_FAI ="%(?.%F{green}√.%F{red}?%?)%f"
+```
+
+```txt:file=~/zshrc 
+PROMPT="%(?.%F{green}->.%F{red}->)%f %B%n@%m-%1~%b "
+```
+
+### My Promp 2024 
+
+[zsh git prompt - github](https://github.com/olivierverdier/zsh-git-prompt)
+
+```sh
+source /Users/luca/_Dev/github/zsh-git-prompt/zshrc.sh
+PROMPT='%(?.%F{green}->.%F{red}->)%f %B%F{yellow}%n@%m::%F{red}%2~%f %b$(git_super_status) '
+```
 
 
 ### Syntax Quick Ref 
