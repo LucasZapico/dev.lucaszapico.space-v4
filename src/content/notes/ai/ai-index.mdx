@@ -2,12 +2,68 @@
 title: "AI Proms"
 description: ""
 date-created: "2023/06/13"
-last-modified: "2023/06/13"
+last-modified: "2024/09/23"
 categories: ["ai", "prompts"]
 tags: ["ai", "prompts", "notes", "reference"]
 isdraft: true
 type: "note"
 ---
+
+## AI W(wins)
+
+### Using Copilot to help me write OpenAPI documentaiton for API 
+
+I was able to give the Copilot my list of endpoint and it was able to generate a substantial amount of the OpenAPI documentation for me. 
+
+> note: I had been "talking"  with it and using it to check and stub out quit of few endpoints before I just dumpped my list of endpoints on it. So I'm not sure how well it would do with out some context to reference. 
+
+
+```yaml
+openapi: 3.0.0
+info:
+  description: "Duis eiusmod cupidatat proident consectetur sint consectetur et culpa cillum labore ullamco consequat reprehenderit."
+  version: 1.0.0
+  title: Go Server 1.0
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: admin@example.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: https://api.example.com
+    description: Production server
+  - url: http://0.0.0.0:3330
+    description: Local server
+tags:
+  - name: people
+    description: Operations related to people
+  - name: customers
+    description: Operations related to customers
+paths:
+  /crm/people:
+    get:
+      tags:
+        - people
+      operationId: "getPeople"
+      summary: "Get all people"
+      description: "Retrieve a list of all people"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Person"
+###...... more doc
+```
+
+
+## Prompts 
+
+### Image
 
 > full body of a plumber, Full body shoot, Front view, natural light, Diffused light , Wide shot, depth of field, high resolution, Cinestill 50, clear focus, Leica M11, 16mm photograph, Ultra-HD, day light, high detail, complex details, ISO100, clear focus, soft lighting, super detailed, rich details, realism, super delicate, photography, photos, 8K --ar 9:16 --v 5.1
 
@@ -18,3 +74,68 @@ type: "note"
 > **average looking man working at computer in a open air office, Full body shoot, Front view, natural light, Diffused light , Wide shot, depth of field, high resolution, Cinestill 50, clear focus, Leica M11, 16mm photograph, Ultra-HD, day light, high detail, complex details, ISO100, clear focus, soft lighting, super detailed, rich details, realism, super delicate, photography, photos, 8K --ar 9:16 --v 5.1**
 
 ![average works](/images/notes/midjourney-average-works.png)
+
+## AI local 
+
+### Working with Ollama Locally 
+
+
+#### Linux 
+
+```sh 
+curl -fsSL https://ollama.com/install.sh | sh 
+```
+
+#### Mac 
+
+> Note: I ran this on a mac using the build in GPU so it was a pretty slow  
+
+[Download](https://ollama.com/download/Ollama-darwin.zip)
+
+1. unzip the file 
+2. move to `/Applications/`
+
+
+Check that Ollama is running;
+
+1. Go to browers by going to `http://localhost:11434`
+2. `curl http://localhost:11434` or `http http://localhost:11434` 
+
+#### Install Models 
+
+```sh 
+ollama pull llama3.1
+
+```sh 
+ollama pull llama2
+```
+
+### Set Up Open Web UI  
+
+Open Web Ui is a web interface for that is easy to set up with Ollama or OpenAI that gives us the expected GUI experience to interact with an AI model.
+
+[Official Open Web UI docs](https://docs.openwebui.com/)
+
+### My Docker Compose Recipe 
+
+[OpenWebUI Docker Compose Recipe - github LucasZapico](https://github.com/LucasZapico/docker-recipes/blob/master/ml-ai/openwebui.docker-compose.yml)
+
+#### Set up Open Web Ui as "Desktop" App 
+
+Despite my general adversion to big tech tools Chromes feature to create a desktop app really shines to create a better experience here. 
+
+[Create Desktop App from Any Website - official Google Doc](https://support.google.com/chrome_webstore/answer/3060053?hl=en)
+
+
+### Robust Use of Personal Data Sets 
+
+Open web UI allows us to add file individually for the model to reference and interact with. But I have a relatively large body of personal notes that I wanted to be priortized and drawn from. 
+
+Open Web UI allows for directories to be added to the model by mounting the directory into our Docekr Image `{DIR_PATH}:/app/backend/data/docs`
+
+
+#### Mount Custom Data Set 
+
+```sh 
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data -v <path/to/data>:/app/backend/data/docs --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
