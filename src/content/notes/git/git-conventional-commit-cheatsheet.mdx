@@ -1,19 +1,94 @@
 ---
-title: "Git Conventional Commit CheeatSheet"
-description: "General reference for conventional commit buckets, emoji, etc"
+title: "Git Commit Conventional"
+description: "General reference for commit conventions and a cheatsheet for commit conventions"
 date-created: "2022/12/12"
-last-modified: "2022/12/12"
-categories: ["git", "cheatsheet", "reference"]
-tags: ["git", "cheatsheet", "reference"]
+last-modified: "2024/10/06"
+categories: ["git", "cheatsheet", "reference", "linter"]
+tags: ["git", "cheatsheet", "reference", "linter"]
 isdraft: false
 type: "note"
 ---
+
+
+
+## Summary
+
+The summary is clear and concise, emphasizing the importance of consistent commit messages for improving the trackability of changes over the project's lifetime.
+
+### Challenge or Problem
+
+The challenge is well-defined, highlighting the issue of unclear or inconsistent commit messages from developers.
+
+### Expectation
+
+A developer should have guardrails in place that enforce clear conventions for commits. A developer should be able to look at the configuration and rules and understand what a commit message should look like.
+
+### Libs 
+
+#### Commit linters 
+
+1. [Commitlint](https://commitlint.js.org/)
+2. [Husky](https://typicode.github.io/husky/#/)
+
+#### References 
+
+[convential commits](https://www.conventionalcommits.org/en/v1.0.0/)
+[commitzen](https://commitizen-tools.github.io/commitizen/)
+
+
+## Commit lint Example 
+
+```txt
+type(scope?): subject
+
+body?
+
+footer?
+```
+
+#### Example 
+
+```txt
+feat(component): add theme switcher
+
+- added theme switcher to the header
+
+```
+
+
+```js:file=comitlint.config.js
+/** @type {import('@commitlint/types').UserConfig} */
+const CommitLintConfiguration = {
+  extends: ["@commitlint/config-conventional"],
+  rules: {
+    // always force lower case
+    "type-case": [2, "always", "lower-case"],
+    // always force type
+    "type-empty": [2, "never"],
+    // type options
+    "type-enum": [2, "always", ["feat", "fix", "chore", "docs", "style", "refactor", "perf", "test", "revert", "ci", "build"]],
+    // scope options
+    "scope-enum": [
+      2,
+      "always",
+      ["components", "layout", "pages", "styles", "utils", "types", "hooks", "comps", "config", "assets", "tests", "deps", "git", "lint", "docker", "ci", "infra", "docs", "build", "release", "security", "auth", "api", "db", "cache", "logs", "monitoring", "analytics", "seo", "ux", "usability", "accessibility", "business-logic", "healthcheck", "authorization", "roles", "permissions", "feature-flag", "easter-egg", "assets],
+    ],
+    "scope-case": [2, "always", "lower-case"],
+  },
+};
+
+module.exports = CommitLintConfiguration;
+
+```
+
+
+## Conventional Commits - Cheatsheet 
 
 ### labels 
 
 feat
 : Features
-: a new feature 
+: a new feature  (example scopes, components, comps, pages, hooks, etc)
 
 fix
 : Bug Fixes
@@ -41,7 +116,7 @@ test
 
 build 
 : Builds 
-: Changes that affect the build system or external dependencies (example scopes, gulp, npm scripts, docker)
+: Changes that affect the build system or external dependencies (example scopes, deps, docker)
 
 ci
 : Continuous Integrations 
