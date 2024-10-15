@@ -1,0 +1,78 @@
+---
+title: "NX catch"
+description: "General notes and references for working with NX"
+date-created: "2024/10/02"
+last-modified: "2024/10/06"
+isdraft: true
+categories: ["nx","reference", "cheatsheet"]
+tags: ["nx", "reference"]
+type: "note"
+---
+
+import { Box, Container } from "@chakra-ui/react"
+import { YouTube, Gist } from "mdx-embed"
+
+## Management of NX monorepo 
+
+
+
+### Monorepo config structure 
+
+```txt
+monorepo-root/
+|--- package.json        // monorepo root package.json
+|--- nx.json             // nx workspace configuration
+|--- workspace.json      // nx workspace configuration
+|--- apps/               // all apps
+|    |--- app1/          // app1
+|    |    |--- package.json  // app1 package.json
+|    |    |--- project.json  // app1 project configuration
+|    |    |--- src/          // app1 source code
+|    |--- app2/          // app2
+|         |--- package.json  // app2 package.json
+|         |--- project.json  // app2 project configuration
+|         |--- src/          // app2 source code
+|--- libs/               // all libs
+|    |--- lib1/          // lib1
+|    |    |--- package.json  // lib1 package.json
+|    |    |--- project.json  // lib1 project configuration
+|    |    |--- src/          // lib1 source code
+|    |--- lib2/          // lib2
+|         |--- package.json  // lib2 package.json
+|         |--- project.json  // lib2 project configuration
+|         |--- src/          // lib2 source code
+```
+
+### Scope of top `package.json`
+
+- **Dependencies:** It lists dependencies that are shared across multiple projects in the monorepo. This helps avoid duplication and ensures that all projects use the same version of shared dependencies.
+- **Scripts:** It contains scripts that are useful for the entire monorepo, such as linting, formatting, or running tests across all projects.
+- **Nx Configuration:** It may include Nx-specific configurations and plugins that are used across the workspace.
+
+### Commond Acctions 
+
+
+
+## Basics 
+
+```json:file=nx.json
+
+{
+// ...
+  "defualtBase": "main", // "master"
+// ...
+}
+
+```
+## React Apps
+
+## Node Apps 
+
+## Golang Apps
+
+## Walk through 
+
+<Box mb={6}>
+	<YouTube youTubeId="ZA9K4iT3ANc"></YouTube>
+</Box>
+
