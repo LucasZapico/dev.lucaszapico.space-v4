@@ -2,12 +2,69 @@
 title: "Window Dev Notes 2022"
 description: "General notes on making Windows Development better"
 date-created: "2022/05/22"
-last-modified: "2022/05/22"
+last-modified: "2024/09/25"
 isdraft: true
 categories: ["windows", "notes", "dev-env"]
 tags: ["windows", "notes", "dev-env"]
 type: "notes"
 ---
+
+import { Box, Container } from "@chakra-ui/react"
+import { YouTube, Gist } from "mdx-embed"
+
+## Clean Install of Windows / No Bloatware Windows
+
+<Box mb={6}>
+  <YouTube youTubeId="JUTdRZNqODY&"></YouTube>
+</Box>
+
+## Flashing Windows ISO to USB on Mac OS from CLI 
+
+[Make windows bootable use macos](https://www.uubyte.com/make-windows-10-bootable-usb-on-macos-big-sur.html)
+
+1. download windows{x} iso
+2. attach usb drive 
+
+
+### List USB drives
+
+```sh 
+diskutil list external 
+```
+
+#### Example 
+
+```sh 
+diskutil list external 
+# /dev/disk2
+```
+
+### Option One 
+
+```sh 
+sudo dd if=/path/to/windows.iso of=/path/to/hardware bs=1m
+```
+
+#### Example 
+
+```sh 
+sudo dd if=/path/to/windows.iso of=/dev/disk2 bs=1m status=progress conv=fsync
+
+```
+
+### Option Two
+
+#### Format the USB drive to MS-DOS
+
+```sh 
+diskutil eraseDisk MS-DOS "WINDOWS10" GPT disk2
+```
+
+### Remove USB/hard drive 
+
+```sh 
+diskutil eject /dev/disk2
+```
 
 ## Chocolaty
 
