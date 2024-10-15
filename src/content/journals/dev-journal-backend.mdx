@@ -1,0 +1,39 @@
+---
+title: "Backend journal"
+description: "A place for references for backend development experience"
+date-created:  "2024/04/05"
+last-modified: "2024/04/05"
+isdraft: false
+categories: ["development", "backend"]
+tags: ["development", "backend"]
+type: "post"
+---
+
+## Catch 
+
+I am just dropping this catch in an attempt to organize my thoughts on what needs coverage to build, maintain and extend a backend system in an efficient path. The issue is that many best(good) practices for backend development require an increase developer overhead. That is, more cognitive load for each marginal step forward. 
+
+I do want to callout how implementing low level guardrails like TypeScript, and writing tests as we go can have a huge effect reducing this cognitive overhead as the app grows. 
+
+## Documentation As We Go Solutions
+
+### Introduction 
+
+I have done a few passes on api documentation and various implementation of solutions. The main pain point that I believe many API docs slip on is the double duty of maintaining the API docs and the code. 
+
+In general, having to update two sources of truth is setting a system up for failure. It compounds the human error element. 
+
+### Solution Options
+
+My main point of frustration is that we already define the shape of API request, response and errors in our code with TypeScript...With a little research I discoverd I want's the only one who was thinking this WebAssembly. 
+
+- [auto generating open api docs with typescript defs - highlight.io](https://www.highlight.io/blog/auto-generating-open-api-documents-with-type-script-interfaces)
+
+They reference; 
+
+- [Tsoa](https://github.com/lukeautry/tsoa)
+- [Deepkit](https://github.com/hanayashiki/deepkit-openapi)
+- [Spot](https://github.com/airtasker/spot)
+
+## API Endpoint Tests As We Go Solutions
+
