@@ -13,3 +13,23 @@ type: note
 ## Story
 
 I have a baremetal server at a given ip and I want to build and deploy my app to it in a simple and efficient way Circle CI is a great tool for this.
+
+## Validate Circle CI Pipeline Locally 
+
+### Install Circle CI CLI io machine 
+
+```sh 
+brew install circleci
+```
+
+### Validate Circle CI Pipeline
+
+```sh
+circleci config validate
+```
+
+### Run a specific job on machine 
+
+```sh
+circleci local execute --job build
+```
