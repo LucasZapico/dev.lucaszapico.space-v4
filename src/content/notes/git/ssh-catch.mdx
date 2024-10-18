@@ -2,7 +2,7 @@
 title: SSH Catch
 description: "General notes on common ssh tasks and actions"
 date-created: "2022/02/11"
-last-modified: "2024/08/15"
+last-modified: "2024/10/18"
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
@@ -77,7 +77,7 @@ _Github Example_
 
 For a single service use the default file `.ssh/id_rsa` but for multiple services follow the steps below.
 
-### Generate SSH Key and Add It to Remote Machine
+### Copy SSh key to remote machine
 
 ```sh
 ssh-copy-id -i ~/.ssh/<name-public-key>.pub <server_user_name>@<ip_add_server>
