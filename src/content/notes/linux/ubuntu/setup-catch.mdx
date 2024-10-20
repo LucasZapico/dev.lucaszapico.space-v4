@@ -1,0 +1,57 @@
+---
+title: "Ubuntu 2024 setup steps"
+description: ""
+date-created: 2024/10/19
+last-modified: 2024/10/20
+isdraft: true
+categories: ["linux", "ubuntu", "setup", "notes"]
+tags: ["linux", "ubuntu", "setup", "notes"]
+type: "notes"
+---
+
+## Summary 
+
+As part of setting up my new Ubuntu machine, I've distilled the essential setup steps into a concise summary. This approach will help me document the process for future reference, as some steps may be less well-known or require additional research to replicate. Additionally, this overview will serve as a foundation for when I eventually deploy my Ansible pipeline.
+
+## Basic Configuration
+
+1. `sudo apt update`
+2. `sudo apt upgrade`
+3. `sudo apt install git`
+4. `sudo apt install zsh`
+5. `sudo apt install tmux`
+5. `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`` # Install Oh My Zsh
+6. set zsh theme to "awesomepanda" in `~/.zshrc`
+7. `export PPROMPT='%(?.%F{green}->.%F{red}->)%f %B%F{yellow}%n@%m::%F{red}%2~%f' in `~/.zshrc`
+8. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` # Install Homebrew
+9. `/bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"` # Install Kinto remap keyboard to mac like behavior
+10. `sudo apt install gnome-shell-extension-manager`
+11. `sudo apt install gnome-tweaks` # Install Gnome Tweaks
+12. Gnome Tweaks > Additional Layout Options > Alt and Win behavior > Ctrl is mapped to win and the usual Ctrl # this just makes `cmd + c`, `cmd + t` etc work as expected
+13. Gnome Tweaks > Additional Layout Options > Caps Lock behavior > Make Caps Lock and addition Esc # this makes caps lock an additional esc key
+14. `sudo apt install gdb` # Install GDB detailed crash reports and debuging  
+
+## Applications
+
+15. `sudo apt install flatpak`
+  - `sudo add-apt-repository ppa:flatpak/stable`
+  - `sudo apt update`
+  - `sudo apt install flatpak`
+
+ 
+### Developer Tools 
+
+- `snap install codium` 
+- `snap install code`
+- `snap install bruno` # APi CLient 
+
+
+### Messaging
+
+- `snap install mailspring` # Email Client  
+- `flatpak install flathub app.bluebubbles.BlueBubbles`
+  - `flatpak install flathub com.discordapp.Discord`
+  - matrix 
+  - rocket chat  
+
+
