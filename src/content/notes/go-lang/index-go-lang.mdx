@@ -2,7 +2,7 @@
 title: "Index Go Lang"
 description: "General note catch of Go lang"
 date-created: '2023/04/14'
-last-modified: "2024/03/16"
+last-modified: 2024/10/21
 categories: ["go-lang", "development",]
 tags: ["go-lang", "development", "notes"]
 isdraft: true
@@ -17,7 +17,7 @@ Go by example is exactly what it sounds like, a nearly exhaustive set of example
 
 ---
 
-## Living CheatSheet
+## GoLang Basics
 
 ### Basics Core Concepts
 
@@ -25,6 +25,87 @@ Go by example is exactly what it sounds like, a nearly exhaustive set of example
 
 - All packages should be a single lowercase word. 
 - variable names should be camel casing
+
+## Defer 
+
+[An Introduction to Programming in Go - Defer](https://www.golang-book.com/books/intro/7#section6)
+
+**`defer`** can be use to delay the execution of a function until the surrounding function returns. 
+
+Deferred functions are executed in LIFO order. 
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    defer fmt.Println("Deferred message 1")
+    defer fmt.Println("Deferred message 2")
+
+    // some code that will be executed before both deferred messages
+    fmt.Println("Before deferred messages")
+
+    // more code...
+}
+
+// Before deferred messages
+// Deferred message 2
+// Deferred message 1
+
+```
+
+> `defer` can be particularly useful in handling errors, logging, and closing file descriptors.
+
+## Pointers 
+
+[Pointers](https://en.wikipedia.org/wiki/Pointer_(computer_programming)
+
+> A **Pointer** is a program object that stores a memory address. This can be used to reference a value stored in the memory address. 
+
+In golang pointers are represented by the `*` symbol. 
+
+{/* TODO */}
+```go
+package main 
+
+import "fmt"
+
+func 
+```
+
+
+- [An Introduction to Programming in Go - Pointer](https://www.golang-book.com/books/intro/8) 
+- [Go By Example - Pointers](https://gobyexample.com/pointers)
+
+
+### Printing 
+
+```go
+// print line
+fmt.Println("Hello World")	
+```
+
+```go
+// print formatted string
+fmt.Printf("Hello %s", "World") 
+```
+
+To print a var via formated string we have to tell `Printf` what the type of our var is and this is done via `%` followed by the type of the var. 
+
+| Type | Description |
+|------|-------------|
+| `%s` | string      |
+| `%d` | integer     |
+| `%f` | float       |
+| `%t` | boolean     |
+| `%v` | any value   |
+
+```go 
+foo := "world"
+fmt.Printf("Hello %s", foo)
+```
+
 
 ### Structs 
 
@@ -240,7 +321,13 @@ func main() {
 
 ## Reference 
 
+### Cheatsheets 
+
 - [golang cheat sheet - github](https://github.com/a8m/golang-cheat-sheet)
 - [go lang cheat sheet - devhints.io](https://devhints.io/go)
 - [go lang cheat sheet - quickref.me](https://quickref.me/go.html)
 
+### Guids 
+
+- [Golang Boosk](https://www.golang-book.com/books)
+- [Golang Book - An Introdcution to Programming in Go](https://www.golang-book.com/books/intro)
