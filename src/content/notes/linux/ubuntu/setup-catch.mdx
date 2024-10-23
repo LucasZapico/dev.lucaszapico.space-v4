@@ -2,7 +2,7 @@
 title: "Ubuntu 2024 setup steps"
 description: ""
 date-created: 2024/10/19
-last-modified: 2024/10/20
+last-modified: 2024/10/23
 isdraft: true
 categories: ["linux", "ubuntu", "setup", "notes"]
 tags: ["linux", "ubuntu", "setup", "notes"]
@@ -45,6 +45,9 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
 - `snap install code`
 - `snap install bruno` # APi CLient 
 
+### Quality Of Life 
+
+
 
 ### Messaging
 
@@ -54,4 +57,35 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
   - matrix 
   - rocket chat  
 
+## Detail 
 
+### Clipboard Manager 
+
+#### CLI clipbaord Manager 
+
+[clipboar](https://github.com/Slackadays/Clipboar)
+
+`sudo snap install clipboard`
+
+```sh
+clipboard copy <something> 
+```
+
+```sh 
+clipboard  # list clipboard history
+```
+
+```sh
+clipboard paste  <item-name-from-list> 
+```
+
+##### Optional Alias 
+
+```txt:file=".zshrc"
+alias cb="clipboard"
+```
+
+### GUI Clipboard Manager
+
+- [CopyQ](https://hluk.github.io/CopyQ/)
+- [GPaste](https://github.com/Keruspe/GPaste)
