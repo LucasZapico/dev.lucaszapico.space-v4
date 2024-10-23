@@ -2,7 +2,7 @@
 title: "Custom Cli Prompt"
 description: "Customizing the command line prompt in bash and zsh"
 date-created: "2024/04/21"
-last-modified: "2024/04/21"
+last-modified: 2024/10/19
 isdraft: false
 categories: ["shell", "catch", "reference", "cli", 'prompt']
 tags: ["shell", "catch", "reference", "cli", 'prompt']
@@ -46,6 +46,11 @@ A common use case is to differentiate the root user from a normal user.
 export PS1="\u@\H \W:\$ "
 ```
 
+## Simple Starter Prompt 
+
+```txt:title=".bashrc"
+PROMPT='%(?.%F{green}->.%F{red}->)%f %B%F{yellow}%n@%m::%F{red}%2~%f
+```
 
 ```sh
 
