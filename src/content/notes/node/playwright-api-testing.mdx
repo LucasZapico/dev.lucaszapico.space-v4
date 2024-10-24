@@ -1,0 +1,43 @@
+---
+title: "API Testing With Playwright"
+description: "General notes, reference and cheatsheet for API testing with Playwright"
+date-created: 2024/10/23
+last-modified: 2024/10/23
+categories: ["node", "testing", "api"]
+tags: ["node", "root", "testing", "api", "playwright"]
+isdraft: true
+type: "note"
+---
+
+## Install Playwright
+
+```sh
+npm install -D @playwright/test 
+```
+
+## Directory Structure Convention
+
+```txt 
+app/
+|-- tests 
+|   |-- api/
+|   |   |-- api.spec.ts
+```
+
+### Simmple Example 
+
+```ts:file=api.spec.ts
+import { test, expect } from '@playwright/test';
+
+test.describe.parallel("API test", () => {
+  test("get users", async ({ request}) => {
+    const response = await request.get("https://jsonplaceholder.typicode.com/users");
+    const json = await response.json();
+    expect(response.status()).toBe(200);
+    expect(json.length).toBeGreaterThan(0);
+    expect(json[0]).toHaveProperty("name");
+    expect(json[0]).toHaveProperty("id");
+  })
+})
+
+```
