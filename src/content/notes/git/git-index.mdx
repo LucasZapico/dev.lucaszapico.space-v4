@@ -2,7 +2,7 @@
 title: git
 description: "General catch of notes, cheatsheet and reference for git related functionality"
 date-created: "2022/02/11"
-last-modified: "2022/11/28"
+last-modified: 2024/10/29
 categories: ["git", "cheatsheet", "reference"]
 tags: ["git", "cheatsheet", "reference"]
 isdraft: false
@@ -48,23 +48,48 @@ git commit -m "fixed untracked files"
 
 [How to Git Reset to HEAD - devconnected](https://devconnected.com/how-to-git-reset-to-head)
 
-Go back to `HEAD`
+
+
+
+Using the `--hard` flag will remove all changes in the working directory and index. While using the `--soft` flag will keep the changes in the working directory and index.
+
+#### Go Back Commits Without loosing Changes 
+
+```sh
+git reset --soft HEAD~<number of commits> 
+```
+
+### Go Back Commits and Remove Changes 
+
+#### Discard all current changes 
 
 ```sh
 git reset --hard HEAD
 ```
 
-Go back to commit before `HEAD`
+#### Discard all current changes and go back to a specific commit
+
+Go back to single commit before `HEAD`
 
 ```sh
 git reset --hard HEAD^
-git reset --hard HEAD~1
+
+```
+
+or 
+
+```sh
+git reset --hard HEAD~1 
 ```
 
 Go back two commits before `HEAD`
 
 ```sh
 git reset --hard HEAD~2
+```
+
+```sh 
+git reset HEAD~<number of commits> --hard 
 ```
 
 ### Delete Local and Remote Branches
