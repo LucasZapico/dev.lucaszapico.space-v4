@@ -2,7 +2,7 @@
 title: "Ubuntu 2024 setup steps"
 description: ""
 date-created: 2024/10/19
-last-modified: 2024/10/24
+last-modified: 2024/10/31
 isdraft: true
 categories: ["linux", "ubuntu", "setup", "notes"]
 tags: ["linux", "ubuntu", "setup", "notes"]
@@ -31,6 +31,39 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
 13. Gnome Tweaks > Additional Layout Options > Caps Lock behavior > Make Caps Lock and addition Esc # this makes caps lock an additional esc key
 14. `sudo apt install gdb` # Install GDB detailed crash reports and debuging  
 
+### Gonme Extensions
+
+
+
+- **Rectangle - Manual Tiling**: Enables manual tiling of windows, allowing you to arrange them freely on your desktop.
+  - [rectangle - manual tiling](https://extensions.gnome.org/extension/6553/rectangle/)
+  - extension manager > browse > rectangle > install
+- **Search Light**: Quickly searches for files, applications, and settings using a customizable search bar.
+  - [search light](https://extensions.gnome.org/extension/5489/search-light/) 
+  - extension manager > browse > search light > install
+- **Dash to Dock**: Automatically adds frequently used applications to the dock for quick access.
+  - [dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+  - extension manager > browse > dash to dock > install
+- **GSConnect**: Allows you to quickly connect to network devices without leaving your desktop.
+  - [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
+- **Clipboard Indicator**: Displays information about the clipboard content in real-time, such as its type and contents.
+  - [clipboard indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+- **Sound Output Device Chooser**: Easily switches between available sound output devices, such as headphones or speakers.
+  - [sound input & output device chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+- **User Themes**: Provides a customizable theme for user interface elements, including colors, fonts, and icons.
+- **Vitals**: Monitors your system's performance and provides real-time insights into CPU usage, memory usage, and more.
+
+
+
+
+
+
+
+- [user themes](https://extensions.gnome.org/extension/19/user-themes/)
+- [Viatals](https://github.com/corecoding/Vitals)
+  - `sudo apt install gnome-shell-extension-manager gir1.2-gtop-2.0 lm-sensors`
+  - extension manager > browse > search vitals > install
+
 ## Applications
 
 15. `sudo apt install flatpak`
@@ -44,6 +77,8 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
 - `snap install codium` 
 - `snap install code`
 - `snap install bruno` # APi CLient 
+- [Gogh](https://github.com/Gogh-Co/Gogh)
+  - `gogh`
 
 ### Quality Of Life 
 
