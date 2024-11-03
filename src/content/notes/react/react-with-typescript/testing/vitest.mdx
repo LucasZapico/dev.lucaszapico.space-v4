@@ -1,0 +1,102 @@
+---
+title: "Vitest in Nextjs, TypeScript and Chakra-UI"
+description: "General notes and reference handling testing with Vitest in Nextjs, TypeScript and Chakra-UI"
+date-created: 2024/11/02
+last-modified: 2024/11/02
+isdraft: false
+categories: ["reactjs", "typescript", "nextjs", "chakraui", "reference", "notes", "testing",]
+tags: ["reactjs", "typescript", "vitest", "testing", "cheatsheet", "reference", "notes"]
+type: "note"
+---
+
+## Introduction 
+
+Ok, so I have been trying to enhance my code quality by adding more testing to my projects. From laps around the industry Jest has been the go-to testing library for React projects. So that is what I intially started wtih. The objective was to test form behavior of a React Hook Form. I quickly ran into challenges; 
+
+- jest and typescript requires some configuration that is not well documented 
+- handling absolut paths is a bit of a pain
+- jest blows up handling ESM modules (well know and lemented bug)
+  - each time you handle one of these bugs another repos in nodemodules has a slightly different issue. 
+
+I my option I put a resonable amount of hours trying to get jest working. But I hit a frustration point when I just felt setting up form testing in Nextjs shouldn't be this hard. 
+
+I know I use some modurn features but I don't use bleeding edge stuff. I use Nextjs, TypeScript and Chakra-UI. I am not doing anything crazy.
+
+## Vitest Jest Alternative 
+
+I did a quick discovery for alternatives to jest and found Vitest. Vitest is a modern testing library that is built on top of esbuild. It is designed to be fast and easy to use. It is also designed to work with modern features like ESM modules. 
+
+But does it works with Nextjs and TypeScript? The answer is yes. 
+
+## Setting up Vitest in Nextjs
+
+```sh 
+pnpm install -D vitest @vitejs/plugin-react jsdom @testing-library/react @testing-library/dom
+```
+
+### Setting up Vitest Config
+
+```js:file=vite.config.ts 
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+ 
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+  },
+})
+```
+
+Mine ended up looking like this: 
+
+```js:file=vite.config.ts
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+ 
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['dotenv/config'], // add dotenv vars
+  },
+  // all my typescript absolute paths 
+  resolve: {
+    alias: {
+      '@/components': path.resolve(__dirname, './src/components/'),
+      '@/_pages': path.resolve(__dirname, './src/_pages/'),
+      '@/utils': path.resolve(__dirname, './src/utils/'),
+      '@/config': path.resolve(__dirname, './src/config/'),
+      '@/hooks': path.resolve(__dirname, './src/hooks/'),
+      
+      '@/store': path.resolve(__dirname, './src/store/'),
+      '@/data': path.resolve(__dirname, './src/data/'),
+      // …
+    },
+  },
+})
+```
+
+Added a script to my package.json
+
+```json:file=package.json
+"scripts": {
+  "test": "vitest"
+}
+```
+
+ran `pnpm test` and it worked and got a bunch of `ExperimentalWarning: CommonJS module...` warnings....
+
+### (Hack) Suppress the CommonJS Warnings
+
+```json:file=package.json
+{
+  "scripts": {
+     "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 vitest --root src/",
+  }
+}
+```
+
+yeah 😁
