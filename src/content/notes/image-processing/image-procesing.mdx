@@ -1,0 +1,28 @@
+---
+title: "Progromatic image processing"
+description: "Notes and reference image processing"
+date-created: "2024/08/20"
+last-modified: 2024/11/08
+isdraft: true
+categories: ["reference", "image-processing",  "notes"]
+tags: ["reference", "image-processing",   "notes"]
+type: "notes"
+---
+
+
+
+
+## `heif-convert`
+
+`heif-convert` is a command line tool for converting images between the `HEIF` (High Efficiency Image Format) and `JPEG` or `PNG` formats and comes with already installed on many linux distributions.
+
+```sh
+heif-convert input.[heic|heif] output.[png|jpg] 
+```
+
+
+## No support for HEIC `ffmpeg`
+
+> HEIC is not fully supported by `ffmpeg` yet. [discussion](https://trac.ffmpeg.org/ticket/6521)
+
+`ffmpeg` is a command line tool for converting video and audio files. It is a powerful tool that can be used to convert between different video and audio formats, extract audio from video files, and perform other video and audio processing tasks.
