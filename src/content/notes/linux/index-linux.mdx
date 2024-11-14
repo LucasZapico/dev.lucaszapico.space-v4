@@ -2,7 +2,7 @@
 title: "Linux Index"
 description: ""
 date-created: '2023/02/27'
-last-modified: 2024/10/29
+last-modified: 2024/11/14
 isdraft: true
 categories: ["linux", "command-line", "notes"]
 tags: []
@@ -23,6 +23,46 @@ sudo apt install gnome-shell-extension-manager
 sudo apt install gnome-shell-extension-gsconnect
 ```
 
+### List Installed Gnome Extensions 
+
+```sh
+gnome-extensions list  
+```
+results 
+```sh
+visualizer@sound.org
+rectangle@acristoffers.me
+clipboard-indicator@tudmotu.com
+search-light@icedman.github.com
+
+```
+
+### Disable Gnome Extension 
+
+```sh
+gnome-extensions disable <extension-name>
+```
+
+**Example** 
+
+```sh
+gnome-extnesions disable rectangle@acristoffers.me 
+```
+
+### Enable Gnome Extension 
+
+```sh
+gnome-extensions enable <extension-name>
+```
+
+**Example** 
+
+```sh
+gnome-extnesions enable rectangle@acristoffers.me 
+```
+
+
+
 ### Troubleshooting Installing Extensions
 
 Some extensions install processes don't foloow the happy path above. In this case one work around is to download the `gnome-shell-extension-manger` and install it from that ui. 
@@ -40,6 +80,8 @@ For example to install `dash to panel`
 ```sh
 kill $(lsof -t -i:8080)
 ```
+
+----------------------
 
 ## Package Managers 
 
