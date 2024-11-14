@@ -2,7 +2,7 @@
 title: "Nextjs Index"
 description: "General notes, cheatsheet and reference for Nextjs"
 date-created: "2022/10/28"
-last-modified: '2023/07/01'
+last-modified: 2024/11/14
 isdraft: true
 categories: ["nextjs", "cheatsheet", "reference", "notes"]
 tags: ["nextjs", "cheatsheet", "reference", "notes"]
@@ -28,3 +28,23 @@ import { YouTube, Gist } from "mdx-embed"
 <Box mb={6}>
   <YouTube youTubeId="V-ntY44UvhM"></YouTube>
 </Box>
+
+
+## References 
+
+### Nextjs 14 
+
+#### Don't Fail Build on Eslint Error 
+
+```mjs:file="next.config.js"
+
+const nextConfig = {
+  //.....
+  eslint: {
+    dirs: ["src"],
+    ignoreDuringBuilds: true,
+  },
+  //.....
+};
+
+```
