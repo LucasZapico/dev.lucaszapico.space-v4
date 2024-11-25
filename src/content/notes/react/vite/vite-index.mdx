@@ -1,0 +1,47 @@
+---
+title: "Vite:React Notes"
+description: "General notes, cheatsheet and reference for building with Vite"
+date-created: 2024/11/20
+last-modified: 2024/11/20
+isdraft: true
+categories: ["react", "vite", "cheatsheet", "reference", "notes"]
+tags: ["react", "cheatsheet", "vite", "reference", "notes"]
+type: "note"
+---
+
+
+
+
+## Bug 
+
+I just want to log for my own reference this bug as I have now tackle it twice and had to go through the googlefoo to find the answer again.
+
+At a high level there seems to be some challenge with how some packages are handled in the server side rendering of Vite. In my case the package `react-use` introduced me to the issue.
+
+On the client react give you this error 👇️
+
+```
+Named export 'useCopyToClipboard' not found. The requested module 'react-use' is a CommonJS module, which may not support all module.exports as named exports.
+CommonJS modules can always be imported via the default export, for example using:
+```
+
+On the server side the error is 👇️
+
+```
+[vite] Internal server error: [vite] Named export 'useCopyToClipboard' not found. The requested module 'react-use' is a CommonJS module, which may not support all module.exports as named exports.
+CommonJS modules can always be imported via the default export, for example using:
+
+import pkg from 'react-use';
+const {useCopyToClipboard} = pkg;
+```
+
+The solutions that is suggested in the error did not work. 
+
+The solution that worked for me was to add the following to the `vite.config.js` file
+
+```
+ ssr: {
+    noExternal: ["react-use"],
+  },
+
+  ```
