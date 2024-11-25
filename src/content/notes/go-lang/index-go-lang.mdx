@@ -2,7 +2,7 @@
 title: "Index Go Lang"
 description: "General note catch of Go lang"
 date-created: '2023/04/14'
-last-modified: 2024/10/21
+last-modified: 2024/11/25
 categories: ["go-lang", "development",]
 tags: ["go-lang", "development", "notes"]
 isdraft: true
@@ -183,8 +183,65 @@ if err := foo(); err != nil {
 
 
 ## Testing 
+{/* TODO: add testing exmaples as ref (don't be lazy) */}
 
+### String Manipulation 
 
+#### Concatenation 
+
+```go
+str1 := "Hello"
+str2 := "World"
+result := str1 + " " + str2 // "Hello World"
+```
+
+Alternative 
+
+```golang 
+import "strings"
+parts := []string{"a", "b", "c"}
+str := strings.Join(parts, ",") // "a,b,c"
+```
+
+#### String Spliting 
+
+```golang 
+import "strings"
+str := "a,b,c"
+parts := strings.Split(str, ",") // ["a", "b", "c"]
+```
+
+#### String Replace 
+
+```golang 
+import "strings"
+str := "Hello World"
+replaced := strings.Replace(str, "World", "Go", 1) // "Hello Go"
+```
+
+#### String Contains 
+
+```golang
+import "strings"
+str := "Hello World"
+contains := strings.Contains(str, "World") // true
+```
+
+### String Index 
+
+```golang 
+import "strings"
+str := "Hello World"
+index := strings.Index(str, "World") // 6
+```
+
+#### String Triming 
+
+```golang
+import "strings"
+str := "  Hello World  "
+trimmed := strings.TrimSpace(str) // "Hello World"
+```
 
 ### Loops 
 
@@ -316,8 +373,46 @@ func main() {
 - solution for colorizing 
 - solution pattern for logging 
 
+## [bytes](https://pkg.go.dev/bytes)
+
+The `bytes` package in Go provides functions for the manipulation of byte slices. It is part of the standard library and is commonly used for tasks such as reading, writing, and modifying byte slices.
 
 
+```golang 
+package main
+
+import (
+    "bytes"
+    "fmt"
+)
+
+func main() {
+    // Create a new buffer and write some bytes to it
+    var b bytes.Buffer
+    b.Write([]byte("Hello, "))
+
+    // Write more bytes to the buffer
+    b.WriteString("world!")
+
+    // Convert the buffer's contents to a string and print it
+    fmt.Println(b.String())
+
+    // Create a byte slice
+    data := []byte("Go is awesome!")
+
+    // Create a new buffer from the byte slice
+    buf := bytes.NewBuffer(data)
+
+		    // Read the first 5 bytes from the buffer
+    p := make([]byte, 5)
+    buf.Read(p)
+    fmt.Println(string(p)) // Output: Go is
+
+    // Read the remaining bytes from the buffer
+    remaining := buf.String()
+    fmt.Println(remaining) // Output: awesome!
+}
+```
 
 ## Reference 
 
