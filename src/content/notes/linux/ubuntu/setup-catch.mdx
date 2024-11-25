@@ -2,7 +2,7 @@
 title: "Ubuntu 2024 setup steps"
 description: ""
 date-created: 2024/10/19
-last-modified: 2024/10/31
+last-modified: 2024/11/25
 isdraft: true
 categories: ["linux", "ubuntu", "setup", "notes"]
 tags: ["linux", "ubuntu", "setup", "notes"]
@@ -15,25 +15,24 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
 
 ## Basic Configuration
 
-1. `sudo apt update`
-2. `sudo apt upgrade`
-3. `sudo apt install git`
-4. `sudo apt install zsh`
-5. `sudo apt install tmux`
-5. `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`` # Install Oh My Zsh
-6. set zsh theme to "awesomepanda" in `~/.zshrc`
-7. `export PPROMPT='%(?.%F{green}->.%F{red}->)%f %B%F{yellow}%n@%m::%F{red}%2~%f' in `~/.zshrc`
-8. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` # Install Homebrew
-9. `/bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"` # Install Kinto remap keyboard to mac like behavior
-10. `sudo apt install gnome-shell-extension-manager`
-11. `sudo apt install gnome-tweaks` # Install Gnome Tweaks
-12. Gnome Tweaks > Additional Layout Options > Alt and Win behavior > Ctrl is mapped to win and the usual Ctrl # this just makes `cmd + c`, `cmd + t` etc work as expected
-13. Gnome Tweaks > Additional Layout Options > Caps Lock behavior > Make Caps Lock and addition Esc # this makes caps lock an additional esc key
-14. `sudo apt install gdb` # Install GDB detailed crash reports and debuging  
+- `sudo apt update`
+- `sudo apt upgrade`
+- `sudo apt install git`
+- `sudo apt install zsh`
+- update `/etc/shells` to include `/usr/bin/zsh`
+- `sudo apt install tmux`
+- `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`` # Install Oh My Zsh
+- set zsh theme to "awesomepanda" in `~/.zshrc`
+- `export PPROMPT='%(?.%F{green}->.%F{red}->)%f %B%F{yellow}%n@%m::%F{red}%2~%f' in `~/.zshrc`
+- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` # Install Homebrew
+- `/bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"` # Install Kinto remap keyboard to mac like behavior
+- `sudo apt install gnome-shell-extension-manager`
+- `sudo apt install gnome-tweaks` # Install Gnome Tweaks
+- Gnome Tweaks > Additional Layout Options > Alt and Win behavior > Ctrl is mapped to win and the usual Ctrl # this just makes `cmd + c`, `cmd + t` etc work as expected
+- Gnome Tweaks > Additional Layout Options > Caps Lock behavior > Make Caps Lock and addition Esc # this makes caps lock an additional esc key
+- `sudo apt install gdb` # Install GDB detailed crash reports and debuging  
 
 ### Gonme Extensions
-
-
 
 - **Rectangle - Manual Tiling**: Enables manual tiling of windows, allowing you to arrange them freely on your desktop.
   - [rectangle - manual tiling](https://extensions.gnome.org/extension/6553/rectangle/)
@@ -67,9 +66,11 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
 ## Applications
 
 15. `sudo apt install flatpak`
-  - `sudo add-apt-repository ppa:flatpak/stable`
+- `sudo add-apt-repository ppa:flatpak/stable`
   - `sudo apt update`
   - `sudo apt install flatpak`
+- [LocalSend](https://localsend.org/download) cross platform airdrop tool 
+  - flatpak install flathub org.localsend.localsend_app
 
  
 ### Developer Tools 
@@ -79,6 +80,8 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
 - `snap install bruno` # APi CLient 
 - [Gogh](https://github.com/Gogh-Co/Gogh)
   - `gogh`
+- [docker color output](https://github.com/devemio/docker-color-output)
+  - 
 
 ### Quality Of Life 
 
@@ -124,3 +127,12 @@ alias cb="clipboard"
 
 - [CopyQ](https://hluk.github.io/CopyQ/)
 - [GPaste](https://github.com/Keruspe/GPaste)
+
+
+## Bluetooth Device Troubleshooting 
+
+[stackoverflow - ubuntu bluetooth Troubleshooting](https://askubuntu.com/questions/1091888/bluetooth-not-finding-any-devices-ubuntu-18-04)
+
+```
+sudo apt-get install bluetooth bluez bluez-tools rfkill
+```
