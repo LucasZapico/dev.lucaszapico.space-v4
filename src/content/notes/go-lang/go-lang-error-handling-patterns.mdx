@@ -2,9 +2,38 @@
 title: "Notes on Go lang Error Handling Patterns"
 description: "General note catch for error handling in Go lang"
 date-created: "2024/03/04"
-last-modified: "2024/07/16"
+last-modified: 2024/10/21
 categories: ["go-lang", "development", "error-handling" ]
 tags: ["go-lang", "development", "error-handling" ]
 isdraft: true
 type: "note"
 ---
+
+## Error Handling In Go Lang 
+
+### `panic` 
+
+A `panic` is a runtime exception that's raised when the program encounters an error it can't handle, such as a divide-by-zero operation or an attempt to access an out-of-bounds array index. When a panic occurs, the program will stop executing and print an error message before exiting.
+
+When a panic occurs, the Go runtime will automatically call the `recover()` function on every deferred function until one of them calls defer return. If no deferred functions are found, the panic is re-raised. Otherwise, the panic is propagated up the call stack until it's caught by the main goroutine.
+
+#### Simple Example 
+
+```go 
+func divide(x int, y int) {
+    if y == 0 {
+        panic("division by zero!")
+    }
+    return x / y
+}
+
+func main() {
+    defer func() { fmt.Println("Panic recovered!") }()
+    result := divide(10, 0)
+    fmt.Println(result)
+}
+```
+
+In this example, the `divide` function panics when `y` is zero. The `defer` statement will catch the panic and print "Panic recovered!" to the console.
+
+
