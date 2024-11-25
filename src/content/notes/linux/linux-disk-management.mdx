@@ -1,0 +1,48 @@
+---
+title: "Linux Disk Management"
+description: "Notes, Reference and Cheatsheet for Linux Disk Management"
+date-created: 2024/11/03
+last-modified: 2024/11/03
+isdraft: true
+categories: ["linux", "disk-mng" "notes"]
+tags: ["linux", "command-line", "disk-mng" "notes"]
+type: "notes"
+---
+
+## CLI Commands for Discovery 
+
+List all block devices 
+
+```sh 
+lsblk 
+```
+```sh 
+lsblk [options]
+```
+
+[Linux Documentation](https://www.kernel.org/doc/Documentation/block/lsblk.txt), `lsblk` is a command that displays information about block devices on a system.
+
+Here's a concise summary:
+
+**Syntax:** `lsblk [options] [device...]`
+
+**Output:**
+`lsblk` displays a list of block devices, including:
+
+1. Device name
+2. Mount point
+3. File system type
+4. Size
+5. Block device number (major/minor)
+6. I/O operations
+
+
+```sh
+sudo fdisk --list  
+```
+
+concise 
+
+## Reference 
+
+[Linux man - man7.org](https://man7.org/linux/man-pages/man8/)
