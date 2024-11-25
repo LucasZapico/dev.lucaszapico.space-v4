@@ -1,21 +1,66 @@
 ---
-title: "Bash Catch and Cheatsheet"
-description: "General notes on bash scripting, config and workflows"
+title: "Bash and Zsh Catch and Cheatsheet"
+description: "General notes on bash and Zsh scripting, config and workflows"
 date-created: "2022/09/23"
-last-modified: '2023/06/16'
+last-modified: 2024/11/25
 isdraft: false
 categories: ["bash", "cheatsheet", "process", "workflows", "reference"]
 tags: ["bash", "cheatsheet", "process", "workflows", "reference"]
 type: "note"
 ---
 
-## Cheatsheet
+I was originally going to make this a Zsh cheatsheet but because of the amount of cross over it would be easier to just callout inline where their is a divergence. 
 
-### Basics
+## Basics
+
+The most basic of any language, framework tool or systems is knowing where to go to find answers. `man` is the manual for the terminal but it can be a little intimidating and just overall a little much. So I have added a few alternatives
+
+```sh 
+man head
+```
+
+### `tldr`
+
+`tldr` which is a community driven man alterative. `brew install tldr` 
+
+```sh 
+tldr head
+```
+
+
+### `cheat.sh` 
+
+This is a slick project, `curl` or `httpie` can be used to access the and it return a simple and easy to read cheatsheet.
+
+```sh 
+curl cheat.sh/head
+```
+or 
+
+`brew install httpie`
+
+```sh 
+http cheat.sh/head
+```
+
+
 
 From within a CLI(command line interface) environment**Echo**
 
-#### Print to Terminal
+
+### Basic Structure 
+
+```sh
+> some-command some-option some-arguments
+```
+
+### Get manual(documentation) for a given command.
+
+```sh
+man <some-command>
+```
+
+### Print to Terminal
 
 ```sh:title=shell
 echo "some text"
@@ -27,6 +72,81 @@ echo "1\t2\t3"
 
 echo -e "1\t2\t3"
 1	2	3
+```
+
+## Conditionals 
+
+```sh
+######### 1)
+if expression 
+then 
+  # do something
+fi
+
+######## 2)
+if expression; then
+    # instructions
+fi
+
+######## 3)
+if expression; then ...; fi
+
+######## 4)
+if expression; then
+    # instructions
+else
+    # instructions
+fi
+
+######## 5)
+if expression; then
+    # instructions
+elif expression
+    # instructions
+else
+    # instructions
+fi
+```
+
+## Loop 
+
+### Basic Loops
+
+```sh 
+# 1)
+for itervarname in iterable
+do
+    # instructions
+done
+
+# 2)
+for itervarname in iterable; do
+    # instructions
+done
+
+# 3)
+for itervaname in iterable; do ...; done
+```
+
+## function 
+
+```sh 
+foo() {
+  echo "Foo rules the world"
+}
+# call function
+foo
+```
+
+### Common Loops
+
+
+```sh 
+FOO_ARR=(foo bar baz)
+# loop through and array 
+for i in ${FOO_ARR[@]}; do
+  echo $i
+done
 ```
 
 ### Styling CLI
@@ -71,19 +191,9 @@ echo -e "\e[1;43m This is text has a yellow background \e[0m"
  This text has a yellow background
 ```
 
-### Basics Commands
 
-```sh
-> some-command some-option some-arguments
-```
 
-### Get manual(documentation) for a given command.
-
-```sh
-man <some-command>
-```
-
-### Get shell enviroment variables
+### Get shell environment variables
 
 Environmental
 : variables are variables that are defined for the current shell and are inherited by any child shells or processes. Environmental variables are used to pass information into processes that are spawned from the shell.
@@ -95,7 +205,7 @@ Shell variables
  env
 ```
 
-### CLI Navigations
+### CLI Navigation
 
 ```sh
  pwd
@@ -112,16 +222,16 @@ cd -
 # change to most recent directory
 ```
 
-### Working with Files
+## Working with Files
 
-#### Save Result of Command to File
+### Save Result of Command to File
 
 ```sh
  'command' /dir > file.txt
  # will save the return of the command to the defined file
 ```
 
-#### Making Files and Directories
+### Making Files and Directories
 
 ```sh
  touch <my-file>
@@ -139,7 +249,7 @@ cd -
  # make a folder/directory
 ```
 
-#### Organizing Files and Directories
+### Organizing Files and Directories
 
 ```sh
  mv <my-file> <directory-name>/
@@ -210,6 +320,7 @@ fg
 //(foreground) brings scripts running in background to foreground
 ```
 
+
 ### Functions 
 
 ```sh
@@ -232,24 +343,6 @@ which some-command
 // file path to command
 ```
 
-### **Zsh**
-
-#### Commands
-
-```
-// zsh commands
-
-man some-command
-// opens manual for 'some-command'
-
-whatis some-command
-// brief descrption of command
-
-```
-
----
-
----
 
 ### Network Status Commands
 
@@ -295,17 +388,57 @@ kill -9 <PID>
 
 ---
 
+### Foo Reference 
+
+I just wanted to jot this down for future reference. Shell scripting languages don't have the concept of a class or object, but you can use associative arrays to create a similar structure. Here are example in bash and zsh of how you can use associative arrays to create a "person" object with properties like name, age, and city:
+
+Interesting stuff, but I think running into a need like this, it would be better to use python or golang. 
+
+```bash  
+# Declare an associative array
+declare -A person
+
+# Add properties to the associative array
+person[name]="John Doe"
+person[age]=30
+person[city]="New York"
+
+# Access properties
+echo "Name: ${person[name]}"
+echo "Age: ${person[age]}"
+echo "City: ${person[city]}"
+```
+
+```zsh 
+# Declare an associative array
+typeset -A person
+
+# Add properties to the associative array
+person[name]="John Doe"
+person[age]=30
+person[city]="New York"
+
+# Access properties
+echo "Name: ${person[name]}"
+echo "Age: ${person[age]}"
+echo "City: ${person[city]}"
+```
+
 ## Resources and Reference
 
-[bash function reference - linuxize.com](https://linuxize.com/post/bash-functions/)
+### Official Documentation 
 
-[bash cheatsheet - devhints.io](https://devhints.io/bash)
+- [zsh html doc](https://zsh.sourceforge.io/Doc/Release/zsh_toc.html)
+- [bash manual - gnu.org](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
 
-[Shell Sytle Guide- google](https://google.github.io/styleguide/shell.xml)
+### Other Resources
 
-[Bash Programming- Introduction How-To](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
-
-[Linux Kernel Codeing Style](https://www.kernel.org/doc/Documentation/process/coding-style.rst)
+- [bash cheatsheet - github](https://gist.github.com/ClementNerma/1dd94cb0f1884b9c20d1ba0037bdcde2)
+- [bash function reference - linuxize.com](https://linuxize.com/post/bash-functions/)
+- [bash cheatsheet - devhints.io](https://devhints.io/bash)
+- [Shell Sytle Guide- google](https://google.github.io/styleguide/shell.xml)
+- [Bash Programming- Introduction How-To](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+- [Linux Kernel Codeing Style](https://www.kernel.org/doc/Documentation/process/coding-style.rst)
 
 ### Tutorials Corses and Guides
 
