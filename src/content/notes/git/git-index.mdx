@@ -2,7 +2,7 @@
 title: git
 description: "General catch of notes, cheatsheet and reference for git related functionality"
 date-created: "2022/02/11"
-last-modified: 2024/10/29
+last-modified: 2024/11/26
 categories: ["git", "cheatsheet", "reference"]
 tags: ["git", "cheatsheet", "reference"]
 isdraft: false
@@ -120,6 +120,55 @@ git merge --strategy-option theirs <feature-branch> staging
 
 ```sh
 git merge -X theirs staging <bug-fix>
+```
+
+## Stash 
+
+### Stash Changes 
+
+```sh
+git stash 
+```
+
+### Stash Changes with Message
+
+```sh
+git stash save "message"
+```
+
+### List Stashes
+
+```sh
+git stash list
+```
+
+### Adding Stash Change 
+
+`apply`
+: `apply` adds the stash changes to the working directory but keeps the stash in the stash list.
+
+`pop` 
+: `pop` adds the stash changes to the working directory and removes the stash from the stash list.
+
+#### Apply stash
+
+```sh 
+git stash apply stash@{<stash number>}
+```
+
+```sh 
+git stash apply stash@{1}
+```
+
+### Pop Stash
+
+
+```sh 
+git stash pop stash@{<stash number>}
+```
+
+```sh 
+git stash pop stash@{1}
 ```
 
 
