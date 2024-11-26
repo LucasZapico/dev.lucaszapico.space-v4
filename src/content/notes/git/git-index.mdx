@@ -171,6 +171,28 @@ git stash pop stash@{<stash number>}
 git stash pop stash@{1}
 ```
 
+### Drop Stash
+
+`drop` removes a stash from the stash list completely.
+
+```sh
+git stash drop stash@{<stash number>}
+```
+
+```sh
+git stash drop stash@{1}
+```
+
+### Clear Stash
+
+> warning should be use with caution as it removes all stashes
+
+`clear` removes all stashes from the stash list.
+
+```sh
+git stash clear
+```
+
 
 ## Reference
 
