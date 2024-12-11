@@ -1,0 +1,60 @@
+---
+title: "Task"
+description: "Notes on Task"
+date_created: 
+last_modified:
+isdraft: true
+categories: ["task", "process", "workflows"]
+tags: ["task", "process", "workflows"]
+type: "note"
+---
+
+## Use Cases 
+
+### Using Environment Variables In Taskfile
+
+I want to commit my Taskfile to git but expose sensitive information like my server ip address and user. To address this issue I want to pass environment vars to my Taskfile. 
+
+```yml:file=Taskfile.yml
+version: '3'
+
+dotenv:
+  - env/.env.production
+
+tasks:
+  hello:
+    cmds:
+      - echo 'Hello World from Task!'
+    silent: true
+  check_env:
+    cmds:
+      - echo $HOST
+      - echo $HOST_USER
+    silent: true
+```
+
+```sh 
+task check_env
+```
+
+###  Task To Run Other tasks
+
+```yml:file=Taskfile.yml
+version: '3'
+
+tasks: 
+  task1:
+    cmds:
+      - echo 'Task 1'
+  task2:
+    cmds:
+      - echo 'Task 2'
+  all-tasks: 
+    cmds:
+      - task task1
+      - task task2
+```
+
+## References 
+
+[Taskfile official docs](https://taskfile.dev/)
