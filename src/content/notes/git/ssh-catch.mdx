@@ -2,7 +2,7 @@
 title: SSH Catch
 description: "General notes on common ssh tasks and actions"
 date-created: "2022/02/11"
-last-modified: "2024/10/18"
+last-modified: 2024/12/24
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
@@ -77,6 +77,21 @@ _Github Example_
 
 For a single service use the default file `.ssh/id_rsa` but for multiple services follow the steps below.
 
+When `ssh-keygen -t rsa` asks for a file specify the file associated with the domain or service
+
+#### Example key gen
+
+```shell
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/<foo>/.ssh/id_ed25519): github.key
+```
+
+```shell
+ssh-keygen -t ed25519 -C <github-email>
+```
+
+> 💡 note: if the file does not show up in `.ssh/`. Using the full path should correct
+
 ### Copy SSh key to remote machine
 
 ```sh
@@ -104,20 +119,17 @@ Host gitlab.com
    IdentityFile ~/.ssh/gitlab.key
 ```
 
-Now when `ssh-keygen -t rsa` asks for a file specify the file associated with the domain or service
+#### Setting up Multiple Aliass for Connections 
 
-**Example key gen**
-
-```shell
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/Users/<foo>/.ssh/id_ed25519): github.key
+```txt 
+Host footron 192.168.2.969
+   User foo
+   HostName 192.168.2.969
+   IdentityFile ~/.ssh/foo.key
 ```
 
-```shell
-ssh-keygen -t ed25519 -C <github-email>
-```
+Now we can connect to this host with `ssh footron` or `ssh 192.168.2.969` 
 
-> 💡 note: if the file does not show up in `.ssh/` using the full path should correct
 
 ### Add Host to known Hosts
 
