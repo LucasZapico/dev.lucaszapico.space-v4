@@ -2,7 +2,7 @@
 title: "General Jupyter Catch and Cheatsheet"
 description: "General notes on Jupyter notebooks, cheatsheet, config, gochas, and workflows"
 date-created: "2024/04/19"
-last-modified: "2024/04/24"
+last-modified: 2025/01/12
 isdraft: false
 categories: ["python", "jupyter", "cheatsheet", "process", "workflows", "reference"]
 tags: ["python", "cheatsheet", "jupyter", "process", "workflows", "reference"]
@@ -18,3 +18,19 @@ type: "note"
 4. Select `Python: Select Interpreter`
 5. Select the virtual environment that matches the path from step 3 or add it directly 
 
+
+## Setting Virtual Env in Vscode Jupyter Notebook 
+
+This is a bit of a pain, as it seems that vscode only supports or detects certain virtual environment paths. In my case my virtual environments were stored in `~/snap/code/179/.local/share/virtualenvs/...` and vscode did not detect them and when setting a virtual env it doesn't let you explicitly set the path.  
+
+### Solution 
+
+Adding the following to my `settings.json` file in vscode allowed me to set the virtual environment path manually.
+
+```json:title="settings.json"
+  {
+  #.... other settings
+  "python.terminal.activateEnvironment": true,
+  "python.defaultInterpreterPath": "~/snap/code/179/.local/share/virtualenvs/src-jRrTfxz5",
+  }
+```
