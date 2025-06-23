@@ -2,7 +2,7 @@
 title: SSH Catch
 description: "General notes on common ssh tasks and actions"
 date-created: "2022/02/11"
-last-modified: 2024/12/24
+last-modified: 2025/06/23
 categories: [git, reference]
 tags: [github, gitlab, bitbucket, version-control, notes]
 isdraft: false
@@ -119,6 +119,16 @@ Host gitlab.com
    IdentityFile ~/.ssh/gitlab.key
 ```
 
+### Force Password Authentication with given host 
+
+I noticed that `ssh-copy-id` was failing on some hosts, even though I had those hosts set up in my SSH config file. The issue appeared to be authentication retry limits being hit while checking keys.  My workaround was to temporarily force password authentication by setting `PubkeyAuthentication no` in the SSH config.  After copying the key, I reverted the setting back to `PubkeyAuthentication yes`.
+
+```txt 
+Host 192.172.1.167
+   PubkeyAuthentication no
+   IdentityFile ~/.ssh/foo.key
+```
+
 #### Setting up Multiple Aliass for Connections 
 
 ```txt 
@@ -218,7 +228,7 @@ You can try the following but it can fail `Full Disk Access privileges.` error.
 
 ```sh
 sudo systemsetup -setremotelogin on
-```
+```\
 
 If 👆that doesn't work try 👇
 
