@@ -1,0 +1,190 @@
+---
+title: "Just a list of tools in the box"
+description: "Catch list of tools in the box and brief description of what they do"
+date-created: 2025/06/22
+last-modified: 2025/06/23
+categories: ["tools", "machine", "os"]
+tags: ["tools", "machine", "os"]
+isdraft: false
+type: "note"
+---
+
+## Cli
+
+### [Ranger](https://github.com/ranger-dev/ranger)
+
+Ranger is a VIM-inspired file manager for the command line. It provides a powerful, keyboard-driven interface for navigating, selecting, and manipulating files and directories. Unlike traditional file managers, Ranger focuses on efficiency and customization. It's built for power users who prefer a highly efficient workflow without needing a graphical user interface. Key features include:
+
+
+### Eza
+```
+brew install eza
+```
+**Description:** Eza is a modern replacement for `ls` with a focus on being more user-friendly and visually appealing. It includes features like Git integration (showing status of files), file type icons, extended attributes, and better color support.
+[GitHub Repo](https://github.com/eza-community/eza)
+
+### Bat
+```
+brew install bat
+```
+**Description:** Bat is a `cat` clone with syntax highlighting and Git integration. It makes it easier to read code and text files in the terminal by highlighting the syntax and displaying Git status information.
+[GitHub Repo](https://github.com/sharkdp/bat)
+
+### Numi Calc
+#### cli
+```
+curl -sSL https://s.numi.app/cli | sh
+```
+**Description:** Numi is a command-line calculator designed for power users.  It supports complex calculations, variables, functions, and can even handle units of measurement. It's aimed at engineers, data scientists, and anyone who needs to perform calculations quickly and efficiently from the terminal.
+[Website](https://numi.app/)
+
+### Task
+```
+sudo snap install task --classic
+```
+**Description:** Task is a command-line task management tool. It allows you to manage your tasks, projects, and priorities directly from the terminal.  It’s inspired by Todo.txt and offers features like due dates, priorities, tags, and dependencies.
+[Website](https://taskwarrior.org/) | [GitHub Repo](https://github.com/GothenburgBitFactory/taskwarrior)
+
+
+## Network 
+
+### gping
+```
+brew install gping
+```
+**Description:** gping is a visual ping tool that displays network latency in a graphical format. It allows you to see the path that packets take to reach a destination, along with the latency at each hop. This helps diagnose network connectivity issues and identify bottlenecks.
+
+[GitHub Repo](https://github.com/schollz/gping)
+
+### Trippy
+```
+brew install trippy
+```
+**Description:** Trippy is a network diagnostics tool that traces the route packets take across the internet, displaying the path visually on a map. It visualizes network hops, geographic locations, and provides detailed information about each hop, helping you understand network performance and identify potential issues.
+
+[GitHub Repo](https://github.com/trippytk/trippy)
+
+## Apps 
+
+
+## Bruno
+```
+sudo snap install bruno
+```
+**Description:** Bruno is a modern, extensible API testing tool. It allows you to design, execute, and automate API tests with a focus on collaboration and a clean user interface. It's a great alternative to Postman or Insomnia for those who prefer a desktop application.
+[GitHub Repo](https://github.com/leebenson/bruno)
+
+### Beekeeper Studio
+```
+sudo snap install beekeeper-studio
+```
+**Description:** Beekeeper Studio is a free, open-source SQL client. It provides a clean and intuitive interface for connecting to and querying various database systems like PostgreSQL, MySQL, SQLite, and more.  It's designed for both beginners and experienced database users.
+[Website](https://www.beekeeperstudio.com/) | [GitHub Repo](https://github.com/beekeeperstudio/beekeeper-studio)
+
+
+
+
+**wavemon**
+
+```
+sudo apt install wavemon # Debian/Ubuntu
+```
+
+**Description:** Wavemon is a command-line based wireless network monitor for Linux. It allows you to view detailed information about your wireless connection, including signal strength, noise level, bit rate, encryption status, and more. It's useful for troubleshooting wireless network issues and monitoring the quality of your connection.
+
+[GitHub Repo](https://github.com/JelteJansma/wavemon)
+
+*   **iftop**
+    ```
+    sudo apt install iftop  # Debian/Ubuntu
+    brew install iftop      # macOS (using Homebrew)
+    ```
+    **Description:** iftop is a real-time network traffic monitor. It displays a list of network connections and their bandwidth usage, helping you identify which hosts and applications are consuming the most bandwidth.
+    [GitHub Repo](https://github.com/robertochiodi/iftop)
+
+*   **nvtop**
+    ```
+    sudo apt install nvtop  # Debian/Ubuntu
+    brew install nvtop      # macOS (using Homebrew)
+    ```
+    **Description:** nvtop is a terminal-based system monitoring tool similar to `top` or `htop`, but with a focus on providing more detailed information about GPUs (if present). It displays CPU usage, memory usage, and GPU statistics in a visually appealing and interactive format.
+    [GitHub Repo](https://github.com/Syllo/nvtop)
+
+*   **iotop**
+    ```
+    sudo apt install iotop  # Debian/Ubuntu
+    brew install iotop      # macOS (using Homebrew)
+    ```
+    **Description:** iotop monitors disk I/O usage. It shows which processes are reading and writing the most data to disk, helping you identify I/O bottlenecks.
+    [GitHub Repo](https://github.com/gm-tooling/iotop)
+
+*   **atop**
+    ```
+    sudo apt install atop  # Debian/Ubuntu
+    brew install atop      # macOS (using Homebrew)
+    ```
+    **Description:** atop is an advanced system monitor that provides a comprehensive view of system resources, including CPU, memory, disk, and network usage. It can also track historical data for later analysis.
+    [GitHub Repo](https://github.com/Atop-project/atop)
+
+*   **htop**
+    ```
+    sudo apt install htop  # Debian/Ubuntu
+    brew install htop      # macOS (using Homebrew)
+    ```
+    **Description:** htop is an interactive process viewer that provides a more user-friendly and visually appealing alternative to the traditional `top` command. It allows you to easily monitor system resources and manage processes.
+    [GitHub Repo](https://github.com/hishamhm/htop)
+
+*   **s-tui**
+    ```
+    cargo install s-tui # Requires Rust and Cargo
+    ```
+    **Description:** s-tui (System Terminal UI) is a full-screen terminal UI for monitoring system processes and resources. It presents detailed information about CPU, memory, disk, network, and processes in a visually appealing and interactive format.
+    [GitHub Repo](https://github.com/rafedbal/s-tui)
+
+*   **btop**
+    ```
+    sudo apt install btop  # Debian/Ubuntu
+    brew install btop      # macOS (using Homebrew)
+    ```
+    **Description:** btop is a resource monitor that presents system information in a visually appealing and interactive manner. It allows you to monitor CPU usage, memory usage, disk I/O, network traffic, and processes.
+    [GitHub Repo](https://github.com/aristocratos/btop)
+
+*   **eza**
+    ```
+    brew install eza  # macOS (using Homebrew)
+    sudo apt install eza  # Debian/Ubuntu
+    ```
+    **Description:** Eza is a modern replacement for `ls` with a focus on being more user-friendly and visually appealing. It includes features like Git integration, file type icons, extended attributes, and better color support.
+    [GitHub Repo](https://github.com/eza-community/eza)
+
+*   **bat**
+    ```
+    brew install bat  # macOS (using Homebrew)
+    sudo apt install bat # Debian/Ubuntu
+    ```
+    **Description:** Bat is a `cat` clone with syntax highlighting and Git integration. It makes it easier to read code and text files in the terminal by highlighting the syntax and displaying Git status information.
+    [GitHub Repo](https://github.com/sharkdp/bat)
+
+*   **bandwhich**
+    ```
+    brew install bandwhich  # macOS (using Homebrew)
+    sudo apt install bandwhich # Debian/Ubuntu
+    ```
+    **Description:** Bandwhich is a command-line tool that monitors network bandwidth usage for each process. It provides a real-time view of which processes are using the most network bandwidth, helping you identify and diagnose network performance issues.
+    [GitHub Repo](https://github.com/imsnif/bandwhich)
+
+*   **lazydocker**
+    ```
+    brew install lazydocker # macOS (using Homebrew)
+    # Other installation methods available on the project's GitHub page (Snap, AppImage, etc.)
+    ```
+    **Description:** Lazydocker is a terminal UI for managing Docker containers, images, networks, and volumes. It provides a fast, intuitive, and visually appealing way to interact with Docker from the command line.
+    [GitHub Repo](https://github.com/jesseduffield/lazydocker)
+
+*   **lazygit**
+    ```
+    brew install lazygit # macOS (using Homebrew)
+    # Other installation methods available on the project's GitHub page (Snap, AppImage, etc.)
+    ```
+    **Description:** LazyGit is a terminal UI for managing Git repositories. It provides a fast, intuitive, and visually appealing way to perform common Git operations like staging, committing, branching, and merging.
+    [GitHub Repo](https://github.com/jesseduffield/lazygit)
