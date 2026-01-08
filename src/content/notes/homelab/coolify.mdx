@@ -1,0 +1,231 @@
+---
+title: "Coolify Multi-Server Setup Guide"
+description: "Guide for setting up Coolify on a primary server with remote server management."
+date-created: '2025/12/16'
+last-modified: 2025/12/16
+isdraft: false
+categories: ["homelab", "notes"]
+tags: ["homelab", "notes"]
+type: "notes"
+---
+
+
+# Coolify Multi-Server Setup Guide
+
+Guide for setting up Coolify on a primary server with remote server management.
+
+## Architecture
+
+```
+Primary (192.168.1.123)              Remote (192.168.1.124)
+┌─────────────────────────┐          ┌─────────────────────────┐
+│  Coolify                │───SSH───►│  Docker Host            │
+│  - Dashboard :8000      │          │  - Managed by Coolify   │
+│  - PostgreSQL           │          │                         │
+│  - Redis                │          │                         │
+└─────────────────────────┘          └─────────────────────────┘
+```
+
+---
+
+## Part 1: Install Coolify on Primary Server
+
+### Prerequisites
+
+```bash
+# On primary (192.168.1.123)
+
+# Check requirements
+docker --version    # Need v24+
+free -h             # Need 2GB+ RAM
+df -h               # Need 30GB+ free
+
+# Configure SSH
+sudo sed -i 's/#PubkeyAuthentication.*/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+sudo systemctl restart ssh
+```
+
+### Install
+
+```bash
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
+```
+
+### Post-Install: Fix Network Access
+
+If Coolify isn't accessible from LAN, check for stale iptables rules:
+
+```bash
+# Check for DROP rules blocking traffic
+sudo iptables -L DOCKER -n | head -20
+
+# If DROP rules exist, flush them
+sudo iptables -F DOCKER
+sudo iptables -F DOCKER-USER
+
+# Restart Docker to recreate clean rules
+sudo systemctl restart docker
+
+# Restart Coolify
+sudo bash -c 'cd /data/coolify/source && docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d'
+```
+
+Access Coolify at `http://192.168.1.123:8000`
+
+---
+
+## Part 2: Prepare Remote Server
+
+### On Remote Server (192.168.1.124)
+
+```bash
+# 1. Install Docker (if not already)
+curl -fsSL https://get.docker.com | sudo sh
+
+# 2. Configure SSH for pubkey authentication
+sudo sed -i 's/#PubkeyAuthentication.*/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+sudo systemctl restart ssh
+
+# 3. Ensure user's .ssh directory exists
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+
+# 4. Add user to docker group
+sudo usermod -aG docker $USER
+newgrp docker
+
+# 5. CRITICAL: Enable passwordless sudo
+echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER
+sudo chmod 440 /etc/sudoers.d/$USER
+```
+
+---
+
+## Part 3: Add Remote Server to Coolify
+
+### Get Coolify's Public Key
+
+**Option A: From UI**
+1. Go to **Keys & Tokens** → **Private Keys**
+2. Click on a key (or create new one)
+3. Copy the **Public Key**
+
+**Option B: From command line**
+```bash
+# On primary server
+sudo cat /data/coolify/ssh/keys/*.pub
+```
+
+### Add Public Key to Remote Server
+
+```bash
+# On remote server (192.168.1.124)
+echo "<paste-coolify-public-key>" >> ~/.ssh/authorized_keys
+```
+
+### Add Server in Coolify UI
+
+1. Go to **Servers** → **+ Add**
+2. Fill in:
+   - **Name:** `failover` (or any name)
+   - **IP Address:** `192.168.1.124`
+   - **User:** `za` (your username, not root)
+   - **Port:** `22`
+   - **Private Key:** Select the key whose public key you added
+3. Click **Validate Server**
+
+---
+
+## Troubleshooting
+
+### Issue: "Key is not valid for this server"
+
+**Cause:** Public key on remote doesn't match private key selected in Coolify.
+
+**Fix:**
+1. In Coolify UI, check which key is selected
+2. Get that key's public key from **Keys & Tokens** → **Private Keys**
+3. Add correct public key to remote's `~/.ssh/authorized_keys`
+
+### Issue: "Server is not reachable" + "sudo: a password is required"
+
+**Cause:** Coolify needs passwordless sudo on remote server.
+
+**Fix:**
+```bash
+# On remote server
+echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$USER
+sudo chmod 440 /etc/sudoers.d/$USER
+```
+
+### Issue: Can't access Coolify on LAN (connection refused)
+
+**Cause:** Stale iptables DROP rules from previous Docker/Coolify install.
+
+**Fix:**
+```bash
+# On primary server
+sudo iptables -F DOCKER
+sudo iptables -F DOCKER-USER
+sudo systemctl restart docker
+```
+
+### Issue: SSH falls back to password auth
+
+**Cause:** Keys not mounted in Coolify container or wrong key path.
+
+**Debug:**
+```bash
+# Check keys are visible inside container
+docker exec coolify ls -la /var/www/html/storage/app/ssh/keys/
+
+# Test SSH from inside container
+docker exec -it coolify ssh -v -i /var/www/html/storage/app/ssh/keys/id.root@host.docker.internal za@192.168.1.124
+```
+
+### Issue: docker-compose errors about missing images
+
+**Cause:** Using wrong compose file.
+
+**Fix:** Use both compose files together:
+```bash
+sudo bash -c 'cd /data/coolify/source && docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d'
+```
+
+---
+
+## Key Files & Locations
+
+| Location | Description |
+|----------|-------------|
+| `/data/coolify/source/` | Coolify compose files and config |
+| `/data/coolify/ssh/keys/` | SSH keys for server connections |
+| `/data/coolify/source/.env` | Coolify environment config |
+| `~/.ssh/authorized_keys` | Remote server's authorized keys |
+| `/etc/sudoers.d/$USER` | Passwordless sudo config |
+
+---
+
+## Required Ports
+
+| Port | Service |
+|------|---------|
+| 8000 | Coolify dashboard |
+| 6001 | Realtime (Soketi) |
+| 6002 | Terminal |
+| 22 | SSH |
+| 80/443 | HTTP/HTTPS for deployments |
+
+---
+
+## Checklist for Adding Remote Servers
+
+- [ ] Docker 24+ installed on remote
+- [ ] SSH pubkey authentication enabled (`PubkeyAuthentication yes`)
+- [ ] User added to `docker` group
+- [ ] Passwordless sudo configured
+- [ ] Coolify's public key added to `~/.ssh/authorized_keys`
+- [ ] Correct private key selected in Coolify UI
+- [ ] No firewall blocking ports 22, 80, 443

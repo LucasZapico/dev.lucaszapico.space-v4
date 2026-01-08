@@ -2,14 +2,56 @@
 title: "_node"
 description:
 date-created: 2022/02/12
-last-modified: "2022/08/24"
+last-modified: 2025/03/08
 categories: ["node"]
 tags: ["node", "root"]
 isdraft: true
 type: "note"
 ---
 
-# \_node
+
+import { YouTube, Gist } from "mdx-embed"
+
+# Node
+
+## Custom Error 
+
+```ts
+// bad practice
+if(!thing){
+  throw ("some error")
+}
+
+// better 
+if(!thing){
+  throw new Error("some error")
+}
+
+// best pattern 
+if (!thing){
+  // custom error class
+  throw new AppError("some error")
+}
+```
+
+### Custom App Error 
+```ts 
+export class AppError extends Error {
+  constructor(name: string, httpCode: HttpCode, description: string) {
+    
+    super(description);
+    this.name = name;
+    this.httpCode = httpCode;
+
+    Error.captureStackTrace(this);
+  })
+}
+```
+
+
+<Box mb={6}>
+	<YouTube youTubeId="vAH4GRWbAQw"></YouTube>
+</Box>
 
 ## Project Architecture
 
@@ -24,3 +66,4 @@ type: "note"
 ## Catch
 
 [debug](https://www.npmjs.com/package/debug)
+

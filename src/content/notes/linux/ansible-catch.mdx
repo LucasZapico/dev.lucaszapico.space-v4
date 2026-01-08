@@ -2,7 +2,7 @@
 title: "Ansible"
 description: "Notes and reference on setting up and implementing Ansible"
 date-created: "2024/08/20"
-last-modified: "2024/09/19"
+last-modified: 2025/02/04
 isdraft: true
 categories: ["linux", "ansible", "dev-quality-life", "network",  "notes"]
 tags: ["linux", "ansible", "dev-quality-life", "network",  "notes"]
@@ -25,10 +25,11 @@ pipx install ansible-core
 
 ### Define Host Inventory 
 
-This config defines the machines ansible can interact with and allows for some advanced confiration.
+This config defines the machines ansible can interact with and allows for some advanced confirmation.
 
-```yml:file=/etc/ansible/hosts.yml
-localNetork:
+```yml:file=/e
+
+
   hosts:
     192.168.1.152:
 webservers:
@@ -67,7 +68,6 @@ Ansible Playbooks offer a repeatable, reusable, simple configuration management 
 
 ### Linux Server 
 
-
 1. git
 2. zsh 
 3. rsync 
@@ -78,3 +78,179 @@ Ansible Playbooks offer a repeatable, reusable, simple configuration management 
 8. glances 
 
 
+## Setting up Ansible on Pi 
+
+```sh 
+sudo apt update 
+sudo apt upgrade
+```
+
+```sh 
+sudo apt install ansible
+```
+
+### Check install 
+
+```sh 
+ansible --version
+```
+
+### Argcomplete 
+
+#### Install Pipx 
+
+```sh 
+sudo apt install pipx 
+```
+
+#### Install Argcomplete 
+
+```sh
+pipx install argcomplete
+```
+
+```sh 
+activate-global-python-argcomplete
+```
+
+### Init Hosts 
+
+The Ansible hosts file, typically located at `/etc/ansible/hosts`, is an inventory file that defines the managed nodes (hosts) and groups of hosts that Ansible will manage. 
+
+### Ansible Inventory
+
+The Ansible inventory file defines the hosts and groups of hosts upon which commands, modules, and tasks in a playbook operate. 
+
+```yaml:file="hosts.yaml"
+webservers:
+  hosts:
+    foo.example.com:
+    bar.example.com:
+```
+
+We can declare useful variables in the invetory file to handle challenges like privilege escalations. 
+
+```yaml:file="hosts.yaml"
+webservers:
+  hosts:
+    foo.example.com:
+      ansible_user: foo
+      ansible_password: bar
+      ansible_become: yes
+      ansible_become_method: sudo
+      ansible_become_user: root
+    bar.example.com:
+      ansible_user: bar
+      ansible_password: foo
+      ansible_become: yes
+      ansible_become_method: sudo
+      ansible_become_user: root
+```
+
+```yaml:file="foo-playbook.yaml"
+---
+- name: "foo playbook"
+  hosts: webservers
+  tasks:
+    - name: "foo task"
+      apt:
+        name: apache2
+        state: latest
+```
+
+
+### Pass Inventory Path to Playbook 
+
+```sh
+ansible-playbook playbook.yaml -i <path/to/>hosts.yaml 
+```
+
+#### Run Playbook verbose 
+
+```sh
+ansible-playbook -v playbook.yaml -i <path/to/>hosts.yaml 
+```
+
+#### Run Playbook with Sudo Password 
+
+Sometime...often we need to run playbooks with sudo privileges. Even with `become: yes` in the playbook, we may need to pass the sudo password. This can be done with the `--ask-become-pass` flag.
+
+```sh
+ansible-playbook playbook.yaml -i <path/to/>hosts.yaml --ask-become-pass
+```
+
+
+## Check Connection 
+
+```sh 
+ansible <hosts> -m ping
+```
+
+```sh
+ansible machines -m ping 
+```
+
+## Playbooks Common Actions 
+
+### Install Packages 
+
+```yaml:file="playbook.yaml"
+##....
+
+tasks: 
+  - name: "install git"
+    apt:
+      name: git
+      state: present
+##.....
+```
+
+### Run Shell Commands 
+
+```yaml:file="playbook.yaml"
+#....
+
+tasks: 
+  - name: "run shell command"
+    shell: "echo 'hello world'"
+```
+
+### Update a line in given file 
+
+- [Ansible Doc lineinfile module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/lineinfile_module.html)
+
+This module ensures a particular line is in a file, or replace an existing line using a back-referenced regular expression.
+
+This is primarily useful when you want to change a single line in a file only.
+
+```yaml:file="playbook.yaml"
+#....
+tasks:
+  - name: Add /usr/bin/zsh to /etc/shells if not present
+    lineinfile:
+      path: /etc/shells
+      line: /usr/bin/zsh
+      insertafter: /bin/sh
+      state: present
+#....
+```
+
+### Install Snap Packages with Ansible 
+
+[Ansible docs snap module official](https://docs.ansible.com/ansible/latest/collections/community/general/snap_module.html)
+
+```
+ansible-galaxy collection install community.general
+```
+
+#### Example 
+
+```yml 
+#....
+- name: "install vscode"
+  become: true
+  snap: 
+    name: code 
+    state: present
+#...
+```

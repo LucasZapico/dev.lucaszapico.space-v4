@@ -2,12 +2,25 @@
 title: "Proxmox Index"
 description: "General reference notes on proxmox"
 date-created: '2023/04/10'
-last-modified: "2024/08/20"
+last-modified: 2025/12/16
 isdraft: true
 categories: ["proxmox", "notes", "cheatsheet"]
 tags: ["proxmox", "notes", "cheatsheet"]
 type: "notes"
 ---
+
+## Handle Apt update error 
+
+DataCenter > <main-node> > Updates > Repositories > 
+
+click on `https://enterprise.proxmox.com/debian/cph-squid` and disable 
+
+then click `add` and click `no subscription`
+
+or/and 
+
+Change:
+cd ~
 
 ## Passthrough 
 
@@ -71,8 +84,6 @@ resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
 - ubuntu server 
 
 ## TrueNas 
-
-
 
 ## Ubuntu Server 
 

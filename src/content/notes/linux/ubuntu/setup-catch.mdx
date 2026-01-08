@@ -2,7 +2,7 @@
 title: "Ubuntu 2024 setup steps"
 description: ""
 date-created: 2024/10/19
-last-modified: 2024/11/25
+last-modified: 2025/02/09
 isdraft: true
 categories: ["linux", "ubuntu", "setup", "notes"]
 tags: ["linux", "ubuntu", "setup", "notes"]
@@ -23,7 +23,7 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
 - `sudo apt install tmux`
 - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`` # Install Oh My Zsh
 - set zsh theme to "awesomepanda" in `~/.zshrc`
-- `export PPROMPT='%(?.%F{green}->.%F{red}->)%f %B%F{yellow}%n@%m::%F{red}%2~%f' in `~/.zshrc`
+- `export PROMPT='%(?.%F{green}->.%F{red}->)%f %B%F{yellow}%n@%m::%F{red}%2~%f' in `~/.zshrc`
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` # Install Homebrew
 - `/bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"` # Install Kinto remap keyboard to mac like behavior
 - `sudo apt install gnome-shell-extension-manager`
@@ -71,7 +71,8 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
   - `sudo apt install flatpak`
 - [LocalSend](https://localsend.org/download) cross platform airdrop tool 
   - flatpak install flathub org.localsend.localsend_app
-
+- [pikebackup](https://apps.gnome.org/PikaBackup/)
+  - `flatpak install flathub org.gnome.World.PikaBackup`
  
 ### Developer Tools 
 
@@ -96,6 +97,13 @@ As part of setting up my new Ubuntu machine, I've distilled the essential setup 
   - rocket chat  
 
 ## Detail 
+
+### Network Management 
+
+- `bmon`
+- `nslookup`
+- `dig`
+- `gping`
 
 ### Clipboard Manager 
 

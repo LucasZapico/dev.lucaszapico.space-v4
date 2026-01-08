@@ -1,0 +1,275 @@
+---
+title: "Vitest:React Notes"
+description: "General notes, patterns and examples testing with Vitest"
+date-created: 2024/11/20
+last-modified: 2025/01/27
+isdraft: true
+categories: ["react", "vite", "cheatsheet", "reference", "notes"]
+tags: ["react", "cheatsheet", "vite", "reference", "notes"]
+type: "note"
+---
+
+## Setup 
+
+
+### Support Testing React Components 
+
+To test React components we need to install 
+
+```sh 
+pnpm install --save-dev @testing-library/react @testing-library/dom @testing-library/jest-dom @testing-library/user-event
+```
+
+and finally `jsdom` or `happy-dom`. Their seems to be more support and documentation for `jsdom`. At the time of writing these notes `happy-dom` has a few unresolved [github discussions](https://github.com/vitest-dev/vitest/discussions/1607) calling out "simple" bugs that make using it a bit of a challenge.
+
+```sh
+pnpm install --save-dev jsdom 
+```
+
+```sh 
+pnpm install --save-dev vitest
+```
+
+### Gotchas 
+
+When testing with Vitest and in particular with Remixjs the setup requires a separate `vite.config.js` the convention seems to be `vitest.config.js` 
+
+```js:file=vitest.config.js
+import { defineConfig } from "vite";
+
+export default defineConfig({
+test: {
+  globals: true, 
+  environment: "jsdom",
+  exclude: ["**/node_modules/**"],
+  include: ["**/*.test.ts", "**/*.test.tsx"],
+}
+});
+
+```
+
+#### Pass config path to Package.json 
+
+
+```json:file=package.json
+// simple example
+{
+  "scripts": {
+    "test": "vitest --config vitest.config.js"
+  }
+}
+```
+
+```json:file=package.json
+{
+  // ....
+  // more common pattern
+  "scripts": {
+    // ....
+    "test": "vitest --vonfig ./vitest.config.js",
+    "test:watch": "vitest --watch --config ./vitest.config.js",
+    "test:ui": "vitest --ui --config ./vitest.config.js",
+    "test:coverage": "vitest --coverage --config ./vitest.config.js"
+  },
+  // ....
+}
+```
+
+### Trivial Check 
+
+```ts:file=<path/to>/foo.test.tsx
+
+
+export function add(a: number, b: number) {
+  return a + b
+}
+
+test('add', () => {
+  expect(add(1, 2)).toBe(3)
+})
+
+```
+
+Running `pnpm test` should return passing tests, at this point the project does not support testing React components.
+
+
+
+### Trivial React Components Test
+
+```tsx:file=<path/to>/Foo.tsx
+export const Foo = () => {
+  return <h1>Foo</h1>
+}
+```
+
+```tsx:file=<path/to>/foo.test.tsx
+import { it, expect, test }  from 'vitest'
+import { Foo } from './Foo'
+import { render, screen } from '@testing-library/react'
+
+
+test("foo", async () => {
+  render(<Foo />)
+
+  await screen.findByText('Foo')
+})
+```
+
+This should pass as expected and we are ready to extend our tests.
+
+### Testing React Forms 
+
+Testing forms has quite a few gotchas in my opinion. I will be using [react-hook-forms]() as it makes checks and validations straight forward.
+
+Firstly, setting some expectations for a form component. For simplicity we will focus single page form with with a few inputs and a submit button. Our form will have a trivial text input, a required text input and one validation, in our case "is number". Each required or validated input will have a dialog that is displayed when the input has been touched and focus has been removed and our submit button will be disabled until all inputs are valid. 
+
+```tsx:file=<path/to>/Form.tsx
+import { useEffect } from "react"
+import { useForm, SubmitHandler } from "react-hook-form"
+
+type Inputs = {
+  example: string
+  exampleRequired: string
+  exampleValidation: string
+}
+
+export function FormOne() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+
+    formState: { errors, isValid },
+  } = useForm<Inputs>({
+    mode: "onBlur",
+  })
+  const onSubmit: SubmitHandler<Inputs> = (data: any) =>
+    console.log(data)
+
+  // watch input value by passing the name of it
+
+  useEffect(() => {
+    console.log(watch())
+  }, [watch])
+
+  return (
+    /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
+    <form
+      className="flex flex-col gap-4"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <div className="">
+        <label htmlFor="example">Example</label>
+        {/* register your input into the hook by invoking the "register" function */}
+        <input
+          aria-labelledby="example"
+          aria-label="example"
+          id="example"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="example"
+          {...register("example")}
+        />
+      </div>
+      <div>
+        <label htmlFor="exampleRequired">Example Required</label>
+        {/* include validation with required or other standard HTML validation rules */}
+        <input
+          aria-label="exampleRequired"
+          id="exampleRequired"
+          placeholder="exampleRequired"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          {...register("exampleRequired", { required: true })}
+        />
+        {/* errors will return when field validation fails  */}
+        {errors.exampleRequired && (
+          <span
+            arial-label="requiredError"
+            className="text-red-700 dark:text-red-800"
+          >
+            This field is required
+          </span>
+        )}
+      </div>
+      <div>
+        <label htmlFor="exampleValidation">Example Validation</label>
+        {/* include validation with required or other standard HTML validation rules */}
+        <input
+          aria-label="exampleValidation"
+          id="exampleValidation"
+          placeholder="Must be a number"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          {...register("exampleValidation", {
+            required: true,
+            pattern: /^[0-9]*$/,
+          })}
+        />
+        {/* errors will return when field validation fails  */}
+        {errors.exampleValidation && (
+          <span className="text-red-700 dark:text-red-800">
+            This field is required
+          </span>
+        )}
+      </div>
+      <input
+        role="button"
+        className={
+          isValid
+            ? "text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+            : "text-gray-500 bg-gray-300 cursor-not-allowed font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-600 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:border-gray-700"
+        }
+        type="submit"
+        disabled={!isValid}
+      />
+    </form>
+  )
+}
+
+```
+
+```tsx:file=<path/to>/Form.test.tsx
+test("form missing required", async () => {
+  const user = userEvent.setup()
+  render(<FormOne />)
+
+
+
+  // Find the input fields and submit button
+  const exampleInput = screen.getByLabelText(
+    "example"
+  ) as HTMLInputElement
+  const exampleRequiredInput = screen.getByLabelText(
+    "exampleRequired"
+  ) as HTMLInputElement
+  const exampleValidInput = screen.getByLabelText(
+    "exampleValidation"
+  ) as HTMLInputElement
+  // const exampleInput = screen.getByLabelText('Example')
+  // const exampleRequiredInput = screen.getByLabelText('Example Required')
+  const submitButton = screen.getByRole("button", { name: /submit/i })
+
+  // Input values into the form fields
+  // simple example value
+  await user.type(exampleInput, "test value" )
+  expect(exampleInput.value).toBe("test value")
+  // simple required value
+  await user.click(exampleRequiredInput)
+
+  // expect().toBeInTheDocument()
+  // simple validation of number value
+  await user.type(exampleValidInput, "10")
+  expect(exampleValidInput.value).toBe("10")
+
+
+
+  await waitFor(async () => {
+
+    const requiredMessage = await screen.getByText("This field is required")
+    
+    expect(requiredMessage).toBeInTheDocument()
+  })
+
+```
+
+
+
+
