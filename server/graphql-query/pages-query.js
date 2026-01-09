@@ -2,7 +2,7 @@ const contentPagesQuery = `
 {
   allMdx(
     filter: {frontmatter: {type: {ne: "project"}, isdraft: {eq: false}}}
-    sort: { fields: frontmatter___date_created, order: DESC }
+    sort: {frontmatter: {date_created: DESC}}
   ) {
     edges {
       next {

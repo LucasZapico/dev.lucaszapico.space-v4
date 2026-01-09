@@ -102,7 +102,7 @@ const Projects = () => {
 export const query = graphql`
   query {
     recentProjects: allMdx(
-      sort: { fields: frontmatter___date_created, order: DESC }
+      sort: {frontmatter: {date_created: DESC}}
       filter: {
         frontmatter: { isdraft: { eq: false }, type: { eq: "project" } }
       }
@@ -120,11 +120,7 @@ export const query = graphql`
             isdraft
             last_modified
             link
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
+            featuredImage
           }
           fields {
             path

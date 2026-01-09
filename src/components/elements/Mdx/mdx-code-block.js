@@ -9,12 +9,12 @@ import {
 } from "@chakra-ui/react"
 import { CopyIcon } from "@chakra-ui/icons"
 import { LightenDarkenColor } from "lighten-darken-color"
-import Highlight, { defaultProps } from "prism-react-renderer"
+import { Highlight, themes } from "prism-react-renderer"
 import useClipboard from "react-use-clipboard"
-import Prism from "prism-react-renderer/prism"
-import dracula from "prism-react-renderer/themes/dracula"
-import duotoneLight from "prism-react-renderer/themes/duotoneLight"
 import { generate } from "shortid"
+
+const dracula = themes.dracula
+const duotoneLight = themes.duotoneLight
 
 const FileName = ({ theme, fileName }) => {
   const bg = LightenDarkenColor(theme.plain.backgroundColor, -10)
@@ -84,10 +84,8 @@ export const CodeBlockMdx = ({ children }) => {
     <Box mb={4} maxW="90vw">
       {fileName.length > 0 ? <FileName theme={theme} fileName={file} /> : <></>}
       <Highlight
-        maxW="100%"
-        {...defaultProps}
         code={rawCode}
-        language={lang || ""}
+        language={lang || "text"}
         theme={theme}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => {

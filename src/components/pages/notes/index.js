@@ -204,7 +204,7 @@ export const query = graphql`
   query {
     recentNotes: allMdx(
       filter: { frontmatter: { type: { eq: "note" }, isdraft: { eq: false } } }
-      sort: { fields: frontmatter___date_created, order: DESC }
+      sort: {frontmatter: {date_created: DESC}}
     ) {
       edges {
         node {

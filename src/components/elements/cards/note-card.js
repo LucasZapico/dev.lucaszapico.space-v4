@@ -43,10 +43,10 @@ const NoteCard = ({ note }) => {
           </Text>
           <Box opacity="0.8">
             <Text variant="sec" mb={0} fontSize="xs">
-              published: {dateCreated.slice(0, 10)}
+              published: {dateCreated ? dateCreated.slice(0, 10) : "N/A"}
             </Text>
             <Text variant="sec" mb={4} fontSize="xs">
-              last updated: {lastModified.slice(0, 10)}
+              last updated: {lastModified ? lastModified.slice(0, 10) : "N/A"}
             </Text>
           </Box>
         </Flex>

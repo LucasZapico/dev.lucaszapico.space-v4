@@ -31,10 +31,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
 
     {
-      resolve: "gatsby-plugin-exclude",
-      options: { paths: ["/templates/**", ".vault-stats*"] },
-    },    
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
@@ -47,7 +43,6 @@ module.exports = {
         
       },
     },
-    `gatsby-plugin-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

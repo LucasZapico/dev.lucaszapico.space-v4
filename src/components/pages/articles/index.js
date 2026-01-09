@@ -95,7 +95,7 @@ export const query = graphql`
       filter: {
         frontmatter: { type: { eq: "article" }, isdraft: { eq: false } }
       }
-      sort: { fields: frontmatter___date_created, order: DESC }
+      sort: {frontmatter: {date_created: DESC}}
     ) {
       edges {
         node {

@@ -1,10 +1,10 @@
 import React from "react"
 import { CardOne } from "components"
 import { Link as GatsbyLink } from "gatsby"
-import { Heading, Text, Box, Tag, VStack } from "@chakra-ui/react"
+import { Heading, Text, Box, Tag, VStack, Flex } from "@chakra-ui/react"
 import { generate } from "shortid"
 
-const ArticleCard = ({ article { node }, dummy = {} }) => {
+const ArticleCard = ({ article: { node }, dummy = {} }) => {
   const {frontmatter, fields } = node
   const { title = '', description = '', categories = [], tags = [] } = frontmatter || dummy
   const { path } =  fields || ''
@@ -21,7 +21,7 @@ const ArticleCard = ({ article { node }, dummy = {} }) => {
       flexDirection="column"
       justifyContent="space-between"
     >
-      <Flex flewDir="column" justContent="space-between">
+      <Flex flexDir="column" justifyContent="space-between">
       <Box>
         <Heading as="h4" size="md" variant="sec">
           {title}

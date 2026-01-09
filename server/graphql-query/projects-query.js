@@ -1,8 +1,7 @@
 const projectPageQuery = `{
   allMdx(
-    sort: {fields: frontmatter___date_created, order: DESC}
+    sort: {frontmatter: {date_created: DESC}}
     filter: {frontmatter: {isdraft: {eq: false}, type: {eq: "project"}}}
-    
   ) {
     edges {
       node {
@@ -34,11 +33,6 @@ const projectPageQuery = `{
         frontmatter {
           title
           subHeader
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
         }
         fields {
           path
@@ -49,11 +43,6 @@ const projectPageQuery = `{
         frontmatter {
           title
           subHeader
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
         }
         fields {
           path
