@@ -120,7 +120,11 @@ export const query = graphql`
             isdraft
             last_modified
             link
-            featuredImage
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
           fields {
             path

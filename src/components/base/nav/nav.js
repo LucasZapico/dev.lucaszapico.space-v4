@@ -127,7 +127,7 @@ const DesktopNav = () => {
         {routesOne.map((r, i) => (
           <Link
             activeClassName="active"
-            fontSize={{ base: "sm", md: "md", lg: "xl" }}
+            fontSize={{ base: "xs", md: "xs", lg: "sm" }}
             variant="navLink"
             key={generate()}
             as={GatsbyLink}
@@ -140,7 +140,7 @@ const DesktopNav = () => {
           {routesTwo.map((r, i) => (
             <Link
               activeClassName="active"
-              fontSize={{ base: "sm", md: "md", lg: "xl" }}
+              fontSize={{ base: "xs", md: "xs", lg: "sm" }}
               variant="navLink"
               key={generate()}
               as={GatsbyLink}
@@ -181,7 +181,7 @@ const DesktopNav = () => {
                   <Link
                     onClick={onToggle}
                     activeClassName="active"
-                    fontSize={{ base: "sm", md: "md", lg: "xl" }}
+                    fontSize={{ base: "xs", md: "xs", lg: "sm" }}
                     variant="navLink"
                     key={generate()}
                     as={GatsbyLink}

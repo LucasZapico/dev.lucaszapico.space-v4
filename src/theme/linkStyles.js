@@ -8,7 +8,7 @@ const LinkStyles = {
     cursor: "pointer",
     textDecoration: "underline",
     outline: "none",
-    color: colorMode === "dark" ? "yellow.700" : "yellow.600",
+    color: colorMode === "dark" ? "gray.300" : "gray.600",
     _hover: {
       textDecoration: "none",
     },
@@ -21,6 +21,9 @@ const LinkStyles = {
   
     navLink: ({ colorMode }) => ({
       textDecoration: "none",
+      textTransform: "uppercase",
+      letterSpacing: "0.1em",
+      fontSize: "0.65rem",
       color: colorMode === "dark" ? "brand.300" : "brand.500",
       paddingLeft: "1rem",
       paddingRight: "1rem",

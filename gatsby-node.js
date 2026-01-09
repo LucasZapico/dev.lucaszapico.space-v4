@@ -16,8 +16,13 @@ const logSp = () =>
 `)
   )
 
-exports.createSchemaCustomization = ({ actions, schema }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
+  createTypes(`
+    type MdxFrontmatter {
+      featuredImage: File @fileByRelativePath
+    }
+  `)
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

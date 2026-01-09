@@ -69,7 +69,7 @@ export const HeadingTwoMDX = ({ children, ...rest }) => {
       {...rest}
       size="xl"
       fontWeight="800"
-      color={colorMode === "dark" ? "yellow.100" : "yellow.700"}
+      color={colorMode === "dark" ? "gray.100" : "gray.700"}
       // color={colorMode === "dark" ? "gray.400" : "gray.800"}
       id={link}
     >

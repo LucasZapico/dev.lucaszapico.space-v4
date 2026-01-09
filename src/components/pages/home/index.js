@@ -21,19 +21,13 @@ const technologies = [
   "Linux",
 ]
 
-const learning = [
-  "GoLang",
-  "Machine Learning",
-  "PyTorch", 
-]
-
 const Home = () => {
   const { recentArticles, recentProjects } = useStaticQuery(query)
   return (
     <>
       <HomeHero />
       <Container maxW="container.xl">
-        <Heading size="md">Stuff I&apos;m Pretty Good At:</Heading>
+        <Heading size="md">Technical Skills</Heading>
         <Flex flexWrap="wrap">
           {technologies.map((t) => {
             return (
@@ -43,17 +37,7 @@ const Home = () => {
             )
           })}
         </Flex>
-        <Heading size="md">Stuff I&apos;m Interested In or Learning:</Heading>
-        <Flex flexWrap="wrap">
-          {learning.map((t) => {
-            return (
-              <Tag mb={2} mr={2} variant="sec" key={generate()}>
-                #{t}
-              </Tag>
-            )
-          })}
-        </Flex>
-        <Heading textAlign="center" as="h3" size="2xl">
+                <Heading textAlign="left" as="h3" size="2xl">
           Recent Projects
         </Heading>
         <Link as={GatsbyLink} to="/projects" variant="linkOne">
@@ -111,7 +95,11 @@ export const query = graphql`
             isdraft
             last_modified
             link
-            featuredImage
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
           fields {
             path

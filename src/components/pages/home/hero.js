@@ -11,15 +11,15 @@ const HomeHero = () => {
     subHeader: "I'm a developer who enjoys building beutiful and functional web sites and web apps. ",
   }
   return (
-    <Box py={20} >
-      <Container  className={colorMode === "dark" ? "glass dark" : "glass light"}  maxW="container.xl">
+    <Box py={20} px={4}>
+      <Container className={colorMode === "dark" ? "glass dark" : "glass light"} maxW="container.xl">
         <Box maxW="850px">
           {colorMode === "light " ? (
             <Heading
               bgGradient={`linear(to-r, ${color} ,#B72525)`}
               bgClip="text"
               as="h2"
-              size="3xl"
+              size="2xl"
             >
               {content.header}
             </Heading>
@@ -28,13 +28,13 @@ const HomeHero = () => {
               bgGradient={`linear(to-r, ${color} ,#B72525)`}
               bgClip="text"
               as="h2"
-              size="3xl"
+              size="2xl"
             >
               {content.header}
             </Heading>
           )}
 
-          <Heading as="h1" size="2xl" variant="sec">
+          <Heading as="h1" size="xl" variant="sec">
             {content.subHeader}
           </Heading>
         </Box>

@@ -6,6 +6,7 @@ export const TagStyles = {
     container: {
       bg: colorMode === "dark" ? "gray.800" : "gray.200",
       color: colorMode === "dark" ? "gray.300" : "gray.700",
+      fontFamily: "mono",
       variant: "default",
     },
   }),

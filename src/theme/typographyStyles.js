@@ -1,6 +1,6 @@
 export const Fonts = {
-  heading: "Montserrat, sans-serif",
-  body: "Montserrat, sans-serif",
+  heading: "Questrial, sans-serif",
+  body: "'IBM Plex Sans Condensed', sans-serif",
 }
 
 export const FontSizeScale = {
@@ -41,6 +41,7 @@ export const HeadingStyles = {
     "2xl": {
       fontSize: ['3xl', null, '4xl', '5xl'],
       lineHeight: "base",
+      letterSpacing: "0.1em",
     },
     "xl": {
       lineHeight: "base",
@@ -51,6 +52,7 @@ export const HeadingStyles = {
     "md": {
       fontSize: "xl",
       lineHeight: "base",
+      letterSpacing: "0.1em",
     },
     "sm": {
       fontSize: "md",
@@ -93,7 +95,7 @@ export const HeadingStyles = {
         color: colorMode === "dark" ? "gray.200" : "brand.500",
       },
       _expanded: {
-        color: colorMode === "dark" ? "yellow.600" : "yellow.700",
+        color: colorMode === "dark" ? "gray.300" : "gray.700",
         // color: colorMode === "dark" ? "gray.200" : "gray.600",
       }
     }),
@@ -104,7 +106,7 @@ export const HeadingStyles = {
       fontWeight: 500,
       textDecoration: "none",
       _selected: {
-        color: colorMode === "dark" ? "yellow.600" : "yellow.700",
+        color: colorMode === "dark" ? "gray.300" : "gray.700",
       },
     }),
    
