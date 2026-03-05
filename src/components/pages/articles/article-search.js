@@ -18,8 +18,6 @@ const ArticleSearch = ({ publishedArticles }) => {
   const [search, setSearch] = useState("")
   const [results, setResults] = useState([])
 
-  console.log("da", publishedArticles)
-
   useEffect(() => {
     if (publishedArticles && search.length > 0) {
       const searchResults =
@@ -28,7 +26,6 @@ const ArticleSearch = ({ publishedArticles }) => {
           const title = article.node.frontmatter.title.toLowerCase()
           return title.includes(search)
         })
-      console.log("searc", searchResults)
       if (searchResults.length > 0) {
         setResults(searchResults)
       }

@@ -10,6 +10,7 @@ import {
   Flex,
   Heading,
   Container,
+  SimpleGrid,
   Input,
   InputGroup,
   InputLeftElement,
@@ -36,10 +37,10 @@ import { useKeyPressEvent } from "react-use"
 
 const NoteGrid = ({ notes }) => {
   return (
-    <Grid templateColumns="repeat(6, 1fr)" gap={10}>
+    <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={6}>
       {notes &&
         notes.map((note, i) => <NoteCard key={generate()} note={note} />)}
-    </Grid>
+    </SimpleGrid>
   )
 }
 

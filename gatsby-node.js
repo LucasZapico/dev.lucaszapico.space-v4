@@ -126,6 +126,12 @@ const handleProjects = async ({ actions, graphql, reporter }) => {
   })
 }
 
+exports.onCreatePage = ({ page, actions }) => {
+  if (process.env.NODE_ENV === "production" && page.path.match(/^\/styleguide/)) {
+    actions.deletePage(page)
+  }
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   await handleGeneralContent({ actions, graphql, reporter })
   await handleProjects({ actions, graphql, reporter })

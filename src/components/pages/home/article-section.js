@@ -18,7 +18,7 @@ import { CardOne } from "components"
 SwiperCore.use([Navigation, Scrollbar, A11y])
 
 const ArticleSection = ({ recentArticles }) => (
-  <Box py={20}>
+  <Box py={16}>
     <Container maxW="container.xl" mb={10}>
       <Flex justifyContent="center" alignItems="center" flexDir="column">
         <Heading as="h3" size="3xl">
@@ -62,9 +62,10 @@ const ArticleSection = ({ recentArticles }) => (
             <SwiperSlide key={generate()}>
               <CardOne
                 className="link"
-                mt={6}
-                minH="20rem"
-                minW="20rem"
+                minH="15rem"
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
                 onClick={() => {
                   navigate(`/${article.node.fields.path}`)
                 }}
@@ -73,19 +74,17 @@ const ArticleSection = ({ recentArticles }) => (
                   <Heading as="h4" size="md" variant="tri">
                     {title}
                   </Heading>
-                  <Text as="h5" variant="sec" size="md" noOfLines={3}>
+                  <Text variant="sec" size="md" noOfLines={3}>
                     {description}
                   </Text>
                 </Box>
-                <Box>
-                  <Flex flexWrap="wrap">
-                    {categories.map((cat, i) => (
-                      <Tag mb={2} mr={1} variant="sec" key={generate()}>
-                        #{cat}
-                      </Tag>
-                    ))}
-                  </Flex>
-                </Box>
+                <Flex flexWrap="wrap" mt={4}>
+                  {categories.map((cat) => (
+                    <Tag size="sm" mb={2} mr={1} variant="sec" key={generate()}>
+                      #{cat}
+                    </Tag>
+                  ))}
+                </Flex>
               </CardOne>
             </SwiperSlide>
           )

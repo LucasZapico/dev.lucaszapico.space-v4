@@ -13,7 +13,7 @@ export const ScrollToTop = () => (
     justifyContent="center"
     alignItems="center"
     bottom="2rem"
-    borderRadius="md"
+    borderRadius="sm"
     right="2rem"
     width="50px"
   >

@@ -44,7 +44,7 @@ const TypographySection = () => {
 }
 
 export const ContentSection = () => (
-  <Box py={20}>
+  <Box py={16}>
     <TypographySection />
     <TypeCompositions />
     {/* TODO: 👇 this doesn't make sense becuase I handle this with mdx so I would have to import all of the mdx element to style this correctly */}

@@ -91,8 +91,8 @@ const Footer = ({ title, description, location }) => {
                 display="flex"
                 flexDirection="column"
                 justifyContent="space-between"
-                px={{ base: 2, sm: 6 }}
-                pt={{ base: 10, md: 20 }}
+                px={{ base: 4, md: 6 }}
+                pt={{ base: 10, md: 16 }}
               >
                 <Heading as="h4" size="md" mb={6} variant="sec">
                   Links
@@ -121,8 +121,8 @@ const Footer = ({ title, description, location }) => {
                 display="flex"
                 flexDirection="column"
                 justifyContent="flex-start"
-                px={{ base: 2, sm: 6 }}
-                pt={{ base: 10, md: 20 }}
+                px={{ base: 4, md: 6 }}
+                pt={{ base: 10, md: 16 }}
               >
                 <Heading as="h4" size="md" mb={0} variant="sec">
                   Contact
@@ -144,8 +144,8 @@ const Footer = ({ title, description, location }) => {
                 display="flex"
                 flexDirection="column"
                 justifyContent="space-between"
-                px={{ base: 2, sm: 6 }}
-                pt={{ base: 10, md: 20 }}
+                px={{ base: 4, md: 6 }}
+                pt={{ base: 10, md: 16 }}
               >
                 <Heading as="h4" size="md" mb={6} variant="sec">
                   Location

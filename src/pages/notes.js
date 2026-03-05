@@ -1,10 +1,13 @@
-import { Box, Heading } from "@chakra-ui/react"
+import { Box, Container } from "@chakra-ui/react"
 import React from "react"
-import { Notes } from "components"
+import { Notes, BreadCrumbGroup } from "components"
 
 const NotesPage = () => {
   return (
-    <Box pb={20}>
+    <Box pb={16}>
+      <Container maxW="container.xl">
+        <BreadCrumbGroup pathArr={["notes"]} />
+      </Container>
       <Notes />
     </Box>
   )

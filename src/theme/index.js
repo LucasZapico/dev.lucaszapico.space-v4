@@ -36,20 +36,18 @@ const theme = extendTheme({
     Text: TextStyles,
   },
   styles: {
-    global: ({ colorMode }) => {
-      return {
-        body: {
-          color: colorMode === "dark" ? "gray.200" : "gray.900",
-          bg: colorMode === "dark" ? "gray.900" : "white",
-        },
-        "*::placeholder": {
-          color: colorMode === "dark" ? "gray.100" : "gray.900",
-        },
-        "*, *::before, &::after": {
-          borderColor: colorMode === "dark" ? "gray.100" : "gray.900",
-        },
-      }
-    },
+    global: (props) => ({
+      body: {
+        color: mode("gray.900", "gray.200")(props),
+        bg: mode("white", "gray.900")(props),
+      },
+      "*::placeholder": {
+        color: mode("gray.900", "gray.100")(props),
+      },
+      "*, *::before, &::after": {
+        borderColor: mode("gray.900", "gray.100")(props),
+      },
+    }),
   },
 })
 

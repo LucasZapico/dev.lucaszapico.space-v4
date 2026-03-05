@@ -26,7 +26,7 @@ const TagsSection = () => (
 )
 
 const ElementsSection = () => (
-  <Box py={20} id="ui-elements">
+  <Box py={16} id="ui-elements">
     <Divider mb={6} />
     <Heading as="h3" size="2xl" color={styleGuideHeaderColors.pri}>
       UI elements

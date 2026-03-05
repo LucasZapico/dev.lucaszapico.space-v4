@@ -52,7 +52,7 @@ export const LinkOne = ({ children, content, icon, ...rest }) => (
 //     {href !== '' ? (
 //       <ChLink href={href}>
 //         <Box
-//           transition="all 0.4s ease-in-out"
+//           transition="all 0.2s ease-out"
 //           display="flex"
 //           alignItems="center"
 //           fontSize={fontSize}
@@ -67,7 +67,7 @@ export const LinkOne = ({ children, content, icon, ...rest }) => (
 //         <Box
 //           display="flex"
 //           alignItems="center"
-//           transition="all 0.4s ease-in-out"
+//           transition="all 0.2s ease-out"
 //           fontSize={fontSize}
 //         >
 //           {children || content}
@@ -102,7 +102,7 @@ export const LinkPhone = (props) => {
           <Link
             color={color}
             fontWeight="semibold"
-            transition="all 0.4s ease-in-out"
+            transition="all 0.2s ease-out"
             _hover={{ color: "brand.two" }}
             href={`tel:+1${formatedPhoneBot}`}
           >
@@ -118,7 +118,7 @@ export const LinkPhone = (props) => {
             <IconButton
               variant="none"
               aria-label="copy to clipboard"
-              icon={<CopyIcon opacity="0.5" />}
+              icon={<CopyIcon opacity="0.7" />}
               m={0}
               onClick={() => {
                 setCopied()
@@ -159,7 +159,7 @@ export const LinkEmail = (props) => {
       wrap="nowrap"
     >
       <Link
-        transition="all 0.4s ease-in-out"
+        transition="all 0.2s ease-out"
         _hover={{ color: "brand.two" }}
         color={color}
         href={`mailto:${children}`}
@@ -177,7 +177,7 @@ export const LinkEmail = (props) => {
           m={0}
           variant="none"
           aria-label="copy to clipboard"
-          icon={<CopyIcon opacity="0.5" />}
+          icon={<CopyIcon opacity="0.7" />}
           onClick={() => {
             setCopied()
             return toast({

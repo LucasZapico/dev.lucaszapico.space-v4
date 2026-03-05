@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { generate } from "shortid"
 import { useSpring, animated as a } from "react-spring"
-import { Box, Container, Button, Link } from "@chakra-ui/react"
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons"
+import { Box, Container, Button, Link, useColorMode } from "@chakra-ui/react"
+import { CloseIcon } from "@chakra-ui/icons"
 import { Link as GatsbyLink } from "gatsby"
 
 const MobileNav = ({ show, setShow, size, ROUTES }) => {
+  const { colorMode } = useColorMode()
+
   const styles = useSpring({
     zIndex: 4,
-    backgroundColor: "#000000",
+    backgroundColor: colorMode === "dark" ? "#1E1C15" : "#F4F3F0",
     opacity: show ? 1 : 0,
     overflow: "hidden",
     height: show ? "100vh" : "0vh",
@@ -17,7 +19,6 @@ const MobileNav = ({ show, setShow, size, ROUTES }) => {
     top: "0px",
     left: "0px",
   })
-  useEffect(() => {}, [show])
 
   useEffect(() => {
     if (size.width > 990) {
@@ -26,6 +27,7 @@ const MobileNav = ({ show, setShow, size, ROUTES }) => {
       setShow(false)
     }
   }, [size])
+
   return (
     <a.div style={styles}>
       <Box zIndex={show ? 10 : 0}>
@@ -49,7 +51,7 @@ const MobileNav = ({ show, setShow, size, ROUTES }) => {
             alignItems="center"
             height={{ base: "100%", lg: "auto" }}
           >
-            {ROUTES.map((r, i) => (
+            {ROUTES.map((r) => (
               <Link
                 activeClassName="active"
                 fontSize="xl"

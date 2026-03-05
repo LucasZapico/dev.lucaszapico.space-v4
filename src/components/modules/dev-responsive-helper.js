@@ -94,7 +94,7 @@ const ResponsiveHelper = () => {
       bottom={6}
       left={6}
       zIndex="100"
-      borderRadius="md"
+      borderRadius="sm"
       p={4}
       color={fontColor}
       bg={{

@@ -8,19 +8,21 @@ export const CardOne = ({ content, children, ...rest }) => {
     <Box
       className={colorMode === "dark" ? "glass dark" : "glass light"}
       p={6}
-      borderRadius="md"
+      borderRadius="sm"
       backgroundColor={colorMode === "dark" ? "gray.900" : "gray.50"}
-      // boxShadow={`10px -10px ${colorMode === "light" ? "#38383a" : "#dbe3df"}`}
       _hover={{
         bg: colorMode === "dark" ? "gray.800" : "gray.100",
       }}
       _active={{
         bg: colorMode === "dark" ? "gray.700" : "gray.200",
       }}
-      _focus={{
-        bg: colorMode === "dark" ? "gray.600" : "gray.300",
+      _focusVisible={{
+        bg: colorMode === "dark" ? "gray.800" : "gray.100",
+        outline: "2px solid",
+        outlineColor: colorMode === "dark" ? "gray.400" : "gray.600",
+        outlineOffset: "2px",
       }}
-      transition="all 0.2s ease-in-out"
+      transition="all 0.2s ease-out"
       {...rest}
     >
       {children || content}

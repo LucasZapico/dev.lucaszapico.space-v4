@@ -18,7 +18,7 @@ import { SEO } from "components"
 const AboutPage = ({ location }) => (
   <>
     <SEO title="About" location={location} />
-    <Container maxW="container.md" py={20}>
+    <Container maxW="container.md" py={16}>
       <Portrait />
       <Heading as="h1" size="2xl">
         About my development journey

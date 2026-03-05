@@ -1,13 +1,12 @@
-import { tagAnatomy } from "@chakra-ui/anatomy"
+import { mode } from "@chakra-ui/theme-tools"
 
 export const TagStyles = {
   parts: ["container", "label", "closeButton"],
-  baseStyle: ({ colorMode }) => ({
+  baseStyle: (props) => ({
     container: {
-      bg: colorMode === "dark" ? "gray.800" : "gray.200",
-      color: colorMode === "dark" ? "gray.300" : "gray.700",
+      bg: mode("gray.200", "gray.800")(props),
+      color: mode("gray.700", "gray.300")(props),
       fontFamily: "mono",
-      variant: "default",
     },
   }),
   defaultProps: {
@@ -15,15 +14,13 @@ export const TagStyles = {
     variant: "default",
   },
   variants: {
-    sec: ({ colorMode }) => ({
+    sec: (props) => ({
       container: {
-        // bg: "yellow.200",
-        // color: "yellow.400",
-        bg: colorMode === "dark" ? "gray.900" : "gray.50",
-        color: colorMode === "dark" ? "gray.600" : "gray.300",
-        borderColor: colorMode === "dark" ? "gray.600" : "gray.300",
+        bg: mode("gray.50", "gray.900")(props),
+        color: mode("gray.300", "gray.600")(props),
+        borderColor: mode("gray.300", "gray.600")(props),
         border: "1px",
-        borderRadius: "0px",
+        borderRadius: "none",
       },
     }),
   },

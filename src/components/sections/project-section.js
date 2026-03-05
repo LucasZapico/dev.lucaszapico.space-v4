@@ -1,15 +1,15 @@
 import React from "react"
-import { Heading, Box, Container, Grid } from "@chakra-ui/react"
+import { Heading, Box, Container, SimpleGrid } from "@chakra-ui/react"
 import { generate } from "shortid"
 import { ProjectCard } from "components"
 
 const ProjectSections = ({ recentProjects }) => {
   if (recentProjects === undefined) {
-    console.log("tets")
+    return null
   }
   return (
-    <Box py={20}>
-      <Grid templateColumns="repeat(6, 1fr)" gap={10}>
+    <Box py={16}>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={6}>
         {recentProjects &&
           recentProjects.edges.map((edge, i) => {
             const { frontmatter, fields } = edge.node
@@ -24,12 +24,11 @@ const ProjectSections = ({ recentProjects }) => {
             return (
               <ProjectCard
                 key={generate()}
-                key={generate()}
                 cardObj={cardObj}
               />
             )
           })}
-      </Grid>
+      </SimpleGrid>
     </Box>
   )
 }

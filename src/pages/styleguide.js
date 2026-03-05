@@ -13,7 +13,7 @@ import { Styleguide } from "components"
 
 const StyleguidePage = () => {
   return (
-    <Box mheight="100vh" py={20}>
+    <Box mheight="100vh" py={16}>
       <Styleguide />
     </Box>
   )

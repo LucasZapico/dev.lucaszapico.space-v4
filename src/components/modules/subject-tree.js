@@ -1,5 +1,5 @@
 import { Link, Heading, Box, Text, useColorMode } from "@chakra-ui/react"
-import React, { useState, useEffect, memo, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import { generate } from "shortid"
 import { FiChevronRight, FiChevronDown } from "react-icons/fi"
 
@@ -12,11 +12,8 @@ const Subject = ({ t, depth }) => {
   const [show, setShow] = useState(false)
   const [treeState, setTreeState] = useAtom(treeAtom)
   useEffect(() => {
-    console.log("subject")
-    // remove last page from active tree state
     if (treeState.length > 0) {
       const matches = treeState.filter((treeEl) => /\.mdx/.test(treeEl))
-      console.log(matches)
       if (matches.length < 1) {
         // navigate("/notes")
       } else if (matches.length > 1) {

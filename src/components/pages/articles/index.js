@@ -6,6 +6,7 @@ import {
   Box,
   Heading,
   Container,
+  SimpleGrid,
   Input,
   InputGroup,
   InputLeftElement,
@@ -66,12 +67,7 @@ const Articles = () => {
               results.map((r, i) => <Box>{r.node.frontmatter.title}</Box>)}
           </Box> */}
         </Container>
-        <Container
-          maxW="container.xl"
-          display="flex"
-          justifyContent="space-between"
-          flexWrap="wrap"
-        >
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={6}>
           {articles &&
             articles.map((edge, i) => {
               const { frontmatter, fields } = edge.node
@@ -83,7 +79,7 @@ const Articles = () => {
               }
               return <ArticleCard key={generate()} cardObj={cardObj} />
             })}
-        </Container>
+        </SimpleGrid>
       </Container>
     </>
   )

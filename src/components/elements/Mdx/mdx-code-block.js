@@ -20,7 +20,7 @@ const FileName = ({ theme, fileName }) => {
   const bg = LightenDarkenColor(theme.plain.backgroundColor, -10)
 
   return (
-    <Box borderTopRadius="md" p={2} mb={0} bg={bg}>
+    <Box borderTopRadius="sm" p={2} mb={0} bg={bg}>
       {fileName}
     </Box>
   )
@@ -101,7 +101,7 @@ export const CodeBlockMdx = ({ children }) => {
             ))
           return (
             <Box
-              borderRadius="md"
+              borderRadius="sm"
               color={style.color}
               bg={style.backgroundColor}
               mt={fileName.length > 0 ? 0 : 2}

@@ -1,10 +1,13 @@
-import { Box, Heading } from "@chakra-ui/react"
+import { Box, Container } from "@chakra-ui/react"
 import React from "react"
-import { Projects } from "components"
+import { Projects, BreadCrumbGroup } from "components"
 
 const Cases = () => {
   return (
-    <Box py={20}>
+    <Box py={16}>
+      <Container maxW="container.xl">
+        <BreadCrumbGroup pathArr={["projects"]} />
+      </Container>
       <Projects />
     </Box>
   )

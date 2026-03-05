@@ -1,3 +1,5 @@
+import { mode } from "@chakra-ui/theme-tools"
+
 export const Fonts = {
   heading: "Questrial, sans-serif",
   body: "'IBM Plex Sans Condensed', sans-serif",
@@ -12,115 +14,114 @@ export const FontSizeScale = {
   "2xl": "1.5rem",
   "3xl": "1.875rem",
   "4xl": "2.25rem",
-  "5xl": "3rem",
-  "6xl": "3.75rem",
-  "7xl": "4.5rem",
-  "8xl": "6rem",
-  "9xl": "8rem",
+  "5xl": "2.75rem",
+  "6xl": "3.25rem",
+  "7xl": "3.75rem",
+  "8xl": "4.5rem",
+  "9xl": "5.5rem",
 }
 
 // Heading
 export const HeadingStyles = {
-  baseStyle: ({ colorMode }) => ({
+  baseStyle: (props) => ({
     fontWeight: 800,
-    color: colorMode === "dark" ? "gray.100" : "gray.900",
+    color: mode("gray.900", "gray.100")(props),
     marginTop: 6,
     marginBottom: 4,
     lineHeight: "base",
-    letterSpacing: "0.02rem",
+    letterSpacing: "0.02em",
   }),
   sizes: {
     "4xl": {
-      fontSize: ["4xl", null, "9xl"],
-      lineHeight: "tall",
+      fontSize: ["4xl", null, "7xl"],
+      lineHeight: "shorter",
     },
     "3xl": {
-      fontSize: ["4xl", null, "7xl"],
-      lineHeight: "base",
+      fontSize: ["3xl", null, "5xl"],
+      lineHeight: "short",
     },
     "2xl": {
-      fontSize: ['3xl', null, '4xl', '5xl'],
-      lineHeight: "base",
-      letterSpacing: "0.1em",
+      fontSize: ["2xl", null, "4xl"],
+      lineHeight: "short",
+      letterSpacing: "0.05em",
     },
     "xl": {
+      fontSize: ["xl", null, "2xl"],
       lineHeight: "base",
     },
     "lg": {
+      fontSize: "lg",
       lineHeight: "base",
     },
     "md": {
-      fontSize: "xl",
+      fontSize: "md",
       lineHeight: "base",
-      letterSpacing: "0.1em",
+      letterSpacing: "0.05em",
     },
     "sm": {
-      fontSize: "md",
+      fontSize: "sm",
       lineHeight: "base",
     },
     "xs": {
-      fontSize: "sm",
+      fontSize: "xs",
       lineHeight: "base",
     },
   },
 
   variants: {
-    sec: ({ colorMode }) => ({
-      color: colorMode === "dark" ? "gray.400" : "gray.700",
+    sec: (props) => ({
+      color: mode("gray.700", "gray.400")(props),
       fontWeight: 500,
       lineHeight: "tall",
     }),
-    tri: ({ colorMode }) => ({
-      color: colorMode === "dark" ? "gray.400" : "gray.700",
+    tri: (props) => ({
+      color: mode("gray.700", "gray.400")(props),
       fontWeight: 800,
       lineHeight: "tall",
     }),
-    quo: ({ colorMode }) => ({
-      color: colorMode === "dark" ? "brand.300" : "brand.500",
+    quo: (props) => ({
+      color: mode("brand.500", "brand.300")(props),
       fontWeight: 800,
       lineHeight: "tall",
     }),
-    sideNavHeader: ({ colorMode }) => ({
+    sideNavHeader: (props) => ({
       textDecoration: "none",
-      color: colorMode === "dark" ?  "gray.400" : "gray.700",
+      color: mode("gray.700", "gray.400")(props),
       fontWeight: 700,
       marginBottom: 4,
       _active: {
-        color: colorMode === "dark" ? "gray.300" : "brand.500",
+        color: mode("brand.500", "gray.300")(props),
       },
       _focus: {
-        color: colorMode === "dark" ? "gray.400" : "brand.500",
+        color: mode("brand.500", "gray.400")(props),
       },
       _selected: {
-        color: colorMode === "dark" ? "gray.200" : "brand.500",
+        color: mode("brand.500", "gray.200")(props),
       },
       _expanded: {
-        color: colorMode === "dark" ? "gray.300" : "gray.700",
-        // color: colorMode === "dark" ? "gray.200" : "gray.600",
-      }
+        color: mode("gray.700", "gray.300")(props),
+      },
     }),
-    sideNavLink: ({ colorMode }) => ({
-      color: colorMode === "dark" ? "gray.500" : "gray.700",
+    sideNavLink: (props) => ({
+      color: mode("gray.700", "gray.500")(props),
       marginBottom: 0,
       marginTop: 0,
       fontWeight: 500,
       textDecoration: "none",
       _selected: {
-        color: colorMode === "dark" ? "gray.300" : "gray.700",
+        color: mode("gray.700", "gray.300")(props),
       },
     }),
-   
   },
-  // The default `size` or `variant` values
   defaultProps: {},
 }
 
 export const TextStyles = {
-  baseStyle: ({ colorMode }) => ({
-    color: colorMode === "dark" ? "gray.200" : "gray.800",
+  baseStyle: (props) => ({
+    color: mode("gray.800", "gray.200")(props),
     fontWeight: 500,
-    letterSpacing: "0.1rem",
-    marginBottom: 6,
+    letterSpacing: "0.05em",
+    marginBottom: 4,
   }),
   sizes: {
     "4xl": {},
@@ -138,11 +139,10 @@ export const TextStyles = {
     sm: {},
   },
   variants: {
-    sec: ({ colorMode }) => ({
-      color: colorMode === "dark" ? "gray.400" : "gray.700",
+    sec: (props) => ({
+      color: mode("gray.700", "gray.400")(props),
       fontWeight: 500,
       lineHeight: "tall",
     }),
-    
-  }
+  },
 }

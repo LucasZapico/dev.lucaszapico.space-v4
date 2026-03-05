@@ -19,7 +19,7 @@ import {
 
 
 export const TypeVariantSection = () => (
-  <Box py={20} id="type-variants">
+  <Box py={16} id="type-variants">
     <Box py={10}>
       <Heading as="h3" size="2xl" color={styleGuideHeaderColors.pri}>
         Typogrpahy Variants
